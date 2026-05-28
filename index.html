@@ -7,153 +7,112 @@
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#020202;color:#f8f1e5;font-family:Arial,Helvetica,sans-serif}
+body{margin:0;background:#f7f5f0;color:#1b1d21;font-family:Inter,Arial,Helvetica,sans-serif}
 a{text-decoration:none;color:inherit}
-:root{--gold:#c9a15a;--gold2:#f5d98d;--muted:#b9ad98}
-header{position:fixed;top:0;left:0;right:0;z-index:50;min-height:108px;display:flex;align-items:center;justify-content:space-between;padding:8px 6vw;background:rgba(0,0,0,.86);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,161,90,.28)}
-.logo img{height:104px;filter:drop-shadow(0 0 34px rgba(245,217,141,.42))}
-nav{display:flex;gap:34px;text-transform:uppercase;font-size:13px;font-weight:900;letter-spacing:2px}
-nav a:hover{color:var(--gold2)}
-.right{display:flex;align-items:center;gap:14px}
-select{background:#050505;color:var(--gold2);border:1px solid rgba(201,161,90,.6);border-radius:8px;padding:13px;font-weight:900}
-.whatsapp{background:linear-gradient(135deg,#f5d98d,#9a6b24);color:#050505;border-radius:8px;padding:15px 24px;font-weight:950;text-transform:uppercase}
-.hero{min-height:100vh;display:flex;align-items:center;padding:155px 6vw 75px;background:
-linear-gradient(90deg,rgba(0,0,0,.97),rgba(0,0,0,.78),rgba(0,0,0,.28)),
-url('https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?q=80&w=1900&auto=format&fit=crop') center right/cover no-repeat;position:relative}
-.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 73% 44%,rgba(245,217,141,.22),transparent 30%),linear-gradient(180deg,transparent 62%,#020202 100%)}
-.hero-content{position:relative;z-index:2;max-width:760px}
-.kicker{color:var(--gold);letter-spacing:7px;text-transform:uppercase;font-weight:900;margin-bottom:26px}
-h1{font-family:Georgia,serif;font-size:88px;line-height:.92;text-transform:uppercase;font-weight:500;margin:0 0 28px;text-shadow:0 0 42px #000}
-h1 span{color:var(--gold2)}
-.lead{font-size:21px;line-height:1.7;color:#e5ddcf;font-weight:700;max-width:650px}
-.buttons{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
-.btn{padding:18px 30px;border-radius:8px;text-transform:uppercase;font-weight:950;letter-spacing:1px}
-.gold{background:linear-gradient(135deg,#f5d98d,#9a6b24);color:#050505}
-.dark{border:1px solid rgba(201,161,90,.6);color:var(--gold2);background:rgba(0,0,0,.45)}
-.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:-58px 6vw 0;position:relative;z-index:3}
-.strip div{background:rgba(8,8,8,.94);border:1px solid rgba(201,161,90,.32);border-radius:16px;padding:24px;box-shadow:0 22px 70px rgba(0,0,0,.52)}
-.strip b{color:var(--gold2);text-transform:uppercase;letter-spacing:1px}
-.strip p{color:var(--muted);line-height:1.55}
-.section{padding:82px 6vw 0}
-.section h2{font-family:Georgia,serif;font-size:42px;text-transform:uppercase;letter-spacing:4px;font-weight:500;margin:0 0 26px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{background:linear-gradient(145deg,#101010,#050505);border:1px solid rgba(201,161,90,.35);border-radius:18px;padding:30px;box-shadow:0 30px 90px rgba(0,0,0,.55)}
-.card h3{font-family:Georgia,serif;color:var(--gold2);font-size:30px;margin:0 0 16px}
-.card p{color:var(--muted);line-height:1.65}
-.catalog .card{padding:0;overflow:hidden}
-.carimg{height:210px;background:linear-gradient(145deg,#181818,#030303);position:relative}
-.carimg:after{content:"";position:absolute;left:11%;right:11%;top:50%;height:32%;border-radius:30px;background:linear-gradient(145deg,#2a2a2a,#050505);border:1px solid rgba(201,161,90,.35);box-shadow:0 28px 50px rgba(0,0,0,.7)}
-.carbody{padding:24px}
-.tag{display:inline-block;color:var(--gold2);border:1px solid rgba(201,161,90,.45);padding:7px 12px;border-radius:99px;font-size:11px;letter-spacing:1px;margin-bottom:12px}
-.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;color:var(--muted);font-size:13px}
-.price{color:var(--gold2);font-size:28px;font-weight:950;margin:18px 0}
-.smallwa{display:block;text-align:center;border:1px solid rgba(38,211,102,.6);color:#8dffb2;border-radius:8px;padding:13px;font-weight:900}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-bottom:90px}
-.box{background:linear-gradient(145deg,#101010,#050505);border:1px solid rgba(201,161,90,.35);border-radius:18px;padding:36px}
-.box h3{font-family:Georgia,serif;color:var(--gold2);font-size:36px;margin:0 0 22px}
-.box a,.box div{display:block;font-size:20px;margin:12px 0}
-.float{position:fixed;right:24px;bottom:24px;z-index:90;background:#0f8f44;color:#fff;border-radius:999px;padding:17px 24px;font-weight:950;box-shadow:0 0 35px rgba(38,211,102,.35)}
-footer{border-top:1px solid rgba(201,161,90,.25);padding:34px;text-align:center;color:var(--gold);letter-spacing:5px;text-transform:uppercase;font-size:12px}
-@media(max-width:900px){
-header{min-height:82px;padding:8px 16px}.logo img{height:68px}nav{display:none}.whatsapp{padding:12px 14px;font-size:12px}select{padding:10px}
-.hero{padding:118px 22px 60px;background-position:center}
-.kicker{font-size:12px;letter-spacing:4px}
-h1{font-size:50px}.lead{font-size:18px}.buttons{display:grid}.btn{text-align:center}
-.strip,.grid3,.contact{grid-template-columns:1fr}.strip{margin:0;padding:26px 22px}.section{padding:58px 22px 0}.section h2{font-size:32px}
-.float{left:18px;right:18px;text-align:center}
+:root{--gold:#c79a39;--gold2:#e0b75d;--dark:#111318;--muted:#6f7278;--line:#e6e1d7}
+.header{height:92px;display:flex;align-items:center;justify-content:space-between;padding:0 3.6vw;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,.06);position:sticky;top:0;z-index:50}
+.logo{display:flex;align-items:center;gap:18px}
+.logo img{height:70px;border-radius:8px;filter:drop-shadow(0 4px 12px rgba(199,154,57,.18))}
+.brand b{font-family:Georgia,serif;font-size:28px;letter-spacing:1px}.brand span{color:var(--gold)}
+.brand small{display:block;letter-spacing:4px;font-size:11px;margin-top:4px;color:#333}
+.nav{display:flex;gap:34px;text-transform:uppercase;font-size:13px;font-weight:900;letter-spacing:.8px}
+.nav a:hover{color:var(--gold)}
+.top-actions{display:flex;align-items:center;gap:16px}
+.phone{font-weight:900}.lang{border:0;background:#fff;font-weight:900;padding:10px}
+.whatsapp{background:linear-gradient(135deg,#d3a347,#a47019);color:#fff;border-radius:8px;padding:15px 22px;font-weight:900}
+.hero{min-height:640px;display:grid;grid-template-columns:1fr 1.08fr;align-items:center;padding:58px 3.6vw 30px;background:
+linear-gradient(90deg,#f9f7f2 0%,rgba(249,247,242,.95) 42%,rgba(249,247,242,.25) 76%),
+url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1900&auto=format&fit=crop') center right/cover no-repeat;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:4vw;bottom:34px;width:48vw;height:29vw;background:
+url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1500&auto=format&fit=crop') center/cover no-repeat;border-radius:24px;box-shadow:0 40px 90px rgba(0,0,0,.18);opacity:.96}
+.hero-text{position:relative;z-index:2;max-width:720px}
+.kicker{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:22px}
+h1{font-family:Georgia,serif;font-size:64px;line-height:1.08;margin:0 0 26px;color:#1b1d21;font-weight:500;text-transform:uppercase}
+h1 span{color:var(--gold)}
+.lead{font-size:20px;line-height:1.65;color:#333941;max-width:700px;margin:0 0 24px}
+.info-row{display:grid;grid-template-columns:repeat(3,1fr);max-width:660px;background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:12px;margin:26px 0;box-shadow:0 18px 50px rgba(0,0,0,.08)}
+.info{padding:20px;border-right:1px solid var(--line)}.info:last-child{border-right:0}.info b{display:block;margin-bottom:6px}.info span{color:var(--muted)}
+.buttons{display:flex;gap:16px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 34px;border-radius:8px;font-weight:900}.btn.gold{background:linear-gradient(135deg,#d8aa4f,#a47019);color:#fff}.btn.white{background:#fff;border:1px solid var(--line);color:var(--gold)}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:-4px 3.6vw 0;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 55px rgba(0,0,0,.08);position:relative;z-index:5}
+.feature{padding:30px;display:flex;gap:18px;border-right:1px solid var(--line)}.feature:last-child{border-right:0}.icon{width:48px;height:48px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:24px}.feature b{display:block;text-transform:uppercase;font-size:14px}.feature p{margin:7px 0 0;color:var(--muted);line-height:1.5}
+.section{padding:58px 3.6vw 0}.section .over{color:var(--gold);font-weight:900;text-transform:uppercase;font-size:13px}.section h2{font-family:Georgia,serif;font-size:34px;font-weight:500;margin:8px 0 24px}
+.catalog-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}.filters{display:flex;gap:14px;flex-wrap:wrap}.filter{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 24px;font-weight:900}.filter.active{background:linear-gradient(135deg,#d8aa4f,#a47019);color:#fff}
+.catalog-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px}.vehicle{display:grid;grid-template-columns:45% 55%;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 16px 45px rgba(0,0,0,.06)}.vehicle-img{background:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=900&auto=format&fit=crop') center/cover no-repeat;min-height:260px}.vehicle-body{padding:28px}.vehicle h3{font-size:26px;margin:0 0 15px}.meta{display:flex;gap:24px;color:#4d525a;flex-wrap:wrap}.price{font-size:30px;color:var(--gold);font-weight:950;margin:32px 0 0}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}.service{padding:36px;text-align:center;border-right:1px solid var(--line)}.service:last-child{border-right:0}.service .icon{margin:0 auto 18px}.service b{display:block;margin-bottom:10px}.service p{color:var(--muted);line-height:1.55}
+.countries{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.country{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px;box-shadow:0 16px 45px rgba(0,0,0,.05)}.country h3{font-family:Georgia,serif;font-size:28px;margin:0 0 12px;color:var(--gold)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-bottom:70px}.box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:34px;box-shadow:0 16px 45px rgba(0,0,0,.05)}.box h3{font-family:Georgia,serif;font-size:32px;margin:0 0 20px}.box a,.box div{display:block;margin:12px 0;font-size:19px}
+.float{position:fixed;right:24px;bottom:24px;background:#17a957;color:#fff;border-radius:999px;padding:17px 24px;font-weight:950;z-index:90;box-shadow:0 14px 45px rgba(23,169,87,.35)}
+footer{text-align:center;padding:30px;color:#777}
+@media(max-width:980px){
+.header{height:auto;min-height:78px;padding:8px 16px}.brand{display:none}.logo img{height:58px}.nav{display:none}.phone{display:none}.whatsapp{padding:12px 14px;font-size:12px}.hero{display:block;min-height:auto;padding:62px 22px 300px;background-position:center}.hero:after{width:88vw;height:250px;left:6vw;right:auto;bottom:24px}h1{font-size:43px}.lead{font-size:17px}.info-row,.features,.catalog-grid,.service-grid,.countries,.contact{grid-template-columns:1fr}.info,.feature,.service{border-right:0;border-bottom:1px solid var(--line)}.vehicle{grid-template-columns:1fr}.section{padding:46px 22px 0}.float{left:18px;right:18px;text-align:center}.buttons{display:grid}.btn{width:100%}
 }
 </style>
 </head>
 <body>
-<header>
-<a class="logo" href="#"><img src="luxes-logo.png" alt="LUXES EXECUTIVE"></a>
-<nav>
-<a href="#catalog" data-t="navCatalog">Каталог</a>
-<a href="#countries" data-t="navCountries">Страны</a>
-<a href="#companies" data-t="navCompanies">Фирмы</a>
-<a href="#contact" data-t="navContact">Контакты</a>
-</nav>
-<div class="right">
-<select id="language">
-<option value="ru">RU</option><option value="en">EN</option><option value="de">DE</option><option value="cs">CZ</option>
-</select>
-<a class="whatsapp" href="https://wa.me/420777399799">WhatsApp</a>
-</div>
+<header class="header">
+  <a class="logo" href="#"><img src="luxes-logo.png" alt="LUXES EXECUTIVE"><div class="brand"><b>LUXES <span>EXECUTIVE</span></b><small>IMPORT / EXPORT / EXECUTIVE</small></div></a>
+  <nav class="nav"><a href="#catalog" data-t="navCatalog">Каталог</a><a href="#countries" data-t="navCountries">Страны</a><a href="#services" data-t="navServices">Услуги</a><a href="#contact" data-t="navContact">Контакт</a></nav>
+  <div class="top-actions"><a class="phone" href="tel:+420777399799">+420 777 399 799</a><select id="language"><option value="ru">RU</option><option value="cs">CZ</option><option value="en">EN</option><option value="de">DE</option></select><a class="whatsapp" href="https://wa.me/420777399799">WhatsApp</a></div>
 </header>
 
 <section class="hero">
-<div class="hero-content">
-<div class="kicker">Private · Executive · Wholesale</div>
-<h1><span data-t="hero1">Luxury</span><br><span>Wholesale</span><br><span data-t="hero3">Worldwide</span></h1>
-<p class="lead" data-t="lead">Премиальные автомобили оптом из Германии, Нидерландов и Турции для профессиональных B2B покупателей. Доверие. Качество. Статус.</p>
-<div class="buttons">
-<a class="btn gold" href="https://wa.me/420777399799" data-t="offer">Получить предложение</a>
-<a class="btn dark" href="#catalog" data-t="catalogBtn">B2B каталог</a>
-</div>
-</div>
+  <div class="hero-text">
+    <div class="kicker" data-t="kicker">PREMIUM IMPORT / EXPORT АВТОМОБИЛЕЙ</div>
+    <h1 data-t="heroTitle">LUXURY АВТОМОБИЛИ ИЗ ЕВРОПЫ И ЗА ПРЕДЕЛЫ ЕС</h1>
+    <p class="lead" data-t="lead">Специализируемся на импорте и экспорте премиальных автомобилей для частных клиентов, дилеров и B2B партнёров.</p>
+    <div class="info-row">
+      <div class="info"><b>+420 777 399 799</b><span>WhatsApp / Call</span></div>
+      <div class="info"><b>ib.luxes@luxes.cz</b><span>E-mail</span></div>
+      <div class="info"><b>LUXES s.r.o.</b><span>IČ: 247 88 384</span></div>
+    </div>
+    <div class="buttons"><a class="btn gold" href="https://wa.me/420777399799">WhatsApp</a><a class="btn white" href="mailto:ib.luxes@luxes.cz">E-mail</a></div>
+  </div>
 </section>
 
-<div class="strip">
-<div><b data-t="s1">B2B only</b><p data-t="s1p">Закрытые предложения для дилеров и оптовых покупателей.</p></div>
-<div><b data-t="s2">Germany</b><p data-t="s2p">Премиальные автомобили и экспортные партии.</p></div>
-<div><b data-t="s3">Netherlands</b><p data-t="s3p">Rotterdam, логистика и европейский stock.</p></div>
-<div><b data-t="s4">Turkey</b><p data-t="s4p">Отдельное направление для партнёров.</p></div>
+<div class="features">
+  <div class="feature"><div class="icon">◇</div><div><b data-t="f1">Проверенные предложения</b><p data-t="f1p">VIN, состояние, фото и цена будут дополнены у конкретных автомобилей.</p></div></div>
+  <div class="feature"><div class="icon">◎</div><div><b data-t="f2">EU / вне EU</b><p data-t="f2p">Германия, Нидерланды, Турция и другие источники.</p></div></div>
+  <div class="feature"><div class="icon">♕</div><div><b data-t="f3">Premium стиль</b><p data-t="f3p">Люксовые автомобили, рабочие авто и микроавтобусы.</p></div></div>
+  <div class="feature"><div class="icon">▣</div><div><b data-t="f4">Безопасная сделка</b><p data-t="f4p">Дискретность, экспорт и VIP клиент.</p></div></div>
 </div>
 
-<section id="countries" class="section">
-<h2 data-t="countriesTitle">Выберите страну</h2>
-<div class="grid3">
-<div class="card"><h3>🇩🇪 Germany</h3><p data-t="germany">Премиальные автомобили из Германии. Дилерские предложения и экспортные партии.</p></div>
-<div class="card"><h3>🇳🇱 Netherlands</h3><p data-t="netherlands">Премиальные автомобили из Нидерландов. Rotterdam, логистика, европейский stock.</p></div>
-<div class="card"><h3>🇹🇷 Turkey</h3><p data-t="turkey">Премиальные автомобили из Турции. Отдельное направление для B2B партнёров.</p></div>
-</div>
+<section class="section" id="catalog">
+  <div class="catalog-head"><div><div class="over" data-t="offerLabel">ПРЕДЛОЖЕНИЯ</div><h2 data-t="catalogTitle">Актуальный каталог</h2></div><div class="filters"><button class="filter active" data-t="allCars">Все автомобили</button><button class="filter">SUV / 4x4</button><button class="filter" data-t="cars">Легковые</button><button class="filter" data-t="vans">Микробусы</button></div></div>
+  <div class="catalog-grid">
+    <div class="vehicle">
+      <div class="vehicle-img"></div>
+      <div class="vehicle-body"><h3>Mercedes-Benz G 63 AMG</h3><div class="meta"><span>2022</span><span>25 000 km</span><span>Benzín</span></div><p>VIN: bude doplněno u konkrétního vozidla.</p><div class="price" data-t="request">Цена по запросу</div></div>
+    </div>
+    <div class="service-grid" id="services">
+      <div class="service"><div class="icon">▰</div><b data-t="s1">Импорт под заказ</b><p data-t="s1p">Найдём автомобиль под ваши параметры.</p></div>
+      <div class="service"><div class="icon">☷</div><b data-t="s2">Полный сервис</b><p data-t="s2p">Экспорт, транспорт и формальности.</p></div>
+      <div class="service"><div class="icon">◎</div><b data-t="s3">Global sourcing</b><p data-t="s3p">Партнёры по Европе и за её пределами.</p></div>
+      <div class="service"><div class="icon">☆</div><b data-t="s4">VIP доступ</b><p data-t="s4p">Индивидуальный подход и дискретность.</p></div>
+    </div>
+  </div>
 </section>
 
-<section id="catalog" class="section catalog">
-<h2 data-t="catalogTitle">B2B предложения</h2>
-<div class="grid3">
-<div class="card"><div class="carimg"></div><div class="carbody"><span class="tag">GERMANY</span><h3>Mercedes-Benz G 63 AMG</h3><div class="meta"><span>2022</span><span>32 000 км</span><span>6 шт.</span><span data-t="wholesale">Опт</span></div><div class="price">On request</div><a class="smallwa" href="https://wa.me/420777399799">WhatsApp</a></div></div>
-<div class="card"><div class="carimg"></div><div class="carbody"><span class="tag">NETHERLANDS</span><h3>Mercedes-Benz S 350 d</h3><div class="meta"><span>2021</span><span>45 000 км</span><span>12 шт.</span><span data-t="wholesale2">Опт</span></div><div class="price">On request</div><a class="smallwa" href="https://wa.me/420777399799">WhatsApp</a></div></div>
-<div class="card"><div class="carimg"></div><div class="carbody"><span class="tag">TURKEY</span><h3>BMW X5 xDrive30d</h3><div class="meta"><span>2022</span><span>38 000 км</span><span>6 шт.</span><span>VIP</span></div><div class="price">On request</div><a class="smallwa" href="https://wa.me/420777399799">WhatsApp</a></div></div>
-</div>
+<section class="section" id="countries">
+  <div class="over">COUNTRIES</div><h2 data-t="countriesTitle">Страны</h2>
+  <div class="countries"><div class="country"><h3>🇩🇪 Germany</h3><p data-t="germany">Премиальные автомобили из Германии.</p></div><div class="country"><h3>🇳🇱 Netherlands</h3><p data-t="netherlands">Rotterdam, логистика и европейский stock.</p></div><div class="country"><h3>🇹🇷 Turkey</h3><p data-t="turkey">Отдельное направление для B2B партнёров.</p></div></div>
 </section>
 
-<section id="companies" class="section">
-<h2 data-t="companiesTitle">Компании группы</h2>
-<div class="grid3">
-<div class="card"><h3>LUXES s.r.o.</h3><p>K Lindě 701/5, 190 15 Praha 9 Satalice</p><p>IČ: 247 88 384</p></div>
-<div class="card"><h3>LUXES EXECUTIVE s.r.o.</h3><p>Sokolovská 325/140, Karlín, 186 00 Praha 8</p><p>IČ: 076 68 295</p></div>
-<div class="card"><h3>VERSANOFIJA s.r.o.</h3><p>Sokolovská 325/140, 186 00 Praha</p><p>IČ: 08695652</p></div>
-</div>
-</section>
-
-<section id="contact" class="section contact">
-<div class="box">
-<h3 data-t="contactTitle">Контакт</h3>
-<a href="tel:+420777399799">+420 777 399 799</a>
-<a href="tel:+420607959595">+420 607 95 95 95</a>
-<a href="tel:+380677799297">+380 67 7799 297</a>
-<a href="tel:+380779997790">+380 77 9997 790</a>
-</div>
-<div class="box">
-<h3>E-mail</h3>
-<a href="mailto:ib.luxes@luxes.cz">ib.luxes@luxes.cz</a>
-<a href="mailto:executive@luxes.cz">executive@luxes.cz</a>
-<div>WhatsApp · Viber · Telegram</div>
-</div>
+<section class="section contact" id="contact">
+  <div class="box"><h3 data-t="contactTitle">Контакт</h3><a href="tel:+420777399799">+420 777 399 799</a><a href="tel:+420607959595">+420 607 95 95 95</a><a href="tel:+380677799297">+380 67 7799 297</a></div>
+  <div class="box"><h3>E-mail</h3><a href="mailto:ib.luxes@luxes.cz">ib.luxes@luxes.cz</a><a href="mailto:executive@luxes.cz">executive@luxes.cz</a><div>WhatsApp · Viber · Telegram</div></div>
 </section>
 
 <a class="float" href="https://wa.me/420777399799">WhatsApp</a>
-<footer>LUXES EXECUTIVE GROUP · PRIVATE · EXECUTIVE · WHOLESALE</footer>
+<footer>LUXES EXECUTIVE GROUP</footer>
 
 <script>
-const translations = {
-ru:{navCatalog:"Каталог",navCountries:"Страны",navCompanies:"Фирмы",navContact:"Контакты",hero1:"Luxury",hero3:"Worldwide",lead:"Премиальные автомобили оптом из Германии, Нидерландов и Турции для профессиональных B2B покупателей. Доверие. Качество. Статус.",offer:"Получить предложение",catalogBtn:"B2B каталог",s1:"B2B only",s1p:"Закрытые предложения для дилеров и оптовых покупателей.",s2:"Germany",s2p:"Премиальные автомобили и экспортные партии.",s3:"Netherlands",s3p:"Rotterdam, логистика и европейский stock.",s4:"Turkey",s4p:"Отдельное направление для партнёров.",countriesTitle:"Выберите страну",germany:"Премиальные автомобили из Германии. Дилерские предложения и экспортные партии.",netherlands:"Премиальные автомобили из Нидерландов. Rotterdam, логистика, европейский stock.",turkey:"Премиальные автомобили из Турции. Отдельное направление для B2B партнёров.",catalogTitle:"B2B предложения",wholesale:"Опт",wholesale2:"Опт",companiesTitle:"Компании группы",contactTitle:"Контакт"},
-en:{navCatalog:"Catalog",navCountries:"Countries",navCompanies:"Companies",navContact:"Contacts",hero1:"Luxury",hero3:"Worldwide",lead:"Premium wholesale vehicles from Germany, Netherlands and Turkey for professional B2B buyers. Trust. Quality. Status.",offer:"Get offer",catalogBtn:"B2B catalog",s1:"B2B only",s1p:"Closed offers for dealers and wholesale buyers.",s2:"Germany",s2p:"Premium vehicles and export lots.",s3:"Netherlands",s3p:"Rotterdam, logistics and European stock.",s4:"Turkey",s4p:"Separate direction for partners.",countriesTitle:"Choose country",germany:"Premium vehicles from Germany. Dealer offers and export lots.",netherlands:"Premium vehicles from the Netherlands. Rotterdam, logistics and European stock.",turkey:"Premium vehicles from Turkey. Separate direction for B2B partners.",catalogTitle:"B2B offers",wholesale:"Wholesale",wholesale2:"Wholesale",companiesTitle:"Group companies",contactTitle:"Contact"},
-de:{navCatalog:"Katalog",navCountries:"Länder",navCompanies:"Firmen",navContact:"Kontakt",hero1:"Luxury",hero3:"Worldwide",lead:"Premium-Fahrzeuge im Großhandel aus Deutschland, den Niederlanden und der Türkei für professionelle B2B-Käufer.",offer:"Angebot erhalten",catalogBtn:"B2B Katalog",s1:"B2B only",s1p:"Geschlossene Angebote für Händler und Großhandelskäufer.",s2:"Deutschland",s2p:"Premium-Fahrzeuge und Exportpartien.",s3:"Niederlande",s3p:"Rotterdam, Logistik und europäischer Bestand.",s4:"Türkei",s4p:"Separates Geschäftsfeld für Partner.",countriesTitle:"Land wählen",germany:"Premium-Fahrzeuge aus Deutschland. Händlerangebote und Exportpartien.",netherlands:"Premium-Fahrzeuge aus den Niederlanden. Rotterdam, Logistik und europäischer Bestand.",turkey:"Premium-Fahrzeuge aus der Türkei. Separates Geschäftsfeld für B2B-Partner.",catalogTitle:"B2B Angebote",wholesale:"Großhandel",wholesale2:"Großhandel",companiesTitle:"Unternehmen der Gruppe",contactTitle:"Kontakt"},
-cs:{navCatalog:"Katalog",navCountries:"Země",navCompanies:"Firmy",navContact:"Kontakt",hero1:"Luxury",hero3:"Worldwide",lead:"Prémiová vozidla velkoobchodně z Německa, Nizozemska a Turecka pro profesionální B2B kupující.",offer:"Získat nabídku",catalogBtn:"B2B katalog",s1:"B2B only",s1p:"Uzavřené nabídky pro dealery a velkoobchodní kupující.",s2:"Německo",s2p:"Prémiová vozidla a exportní partie.",s3:"Nizozemsko",s3p:"Rotterdam, logistika a evropský sklad.",s4:"Turecko",s4p:"Samostatný směr pro partnery.",countriesTitle:"Vyberte zemi",germany:"Prémiová vozidla z Německa. Nabídky dealerů a exportní partie.",netherlands:"Prémiová vozidla z Nizozemska. Rotterdam, logistika a evropský sklad.",turkey:"Prémiová vozidla z Turecka. Samostatný směr pro B2B partnery.",catalogTitle:"B2B nabídky",wholesale:"Velkoobchod",wholesale2:"Velkoobchod",companiesTitle:"Společnosti skupiny",contactTitle:"Kontakt"}};
-function setLanguage(lang){document.documentElement.lang=lang;document.querySelectorAll("[data-t]").forEach(el=>{const k=el.getAttribute("data-t");if(translations[lang]&&translations[lang][k])el.textContent=translations[lang][k];});localStorage.setItem("luxes_language",lang);}
-const selector=document.getElementById("language");const saved=localStorage.getItem("luxes_language")||"ru";selector.value=saved;setLanguage(saved);selector.addEventListener("change",function(){setLanguage(this.value);});
+const tr={
+ru:{navCatalog:"Каталог",navCountries:"Страны",navServices:"Услуги",navContact:"Контакт",kicker:"PREMIUM IMPORT / EXPORT АВТОМОБИЛЕЙ",heroTitle:"LUXURY АВТОМОБИЛИ ИЗ ЕВРОПЫ И ЗА ПРЕДЕЛЫ ЕС",lead:"Специализируемся на импорте и экспорте премиальных автомобилей для частных клиентов, дилеров и B2B партнёров.",f1:"Проверенные предложения",f1p:"VIN, состояние, фото и цена будут дополнены у конкретных автомобилей.",f2:"EU / вне EU",f2p:"Германия, Нидерланды, Турция и другие источники.",f3:"Premium стиль",f3p:"Люксовые автомобили, рабочие авто и микроавтобусы.",f4:"Безопасная сделка",f4p:"Дискретность, экспорт и VIP клиент.",offerLabel:"ПРЕДЛОЖЕНИЯ",catalogTitle:"Актуальный каталог",allCars:"Все автомобили",cars:"Легковые",vans:"Микробусы",request:"Цена по запросу",s1:"Импорт под заказ",s1p:"Найдём автомобиль под ваши параметры.",s2:"Полный сервис",s2p:"Экспорт, транспорт и формальности.",s3:"Global sourcing",s3p:"Партнёры по Европе и за её пределами.",s4:"VIP доступ",s4p:"Индивидуальный подход и дискретность.",countriesTitle:"Страны",germany:"Премиальные автомобили из Германии.",netherlands:"Rotterdam, логистика и европейский stock.",turkey:"Отдельное направление для B2B партнёров.",contactTitle:"Контакт"},
+cs:{navCatalog:"Katalog",navCountries:"Země",navServices:"Služby",navContact:"Kontakt",kicker:"PREMIUM IMPORT / EXPORT VOZIDEL",heroTitle:"LUXUSNÍ VOZY Z EVROPY A MIMO EU",lead:"Specializujeme se na dovoz a vývoz prémiových vozidel pro soukromé klienty, dealery a B2B partnery.",f1:"Prověřené nabídky",f1p:"VIN, stav, foto a cena budou doplněny u konkrétních vozidel.",f2:"EU / mimo EU",f2p:"Německo, Nizozemsko, Turecko a další zdroje.",f3:"Premium styl",f3p:"Luxusní vozy, pracovní auta a mikrobusy.",f4:"Bezpečný obchod",f4p:"Diskrétnost, export a VIP klient.",offerLabel:"NABÍDKA VOZIDEL",catalogTitle:"Aktuální katalog",allCars:"Všechny vozy",cars:"Osobní vozy",vans:"Mikrobusy",request:"Cena na dotaz",s1:"Dovoz na zakázku",s1p:"Najdeme vůz podle vašich představ.",s2:"Kompletní servis",s2p:"Export, doprava a formality.",s3:"Global sourcing",s3p:"Partneři v Evropě i mimo ni.",s4:"VIP přístup",s4p:"Individuální přístup a diskrétnost.",countriesTitle:"Země",germany:"Prémiová vozidla z Německa.",netherlands:"Rotterdam, logistika a evropský sklad.",turkey:"Samostatný směr pro B2B partnery.",contactTitle:"Kontakt"},
+en:{navCatalog:"Catalog",navCountries:"Countries",navServices:"Services",navContact:"Contact",kicker:"PREMIUM VEHICLE IMPORT / EXPORT",heroTitle:"LUXURY VEHICLES FROM EUROPE AND BEYOND",lead:"We specialize in premium vehicle import and export for private clients, dealers and B2B partners.",f1:"Verified offers",f1p:"VIN, condition, photos and price will be added for specific vehicles.",f2:"EU / outside EU",f2p:"Germany, Netherlands, Turkey and other sources.",f3:"Premium style",f3p:"Luxury cars, business vehicles and minibuses.",f4:"Secure deal",f4p:"Discretion, export and VIP client.",offerLabel:"VEHICLE OFFERS",catalogTitle:"Current catalog",allCars:"All vehicles",cars:"Passenger cars",vans:"Vans",request:"Price on request",s1:"Custom import",s1p:"We find the vehicle according to your needs.",s2:"Full service",s2p:"Export, transport and formalities.",s3:"Global sourcing",s3p:"Partners across Europe and beyond.",s4:"VIP access",s4p:"Individual approach and discretion.",countriesTitle:"Countries",germany:"Premium vehicles from Germany.",netherlands:"Rotterdam, logistics and European stock.",turkey:"Separate direction for B2B partners.",contactTitle:"Contact"},
+de:{navCatalog:"Katalog",navCountries:"Länder",navServices:"Service",navContact:"Kontakt",kicker:"PREMIUM FAHRZEUG IMPORT / EXPORT",heroTitle:"LUXUSFAHRZEUGE AUS EUROPA UND AUSSERHALB DER EU",lead:"Wir spezialisieren uns auf Import und Export von Premium-Fahrzeugen für Privatkunden, Händler und B2B-Partner.",f1:"Geprüfte Angebote",f1p:"VIN, Zustand, Fotos und Preis werden bei konkreten Fahrzeugen ergänzt.",f2:"EU / außerhalb EU",f2p:"Deutschland, Niederlande, Türkei und weitere Quellen.",f3:"Premium Stil",f3p:"Luxusfahrzeuge, Arbeitsfahrzeuge und Minibusse.",f4:"Sicherer Handel",f4p:"Diskretion, Export und VIP-Kunde.",offerLabel:"FAHRZEUGANGEBOTE",catalogTitle:"Aktueller Katalog",allCars:"Alle Fahrzeuge",cars:"PKW",vans:"Minibusse",request:"Preis auf Anfrage",s1:"Import auf Bestellung",s1p:"Wir finden ein Fahrzeug nach Ihren Wünschen.",s2:"Komplettservice",s2p:"Export, Transport und Formalitäten.",s3:"Global sourcing",s3p:"Partner in Europa und darüber hinaus.",s4:"VIP Zugang",s4p:"Individueller Ansatz und Diskretion.",countriesTitle:"Länder",germany:"Premium-Fahrzeuge aus Deutschland.",netherlands:"Rotterdam, Logistik und europäischer Bestand.",turkey:"Separates Geschäftsfeld für B2B-Partner.",contactTitle:"Kontakt"}};
+function setLang(l){document.documentElement.lang=l;document.querySelectorAll("[data-t]").forEach(e=>{const k=e.dataset.t;if(tr[l]&&tr[l][k])e.textContent=tr[l][k]});localStorage.setItem("luxes_lang",l)}
+const s=document.getElementById("language");const saved=localStorage.getItem("luxes_lang")||"ru";s.value=saved;setLang(saved);s.addEventListener("change",()=>setLang(s.value));
 </script>
 </body>
 </html>
