@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="cs">
+<html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,46 +7,59 @@
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#050505;color:#f6efe4;font-family:Arial,Helvetica,sans-serif}
+body{margin:0;background:#f6f2ea;color:#181818;font-family:Arial,Helvetica,sans-serif}
 a{text-decoration:none;color:inherit}
-:root{--gold:#c99a36;--gold2:#f4d48a;--line:rgba(224,174,72,.34);--muted:#c9c0b2}
-.header{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:12px 4vw}
-.headerTop{display:flex;align-items:center;justify-content:space-between;gap:22px}
-.logo{display:flex;align-items:center;gap:16px}.logo img{height:74px;object-fit:contain}.brand b{font-family:Georgia,serif;font-size:30px;letter-spacing:1px}.brand small{display:block;color:var(--gold2);letter-spacing:4px;font-size:11px;margin-top:5px}
-.companyData{display:flex;gap:22px;flex-wrap:wrap;justify-content:flex-end;font-size:13px;color:#ddd4c7}.companyData b{color:var(--gold2)}
-.navRow{display:flex;align-items:center;justify-content:space-between;margin-top:10px;border-top:1px solid rgba(224,174,72,.18);padding-top:10px}
-.nav{display:flex;gap:32px;text-transform:uppercase;font-weight:950;font-size:13px;letter-spacing:.7px}.nav a:hover{color:var(--gold2)}
-.lang{background:#0b0b0b;color:var(--gold2);border:1px solid var(--line);border-radius:7px;padding:10px 12px;font-weight:950}
-.wa,.gold{background:linear-gradient(135deg,#f3d991,#9d6820);color:#060606;border-radius:7px;padding:13px 20px;font-weight:950}
-.hero{min-height:720px;background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.82) 32%,rgba(5,5,5,.34) 58%,rgba(5,5,5,.08) 100%),url('hero.jpg') right center/cover no-repeat;display:flex;align-items:flex-end;padding:0 4vw 62px;position:relative}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0),#050505 98%);pointer-events:none}
-.heroText{position:relative;z-index:2;max-width:720px}.kicker{color:var(--gold2);letter-spacing:5px;text-transform:uppercase;font-weight:950;margin-bottom:18px}
-h1{font-family:Georgia,serif;font-size:56px;line-height:1.03;text-transform:uppercase;margin:0 0 20px;font-weight:500;text-shadow:0 18px 60px #000}h1 span{color:var(--gold2)}
-.lead{font-size:18px;line-height:1.6;font-weight:800;max-width:650px;color:#f3eadb}
-.buttons{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 28px;border-radius:7px;text-transform:uppercase;font-weight:950}.dark{border:1px solid var(--line);color:var(--gold2);background:rgba(0,0,0,.62)}
-.section{padding:60px 4vw 0}.over{color:var(--gold2);text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:950}.section h2{font-family:Georgia,serif;text-transform:uppercase;font-size:38px;font-weight:500;margin:10px 0 26px}
-.catalogTools{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:22px}.addHint{border:1px solid var(--line);border-radius:12px;padding:16px 20px;background:linear-gradient(145deg,#111,#060606);color:#e8dccb}.addHint b{color:var(--gold2)}
-.vehicleList{display:grid;gap:18px}
-.vehicle{display:grid;grid-template-columns:1.1fr 1.2fr .8fr auto;gap:18px;align-items:center;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#111,#060606);padding:22px}
-.vehicle h3{font-family:Georgia,serif;font-size:28px;margin:0;color:#fff}.vehicle .type{color:var(--gold2);font-weight:950;text-transform:uppercase;font-size:12px;margin-top:6px}
-.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;color:#d9d0c3}.specs b{color:#fff}.price{font-family:Georgia,serif;color:var(--gold2);font-size:24px}.status{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:8px 13px;color:#f4d48a;font-weight:950;text-transform:uppercase;font-size:12px}
-.request{background:linear-gradient(135deg,#f3d991,#9d6820);color:#060606;border-radius:7px;padding:13px 18px;font-weight:950;text-transform:uppercase;text-align:center}
-.infoGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.box{border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#111,#060606);padding:26px}.box h3{font-family:Georgia,serif;color:var(--gold2);font-size:27px;margin:0 0 14px}.box p{color:var(--muted);line-height:1.6}
-.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;padding-bottom:80px}.form input,.form select,.form textarea{width:100%;margin:8px 0;padding:15px;border-radius:7px;border:1px solid var(--line);background:#090909;color:#fff;font:inherit}.form textarea{min-height:120px}.form button{border:0;width:100%;margin-top:12px;cursor:pointer}
+:root{--gold:#b8872c;--dark:#101010;--line:#dfd4c2;--muted:#6f6a61}
+.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.06);padding:14px 4vw}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:16px}
+.logo img{height:82px;object-fit:contain}
+.brand b{font-family:Georgia,serif;font-size:34px;letter-spacing:1px;color:#121212}
+.brand small{display:block;color:var(--gold);font-weight:900;letter-spacing:3px;font-size:11px;margin-top:5px}
+.contacts{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end;font-size:14px;color:#2b2b2b}
+.contacts b{color:var(--gold)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid #eee3d3}
+.menu{display:flex;gap:28px;text-transform:uppercase;font-weight:900;font-size:13px}
+.lang{min-width:150px}
+.whatsapp,.btnGold{background:linear-gradient(135deg,#d8b160,#a06a1f);color:#070707;border-radius:8px;padding:14px 22px;font-weight:950}
+.hero{min-height:520px;background:linear-gradient(135deg,#fff 0%,#f3eadb 55%,#dfd0b9 100%);display:flex;align-items:center;padding:64px 4vw;border-bottom:1px solid var(--line)}
+.heroText{max-width:840px}
+.kicker{color:var(--gold);font-weight:950;text-transform:uppercase;letter-spacing:4px;margin-bottom:20px}
+h1{font-family:Georgia,serif;font-size:58px;line-height:1.05;text-transform:uppercase;font-weight:500;margin:0 0 22px;color:#141414}
+h1 span{color:var(--gold)}
+.lead{font-size:21px;line-height:1.55;color:#34302a;max-width:760px;font-weight:700}
+.buttons{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:8px;padding:16px 28px;text-transform:uppercase;font-weight:950}.btnDark{border:1px solid var(--gold);color:var(--gold);background:#fff}
+.section{padding:58px 4vw 0}.over{color:var(--gold);font-weight:950;text-transform:uppercase;letter-spacing:2px;font-size:13px}.section h2{font-family:Georgia,serif;font-size:38px;text-transform:uppercase;font-weight:500;margin:10px 0 22px}
+.note{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:22px;color:#514a40;box-shadow:0 12px 35px rgba(0,0,0,.04)}
+.tableWrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 45px rgba(0,0,0,.06)}
+table{width:100%;border-collapse:collapse;min-width:980px}
+th{background:#151515;color:#f1d18a;text-align:left;text-transform:uppercase;font-size:12px;letter-spacing:.6px;padding:16px}
+td{padding:17px 16px;border-top:1px solid #eee3d3;color:#272727}
+tr:hover td{background:#faf6ef}
+.status{display:inline-block;border:1px solid var(--gold);border-radius:999px;padding:7px 12px;color:var(--gold);font-weight:900;font-size:12px;text-transform:uppercase}
+.request{display:inline-block;background:#151515;color:#f1d18a;border-radius:7px;padding:10px 14px;font-weight:900;text-transform:uppercase;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:0 12px 35px rgba(0,0,0,.04)}
+.box h3{font-family:Georgia,serif;color:var(--gold);font-size:27px;margin:0 0 14px}.box p{line-height:1.6;color:var(--muted)}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;padding-bottom:80px}
+.form input,.form textarea{width:100%;padding:15px;margin:8px 0;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff}.form textarea{min-height:120px}.form button{border:0;width:100%;margin-top:12px;cursor:pointer}
 .float{position:fixed;right:22px;bottom:22px;background:#17a65a;color:white;border-radius:999px;padding:16px 23px;font-weight:950;z-index:99}
-footer{border-top:1px solid var(--line);padding:30px 4vw;color:var(--gold2);letter-spacing:4px;text-transform:uppercase;text-align:center}
-@media(max-width:1000px){.vehicle{grid-template-columns:1fr}.infoGrid,.contact{grid-template-columns:1fr}.companyData{justify-content:flex-start}.headerTop{align-items:flex-start;flex-direction:column}.navRow{gap:12px;flex-wrap:wrap}.hero{min-height:740px;background:linear-gradient(180deg,rgba(0,0,0,.28),#050505 84%),url('hero.jpg') center top/cover no-repeat}}
-@media(max-width:720px){.header{padding:10px 16px}.logo img{height:62px}.brand b{font-size:24px}.companyData{font-size:12px;display:grid;gap:5px}.nav{gap:18px;font-size:12px}.wa{padding:11px 12px}.hero{padding:40px 20px 52px}h1{font-size:38px}.lead{font-size:16px}.buttons{display:grid}.btn{width:100%}.section{padding:48px 20px 0}.specs{grid-template-columns:1fr}.float{left:18px;right:18px;text-align:center}}
+footer{padding:30px 4vw;text-align:center;color:var(--gold);letter-spacing:4px;text-transform:uppercase;border-top:1px solid var(--line)}
+@media(max-width:900px){.top{align-items:flex-start;flex-direction:column}.contacts{justify-content:flex-start}.nav{align-items:flex-start;flex-direction:column}.logo img{height:66px}.brand b{font-size:28px}.hero{min-height:auto;padding:48px 22px}h1{font-size:38px}.lead{font-size:17px}.buttons{display:grid}.btn{width:100%}.section{padding:46px 22px 0}.grid,.contact{grid-template-columns:1fr}.float{left:18px;right:18px;text-align:center}}
 </style>
 </head>
 <body>
+
 <header class="header">
-  <div class="headerTop">
+  <div class="top">
     <a class="logo" href="#">
       <img src="luxes-logo.png" alt="LUXES EXECUTIVE">
-      <div class="brand"><b>LUXES EXECUTIVE</b><small>PRIVATE • EXECUTIVE • WHOLESALE</small></div>
+      <div class="brand">
+        <b>LUXES EXECUTIVE</b>
+        <small>PRIVATE • EXECUTIVE • WHOLESALE</small>
+      </div>
     </a>
-    <div class="companyData">
+    <div class="contacts">
       <span><b>LUXES EXECUTIVE s.r.o.</b></span>
       <span>Sokolovská 325/140, Karlín, 186 00 Praha 8</span>
       <span>IČO: 07668295</span>
@@ -54,80 +67,103 @@ footer{border-top:1px solid var(--line);padding:30px 4vw;color:var(--gold2);lett
       <span>executive@luxes.cz</span>
     </div>
   </div>
-  <div class="navRow">
-    <nav class="nav"><a href="#catalog">Catalog</a><a href="#how">How it works</a><a href="#contact">Contact</a></nav>
-    <div><select class="lang" id="google_translate_element"></select><a class="wa" href="https://wa.me/420777399799">WhatsApp</a></div>
+  <div class="nav">
+    <div class="menu">
+      <a href="#catalog">Каталог</a>
+      <a href="#how">Как работает</a>
+      <a href="#contact">Контакт</a>
+    </div>
+    <div class="lang" id="google_translate_element"></div>
   </div>
 </header>
 
 <section class="hero">
   <div class="heroText">
     <div class="kicker">Private • Executive • Wholesale</div>
-    <h1>Luxury Executive Vehicles <span>from Europe</span></h1>
-    <p class="lead">Premium vehicles sourced from Germany, the Netherlands and Turkey for private clients, dealers and international partners.</p>
-    <div class="buttons"><a class="btn gold" href="#catalog">View Vehicles</a><a class="btn dark" href="#contact">Request Offer</a></div>
+    <h1>Премиальные автомобили <span>из Европы</span></h1>
+    <p class="lead">LUXES EXECUTIVE занимается подбором и поставкой премиальных автомобилей для частных клиентов, дилеров и международных партнёров.</p>
+    <div class="buttons">
+      <a class="btn btnGold" href="#catalog">Смотреть каталог</a>
+      <a class="btn btnDark" href="#contact">Запросить предложение</a>
+      <a class="btn btnDark" href="https://wa.me/420777399799">WhatsApp</a>
+    </div>
   </div>
 </section>
 
 <section class="section" id="catalog">
-  <div class="catalogTools">
-    <div><div class="over">Universal catalog</div><h2>Available vehicles</h2></div>
-    <div class="addHint"><b>+ Add vehicle:</b> copy one vehicle block in index.html and change brand, year, mileage, VIN, price and status.</div>
+  <div class="over">Универсальный каталог</div>
+  <h2>Автомобили</h2>
+  <div class="note">
+    Здесь можно добавлять автомобили без фотографий: марка, модель, год, пробег, VIN, цвет, цена и статус. Когда появятся реальные фото — добавим фото позже.
   </div>
 
-  <div class="vehicleList">
-    <!-- COPY THIS VEHICLE BLOCK TO ADD A NEW CAR -->
-    <div class="vehicle">
-      <div><h3>Mercedes G63 AMG</h3><div class="type">SUV / 4x4</div></div>
-      <div class="specs">
-        <span><b>Year:</b> 2023</span>
-        <span><b>Mileage:</b> 22 000 km</span>
-        <span><b>VIN:</b> W1NXXXXXXXXXXXX</span>
-        <span><b>Color:</b> Obsidian Black</span>
-      </div>
-      <div><div class="price">Price on request</div><div class="status">Available</div></div>
-      <a class="request" href="#contact">Request details</a>
-    </div>
-
-    <div class="vehicle">
-      <div><h3>Mercedes S580</h3><div class="type">Executive sedan</div></div>
-      <div class="specs">
-        <span><b>Year:</b> 2023</span>
-        <span><b>Mileage:</b> 18 500 km</span>
-        <span><b>VIN:</b> W1KXXXXXXXXXXXX</span>
-        <span><b>Color:</b> Black / Beige</span>
-      </div>
-      <div><div class="price">Price on request</div><div class="status">On request</div></div>
-      <a class="request" href="#contact">Request details</a>
-    </div>
+  <div class="tableWrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Марка / модель</th>
+          <th>Год</th>
+          <th>Пробег</th>
+          <th>VIN</th>
+          <th>Цвет</th>
+          <th>Цена</th>
+          <th>Статус</th>
+          <th>Запрос</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- СКОПИРУЙ ЭТУ СТРОКУ, ЧТОБЫ ДОБАВИТЬ НОВЫЙ АВТОМОБИЛЬ -->
+        <tr>
+          <td><b>Mercedes G63 AMG</b><br>SUV / 4x4</td>
+          <td>2023</td>
+          <td>22 000 км</td>
+          <td>W1NXXXXXXXXXXXX</td>
+          <td>Obsidian Black</td>
+          <td>По запросу</td>
+          <td><span class="status">В наличии</span></td>
+          <td><a class="request" href="#contact">Запросить</a></td>
+        </tr>
+        <tr>
+          <td><b>Mercedes S580</b><br>Executive Sedan</td>
+          <td>2023</td>
+          <td>18 500 км</td>
+          <td>W1KXXXXXXXXXXXX</td>
+          <td>Black / Beige</td>
+          <td>По запросу</td>
+          <td><span class="status">Под заказ</span></td>
+          <td><a class="request" href="#contact">Запросить</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
 <section class="section" id="how">
-  <div class="over">Process</div><h2>How it works</h2>
-  <div class="infoGrid">
-    <div class="box"><h3>1. Request</h3><p>Tell us what vehicle you are looking for.</p></div>
-    <div class="box"><h3>2. Selection</h3><p>We source and verify available vehicles.</p></div>
-    <div class="box"><h3>3. Delivery</h3><p>Vehicle delivered to your destination by agreement.</p></div>
+  <div class="over">Процесс</div>
+  <h2>Как это работает</h2>
+  <div class="grid">
+    <div class="box"><h3>1. Запрос</h3><p>Клиент сообщает, какой автомобиль нужен.</p></div>
+    <div class="box"><h3>2. Подбор</h3><p>Мы подбираем и проверяем доступные варианты.</p></div>
+    <div class="box"><h3>3. Поставка</h3><p>Условия цены и доставки согласовываются индивидуально.</p></div>
   </div>
 </section>
 
 <section class="section contact" id="contact">
   <div class="box">
     <h3>LUXES EXECUTIVE s.r.o.</h3>
-    <p><b>Sídlo:</b><br>Sokolovská 325/140, Karlín, 186 00 Praha 8</p>
-    <p><b>Identifikační číslo:</b><br>07668295</p>
-    <p><b>Phone:</b><br>+420 777 399 799</p>
-    <p><b>Email:</b><br>executive@luxes.cz</p>
+    <p><b>Адрес:</b><br>Sokolovská 325/140, Karlín, 186 00 Praha 8</p>
+    <p><b>IČO:</b><br>07668295</p>
+    <p><b>Телефон:</b><br>+420 777 399 799</p>
+    <p><b>E-mail:</b><br>executive@luxes.cz</p>
   </div>
   <div class="box form">
-    <h3>Request Offer</h3>
-    <input placeholder="Name / Company">
-    <input placeholder="Phone / WhatsApp">
+    <h3>Запросить предложение</h3>
+    <input placeholder="Имя / фирма">
+    <input placeholder="Телефон / WhatsApp">
     <input placeholder="E-mail">
-    <input placeholder="Vehicle model / VIN">
-    <textarea placeholder="Message"></textarea>
-    <button class="btn gold" onclick="location.href='https://wa.me/420777399799'">Send via WhatsApp</button>
+    <input placeholder="Марка / модель / VIN">
+    <textarea placeholder="Сообщение"></textarea>
+    <button class="btnGold" onclick="location.href='https://wa.me/420777399799'">Отправить через WhatsApp</button>
   </div>
 </section>
 
@@ -137,8 +173,8 @@ footer{border-top:1px solid var(--line);padding:30px 4vw;color:var(--gold2);lett
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'en,cs,de,ru',
+    pageLanguage: 'ru',
+    includedLanguages: 'ru,cs,en,de',
     layout: google.translate.TranslateElement.InlineLayout.SIMPLE
   }, 'google_translate_element');
 }
