@@ -1,62 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LUXES EXECUTIVE</title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Arial,Helvetica,sans-serif;background:#070707;color:#fff}
-    a{text-decoration:none;color:inherit}
-    .header{position:fixed;top:0;left:0;right:0;height:78px;background:rgba(8,8,8,.86);backdrop-filter:blur(12px);z-index:10;display:flex;align-items:center;justify-content:space-between;padding:0 46px;border-bottom:1px solid rgba(201,161,93,.18)}
-    .brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:1px}.brand-mark{width:54px;height:54px;border:2px solid #c9a15d;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#c9a15d;font-size:25px;font-weight:900}.brand-title{font-size:24px;font-family:Georgia,serif}.brand-sub{font-size:10px;color:#c9a15d;letter-spacing:4px;margin-top:3px}
-    .nav{display:flex;gap:38px;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.8px}.nav a:hover{color:#c9a15d}.right{display:flex;align-items:center;gap:18px}.phone{font-weight:800;font-size:16px}.lang{border:1px solid rgba(201,161,93,.6);padding:13px 17px;border-radius:7px;font-weight:800}.wa,.btn-gold{background:linear-gradient(135deg,#f1c46c,#b78437);color:#080808;padding:15px 24px;border-radius:7px;font-weight:900}.wa:hover,.btn-gold:hover{filter:brightness(1.08)}
-    .hero{min-height:100vh;background:linear-gradient(90deg,rgba(0,0,0,.70),rgba(0,0,0,.22),rgba(0,0,0,.05)),url('hero-g63-prague.jpg') center/cover no-repeat;display:flex;align-items:flex-end;padding:130px 46px 58px;position:relative}.hero-content{max-width:680px}.eyebrow{color:#c9a15d;letter-spacing:7px;font-size:13px;font-weight:800;text-transform:uppercase;margin-bottom:20px}.hero h1{font-family:Georgia,serif;font-size:72px;line-height:.92;font-weight:900;text-transform:uppercase;margin-bottom:24px;text-shadow:0 4px 24px rgba(0,0,0,.55)}.gold{color:#e0b465}.hero p{font-size:20px;line-height:1.55;max-width:600px;color:#f4f4f4;margin-bottom:30px}.actions{display:flex;gap:18px;flex-wrap:wrap}.btn-dark{border:1px solid rgba(201,161,93,.75);padding:15px 26px;border-radius:7px;font-weight:900;background:rgba(0,0,0,.35)}
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;max-width:840px}.feature{background:rgba(0,0,0,.45);border:1px solid rgba(201,161,93,.3);border-radius:10px;padding:18px}.feature b{color:#fff;font-size:13px;text-transform:uppercase}.feature span{display:block;color:#d6d6d6;margin-top:6px;font-size:14px}.section{padding:62px 46px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}.section h2{font-family:Georgia,serif;font-size:34px}.section p{color:#d3d3d3;margin-top:8px}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.card{background:#111;border:1px solid rgba(201,161,93,.2);border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}.card img{width:100%;height:190px;object-fit:cover;display:block}.card-body{padding:18px}.card h3{font-size:18px;margin-bottom:14px}.specs{list-style:none;color:#dedede;font-size:14px;line-height:1.9;margin-bottom:18px}.price{color:#e0b465;font-weight:900;margin-bottom:16px;font-size:14px}.small-btn{display:block;text-align:center;border:1px solid rgba(201,161,93,.65);padding:12px;border-radius:6px;font-size:12px;font-weight:900;text-transform:uppercase}.footer{padding:36px 46px;border-top:1px solid rgba(201,161,93,.18);display:flex;justify-content:space-between;color:#bdbdbd;background:#050505}
-    @media(max-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.nav{display:none}.hero h1{font-size:52px}.header{padding:0 22px}.hero,.section{padding-left:22px;padding-right:22px}.phone{display:none}}
-    @media(max-width:650px){.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.brand-title{font-size:18px}.right{gap:8px}.wa{padding:12px}.lang{display:none}.hero{padding-top:120px}.card img{height:230px}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUXES EXECUTIVE</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#050505;color:#f4efe6;font-family:Arial,Helvetica,sans-serif}a{text-decoration:none;color:inherit}
+:root{--gold:#c99a36;--gold2:#f4d48a;--line:rgba(218,170,70,.35);--muted:#c8c0b4}
+.header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:#050505;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.logo img{height:58px;display:block}.nav{display:flex;gap:34px;text-transform:uppercase;font-size:13px;font-weight:900;letter-spacing:.6px}.right{display:flex;align-items:center;gap:16px}.phone{font-weight:900}.lang{background:#0b0b0b;color:var(--gold2);border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-weight:900}.wa,.btnGold{background:linear-gradient(135deg,#f0d28a,#a46a1e);color:#070707;border-radius:6px;padding:14px 22px;font-weight:950}
+.hero{min-height:680px;background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.88) 31%,rgba(5,5,5,.38) 58%,rgba(5,5,5,.08) 100%),url('hero.jpg') right center/cover no-repeat;display:flex;align-items:flex-end;padding:0 4vw 58px;position:relative}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0),#050505 98%);pointer-events:none}.heroText{position:relative;z-index:2;max-width:650px}.kicker{color:var(--gold2);letter-spacing:5px;text-transform:uppercase;font-weight:900;margin-bottom:18px}
+h1{font-family:Georgia,serif;text-transform:uppercase;font-size:58px;line-height:1.02;margin:0 0 20px;font-weight:500;text-shadow:0 16px 55px #000}h1 span{color:var(--gold2)}.lead{font-size:18px;line-height:1.55;font-weight:700;color:#f1eadf;max-width:570px}
+.buttons{display:flex;gap:16px;margin-top:28px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;text-transform:uppercase;letter-spacing:.5px;border-radius:6px;padding:15px 28px;font-weight:950}.btnDark{border:1px solid var(--line);background:rgba(0,0,0,.55);color:var(--gold2)}
+.section{padding:58px 4vw 0}.over{color:var(--gold2);letter-spacing:2px;text-transform:uppercase;font-weight:900;font-size:13px}.section h2{font-family:Georgia,serif;font-size:36px;text-transform:uppercase;font-weight:500;margin:10px 0 26px}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.why div{border:1px solid var(--line);background:linear-gradient(145deg,#111,#060606);border-radius:14px;padding:22px;font-weight:900}.why span{color:var(--gold2)}
+.cars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.car{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:linear-gradient(145deg,#111,#060606)}.photo{height:220px;background-size:cover;background-position:center}.body{padding:22px}.body h3{font-family:Georgia,serif;font-size:24px;margin:0 0 12px}.specs{display:grid;gap:7px;color:#ddd4c8;font-size:14px;margin-bottom:18px}.request{color:var(--gold2);font-weight:950;text-transform:uppercase;font-size:13px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step,.aboutBox,.card,.form{border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,#111,#060606);padding:26px}.step b{color:var(--gold2)}.step h3,.aboutBox h3,.card h3,.form h2{font-family:Georgia,serif;color:var(--gold2);font-size:27px;margin:0 0 14px}.step p,.aboutBox p,.card p{color:var(--muted);line-height:1.55}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:24px}.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;padding-bottom:80px}.form input,.form select,.form textarea{width:100%;margin:8px 0;padding:15px;border-radius:7px;border:1px solid var(--line);background:#090909;color:#fff;font:inherit}.form textarea{min-height:120px}.form button{border:0;width:100%;margin-top:12px;cursor:pointer}.float{position:fixed;right:22px;bottom:22px;background:#17a65a;color:white;border-radius:999px;padding:16px 23px;font-weight:950;z-index:99}footer{border-top:1px solid var(--line);padding:30px 4vw;color:var(--gold2);letter-spacing:4px;text-transform:uppercase}
+@media(max-width:1100px){.cars{grid-template-columns:repeat(2,1fr)}.steps,.why{grid-template-columns:repeat(2,1fr)}.about,.contact{grid-template-columns:1fr}}
+@media(max-width:760px){.header{height:auto;min-height:78px;padding:10px 16px}.logo img{height:50px}.nav{display:none}.phone{display:none}.wa{padding:11px 12px}.hero{min-height:760px;padding:40px 20px 50px;background:linear-gradient(180deg,rgba(0,0,0,.26),#050505 86%),url('hero.jpg') center top/cover no-repeat}h1{font-size:40px}.lead{font-size:16px}.buttons{display:grid}.btn{width:100%}.why,.cars,.steps{grid-template-columns:1fr}.section{padding:48px 20px 0}.float{left:18px;right:18px;text-align:center}.photo{height:210px}}
+</style>
 </head>
 <body>
-  <header class="header">
-    <a class="brand" href="#top">
-      <div class="brand-mark">LE</div>
-      <div><div class="brand-title">LUXES EXECUTIVE</div><div class="brand-sub">PRIVATE · EXECUTIVE · WHOLESALE</div></div>
-    </a>
-    <nav class="nav"><a href="#catalog">Catalog</a><a href="#about">About Us</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
-    <div class="right"><div class="phone">+420 777 399 799</div><div class="lang">EN</div><a class="wa" href="https://wa.me/420777399799">WhatsApp</a></div>
-  </header>
+<header class="header">
+<a class="logo" href="#"><img src="luxes-logo.png" alt="LUXES EXECUTIVE"></a>
+<nav class="nav"><a href="#catalog">Catalog</a><a href="#about">About us</a><a href="#process">How it works</a><a href="#contact">Contact</a></nav>
+<div class="right"><a class="phone" href="tel:+420777399799">+420 777 399 799</a><select class="lang"><option>EN</option><option>CZ</option><option>DE</option><option>RU</option></select><a class="wa" href="https://wa.me/420777399799">WhatsApp</a></div>
+</header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-content">
-        <div class="eyebrow">Premium vehicles from Europe</div>
-        <h1>Luxury<br><span class="gold">Executive</span><br>Vehicles</h1>
-        <p>Premium vehicles sourced from Germany, the Netherlands and Turkey for private clients, dealers and B2B partners.</p>
-        <div class="actions"><a class="btn-gold" href="#catalog">VIEW VEHICLES</a><a class="btn-dark" href="https://wa.me/420777399799">WHATSAPP</a></div>
-        <div class="features">
-          <div class="feature"><b>Verified suppliers</b><span>Trusted partners only</span></div>
-          <div class="feature"><b>Premium vehicles</b><span>Quality & performance</span></div>
-          <div class="feature"><b>Worldwide delivery</b><span>Safe & secure shipping</span></div>
-        </div>
-      </div>
-    </section>
+<section class="hero">
+<div class="heroText">
+<div class="kicker">Private • Executive • Wholesale</div>
+<h1>Luxury <span>Executive</span> Vehicles From Europe</h1>
+<p class="lead">Premium vehicles sourced from Germany, the Netherlands and Turkey for private clients, dealers and international partners.</p>
+<div class="buttons"><a href="#catalog" class="btn btnGold">View Vehicles</a><a href="#contact" class="btn btnDark">Request Offer</a></div>
+</div>
+</section>
 
-    <section class="section" id="catalog">
-      <div class="section-head"><div><h2>Our Vehicles</h2><p>Carefully selected premium vehicles available for immediate delivery or individual order.</p></div></div>
-      <div class="grid">
-        <article class="card"><img src="car-1.jpg" alt="Mercedes G63 AMG"><div class="card-body"><h3>Mercedes G63 AMG</h3><ul class="specs"><li>2023</li><li>22 000 km</li><li>AMG Performance Package</li><li>EU Specification</li></ul><div class="price">PRICE ON REQUEST</div><a class="small-btn" href="https://wa.me/420777399799">Request details</a></div></article>
-        <article class="card"><img src="car-2.jpg" alt="Mercedes S580"><div class="card-body"><h3>Mercedes S580</h3><ul class="specs"><li>2023</li><li>18 500 km</li><li>4MATIC</li><li>Premium Package</li></ul><div class="price">PRICE ON REQUEST</div><a class="small-btn" href="https://wa.me/420777399799">Request details</a></div></article>
-        <article class="card"><img src="car-3.jpg" alt="BMW X7"><div class="card-body"><h3>BMW X7 xDrive40i</h3><ul class="specs"><li>2023</li><li>24 000 km</li><li>M Sport Package</li><li>7 Seats</li></ul><div class="price">PRICE ON REQUEST</div><a class="small-btn" href="https://wa.me/420777399799">Request details</a></div></article>
-        <article class="card"><img src="car-4.jpg" alt="Range Rover Autobiography"><div class="card-body"><h3>Range Rover Autobiography</h3><ul class="specs"><li>2023</li><li>19 000 km</li><li>P530</li><li>Full Options</li></ul><div class="price">PRICE ON REQUEST</div><a class="small-btn" href="https://wa.me/420777399799">Request details</a></div></article>
-        <article class="card"><img src="car-5.jpg" alt="Porsche Cayenne Turbo"><div class="card-body"><h3>Porsche Cayenne Turbo</h3><ul class="specs"><li>2023</li><li>15 000 km</li><li>Sport Chrono Package</li><li>Panoramic Roof</li></ul><div class="price">PRICE ON REQUEST</div><a class="small-btn" href="https://wa.me/420777399799">Request details</a></div></article>
-      </div>
-    </section>
+<section class="section">
+<div class="over">Why LUXES EXECUTIVE</div>
+<h2>Trusted premium sourcing</h2>
+<div class="why">
+<div><span>✓</span> Verified suppliers</div><div><span>✓</span> Premium vehicles only</div><div><span>✓</span> Worldwide delivery</div>
+<div><span>✓</span> Private transactions</div><div><span>✓</span> B2B & private clients</div><div><span>✓</span> Individual sourcing</div>
+</div>
+</section>
 
-    <section class="section" id="about"><h2>About LUXES EXECUTIVE</h2><p>Private, executive and wholesale sourcing of premium vehicles across Europe with discreet communication and secure cooperation.</p></section>
-    <section class="section" id="contact"><h2>Contact</h2><p>Phone / WhatsApp: +420 777 399 799</p></section>
-  </main>
-  <footer class="footer"><span>© LUXES EXECUTIVE</span><span>Private · Executive · Wholesale</span></footer>
-</body>
-</html>
+<section class="section" id="catalog">
+<div class="over">Our premium vehicles</div><h2>Vehicle collection</h2>
+<div class="cars">
+<div class="car"><div class="photo" style="background-image:url('car-1.jpg')"></div><div class="body"><h3>Mercedes G63 AMG</h3><div class="specs"><span>2023</span><span>22 000 km</span><span>AMG Package</span><span>EU Specification</span></div><a class="request" href="#contact">Request Details</a></div></div>
+<div class="car"><div class="photo" style="background-image:url('car-2.jpg')"></div><div class="body"><h3>Mercedes S580</h3><div class="specs"><span>2023</span><span>18 500 km</span><span>4MATIC</span><span>Premium Package</span></div><a class="request" href="#contact">Request Details</a></div></div>
+<div class="car"><div class="photo" style="background-image:url('car-3.jpg')"></div><div class="body"><h3>BMW X7 xDrive40i</h3><div class="specs"><span>2023</span><span>24 000 km</span><span>M Sport</span><span>7 seats</span></div><a class="request" href="#contact">Request Details</a></div></div>
+<div class="car"><div class="photo" style="background-image:url('car-4.jpg')"></div><div class="body"><h3>Range Rover Autobiography</h3><div class="specs"><span>2023</span><span>19 000 km</span><span>P530</span><span>Full options</span></div><a class="request" href="#contact">Request Details</a></div></div>
+<div class="car"><div class="photo" style="background-image:url('car-5.jpg')"></div><div class="body"><h3>Porsche Cayenne Turbo</h3><div class="specs"><span>2023</span><span>15 000 km</span><span>Sport Chrono</span><span>Panoramic roof</span></div><a class="request" href="#contact">Request Details</a></div></div>
+</div>
+</section>
+
+<section class="section" id="process">
+<div class="over">Process</div><h2>How it works</h2>
+<div class="steps"><div class="step"><b>01</b><h3>Request</h3><p>Tell us what vehicle you need.</p></div><div class="step"><b>02</b><h3>Selection</h3><p>We source verified options.</p></div><div class="step"><b>03</b><h3>Agreement</h3><p>We agree price and delivery.</p></div><div class="step"><b>04</b><h3>Delivery</h3><p>Vehicle delivered to destination.</p></div></div>
+</section>
+
+<section class="section" id="about">
+<div class="over">About</div><h2>About LUXES EXECUTIVE</h2>
+<div class="about"><div class="aboutBox"><h3>Premium European sourcing</h3><p>LUXES EXECUTIVE specializes in sourcing premium and executive vehicles across Europe for private clients, dealers and corporate buyers.</p></div><div class="aboutBox"><h3>Discreet cooperation</h3><p>We work with trusted partners and verified suppliers to provide secure, efficient and confidential vehicle acquisition services.</p></div></div>
+</section>
+
+<section class="section contact" id="contact">
+<div class="card"><h3>LUXES EXECUTIVE s.r.o.</h3><p><b>Sídlo:</b><br>Sokolovská 325/140, Karlín, 186 00 Praha 8</p><p><b>Identifikační číslo:</b><br>07668295</p><p><b>Phone:</b><br>+420 777 399 799</p><p><b>Email:</b><br>executive@luxes.cz</p></div>
+<div class="form"><div class="over">Form</div><h2>Request Offer</h2><input placeholder="Name / Company"><input placeholder="Phone / WhatsApp"><input placeholder="E-mail"><select><option>Mercedes G63 AMG</option><option>Mercedes S580</option><option>BMW X7</option><option>Range Rover Autobiography</option><option>Porsche Cayenne Turbo</option><option>Other vehicle</option></select><textarea placeholder="Message"></textarea><button class="btnGold" onclick="location.href='https://wa.me/420777399799'">Send via WhatsApp</button></div>
+</section>
+
+<a class="float" href="https://wa.me/420777399799">WhatsApp</a>
+<footer>© LUXES EXECUTIVE</footer>
+</body></html>
