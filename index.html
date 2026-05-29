@@ -7,33 +7,33 @@
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#050505;color:#f5efe4;font-family:Arial,Helvetica,sans-serif}
+body{margin:0;background:#050505;color:#f6efe3;font-family:Arial,Helvetica,sans-serif}
 a{text-decoration:none;color:inherit}
-:root{--gold:#c89b3c;--gold2:#f0d38a;--line:rgba(214,169,78,.28);--muted:#b9b0a1;--dark:#080808}
-.header{height:104px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(5,5,5,.92);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;backdrop-filter:blur(18px)}
-.logo{display:flex;align-items:center;gap:18px}.logo img{height:88px;object-fit:contain}.brand b{font-family:Georgia,serif;font-size:31px;letter-spacing:1px;color:#fff}.brand small{display:block;letter-spacing:5px;font-size:11px;margin-top:6px;color:var(--gold2)}
-.nav{display:flex;gap:38px;text-transform:uppercase;font-size:13px;font-weight:900;letter-spacing:1px}.nav a:hover{color:var(--gold2)}
-.actions{display:flex;align-items:center;gap:15px}.phone{font-weight:900;color:#fff}.lang{background:#0b0b0b;color:var(--gold2);border:1px solid var(--line);padding:12px;border-radius:8px;font-weight:900}.wa,.btnGold{background:linear-gradient(135deg,#f0d38a,#9d6a20);color:#070707;border-radius:8px;padding:15px 22px;font-weight:950}
-.hero{position:relative;min-height:790px;display:grid;grid-template-columns:1fr 1.1fr;align-items:center;padding:70px 5vw 46px;overflow:hidden;background:
-radial-gradient(circle at 74% 42%,rgba(201,155,60,.25),transparent 30%),
-linear-gradient(90deg,#050505 0%,#050505 38%,rgba(5,5,5,.83) 58%,rgba(5,5,5,.42) 100%),
+:root{--gold:#c89b3c;--gold2:#f2d38a;--line:rgba(218,174,84,.30);--muted:#bdb4a4}
+.header{height:118px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(5,5,5,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;backdrop-filter:blur(16px)}
+.logo{display:flex;align-items:center;gap:20px}.logo img{height:112px;object-fit:contain}.brand b{font-family:Georgia,serif;font-size:34px;letter-spacing:1px;color:#fff}.brand small{display:block;letter-spacing:5px;font-size:11px;margin-top:6px;color:var(--gold2)}
+.nav{display:flex;gap:42px;text-transform:uppercase;font-size:13px;font-weight:950;letter-spacing:1px}.nav a:hover{color:var(--gold2)}
+.actions{display:flex;align-items:center;gap:16px}.phone{font-weight:950;color:#fff}.lang{background:#0a0a0a;color:var(--gold2);border:1px solid var(--line);padding:12px;border-radius:8px;font-weight:950}.wa,.btnGold{background:linear-gradient(135deg,#f3d991,#9b661e);color:#060606;border-radius:8px;padding:16px 24px;font-weight:950}
+.hero{position:relative;min-height:780px;display:grid;grid-template-columns:1fr 1.08fr;align-items:center;padding:78px 5vw 54px;overflow:hidden;background:
+radial-gradient(circle at 77% 43%,rgba(201,155,60,.20),transparent 33%),
+linear-gradient(90deg,#050505 0%,#050505 42%,rgba(5,5,5,.88) 61%,rgba(5,5,5,.62) 100%),
 url('hero-g63.jpg') right center/cover no-repeat}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),#050505 96%);pointer-events:none}
-.heroText{position:relative;z-index:2;max-width:650px}
-.kicker{color:var(--gold2);font-weight:900;text-transform:uppercase;letter-spacing:5px;margin-bottom:20px}
-h1{font-family:Georgia,serif;font-size:76px;line-height:.96;margin:0 0 26px;text-transform:uppercase;font-weight:500;color:#fff;text-shadow:0 20px 70px #000}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.30) 42%,#050505 98%);pointer-events:none}
+.heroText{position:relative;z-index:2;max-width:720px}
+.kicker{color:var(--gold2);font-weight:950;text-transform:uppercase;letter-spacing:5px;margin-bottom:22px}
+h1{font-family:Georgia,serif;font-size:74px;line-height:.96;margin:0 0 28px;text-transform:uppercase;font-weight:500;color:#fff;text-shadow:0 20px 70px #000}
 h1 span{color:var(--gold2)}
-.lead{font-size:19px;line-height:1.65;color:#d6d0c4;max-width:600px}
-.buttons{display:flex;gap:16px;margin-top:30px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:17px 32px;border-radius:8px;font-weight:950;text-transform:uppercase;letter-spacing:.5px}.btnDark{border:1px solid var(--line);background:rgba(0,0,0,.52);color:var(--gold2)}
-.infoRow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}.info{border:1px solid var(--line);background:rgba(0,0,0,.5);border-radius:14px;padding:20px}.info b{display:block;color:var(--gold2);text-transform:uppercase;font-size:13px}.info span{display:block;color:#d8d1c5;margin-top:8px;line-height:1.45}
-.section{padding:72px 5vw 0}.over{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:13px}.section h2{font-family:Georgia,serif;font-size:42px;font-weight:500;margin:9px 0 26px;color:#fff;text-transform:uppercase}
-.emptyCards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.emptyCar{background:linear-gradient(145deg,#111,#050505);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.45)}.emptyPhoto{height:230px;background:radial-gradient(circle at 50% 50%,rgba(201,155,60,.20),transparent 55%),linear-gradient(135deg,#141414,#060606);display:flex;align-items:center;justify-content:center;color:var(--gold2);font-weight:950;letter-spacing:2px}.emptyBody{padding:26px}.emptyBody h3{margin:0 0 12px;font-family:Georgia,serif;color:#fff;font-size:26px}.emptyBody p{color:var(--muted);line-height:1.55}.emptyTag{display:inline-block;margin-top:12px;color:var(--gold2);font-weight:900;font-size:13px;text-transform:uppercase}
-.companyGrid{display:grid;grid-template-columns:1fr 1.3fr;gap:26px}.card,.form{background:linear-gradient(145deg,#111,#050505);border:1px solid var(--line);border-radius:18px;padding:34px;box-shadow:0 30px 90px rgba(0,0,0,.42)}.card h3{font-family:Georgia,serif;color:var(--gold2);font-size:31px;margin:0 0 18px}.card p{color:#d8d1c5;line-height:1.6}.card b{color:#fff}
-.formWrap{padding-bottom:96px}.form h2{font-family:Georgia,serif;font-size:38px;margin:0 0 20px;color:#fff}.form input,.form select,.form textarea{width:100%;padding:17px;margin:8px 0;border:1px solid var(--line);border-radius:9px;background:#090909;color:#fff;font:inherit}.form textarea{min-height:130px}.form button{border:0;width:100%;margin-top:12px;cursor:pointer}
+.lead{font-size:19px;line-height:1.68;color:#ddd5c8;max-width:610px;font-weight:700}
+.buttons{display:flex;gap:16px;margin-top:30px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:17px 34px;border-radius:8px;font-weight:950;text-transform:uppercase;letter-spacing:.5px}.btnDark{border:1px solid var(--line);background:rgba(0,0,0,.58);color:var(--gold2)}
+.infoRow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}.info{border:1px solid var(--line);background:rgba(0,0,0,.58);border-radius:14px;padding:20px}.info b{display:block;color:var(--gold2);text-transform:uppercase;font-size:13px}.info span{display:block;color:#d8d1c5;margin-top:8px;line-height:1.45}
+.section{padding:74px 5vw 0}.over{color:var(--gold);font-weight:950;text-transform:uppercase;letter-spacing:2px;font-size:13px}.section h2{font-family:Georgia,serif;font-size:42px;font-weight:500;margin:9px 0 28px;color:#fff;text-transform:uppercase}
+.emptyCards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.emptyCar{background:linear-gradient(145deg,#111,#050505);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.45)}.emptyPhoto{height:230px;background:radial-gradient(circle at 50% 50%,rgba(201,155,60,.20),transparent 55%),linear-gradient(135deg,#141414,#060606);display:flex;align-items:center;justify-content:center;color:var(--gold2);font-weight:950;letter-spacing:2px}.emptyBody{padding:26px}.emptyBody h3{margin:0 0 12px;font-family:Georgia,serif;color:#fff;font-size:26px}.emptyBody p{color:var(--muted);line-height:1.55}.emptyTag{display:inline-block;margin-top:12px;color:var(--gold2);font-weight:950;font-size:13px;text-transform:uppercase}
+.companyGrid{display:grid;grid-template-columns:.82fr 1.18fr;gap:28px}.card,.form{background:linear-gradient(145deg,#111,#050505);border:1px solid var(--line);border-radius:18px;padding:36px;box-shadow:0 30px 90px rgba(0,0,0,.42)}.card h3{font-family:Georgia,serif;color:var(--gold2);font-size:31px;margin:0 0 22px}.card p{color:#d8d1c5;line-height:1.62;margin:0 0 18px}.card b{color:#fff}
+.formWrap{padding-bottom:96px}.form h2{font-family:Georgia,serif;font-size:38px;margin:0 0 22px;color:#fff;text-transform:uppercase}.form input,.form select,.form textarea{width:100%;padding:17px;margin:8px 0;border:1px solid var(--line);border-radius:9px;background:#090909;color:#fff;font:inherit}.form textarea{min-height:130px}.form button{border:0;width:100%;margin-top:12px;cursor:pointer}
 .float{position:fixed;right:24px;bottom:24px;background:#19a65a;color:#fff;border-radius:999px;padding:17px 24px;font-weight:950;z-index:90;box-shadow:0 14px 45px rgba(25,166,90,.35)}
 footer{text-align:center;padding:34px;color:var(--gold);letter-spacing:5px;text-transform:uppercase;border-top:1px solid var(--line)}
-@media(max-width:1100px){.emptyCards{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr;min-height:760px;background-position:center right}.heroText{max-width:720px}.companyGrid{grid-template-columns:1fr}}
-@media(max-width:780px){.header{height:auto;min-height:86px;padding:8px 16px}.logo img{height:70px}.brand{display:none}.nav{display:none}.phone{display:none}.wa{padding:12px 14px;font-size:12px}.lang{padding:10px}.hero{padding:54px 22px 56px;min-height:680px;background-position:center}.kicker{letter-spacing:3px;font-size:12px}h1{font-size:46px}.lead{font-size:17px}.infoRow,.emptyCards{grid-template-columns:1fr}.section{padding:52px 22px 0}.buttons{display:grid}.btn{width:100%}.float{left:18px;right:18px;text-align:center}}
+@media(max-width:1100px){.emptyCards{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr;min-height:760px;background-position:center right}.companyGrid{grid-template-columns:1fr}}
+@media(max-width:780px){.header{height:auto;min-height:86px;padding:8px 16px}.logo img{height:80px}.brand{display:none}.nav{display:none}.phone{display:none}.wa{padding:12px 14px;font-size:12px}.lang{padding:10px}.hero{padding:54px 22px 56px;min-height:680px;background-position:center}.kicker{letter-spacing:3px;font-size:12px}h1{font-size:44px}.lead{font-size:17px}.infoRow,.emptyCards{grid-template-columns:1fr}.section{padding:52px 22px 0}.buttons{display:grid}.btn{width:100%}.float{left:18px;right:18px;text-align:center}}
 </style>
 </head>
 <body>
@@ -46,7 +46,7 @@ footer{text-align:center;padding:34px;color:var(--gold);letter-spacing:5px;text-
 <section class="hero">
 <div class="heroText">
 <div class="kicker">PRIVATE • EXECUTIVE • WHOLESALE</div>
-<h1 data-t="heroTitle">Luxury<br><span>Executive</span><br>Vehicles</h1>
+<h1>Luxury<br><span>Executive</span><br>Vehicles</h1>
 <p class="lead" data-t="lead">Prémiová vozidla z Německa, Nizozemska a Turecka pro soukromé klienty, dealery a B2B partnery. Diskrétnost. Kvalita. Status.</p>
 <div class="buttons"><a class="btn btnGold" href="#offer" data-t="getOffer">Získat nabídku</a><a class="btn btnDark" href="https://wa.me/420777399799">WhatsApp</a></div>
 <div class="infoRow">
@@ -75,8 +75,6 @@ footer{text-align:center;padding:34px;color:var(--gold);letter-spacing:5px;text-
 <h3>LUXES EXECUTIVE s.r.o.</h3>
 <p><b>Sídlo:</b><br>Sokolovská 325/140, Karlín, 186 00 Praha 8</p>
 <p><b>Identifikační číslo:</b><br>07668295</p>
-<p><b>Telefon:</b><br><a href="tel:+420777399799">+420 777 399 799</a></p>
-<p><b>E-mail:</b><br><a href="mailto:executive@luxes.cz">executive@luxes.cz</a></p>
 </div>
 <div class="form">
 <div class="over" data-t="offerFormLabel">FORMULÁŘ</div>
@@ -96,14 +94,14 @@ footer{text-align:center;padding:34px;color:var(--gold);letter-spacing:5px;text-
 
 <script>
 const tr={
-cs:{navCatalog:"Katalog",navContact:"Kontakt",heroTitle:"Luxury\\nExecutive\\nVehicles",lead:"Prémiová vozidla z Německa, Nizozemska a Turecka pro soukromé klienty, dealery a B2B partnery. Diskrétnost. Kvalita. Status.",getOffer:"Získat nabídku",i1:"Premium",i1p:"Pouze prémiová vozidla",i2:"Secure & Private",i2p:"Diskrétnost a bezpečný obchod",i3:"Worldwide",i3p:"Doručení podle dohody",offerLabel:"NABÍDKA VOZIDEL",catalogTitle:"Premium vehicle collection",soon:"PŘIPRAVUJEME",request:"Cena na dotaz",emptyText:"Detaily budou doplněny.",offerFormLabel:"FORMULÁŘ",offerFormTitle:"Získat nabídku",sendWhatsApp:"Odeslat přes WhatsApp",ph:{name:"Jméno / Firma",phone:"Telefon / WhatsApp",email:"E-mail",message:"Zpráva"}},
-ru:{navCatalog:"Каталог",navContact:"Контакты",heroTitle:"Luxury\\nExecutive\\nVehicles",lead:"Премиальные автомобили из Германии, Нидерландов и Турции для частных клиентов, дилеров и B2B партнёров. Дискретность. Качество. Статус.",getOffer:"Получить предложение",i1:"Premium",i1p:"Только премиальные автомобили",i2:"Secure & Private",i2p:"Дискретность и безопасная сделка",i3:"Worldwide",i3p:"Доставка по договорённости",offerLabel:"ПРЕДЛОЖЕНИЯ",catalogTitle:"Premium vehicle collection",soon:"ГОТОВИМ",request:"Цена по запросу",emptyText:"Детали будут добавлены позже.",offerFormLabel:"ФОРМА",offerFormTitle:"Получить предложение",sendWhatsApp:"Отправить через WhatsApp",ph:{name:"Имя / Фирма",phone:"Телефон / WhatsApp",email:"E-mail",message:"Сообщение"}},
-en:{navCatalog:"Catalog",navContact:"Contact",heroTitle:"Luxury\\nExecutive\\nVehicles",lead:"Premium vehicles from Germany, the Netherlands and Turkey for private clients, dealers and B2B partners. Discretion. Quality. Status.",getOffer:"Get offer",i1:"Premium",i1p:"Premium vehicles only",i2:"Secure & Private",i2p:"Discretion and secure deal",i3:"Worldwide",i3p:"Delivery by agreement",offerLabel:"VEHICLE OFFERS",catalogTitle:"Premium vehicle collection",soon:"COMING SOON",request:"Price on request",emptyText:"Details will be added soon.",offerFormLabel:"FORM",offerFormTitle:"Get offer",sendWhatsApp:"Send via WhatsApp",ph:{name:"Name / Company",phone:"Phone / WhatsApp",email:"E-mail",message:"Message"}},
-de:{navCatalog:"Katalog",navContact:"Kontakt",heroTitle:"Luxury\\nExecutive\\nVehicles",lead:"Premium-Fahrzeuge aus Deutschland, den Niederlanden und der Türkei für Privatkunden, Händler und B2B-Partner. Diskretion. Qualität. Status.",getOffer:"Angebot erhalten",i1:"Premium",i1p:"Nur Premium-Fahrzeuge",i2:"Secure & Private",i2p:"Diskretion und sicherer Handel",i3:"Worldwide",i3p:"Lieferung nach Vereinbarung",offerLabel:"FAHRZEUGANGEBOTE",catalogTitle:"Premium vehicle collection",soon:"IN VORBEREITUNG",request:"Preis auf Anfrage",emptyText:"Details werden später ergänzt.",offerFormLabel:"FORMULAR",offerFormTitle:"Angebot erhalten",sendWhatsApp:"Über WhatsApp senden",ph:{name:"Name / Firma",phone:"Telefon / WhatsApp",email:"E-mail",message:"Nachricht"}}
+cs:{navCatalog:"Katalog",navContact:"Kontakt",lead:"Prémiová vozidla z Německa, Nizozemska a Turecka pro soukromé klienty, dealery a B2B partnery. Diskrétnost. Kvalita. Status.",getOffer:"Získat nabídku",i1:"Premium",i1p:"Pouze prémiová vozidla",i2:"Secure & Private",i2p:"Diskrétnost a bezpečný obchod",i3:"Worldwide",i3p:"Doručení podle dohody",offerLabel:"NABÍDKA VOZIDEL",catalogTitle:"Premium vehicle collection",soon:"PŘIPRAVUJEME",request:"Cena na dotaz",emptyText:"Detaily budou doplněny.",offerFormLabel:"FORMULÁŘ",offerFormTitle:"Získat nabídku",sendWhatsApp:"Odeslat přes WhatsApp",ph:{name:"Jméno / Firma",phone:"Telefon / WhatsApp",email:"E-mail",message:"Zpráva"}},
+ru:{navCatalog:"Каталог",navContact:"Контакты",lead:"Премиальные автомобили из Германии, Нидерландов и Турции для частных клиентов, дилеров и B2B партнёров. Дискретность. Качество. Статус.",getOffer:"Получить предложение",i1:"Premium",i1p:"Только премиальные автомобили",i2:"Secure & Private",i2p:"Дискретность и безопасная сделка",i3:"Worldwide",i3p:"Доставка по договорённости",offerLabel:"ПРЕДЛОЖЕНИЯ",catalogTitle:"Premium vehicle collection",soon:"ГОТОВИМ",request:"Цена по запросу",emptyText:"Детали будут добавлены позже.",offerFormLabel:"ФОРМА",offerFormTitle:"Получить предложение",sendWhatsApp:"Отправить через WhatsApp",ph:{name:"Имя / Фирма",phone:"Телефон / WhatsApp",email:"E-mail",message:"Сообщение"}},
+en:{navCatalog:"Catalog",navContact:"Contact",lead:"Premium vehicles from Germany, the Netherlands and Turkey for private clients, dealers and B2B partners. Discretion. Quality. Status.",getOffer:"Get offer",i1:"Premium",i1p:"Premium vehicles only",i2:"Secure & Private",i2p:"Discretion and secure deal",i3:"Worldwide",i3p:"Delivery by agreement",offerLabel:"VEHICLE OFFERS",catalogTitle:"Premium vehicle collection",soon:"COMING SOON",request:"Price on request",emptyText:"Details will be added soon.",offerFormLabel:"FORM",offerFormTitle:"Get offer",sendWhatsApp:"Send via WhatsApp",ph:{name:"Name / Company",phone:"Phone / WhatsApp",email:"E-mail",message:"Message"}},
+de:{navCatalog:"Katalog",navContact:"Kontakt",lead:"Premium-Fahrzeuge aus Deutschland, den Niederlanden und der Türkei für Privatkunden, Händler und B2B-Partner. Diskretion. Qualität. Status.",getOffer:"Angebot erhalten",i1:"Premium",i1p:"Nur Premium-Fahrzeuge",i2:"Secure & Private",i2p:"Diskretion und sicherer Handel",i3:"Worldwide",i3p:"Lieferung nach Vereinbarung",offerLabel:"FAHRZEUGANGEBOTE",catalogTitle:"Premium vehicle collection",soon:"IN VORBEREITUNG",request:"Preis auf Anfrage",emptyText:"Details werden später ergänzt.",offerFormLabel:"FORMULAR",offerFormTitle:"Angebot erhalten",sendWhatsApp:"Über WhatsApp senden",ph:{name:"Name / Firma",phone:"Telefon / WhatsApp",email:"E-mail",message:"Nachricht"}}
 };
 function setLang(l){
 document.documentElement.lang=l;
-document.querySelectorAll("[data-t]").forEach(e=>{const k=e.dataset.t;if(tr[l]&&tr[l][k])e.textContent=tr[l][k].replace(/\\n/g,"\\n");});
+document.querySelectorAll("[data-t]").forEach(e=>{const k=e.dataset.t;if(tr[l]&&tr[l][k])e.textContent=tr[l][k];});
 document.querySelectorAll("[data-ph]").forEach(e=>{const k=e.dataset.ph;if(tr[l]&&tr[l].ph&&tr[l].ph[k])e.placeholder=tr[l].ph[k];});
 localStorage.setItem("luxes_lang",l);
 }
