@@ -1,98 +1,435 @@
 <!doctype html>
 <html lang="cs">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LUXES EXECUTIVE — PRÉMIOVÉ VOZY Z EVROPY</title>
-<meta name="description" content="LUXES EXECUTIVE — Výběr a dodání prémiových vozů pro soukromé klienty, prodejce a mezinárodní partnery.">
-<link rel="icon" href="assets/logo.svg"><style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUXES EXECUTIVE — Премиальные автомобили из Европы</title>
+<meta name="description" content="Подбор и поставка премиальных автомобилей из Европы для частных клиентов, дилеров и международных партнёров.">
+<style>
 :root{
-  --bg:#030b14; --bg2:#07182b; --blue:#081f38; --blue2:#0d2e50;
-  --gold:#d9a441; --gold2:#f0c36a; --gold3:#b8872c;
-  --white:#fff; --muted:#d5c49c; --line:rgba(217,164,65,.38);
+  --dark:#03070d;
+  --navy:#06182b;
+  --navy2:#0b2745;
+  --navy3:#102f50;
+  --gold:#d9a441;
+  --gold2:#f5d37d;
+  --gold3:#b8872c;
+  --muted:#d8c79a;
+  --line:rgba(217,164,65,.35);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:linear-gradient(180deg,#02070d,#07182b 55%,#02070d);color:var(--gold);font-family:Arial,Helvetica,sans-serif}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 72% 10%,rgba(217,164,65,.16),transparent 26%),
+    linear-gradient(180deg,#03070d 0%,#06182b 45%,#02070d 100%);
+  color:var(--gold);
+  font-family:Arial,Helvetica,sans-serif;
+}
 a{color:var(--gold);text-decoration:none}
-.header{position:sticky;top:0;z-index:50;background:rgba(2,9,17,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
-.top{max-width:1440px;margin:auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.logo img{width:340px;max-width:46vw;height:auto;display:block}
-.contacts{display:flex;align-items:center;gap:20px;font-size:14px;font-weight:800;color:var(--gold)}
-.wa{background:linear-gradient(135deg,var(--gold2),var(--gold3));color:#06182b;padding:12px 24px;border-radius:6px;font-weight:900}
-.social{font-size:19px}
-.nav{border-top:1px solid rgba(217,164,65,.24)}
-.navIn{max-width:1440px;margin:auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center}
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(3,7,13,.97);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+}
+.wrap{max-width:1440px;margin:0 auto;padding:0 34px}
+.top{height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logoText{display:flex;align-items:center;gap:18px}
+.logoMark{width:76px;height:76px}
+.brandName{
+  font-family:Georgia,serif;
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:.5px;
+  color:var(--gold2);
+}
+.brandSub{
+  margin-top:5px;
+  font-size:12px;
+  letter-spacing:2.2px;
+  font-weight:900;
+  color:var(--gold);
+  text-transform:uppercase;
+}
+.contacts{display:flex;align-items:center;gap:19px;font-weight:900;font-size:14px;color:var(--gold2)}
+.social{font-size:19px;color:var(--gold2)}
+.wa{
+  background:linear-gradient(135deg,var(--gold2),var(--gold3));
+  color:#06182b;
+  padding:13px 24px;
+  border-radius:6px;
+  font-weight:900;
+}
+.navLine{border-top:1px solid rgba(217,164,65,.22)}
+.nav{height:56px;display:flex;align-items:center;justify-content:space-between}
 .menu{display:flex;gap:42px;text-transform:uppercase;font-size:13px;font-weight:900}
-.menu a{padding:17px 0;color:var(--gold)}
-.menu a.active{border-bottom:3px solid var(--gold2);color:var(--gold2)}
-.lang{border-left:1px solid var(--line);padding:16px 24px;font-weight:900;color:var(--gold2)}
-.lang a{margin:0 5px;color:var(--gold)}
-.hero{background:
-  linear-gradient(90deg,rgba(2,9,17,.98) 0%,rgba(6,24,43,.86) 42%,rgba(6,24,43,.35) 100%),
-  radial-gradient(circle at 72% 48%,rgba(217,164,65,.18),transparent 24%),
-  linear-gradient(135deg,#06182b,#0b2745 60%,#02070d);
-border-bottom:1px solid var(--line)}
-.heroIn{max-width:1440px;margin:auto;min-height:500px;padding:54px 32px;display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center}
-h1{font-family:Georgia,serif;font-size:60px;line-height:1;margin:0 0 22px;text-transform:uppercase;color:var(--gold2);text-shadow:0 5px 25px rgba(0,0,0,.45)}
-.lead{max-width:560px;font-size:21px;line-height:1.5;color:var(--gold);font-weight:700;margin-bottom:30px}
+.menu a{height:56px;display:flex;align-items:center;color:var(--gold)}
+.menu a.active{color:var(--gold2);border-bottom:3px solid var(--gold2)}
+.lang{font-weight:900;color:var(--gold2);border-left:1px solid var(--line);padding-left:28px}
+.lang a{padding:0 6px}
+.hero{
+  min-height:520px;
+  border-bottom:1px solid var(--line);
+  background:
+    linear-gradient(90deg,rgba(3,7,13,.98) 0%,rgba(6,24,43,.92) 38%,rgba(6,24,43,.48) 100%),
+    linear-gradient(135deg,#04111f 0%,#0a2847 60%,#130d08 100%);
+  overflow:hidden;
+}
+.heroGrid{
+  max-width:1440px;
+  margin:0 auto;
+  padding:54px 34px 45px;
+  min-height:520px;
+  display:grid;
+  grid-template-columns:0.88fr 1.12fr;
+  gap:28px;
+  align-items:center;
+}
+h1{
+  margin:0 0 22px;
+  font-family:Georgia,serif;
+  font-size:64px;
+  line-height:.98;
+  text-transform:uppercase;
+  color:var(--gold2);
+  text-shadow:0 8px 28px rgba(0,0,0,.6);
+}
+.lead{
+  max-width:560px;
+  color:var(--gold);
+  font-size:21px;
+  font-weight:800;
+  line-height:1.48;
+  margin:0 0 30px;
+}
 .btns{display:flex;gap:16px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-width:210px;padding:15px 26px;border-radius:6px;text-transform:uppercase;font-weight:900;font-size:13px}
+.btn{
+  min-width:210px;
+  padding:16px 25px;
+  border-radius:6px;
+  text-transform:uppercase;
+  font-weight:900;
+  font-size:13px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:.2s ease;
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
 .btnGold{background:linear-gradient(135deg,var(--gold2),var(--gold3));color:#06182b}
-.btnLine{border:1px solid var(--gold);color:var(--gold);background:rgba(0,0,0,.18)}
-.heroCar{width:100%;filter:drop-shadow(0 30px 65px rgba(0,0,0,.55))}
-.features{max-width:1440px;margin:auto;display:grid;grid-template-columns:repeat(6,1fr);gap:20px;padding:30px 32px;border-bottom:1px solid var(--line)}
-.feature{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start}
+.btnLine{border:1px solid var(--gold);color:var(--gold2);background:rgba(0,0,0,.18)}
+.heroVisual{
+  position:relative;
+  min-height:360px;
+}
+.city{
+  position:absolute;inset:auto 0 20px 0;height:260px;
+  background:
+    linear-gradient(90deg,rgba(2,7,13,.2),rgba(2,7,13,.86)),
+    repeating-linear-gradient(90deg,rgba(217,164,65,.14) 0 2px,transparent 2px 48px);
+  clip-path:polygon(0 35%,8% 35%,8% 20%,14% 20%,14% 50%,23% 50%,23% 10%,31% 10%,31% 44%,42% 44%,42% 0,51% 0,51% 42%,60% 42%,60% 18%,68% 18%,68% 48%,77% 48%,77% 8%,85% 8%,85% 36%,100% 36%,100% 100%,0 100%);
+  opacity:.55;
+}
+.gClass{
+  position:absolute;
+  right:-10px;
+  bottom:-18px;
+  width:100%;
+  max-width:760px;
+  filter:drop-shadow(0 35px 65px rgba(0,0,0,.8));
+}
+.features{
+  border-bottom:1px solid var(--line);
+  background:rgba(2,7,13,.35);
+}
+.featuresGrid{
+  max-width:1440px;margin:auto;padding:30px 34px;
+  display:grid;grid-template-columns:repeat(6,1fr);gap:20px;
+}
+.feature{display:grid;grid-template-columns:42px 1fr;gap:12px}
 .icon{font-size:32px;color:var(--gold2)}
 .feature b{display:block;color:var(--gold2);font-size:14px}
 .feature span{display:block;color:var(--muted);font-size:12px;line-height:1.45;margin-top:5px}
-.section{max-width:1440px;margin:auto;padding:36px 32px;border-bottom:1px solid rgba(217,164,65,.2)}
+.section{max-width:1440px;margin:auto;padding:38px 34px;border-bottom:1px solid rgba(217,164,65,.22)}
 .titleRow{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
 h2{font-family:Georgia,serif;font-size:30px;margin:0;text-transform:uppercase;color:var(--gold2)}
-.all{font-size:13px;text-transform:uppercase;font-weight:900}
+.all{text-transform:uppercase;font-size:13px;font-weight:900}
 .catalog{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
-.carCard{background:linear-gradient(180deg,rgba(11,38,66,.9),rgba(3,13,24,.98));border:1px solid var(--line);border-radius:8px;overflow:hidden;min-height:242px}
-.carPhoto{height:135px;background:linear-gradient(135deg,#132b45,#2f4b68 55%,#07111e);border-bottom:1px solid rgba(217,164,65,.25)}
-.carPhoto.orange{background:linear-gradient(135deg,#38200b,#d99022 55%,#07111e)}
-.carBody{padding:15px}.carBody h3{font-size:14px;color:var(--gold2);margin:0 0 10px}.meta{font-size:12px;color:var(--muted)}.price{font-size:19px;font-weight:900;color:var(--gold2);margin-top:10px}
+.carCard{
+  min-height:250px;
+  background:linear-gradient(180deg,rgba(13,46,80,.88),rgba(3,12,22,.98));
+  border:1px solid var(--line);
+  border-radius:8px;
+  overflow:hidden;
+}
+.carPhoto{
+  height:138px;
+  background:
+    radial-gradient(circle at 50% 30%,rgba(255,255,255,.22),transparent 28%),
+    linear-gradient(135deg,#102b48,#344e66 58%,#09131f);
+  border-bottom:1px solid rgba(217,164,65,.25);
+}
+.carPhoto.orange{background:linear-gradient(135deg,#2d1a09,#e09a24 58%,#09131f)}
+.carBody{padding:15px}
+.carBody h3{font-size:14px;margin:0 0 10px;color:var(--gold2)}
+.meta{font-size:12px;color:var(--muted)}
+.price{font-size:19px;font-weight:900;color:var(--gold2);margin-top:10px}
 .work{display:grid;grid-template-columns:330px 1fr 320px;gap:24px;align-items:stretch}
-.steps{display:grid;gap:20px;margin-top:24px}.step{display:grid;grid-template-columns:38px 1fr;gap:12px}.num{width:28px;height:28px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-size:12px;font-weight:900}.step b{display:block;color:var(--gold2);margin-bottom:5px}.step span{font-size:13px;color:var(--muted);line-height:1.45}
+.steps{display:grid;gap:20px;margin-top:24px}
+.step{display:grid;grid-template-columns:38px 1fr;gap:12px}
+.num{width:28px;height:28px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-size:12px;font-weight:900}
+.step b{display:block;color:var(--gold2);margin-bottom:5px}.step span{font-size:13px;color:var(--muted);line-height:1.45}
 .box{background:rgba(8,31,56,.78);border:1px solid var(--line);border-radius:8px;padding:28px}
-.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.formGrid label{font-size:13px;color:var(--gold2)}input,textarea{width:100%;margin-top:7px;padding:14px;background:rgba(255,255,255,.07);border:1px solid rgba(217,164,65,.28);border-radius:4px;color:var(--gold);font:inherit}textarea{grid-column:1/-1;min-height:80px}.agree{margin:16px 0;color:var(--muted);font-size:13px}
-.submit{border:0;background:linear-gradient(135deg,var(--gold2),var(--gold3));color:#06182b;border-radius:5px;padding:15px 28px;font-weight:900;text-transform:uppercase;float:right}
-.sidePic{height:165px;background:linear-gradient(135deg,#0b121d,#6d4a20,#1a0f07);border-radius:6px;margin-bottom:20px}.sideBox h3{font-family:Georgia,serif;color:var(--gold2);text-transform:uppercase}.sideBox li{margin:12px 0;color:var(--gold)}
-.why{display:grid;grid-template-columns:300px repeat(4,1fr);gap:18px}.whyIntro p,.whyCard p{color:var(--muted);line-height:1.55}.whyCard{text-align:center;background:rgba(8,31,56,.78);border:1px solid var(--line);border-radius:8px;padding:32px 20px}.whyIcon{font-size:52px;color:var(--gold2);margin-bottom:16px}.whyCard h3{font-family:Georgia,serif;text-transform:uppercase;color:var(--gold2)}
-.footer{background:rgba(1,6,12,.95)}.footIn{max-width:1440px;margin:auto;padding:38px 32px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:28px}.footIn img{width:260px}.footIn h4{color:var(--gold2);text-transform:uppercase}.footIn p,.footIn a{color:var(--muted);line-height:1.7;font-size:14px}.copy{border-top:1px solid rgba(217,164,65,.25);padding:16px 32px;text-align:center;color:var(--muted);font-size:12px}
-@media(max-width:1150px){.catalog{grid-template-columns:repeat(3,1fr)}.features{grid-template-columns:repeat(3,1fr)}.work,.why{grid-template-columns:1fr}.contacts{display:none}}
-@media(max-width:720px){.top,.navIn,.heroIn,.section,.features{padding-left:20px;padding-right:20px}.logo img{max-width:78vw}.menu{gap:18px;overflow:auto}.heroIn{grid-template-columns:1fr;min-height:auto}.heroCar{margin-top:10px}h1{font-size:40px}.catalog{grid-template-columns:1fr}.features{grid-template-columns:1fr}.formGrid{grid-template-columns:1fr}.footIn{grid-template-columns:1fr}}
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+label{font-size:13px;color:var(--gold2)}
+input,textarea{width:100%;margin-top:7px;padding:14px;background:rgba(255,255,255,.07);border:1px solid rgba(217,164,65,.28);border-radius:4px;color:var(--gold);font:inherit}
+textarea{grid-column:1/-1;min-height:82px}
+.agree{margin:16px 0;color:var(--muted);font-size:13px}
+.submit{border:0;background:linear-gradient(135deg,var(--gold2),var(--gold3));color:#06182b;border-radius:5px;padding:15px 28px;font-weight:900;text-transform:uppercase;float:right;cursor:pointer}
+.sidePic{height:165px;background:linear-gradient(135deg,#0b121d,#6d4a20,#1a0f07);border-radius:6px;margin-bottom:20px}
+.sideBox h3{font-family:Georgia,serif;color:var(--gold2);text-transform:uppercase}
+.sideBox li{margin:12px 0;color:var(--gold)}
+.why{display:grid;grid-template-columns:300px repeat(4,1fr);gap:18px}
+.whyIntro p,.whyCard p{color:var(--muted);line-height:1.55}
+.whyCard{text-align:center;background:rgba(8,31,56,.78);border:1px solid var(--line);border-radius:8px;padding:32px 20px}
+.whyIcon{font-size:52px;color:var(--gold2);margin-bottom:16px}
+.whyCard h3{font-family:Georgia,serif;text-transform:uppercase;color:var(--gold2)}
+footer{background:rgba(1,6,12,.96)}
+.footIn{max-width:1440px;margin:auto;padding:38px 34px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:28px}
+.footLogo{font-family:Georgia,serif;font-size:27px;color:var(--gold2);font-weight:900}
+.footIn h4{color:var(--gold2);text-transform:uppercase}
+.footIn p,.footIn a{color:var(--muted);line-height:1.7;font-size:14px}
+.copy{border-top:1px solid rgba(217,164,65,.25);padding:16px 34px;text-align:center;color:var(--muted);font-size:12px}
+@media(max-width:1150px){
+  .catalog{grid-template-columns:repeat(3,1fr)}
+  .featuresGrid{grid-template-columns:repeat(3,1fr)}
+  .work,.why{grid-template-columns:1fr}
+  .contacts{display:none}
+}
+@media(max-width:720px){
+  .wrap,.heroGrid,.section,.featuresGrid{padding-left:20px;padding-right:20px}
+  .top{height:auto;padding-top:12px;padding-bottom:12px}
+  .brandName{font-size:24px}.brandSub{font-size:10px}
+  .logoMark{width:60px;height:60px}
+  .menu{gap:18px;overflow:auto}
+  .heroGrid{grid-template-columns:1fr;min-height:auto}
+  h1{font-size:42px}
+  .heroVisual{min-height:250px}
+  .catalog{grid-template-columns:1fr}
+  .featuresGrid{grid-template-columns:1fr}
+  .formGrid{grid-template-columns:1fr}
+  .footIn{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<header class="header">
- <div class="top"><a class="logo" href="index.html"><img src="assets/logo.svg" alt="LUXES EXECUTIVE"></a>
-  <div class="contacts"><span>☎ +420 777 399 799</span><span>✉ executive@luxes.cz</span><span class="social">●</span><span class="social">✈</span><span class="social">in</span><a class="wa" href="https://wa.me/420777399799">WhatsApp</a></div>
- </div>
- <div class="nav"><div class="navIn"><nav class="menu"><a class="active" href="#">Hlavní</a><a class="" href="#">Katalog vozů</a><a class="" href="#">Jak pracujeme</a><a class="" href="#">Služby</a><a class="" href="#">O společnosti</a><a class="" href="#">Kontakty</a></nav><div class="lang"><a href="index.html">RU</a> / <a href="index_de.html">DE</a> / <a href="index_en.html">EN</a> / <a href="index_cs.html">CS</a></div></div></div>
+<header>
+  <div class="wrap top">
+    <a class="logoText" href="#">
+      
+<svg class="logoMark" viewBox="0 0 100 100" aria-hidden="true">
+<defs><linearGradient id="lg" x1="0" x2="1"><stop stop-color="#f5d37d"/><stop offset="1" stop-color="#b8872c"/></linearGradient></defs>
+<circle cx="50" cy="50" r="39" fill="none" stroke="url(#lg)" stroke-width="5"/>
+<path d="M22 52h56M32 31h48M30 68h44" stroke="url(#lg)" stroke-width="5" stroke-linecap="round"/>
+<path d="M58 24L39 76M77 29L60 76" stroke="url(#lg)" stroke-width="6" stroke-linecap="round"/>
+</svg>
+
+      <div>
+        <div class="brandName">LUXES EXECUTIVE</div>
+        <div class="brandSub">Премиальные автомобили из Европы</div>
+      </div>
+    </a>
+    <div class="contacts">
+      <span>☎ +420 777 399 799</span>
+      <span>✉ executive@luxes.cz</span>
+      <span class="social">●</span>
+      <span class="social">✈</span>
+      <span class="social">in</span>
+      <a class="wa" href="https://wa.me/420777399799">WhatsApp</a>
+    </div>
+  </div>
+  <div class="navLine">
+    <div class="wrap nav">
+      <nav class="menu">
+        <a class="active" href="#">Главная</a>
+        <a href="#catalog">Каталог авто</a>
+        <a href="#work">Как мы работаем</a>
+        <a href="#services">Услуги</a>
+        <a href="#about">О компании</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="lang">
+        <a href="index.html">RU</a> / <a href="index_de.html">DE</a> / <a href="index_en.html">EN</a> / <a href="index_cs.html">CS</a>
+      </div>
+    </div>
+  </div>
 </header>
+
 <main>
-<section class="hero"><div class="heroIn"><div>
- <h1>Prémiové<br>vozy<br>z Evropy</h1><p class="lead">Výběr a dodání prémiových vozů pro soukromé klienty, prodejce a mezinárodní partnery.</p>
- <div class="btns"><a class="btn btnGold" href="#catalog">Zobrazit katalog</a><a class="btn btnLine" href="#request">Požádat o nabídku</a></div>
- </div><img class="heroCar" src="assets/mercedes-g.svg" alt="Mercedes G"></div></section>
-<section class="features"><div class="feature"><div class="icon">⚙</div><div><b>Prověřené vozy</b><span>Pouze právně čistá vozidla</span></div></div><div class="feature"><div class="icon">◎</div><div><b>Výběr po celé Evropě</b><span>Přístup k nejlepším nabídkám</span></div></div><div class="feature"><div class="icon">▤</div><div><b>Exportní dokumenty</b><span>Kompletní dokumentace</span></div></div><div class="feature"><div class="icon">▱</div><div><b>Doručení až ke dveřím</b><span>Postaráme se o logistiku</span></div></div><div class="feature"><div class="icon">✺</div><div><b>Prémiový a sběratelský segment</b><span>Exkluzivní vozy</span></div></div><div class="feature"><div class="icon">☏</div><div><b>Osobní manažer</b><span>Podpora ve všech fázích</span></div></div></section>
-<section class="section" id="catalog"><div class="titleRow"><h2>Katalog vozů</h2><a class="all" href="#">Zobrazit vše</a></div><div class="catalog"><article class="carCard"><div class="carPhoto "></div><div class="carBody"><h3>BMW X7 M60i</h3><div class="meta">2024 • 9 800 km</div><div class="price">99 900 €</div></div></article><article class="carCard"><div class="carPhoto "></div><div class="carBody"><h3>Mercedes-Benz S 580 4MATIC</h3><div class="meta">2023 • 15 200 km</div><div class="price">89 900 €</div></div></article><article class="carCard"><div class="carPhoto "></div><div class="carBody"><h3>Porsche Cayenne Turbo GT</h3><div class="meta">2024 • 6 900 km</div><div class="price">169 900 €</div></div></article><article class="carCard"><div class="carPhoto "></div><div class="carBody"><h3>Range Rover Autobiography</h3><div class="meta">2023 • 8 900 km</div><div class="price">124 900 €</div></div></article><article class="carCard"><div class="carPhoto orange"></div><div class="carBody"><h3>Audi RS Q8</h3><div class="meta">2024 • 5 400 km</div><div class="price">139 900 €</div></div></article><article class="carCard"><div class="carPhoto "></div><div class="carBody"><h3>Bentley Bentayga EWB</h3><div class="meta">2023 • 7 200 km</div><div class="price">219 900 €</div></div></article></div></section>
-<section class="section work" id="work"><div><h2>Jak pracujeme</h2><div class="steps"><div class="step"><div class="num">01</div><div><b>Žádost</b><span>Zašlete poptávku nebo popíšete požadovaný vůz.</span></div></div><div class="step"><div class="num">02</div><div><b>Výběr</b><span>Vybereme nejlepší možnosti v celé Evropě.</span></div></div><div class="step"><div class="num">03</div><div><b>Kontrola</b><span>Vůz prověříme a dodáme všechny detaily.</span></div></div><div class="step"><div class="num">04</div><div><b>Dodání</b><span>Vyřídíme dokumenty a dodáme vůz na klíč.</span></div></div></div></div>
- <form class="box" id="request"><h2>Požádat o nabídku</h2><p>Pošlete poptávku a najdeme pro vás nejlepší vůz.</p><div class="formGrid">
-  <label>Jméno*<input placeholder="Jméno"></label><label>Email*<input placeholder="Email"></label>
-  <label>Telefon / WhatsApp*<input placeholder="+420 ___ ___ ___"></label><label>Požadovaný vůz<input placeholder="Požadovaný vůz"></label>
-  <textarea placeholder="Komentář"></textarea></div><div class="agree"><input type="checkbox"> Souhlasím se zpracováním osobních údajů</div><button class="submit" type="button">Odeslat žádost</button></form>
- <aside class="box sideBox"><div class="sidePic"></div><h3>Individuální přístup ke každému klientovi</h3><ul><li>Férové podmínky</li><li>Transparentní obchody</li><li>Důvěrnost</li><li>Podpora 24/7</li></ul></aside></section>
-<section class="section why" id="services"><div class="whyIntro"><h2>Proč<br>LUXES EXECUTIVE?</h2><p>Specializujeme se na prémiový segment a nabízíme spolehlivá řešení, zkušenosti a reputaci.</p><a class="btn btnGold" href="#about">Více o nás</a></div><div class="whyCard"><div class="whyIcon">♙</div><h3>Soukromí klienti</h3><p>Exkluzivní vozy podle vašich požadavků.</p></div><div class="whyCard"><div class="whyIcon">🤝</div><h3>Prodejci</h3><p>Partnerské podmínky a velkoobchodní nabídky.</p></div><div class="whyCard"><div class="whyIcon">↗</div><h3>Investoři</h3><p>Investice do prémiových a sběratelských vozů.</p></div><div class="whyCard"><div class="whyIcon">◎</div><h3>Mezinárodní partneři</h3><p>Spolehlivá spolupráce a export po celém světě.</p></div></section>
+<section class="hero">
+  <div class="heroGrid">
+    <div>
+      <h1>Prémiové<br>vozy<br>z Evropy</h1>
+      <p class="lead">Подбор и поставка премиальных автомобилей для частных клиентов, дилеров и международных партнёров.</p>
+      <div class="btns">
+        <a class="btn btnGold" href="#catalog">Смотреть каталог</a>
+        <a class="btn btnLine" href="#request">Запросить предложение</a>
+      </div>
+    </div>
+    <div class="heroVisual">
+      <div class="city"></div>
+      
+<svg class="gClass" viewBox="0 0 760 430" aria-label="Black Mercedes G">
+<defs>
+  <linearGradient id="bodyG" x1="0" x2="1"><stop stop-color="#05070a"/><stop offset=".48" stop-color="#1a2027"/><stop offset="1" stop-color="#030405"/></linearGradient>
+  <linearGradient id="goldG" x1="0" x2="1"><stop stop-color="#f5d37d"/><stop offset="1" stop-color="#b8872c"/></linearGradient>
+</defs>
+<g transform="translate(48 76)">
+  <ellipse cx="330" cy="278" rx="280" ry="30" fill="rgba(0,0,0,.55)"/>
+  <path d="M78 188 L96 84 Q104 44 148 40 L392 27 Q465 24 505 70 L588 158 Q618 162 630 194 L642 238 L40 238 Q47 205 78 188Z" fill="url(#bodyG)" stroke="url(#goldG)" stroke-width="5"/>
+  <path d="M140 67 L382 55 Q435 53 468 88 L520 148 L102 148 L120 84 Q124 70 140 67Z" fill="#111923" stroke="#d9a441" stroke-width="3"/>
+  <path d="M151 77 L234 74 L229 144 L126 144 ZM255 73 L371 66 L380 144 L250 144 ZM395 70 Q433 74 458 101 L493 144 L404 144 Z" fill="#06182b" stroke="#d9a441" stroke-width="2"/>
+  <rect x="105" y="157" width="417" height="58" rx="7" fill="#06080b" stroke="#d9a441" stroke-width="2"/>
+  <rect x="546" y="166" width="64" height="42" rx="6" fill="#06080b" stroke="#d9a441" stroke-width="2"/>
+  <circle cx="160" cy="242" r="58" fill="#020202" stroke="#d9a441" stroke-width="6"/>
+  <circle cx="160" cy="242" r="30" fill="#141a21" stroke="#69717b"/>
+  <circle cx="503" cy="242" r="58" fill="#020202" stroke="#d9a441" stroke-width="6"/>
+  <circle cx="503" cy="242" r="30" fill="#141a21" stroke="#69717b"/>
+  <rect x="290" y="176" width="94" height="28" rx="4" fill="#020203" stroke="#d9a441"/>
+  <text x="304" y="194" font-family="Arial" font-size="10" font-weight="700" fill="#d9a441">LUXES EXECUTIVE</text>
+  <path d="M84 185h538" stroke="rgba(245,211,125,.28)" stroke-width="2"/>
+  <circle cx="95" cy="138" r="12" fill="#f5d37d"/>
+  <circle cx="610" cy="198" r="10" fill="#f5d37d"/>
+</g>
+</svg>
+
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="featuresGrid">
+    <div class="feature"><div class="icon">⚙</div><div><b>Проверенные автомобили</b><span>Только юридически чистые автомобили</span></div></div>
+    <div class="feature"><div class="icon">◎</div><div><b>Подбор по всей Европе</b><span>Доступ к лучшим предложениям</span></div></div>
+    <div class="feature"><div class="icon">▤</div><div><b>Экспортные документы</b><span>Полный пакет документов</span></div></div>
+    <div class="feature"><div class="icon">▱</div><div><b>Доставка «под ключ»</b><span>Берём логистику на себя</span></div></div>
+    <div class="feature"><div class="icon">✺</div><div><b>Премиум и коллекционный сегмент</b><span>Эксклюзивные автомобили</span></div></div>
+    <div class="feature"><div class="icon">☎</div><div><b>Личный менеджер</b><span>Поддержка на всех этапах сделки</span></div></div>
+  </div>
+</section>
+
+<section class="section" id="catalog">
+  <div class="titleRow"><h2>Каталог автомобилей</h2><a class="all" href="#">Смотреть все</a></div>
+  <div class="catalog">
+      <article class="carCard">
+        <div class="carPhoto "></div>
+        <div class="carBody">
+          <h3>BMW X7 M60i</h3>
+          <div class="meta">2024 • 9 800 km</div>
+          <div class="price">99 900 €</div>
+        </div>
+      </article>
+
+      <article class="carCard">
+        <div class="carPhoto "></div>
+        <div class="carBody">
+          <h3>Mercedes-Benz S 580 4MATIC</h3>
+          <div class="meta">2023 • 15 200 km</div>
+          <div class="price">89 900 €</div>
+        </div>
+      </article>
+
+      <article class="carCard">
+        <div class="carPhoto "></div>
+        <div class="carBody">
+          <h3>Porsche Cayenne Turbo GT</h3>
+          <div class="meta">2024 • 6 900 km</div>
+          <div class="price">169 900 €</div>
+        </div>
+      </article>
+
+      <article class="carCard">
+        <div class="carPhoto "></div>
+        <div class="carBody">
+          <h3>Range Rover Autobiography</h3>
+          <div class="meta">2023 • 8 900 km</div>
+          <div class="price">124 900 €</div>
+        </div>
+      </article>
+
+      <article class="carCard">
+        <div class="carPhoto orange"></div>
+        <div class="carBody">
+          <h3>Audi RS Q8</h3>
+          <div class="meta">2024 • 5 400 km</div>
+          <div class="price">139 900 €</div>
+        </div>
+      </article>
+
+      <article class="carCard">
+        <div class="carPhoto "></div>
+        <div class="carBody">
+          <h3>Bentley Bentayga EWB</h3>
+          <div class="meta">2023 • 7 200 km</div>
+          <div class="price">219 900 €</div>
+        </div>
+      </article></div>
+</section>
+
+<section class="section work" id="work">
+  <div>
+    <h2>Как мы работаем</h2>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><div><b>Заявка</b><span>Вы оставляете заявку или описываете желаемый автомобиль.</span></div></div>
+      <div class="step"><div class="num">02</div><div><b>Подбор</b><span>Мы подбираем лучшие варианты по всей Европе и согласовываем с вами.</span></div></div>
+      <div class="step"><div class="num">03</div><div><b>Проверка</b><span>Проводим проверку, предоставляем отчёты и все детали.</span></div></div>
+      <div class="step"><div class="num">04</div><div><b>Доставка</b><span>Оформляем документы и доставляем автомобиль «под ключ».</span></div></div>
+    </div>
+  </div>
+  <form class="box" id="request">
+    <h2>Запросить предложение</h2>
+    <p>Оставьте заявку и мы подберём лучший автомобиль для вас.</p>
+    <div class="formGrid">
+      <label>Имя*<input placeholder="Ваше имя"></label>
+      <label>Email*<input placeholder="Ваш e-mail"></label>
+      <label>Телефон / WhatsApp*<input placeholder="+420 ___ ___ ___"></label>
+      <label>Желаемый автомобиль<input placeholder="Марка, модель, год, бюджет"></label>
+      <textarea placeholder="Комментарий"></textarea>
+    </div>
+    <div class="agree"><input type="checkbox"> Я согласен с обработкой персональных данных</div>
+    <button class="submit" type="button">Отправить заявку</button>
+  </form>
+  <aside class="box sideBox">
+    <div class="sidePic"></div>
+    <h3>Индивидуальный подход к каждому клиенту</h3>
+    <ul><li>Честные условия</li><li>Прозрачные сделки</li><li>Конфиденциальность</li><li>Поддержка 24/7</li></ul>
+  </aside>
+</section>
+
+<section class="section why" id="services">
+  <div class="whyIntro">
+    <h2>Почему<br>LUXES EXECUTIVE?</h2>
+    <p>Мы специализируемся на премиальном сегменте и предлагаем клиентам надёжные решения, проверенный опыт и репутацию.</p>
+    <a class="btn btnGold" href="#about">Узнать больше о нас</a>
+  </div>
+  <div class="whyCard"><div class="whyIcon">♙</div><h3>Частные клиенты</h3><p>Подбор эксклюзивных автомобилей под ваши пожелания.</p></div>
+  <div class="whyCard"><div class="whyIcon">🤝</div><h3>Дилеры</h3><p>Партнёрские условия и оптовые предложения для автодилеров.</p></div>
+  <div class="whyCard"><div class="whyIcon">↗</div><h3>Инвесторы</h3><p>Инвестиции в премиальные и коллекционные автомобили.</p></div>
+  <div class="whyCard"><div class="whyIcon">◎</div><h3>Международные партнёры</h3><p>Надёжное сотрудничество и экспорт по всему миру.</p></div>
+</section>
 </main>
-<footer class="footer" id="contacts"><div class="footIn">
- <div><img src="assets/logo.svg" alt=""><p>European Luxury Vehicle Brokerage & Executive Mobility Solutions</p><p>WhatsApp · Telegram · LinkedIn</p></div>
- <div><h4>Navigace</h4><p>Hlavní<br>Katalog vozů<br>Jak pracujeme<br>Služby<br>O společnosti<br>Kontakty</p></div>
- <div><h4>Služby</h4><p>Подбор автомобиля<br>Проверка и диагностика<br>Экспорт и документы<br>Доставка «под ключ»<br>Страхование<br>Консультации</p></div>
- <div><h4>Kontakty</h4><p>+420 777 399 799<br>executive@luxes.cz<br>Vinohradská 1511/230<br>130 00 Praha 3</p></div>
- <div><h4>Společnost</h4><p>LUXES EXECUTIVE s.r.o.<br>IČO: 196 99 301<br>DIČ: CZ19699301<br>VAT: CZ19699301<br>Městský soud v Praze</p></div>
- </div><div class="copy">© 2025 LUXES EXECUTIVE s.r.o. Všechna práva vyhrazena. · GDPR · Cookies · Terms</div></footer>
-</body></html>
+
+<footer id="contacts">
+  <div class="footIn">
+    <div><div class="footLogo">LUXES EXECUTIVE</div><p>European Luxury Vehicle Brokerage & Executive Mobility Solutions</p><p>WhatsApp · Telegram · LinkedIn</p></div>
+    <div><h4>Навигация</h4><p>Главная<br>Каталог авто<br>Как мы работаем<br>Услуги<br>О компании<br>Контакты</p></div>
+    <div><h4>Услуги</h4><p>Подбор автомобиля<br>Проверка и диагностика<br>Экспорт и документы<br>Доставка «под ключ»<br>Страхование<br>Консультации</p></div>
+    <div><h4>Контакты</h4><p>+420 777 399 799<br>executive@luxes.cz<br>Vinohradská 1511/230<br>130 00 Praha 3</p></div>
+    <div><h4>Компания</h4><p>LUXES EXECUTIVE s.r.o.<br>IČO: 196 99 301<br>DIČ: CZ19699301<br>VAT: CZ19699301<br>Městský soud v Praze</p></div>
+  </div>
+  <div class="copy">© 2025 LUXES EXECUTIVE s.r.o. Все права защищены. · GDPR · Cookies · Terms</div>
+</footer>
+</body>
+</html>
