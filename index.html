@@ -1,13 +1,12 @@
-## Красивый премиум-макет: обновлённая страница
+## Готовый премиум-макет: обновлённая страница (карточный стиль)
 
-Чтобы ваша страница выглядела по-настоящему премиально, я переработал дизайн в более современный карточный стиль с акцентом на золото и элегантные шрифты. Каталог представлен в виде карточек (на мобильных — одна колонка, на планшетах/десктопах — три колонки). Также добавлены доступность, SEO-улучшения и производительность.
+Ниже полный HTML-файл с обновлённым премиум-дизайном. Основные моменты:
+- Карточки автомобилей вместо таблицы (мобильная версия — 1 колонка, планшеты/десктопы — 3 колонки).
+- Доступность: подписанные поля формы, landmarks, ARIA-атрибуты.
+- SEO и производительность: мета-описание, og-теги, favicon, lazy loading там, где возможно.
+- Элегантная палитра и шрифты для премиум-впечатления.
 
-- Новая премиум-версия: карточки автомобилей, более чистый шрифт и палитра.
-- Адаптивность: карточки на мобилках, таблица остаётся только как концепция (мы используем карточки для лучшего UX).
-- Улучшенная форма: доступные подписи к полям.
-- SEO и производительность: meta description, og-теги, favicon, lazy loading для изображений.
-
-Скопируйте код ниже и замените файл на ваш сервер. При необходимости могу адаптировать под ваши конкретные данные и изображения.
+Код можно скопировать целиком и заменить файл на вашем сервере. По необходимости могу адаптировать под ваши данные и изображения.
 
 ```html
 <!doctype html>
@@ -15,17 +14,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Премиальные автомобили из Европы. Подбор и поставка автомобилей для частных клиентов, дилеров и международных партнёров.">
-  <title>LUXES EXECUTIVE</title>
 
-  <!-- Фавикон и социальная графика -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- SEO -->
+  <meta name="description" content="Премиальные автомобили из Европы. Подбор и поставка автомобилей для частных клиентов, дилеров и международных партнёров.">
   <meta property="og:title" content="LUXES EXECUTIVE — Премиальные автомобили из Европы">
   <meta property="og:description" content="Премиальные автомобили из Европы. Подбор и поставка автомобилей для частных клиентов, дилеров и международных партнёров.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yourdomain.com/">
   <meta property="og:image" content="luxes-og.png">
   <link rel="canonical" href="https://yourdomain.com/">
+
+  <!-- Фавикон -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <!-- Шрифты -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
@@ -57,8 +57,7 @@
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid #eee3d3}
     .menu{display:flex;gap:28px;text-transform:uppercase;font-weight:900;font-size:13px;color:var(--blue)}
     .lang{min-width:150px;color:var(--blue)}
-    .hero{min-height:520px;background:linear-gradient(135deg,#fff 0%,#f3eadb 55%,#dfd0b9 100%);display:flex;align-items:center;padding:64px 4vw;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-    .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% -10%, rgba(255,215,0,.15), transparent 40%), radial-gradient(circle at 90% 10%, rgba(0,0,0,.04), transparent 40%);pointer-events:none}
+    .hero{min-height:520px;background:linear-gradient(135deg,#fff 0%,#f3eadb 55%,#dfd0b9 100%);display:flex;align-items:center;padding:64px 4vw;border-bottom:1px solid var(--line)}
     .heroText{max-width:900px}
     .kicker{color:var(--blue);font-weight:950;text-transform:uppercase;letter-spacing:4px;margin-bottom:20px}
     h1{font-family:Playfair Display, serif;font-size:44px;line-height:1.08;text-transform:uppercase;font-weight:900;margin:0 0 14px;color:#1b1b1b}
@@ -71,23 +70,24 @@
     .over{color:var(--blue);font-weight:950;text-transform:uppercase;letter-spacing:2px;font-size:13px;margin-bottom:8px}
     .section h2{font-family:Playfair Display, serif;font-size:38px;text-transform:uppercase;font-weight:500;margin:10px 0 22px}
     .note{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:22px;color:#514a40;box-shadow:0 12px 35px rgba(0,0,0,.04)}
-    /* Каталог - карточки */
-    .catalog{display:block}
+
+    /* Карточный каталог */
+    .catalog{padding-top:0}
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
-    .card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,.04);transition: transform .25s ease, box-shadow .25s;display:flex;flex-direction:column}
-    .card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.08)}
-    .card-media{height:190px;background:linear-gradient(135deg,#1f4e79 0%,#1f4e79 60%,#0b1b2b 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Montserrat;font-weight:900;font-size:20px;position:relative}
-    .card-media .tag{position:absolute;left:12px;top:12px;background:#fff3;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800;color:#123}
-    .card-body{padding:16px;display:flex;flex-direction:column;gap:8px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,.04);display:flex;flex-direction:column}
+    .card-media{height:190px;background:linear-gradient(135deg,#1f4e79 0%,#0f2a63 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Montserrat;font-weight:900;font-size:20px;position:relative}
+    .card-media .tag{position:absolute;left:12px;top:12px;background:#fff3;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800;color:#123;border:1px solid #ddd}
+    .card-body{padding:14px 16px;display:flex;flex-direction:column;gap:6px}
     .car-title{font-family:Playfair Display, serif;font-size:20px;color:var(--blue);margin:0}
     .car-sub{color:#555;font-size:13px}
-    .grid-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-    .meta{font-weight:700;color:#333;font-size:13px}
+    .grid-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
     .price{margin-left:auto;font-family:Montserrat, sans-serif;font-weight:900;color:var(--blue);font-size:14px}
     .status{display:inline-block;border:1px solid var(--blue);border-radius:999px;padding:6px 10px;color:var(--blue);font-weight:900;font-size:11px;text-transform:uppercase}
-    .card-actions{margin-top:auto;padding:12px 16px;border-top:1px solid var(--line);display:flex;gap:8px}
+    .card-actions{margin-top:auto;padding:12px 0 0;display:flex;gap:8px}
     .btnCompact{background:var(--blue);color:#fff;border-radius:8px;padding:10px 12px;font-weight:900;font-size:12px}
-    /* Контактная секция - двойная колонка */
+    .btnOutline{background:#fff;border:1px solid var(--blue);color:var(--blue);border-radius:8px;padding:10px 12px;font-weight:900;font-size:12px}
+
+    /* Контактная секция */
     .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;padding-bottom:80px}
     .box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:0 12px 35px rgba(0,0,0,.04)}
     .form input,.form textarea{width:100%;padding:14px 12px;margin:8px 0;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff}
@@ -98,10 +98,10 @@
 
     /* Адаптивность */
     @media (max-width: 1024px){
-      .cards{grid-template-columns: repeat(2, 1fr);}
+      .cards{grid-template-columns:repeat(2,1fr);}
     }
     @media (max-width: 700px){
-      .cards{grid-template-columns: 1fr;}
+      .cards{grid-template-columns:1fr;}
       .hero{min-height:auto;padding:48px 22px}
       h1{font-size:34px}
       .card-media{height:180px}
@@ -111,22 +111,22 @@
 </head>
 <body>
 
-<header class="header">
+<header class="header" aria-label="Главная навигация">
   <div class="top">
     <a class="logo" href="#">
-      <img src="luxes-logo.png" alt="LUXES EXECUTIVE" loading="lazy" height="76">
-      <div class="brand">
+      <img src="luxes-logo.png" alt="LUXES EXECUTIVE" loading="lazy" width="160" height="60">
+      <div class="brand" aria-label="Бренд">
         <b>LUXES EXECUTIVE</b>
         <small>Премиальные автомобили из Европы</small>
       </div>
     </a>
-    <div class="contacts">
+    <div class="contacts" aria-label="Контакты">
       <span><a href="tel:+420777399799" aria-label="Телефон">+420 777 399 799</a></span>
       <span><a href="mailto:executive@luxes.cz" aria-label="Электронная почта">executive@luxes.cz</a></span>
       <span><a class="whatsapp smallWa" href="https://wa.me/420777399799" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WhatsApp</a></span>
     </div>
   </div>
-  <div class="nav">
+  <div class="nav" aria-label="Навигация по разделам">
     <div class="menu">
       <a href="#catalog">Каталог</a>
       <a href="#how">Как работает</a>
@@ -141,26 +141,26 @@
     <h1>Премиальные автомобили <span>из Европы</span></h1>
     <p class="lead">Подбор и поставка премиальных автомобилей для частных клиентов, дилеров и международных партнёров.</p>
     <div class="buttons">
-      <a class="btn btnGold" href="#catalog" aria-label="Перейти в каталог" style="background:var(--blue);color:#fff;border-radius:10px;padding:14px 28px;">Смотреть каталог</a>
-      <a class="btn btnDark" href="#contact" aria-label="Запросить предложение" style="color:var(--blue);background:#fff;border:2px solid var(--blue);">Запросить предложение</a>
+      <a class="btn" href="#catalog" aria-label="Перейти в каталог" style="background:var(--blue);color:#fff">Смотреть каталог</a>
+      <a class="btn btnDark" href="#contact" aria-label="Запросить предложение" style="background:#fff;border:2px solid var(--blue);color:var(--blue)">Запросить предложение</a>
     </div>
   </div>
 </section>
 
 <section class="section catalog" id="catalog" aria-labelledby="catalog-title">
-  <div class="over" style="color:var(--blue);">Универсальный каталог</div>
+  <div class="over" style="color:var(--blue)">Универсальный каталог</div>
   <h2 id="catalog-title" style="margin:0 0 8px">Автомобили</h2>
   <div class="note" role="note">
-    Здесь можно добавлять автомобили без фотографий: марка, модель, год, пробег, VIN, цвет, цена и статус. Фото добавим позже, когда будут реальные автомобили.
+    Здесь представлены карточки автомобилей. На мобильных версиях — одна колонка, на планшетах и десктopах — три колонки. Фото можно добавить позже.
   </div>
 
-  <!-- Карточки автомобилей (мобильная и десктопная версии) -->
+    <!-- Карточки автомобилей -->
   <div class="cards" aria-label="Каталог автомобилей в карточках">
     <!-- Карточка 1 -->
     <article class="card" aria-label="Lexus GX 460, 2016 год, 203000 км">
-      <div class="card-media" aria-label="Изображение автомобиля Lexus GX 460" style="background: linear-gradient(135deg,#0f2a63 0%,#1a4e8c 60%,#1f4e79 100%);">
+      <div class="card-media" aria-label="Изображение Lexus GX 460">
         Lexus GX 460
-        <span class="tag" style="position:absolute;bottom:12px;left:12px;background:white;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800;color:#123;border:1px solid #ddd;">V8 Executive LPG</span>
+        <span class="tag" aria-label="Двигатель">V8 Executive LPG</span>
       </div>
       <div class="card-body">
         <h3 class="car-title">Lexus GX 460</h3>
@@ -170,17 +170,17 @@
           <span class="status" style="margin-left:8px;">В наличии</span>
         </div>
       </div>
-      <div class="card-actions">
+      <div class="card-actions" aria-label="Действия по автомобилю">
         <a class="btnCompact" href="#contact" aria-label="Запросить Lexus GX 460">Запросить</a>
-        <a class="btnCompact" href="#catalog" aria-label="Подробнее Lexus GX 460" style="background:#fff;border:1px solid var(--blue);color:var(--blue)">Подробнее</a>
+        <a class="btnOutline" href="#catalog" aria-label="Подробнее Lexus GX 460">Подробнее</a>
       </div>
     </article>
 
-    <!-- Карточка 2 (пример) -->
+    <!-- Карточка 2 -->
     <article class="card" aria-label="BMW 750i, 2018 год, 40 000 км">
-      <div class="card-media" aria-label="Изображение автомобиля BMW 750i" style="background: linear-gradient(135deg,#1c3a86 0%,#1f4e79 60%,#0e1b2a 100%);">
+      <div class="card-media" aria-label="Изображение BMW 750i" style="background: linear-gradient(135deg,#1c3a86 0%,#1f4e79 60%,#0e1b2a 100%);">
         BMW 750i
-        <span class="tag" style="position:absolute;bottom:12px;left:12px;background:white;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800;color:#123;border:1px solid #ddd;">V8</span>
+        <span class="tag" aria-label="Двигатель">V8</span>
       </div>
       <div class="card-body">
         <h3 class="car-title">BMW 750i</h3>
@@ -190,17 +190,17 @@
           <span class="status" style="margin-left:8px;">В заказе</span>
         </div>
       </div>
-      <div class="card-actions">
+      <div class="card-actions" aria-label="Действия по автомобилю">
         <a class="btnCompact" href="#contact" aria-label="Запросить BMW 750i">Запросить</a>
-        <a class="btnCompact" href="#catalog" aria-label="Подробнее BMW 750i" style="background:#fff;border:1px solid var(--blue);color:var(--blue)">Подробнее</a>
+        <a class="btnOutline" href="#catalog" aria-label="Подробнее BMW 750i">Подробнее</a>
       </div>
     </article>
 
-    <!-- Карточка 3 (пример) -->
+    <!-- Карточка 3 -->
     <article class="card" aria-label="Mercedes-Benz S-Class, 2020 год, 15 000 км">
-      <div class="card-media" aria-label="Изображение автомобиля Mercedes-Benz S-Class" style="background: linear-gradient(135deg,#0b1f3b 0%,#1b3a7a 60%,#1F4E79 100%);">
+      <div class="card-media" aria-label="ИзображениеMercedes-Benz S-Class" style="background: linear-gradient(135deg,#0b1f3b 0%,#1b3a7a 60%,#1F4E79 100%);">
         Mercedes-Benz S-Class
-        <span class="tag" style="position:absolute;bottom:12px;left:12px;background:white;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800;color:#123;border:1px solid #ddd;">AMG</span>
+        <span class="tag" aria-label="Двигатель AMG">AMG</span>
       </div>
       <div class="card-body">
         <h3 class="car-title">Mercedes-Benz S-Class</h3>
@@ -210,9 +210,9 @@
           <span class="status" style="margin-left:8px;">Под заказ</span>
         </div>
       </div>
-      <div class="card-actions">
+      <div class="card-actions" aria-label="Действия по автомобилю">
         <a class="btnCompact" href="#contact" aria-label="Запросить Mercedes-Benz S-Class">Запросить</a>
-        <a class="btnCompact" href="#catalog" aria-label="Подробнее Mercedes-Benz S-Class" style="background:#fff;border:1px solid var(--blue);color:var(--blue)">Подробнее</a>
+        <a class="btnOutline" href="#catalog" aria-label="Подробнее Mercedes-Benz S-Class">Подробнее</a>
       </div>
     </article>
   </div>
@@ -238,20 +238,20 @@
   <div class="box form" aria-label="Форма запроса предложения">
     <h3 id="contact-title" style="margin:0 0 12px">Запросить предложение</h3>
     <form onsubmit="return false;">
-      <label for="name2" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Имя / фирма</label>
-      <input id="name2" name="name" placeholder="Имя / фирма" aria-label="Имя или фирма">
+      <label for="name" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Имя / фирма</label>
+      <input id="name" name="name" placeholder="Имя / фирма" aria-label="Имя или фирма">
 
-      <label for="phone2" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Телефон / WhatsApp</label>
-      <input id="phone2" name="phone" placeholder="Телефон / WhatsApp" aria-label="Телефон или WhatsApp">
+      <label for="phone" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Телефон / WhatsApp</label>
+      <input id="phone" name="phone" placeholder="Телефон / WhatsApp" aria-label="Телефон или WhatsApp">
 
-      <label for="email3" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">E-mail</label>
-      <input id="email3" name="email" placeholder="E-mail" aria-label="E-mail">
+      <label for="email" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">E-mail</label>
+      <input id="email" name="email" placeholder="E-mail" aria-label="E-mail">
 
-      <label for="vehicle2" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Марка / модель / VIN</label>
-      <input id="vehicle2" name="vehicle" placeholder="Марка / модель / VIN" aria-label="Марка, модель, VIN">
+      <label for="vehicle" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Марка / модель / VIN</label>
+      <input id="vehicle" name="vehicle" placeholder="Марка / модель / VIN" aria-label="Марка, модель, VIN">
 
-      <label for="message2" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Сообщение</label>
-      <textarea id="message2" name="message" placeholder="Сообщение" aria-label="Сообщение"></textarea>
+      <label for="message" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Сообщение</label>
+      <textarea id="message" name="message" placeholder="Сообщение" aria-label="Сообщение"></textarea>
 
       <button class="btnGold" type="button" onclick="location.href='https://wa.me/420777399799'">Отправить через WhatsApp</button>
     </form>
@@ -278,11 +278,10 @@ function googleTranslateElementInit() {
 
 ---
 
-## Что можно дополнительно добавить по вашим пожеланиям
-- Подключение реального фото-баннера для каждого автомобиля.
-- Интерактивный фильтр по параметрам каталога (год, пробег, цвет, цена).
-- Интеграция формы запроса с CRM или почтой.
-- Хардовые переводные версии и полноценная hreflang‑структура.
-- Быстрая интеграция лендинга под вашу CMS или статическую сборку. 
+### Что можно дополнительно сделать
+- Добавить реальные фото для карточек и настроить конкретные VIN, года, пробеги и цены.
+- Внедрить интерактивный фильтр по параметрам каталога (год, пробег, цвет, цена).
+- Интеграцию формы запроса с вашим CRM или почтовой пересылкой.
+- Правильную hreflang-структуру для мультиязычности, если планируете отдельные языковые версии.
 
-Если хотите, могу адаптировать версию под ваши реальные изображения и данные (одним файлом с вашими VIN, годами, ценами и т.д.). Также могу сделать полностью карточный вид и для десктопа, если нужны дополнительные анимации или эффекты.
+Если хотите, могу адаптировать макет под ваши конкретные изображения и данные (прикрепить реальные фото, VIN, года, цены). Сообщите, какие автомобили добавить в каталог и какие стилистические акценты важнее: больше золота, минимализм, анимации и т. п. 🔎💫
