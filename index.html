@@ -1,287 +1,135 @@
-## Готовый премиум-макет: обновлённая страница (карточный стиль)
-
-Ниже полный HTML-файл с обновлённым премиум-дизайном. Основные моменты:
-- Карточки автомобилей вместо таблицы (мобильная версия — 1 колонка, планшеты/десктопы — 3 колонки).
-- Доступность: подписанные поля формы, landmarks, ARIA-атрибуты.
-- SEO и производительность: мета-описание, og-теги, favicon, lazy loading там, где возможно.
-- Элегантная палитра и шрифты для премиум-впечатления.
-
-Код можно скопировать целиком и заменить файл на вашем сервере. По необходимости могу адаптировать под ваши данные и изображения.
-
-```html
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <!-- SEO -->
-  <meta name="description" content="Премиальные автомобили из Европы. Подбор и поставка автомобилей для частных клиентов, дилеров и международных партнёров.">
-  <meta property="og:title" content="LUXES EXECUTIVE — Премиальные автомобили из Европы">
-  <meta property="og:description" content="Премиальные автомобили из Европы. Подбор и поставка автомобилей для частных клиентов, дилеров и международных партнёров.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourdomain.com/">
-  <meta property="og:image" content="luxes-og.png">
-  <link rel="canonical" href="https://yourdomain.com/">
-
-  <!-- Фавикон -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- Шрифты -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --gold:#b8872c;
-      --blue:#1F4E79;
-      --bg:#f6f2ea;
-      --line:#dfd4c2;
-      --muted:#6f6a61;
-      --text:#181818;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Montserrat, Arial, Helvetica, sans-serif}
-    a{text-decoration:none;color:inherit}
-    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.06);padding:14px 4vw}
-    .top{display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .logo{display:flex;align-items:center;gap:16px}
-    .logo img{height:76px;object-fit:contain}
-    .brand{font-family:Playfair Display, serif}
-    .brand b{font-size:34px;color:#121212;letter-spacing:1px}
-    .brand small{display:block;color:var(--gold);font-weight:900;letter-spacing:3px;font-size:11px;margin-top:5px}
-    .contacts{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end;align-items:center;font-size:14px;color:var(--blue);font-weight:900}
-    .contacts a{color:var(--blue)}
-    .whatsapp,.btnGold{background:var(--blue);color:#fff;border-radius:8px;padding:14px 22px;font-weight:950}
-    .smallWa{padding:10px 16px;color:#fff!important}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid #eee3d3}
-    .menu{display:flex;gap:28px;text-transform:uppercase;font-weight:900;font-size:13px;color:var(--blue)}
-    .lang{min-width:150px;color:var(--blue)}
-    .hero{min-height:520px;background:linear-gradient(135deg,#fff 0%,#f3eadb 55%,#dfd0b9 100%);display:flex;align-items:center;padding:64px 4vw;border-bottom:1px solid var(--line)}
-    .heroText{max-width:900px}
-    .kicker{color:var(--blue);font-weight:950;text-transform:uppercase;letter-spacing:4px;margin-bottom:20px}
-    h1{font-family:Playfair Display, serif;font-size:44px;line-height:1.08;text-transform:uppercase;font-weight:900;margin:0 0 14px;color:#1b1b1b}
-    h1 span{color:var(--gold)}
-    .lead{font-size:20px;line-height:1.6;color:var(--blue);font-weight:700}
-    .buttons{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;padding:14px 28px;text-transform:uppercase;font-weight:900}
-    .btnDark{border:1px solid var(--blue);color:var(--blue);background:#fff}
-    .section{padding:58px 4vw 0}
-    .over{color:var(--blue);font-weight:950;text-transform:uppercase;letter-spacing:2px;font-size:13px;margin-bottom:8px}
-    .section h2{font-family:Playfair Display, serif;font-size:38px;text-transform:uppercase;font-weight:500;margin:10px 0 22px}
-    .note{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:22px;color:#514a40;box-shadow:0 12px 35px rgba(0,0,0,.04)}
-
-    /* Карточный каталог */
-    .catalog{padding-top:0}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
-    .card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,.04);display:flex;flex-direction:column}
-    .card-media{height:190px;background:linear-gradient(135deg,#1f4e79 0%,#0f2a63 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Montserrat;font-weight:900;font-size:20px;position:relative}
-    .card-media .tag{position:absolute;left:12px;top:12px;background:#fff3;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800;color:#123;border:1px solid #ddd}
-    .card-body{padding:14px 16px;display:flex;flex-direction:column;gap:6px}
-    .car-title{font-family:Playfair Display, serif;font-size:20px;color:var(--blue);margin:0}
-    .car-sub{color:#555;font-size:13px}
-    .grid-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-    .price{margin-left:auto;font-family:Montserrat, sans-serif;font-weight:900;color:var(--blue);font-size:14px}
-    .status{display:inline-block;border:1px solid var(--blue);border-radius:999px;padding:6px 10px;color:var(--blue);font-weight:900;font-size:11px;text-transform:uppercase}
-    .card-actions{margin-top:auto;padding:12px 0 0;display:flex;gap:8px}
-    .btnCompact{background:var(--blue);color:#fff;border-radius:8px;padding:10px 12px;font-weight:900;font-size:12px}
-    .btnOutline{background:#fff;border:1px solid var(--blue);color:var(--blue);border-radius:8px;padding:10px 12px;font-weight:900;font-size:12px}
-
-    /* Контактная секция */
-    .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;padding-bottom:80px}
-    .box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:0 12px 35px rgba(0,0,0,.04)}
-    .form input,.form textarea{width:100%;padding:14px 12px;margin:8px 0;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff}
-    .form textarea{min-height:120px}
-    .form button{border:0;width:100%;margin-top:12px;cursor:pointer}
-    .float{position:fixed;right:22px;bottom:22px;background:#1a9a58;color:white;border-radius:999px;padding:14px 18px;font-weight:950;z-index:99}
-    footer{padding:30px 4vw;text-align:center;color:var(--blue);letter-spacing:4px;text-transform:uppercase;border-top:1px solid var(--line)}
-
-    /* Адаптивность */
-    @media (max-width: 1024px){
-      .cards{grid-template-columns:repeat(2,1fr);}
-    }
-    @media (max-width: 700px){
-      .cards{grid-template-columns:1fr;}
-      .hero{min-height:auto;padding:48px 22px}
-      h1{font-size:34px}
-      .card-media{height:180px}
-      .contact{grid-template-columns:1fr}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUXES EXECUTIVE — Премиальные автомобили из Европы</title>
+<meta name="description" content="LUXES EXECUTIVE — подбор и поставка премиальных автомобилей из Европы для частных клиентов, дилеров и международных партнёров.">
+<link rel="icon" href="assets/logo.svg">
+<style>
+:root{
+  --navy:#06182b; --navy2:#0b2540; --navy3:#0e3155;
+  --gold:#d9a441; --gold2:#f0c36a; --white:#fff; --muted:#b9c5d3;
+  --line:rgba(217,164,65,.34); --card:rgba(7,26,45,.92);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 70% 0,#15385f 0,#06182b 38%,#020b14 100%);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+.header{position:sticky;top:0;z-index:20;background:rgba(3,14,26,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.top{max-width:1440px;margin:auto;padding:18px 34px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:16px}.logo img{width:330px;max-width:42vw;height:auto}
+.contacts{display:flex;gap:22px;align-items:center;font-weight:700;font-size:14px}
+.ico{color:var(--gold);font-weight:900}.wa{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#07182b;padding:13px 24px;border-radius:7px;font-weight:900}
+.nav{border-top:1px solid rgba(217,164,65,.2)}
+.navIn{max-width:1440px;margin:auto;padding:0 34px;display:flex;justify-content:space-between;align-items:center}
+.menu{display:flex;gap:48px;text-transform:uppercase;font-size:13px;font-weight:900}
+.menu a{padding:18px 0}.menu a:first-child{color:var(--gold);border-bottom:3px solid var(--gold)}
+.lang{padding:18px 28px;border-left:1px solid rgba(217,164,65,.25);font-weight:900}
+.hero{border-bottom:1px solid var(--line);background:
+ linear-gradient(90deg,rgba(3,14,26,.98) 0%,rgba(5,20,35,.88) 35%,rgba(5,20,35,.25) 72%),
+ radial-gradient(circle at 78% 45%,rgba(231,174,69,.28),transparent 20%),
+ linear-gradient(135deg,#07192b,#102b48 55%,#2a2119);
+}
+.heroIn{max-width:1440px;margin:auto;min-height:455px;padding:62px 34px;display:grid;grid-template-columns:1fr 1.2fr;align-items:center;position:relative;overflow:hidden}
+h1{font-family:Georgia,serif;font-size:58px;line-height:.98;margin:0 0 22px;text-transform:uppercase;letter-spacing:.5px}
+.gold{color:var(--gold)}
+.lead{font-size:21px;line-height:1.5;max-width:540px;margin:0 0 30px}
+.btns{display:flex;gap:16px}.btn{display:inline-flex;align-items:center;justify-content:center;min-width:210px;padding:16px 26px;border-radius:6px;text-transform:uppercase;font-weight:900;font-size:13px}
+.btn.goldBtn{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#07182b}.btn.out{border:1px solid var(--gold);color:#fff}
+.carHero{height:330px;border-radius:20px;background:linear-gradient(160deg,#111,#2b3740 45%,#070b10);position:relative;box-shadow:0 25px 80px rgba(0,0,0,.45)}
+.carHero:before{content:"";position:absolute;inset:38px 25px 70px;border-radius:55% 45% 18% 18%;background:linear-gradient(135deg,#171d22,#57616a 50%,#111);box-shadow:inset 0 -20px 30px rgba(0,0,0,.5)}
+.carHero:after{content:"";position:absolute;left:110px;right:110px;bottom:58px;height:70px;background:linear-gradient(90deg,#090d12,#202b35,#090d12);border-radius:16px}
+.wheel{position:absolute;bottom:35px;width:88px;height:88px;border-radius:50%;background:radial-gradient(circle,#0b0b0b 30%,#54606b 31%,#111 64%,#000 65%);border:5px solid #222}.w1{left:95px}.w2{right:95px}
+.features{max-width:1440px;margin:auto;display:grid;grid-template-columns:repeat(6,1fr);gap:22px;padding:32px 34px;border-bottom:1px solid var(--line)}
+.feature{display:flex;gap:13px;align-items:flex-start}.feature .icon{font-size:31px;color:var(--gold)}.feature b{display:block;font-size:14px}.feature span{color:var(--muted);font-size:12px;line-height:1.4}
+.section{max-width:1440px;margin:auto;padding:34px}.titleRow{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+h2{font-family:Georgia,serif;font-size:28px;margin:0;text-transform:uppercase}.all{color:var(--gold);font-weight:900;font-size:13px}
+.catalog{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.card{background:linear-gradient(180deg,rgba(20,47,75,.92),rgba(4,15,27,.98));border:1px solid rgba(217,164,65,.32);border-radius:7px;overflow:hidden}
+.pic{height:135px;background:linear-gradient(135deg,#0b1018,#4d5964 55%,#151719);position:relative}
+.pic:after{content:"";position:absolute;left:16px;right:16px;bottom:21px;height:42px;border-radius:28px 34px 12px 12px;background:linear-gradient(135deg,#050607,#555,#121212)}
+.orange .pic{background:linear-gradient(135deg,#442509,#f2a12a 55%,#1b1108)}
+.cardBody{padding:15px}.card h3{font-size:14px;margin:0 0 9px}.meta{font-size:12px;color:#d4dde7}.price{font-size:18px;font-weight:900;margin-top:9px}
+.work{display:grid;grid-template-columns:330px 1fr 320px;gap:24px;align-items:stretch}
+.steps{display:grid;gap:22px}.step{display:grid;grid-template-columns:42px 1fr;gap:14px}.num{color:var(--gold);border:1px solid var(--gold);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:12px}
+.step b{display:block;margin-bottom:5px}.step span{color:var(--muted);font-size:13px;line-height:1.5}
+.formBox,.sideBox,.whyCard{background:rgba(7,26,45,.8);border:1px solid var(--line);border-radius:8px;padding:28px}
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{font-size:13px}input,textarea{width:100%;margin-top:7px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:4px;color:#fff;padding:14px}textarea{grid-column:1/-1;min-height:70px}
+.check{margin:18px 0;color:var(--muted);font-size:13px}.submit{float:right;border:0;background:linear-gradient(135deg,var(--gold2),var(--gold));padding:15px 30px;border-radius:5px;font-weight:900;color:#07182b}
+.sidePic{height:160px;background:linear-gradient(135deg,#25160b,#b07a2c,#111);border-radius:6px;margin-bottom:20px}.sideBox h3{font-family:Georgia,serif;color:var(--gold);text-transform:uppercase}.sideBox li{margin:12px 0}
+.why{display:grid;grid-template-columns:300px repeat(4,1fr);gap:18px}.whyIntro p{color:var(--muted);line-height:1.55}.whyCard{text-align:center}.whyIcon{font-size:54px;color:var(--gold);margin-bottom:18px}.whyCard h3{font-family:Georgia,serif;text-transform:uppercase}
+.footer{border-top:1px solid var(--line);background:rgba(2,10,18,.9)}.footIn{max-width:1440px;margin:auto;padding:38px 34px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:30px}.footIn h4{color:var(--gold);text-transform:uppercase}.footIn p,.footIn a{color:#c7d1dc;line-height:1.7;font-size:14px}.copy{border-top:1px solid rgba(217,164,65,.25);padding:17px 34px;text-align:center;color:#aeb8c4;font-size:12px}
+@media(max-width:1100px){.catalog{grid-template-columns:repeat(3,1fr)}.features{grid-template-columns:repeat(3,1fr)}.work,.why{grid-template-columns:1fr}.contacts{display:none}}
+@media(max-width:700px){.logo img{max-width:72vw}.menu{gap:15px;overflow:auto}.heroIn{grid-template-columns:1fr;padding:40px 22px}h1{font-size:40px}.carHero{display:none}.catalog{grid-template-columns:1fr}.features{grid-template-columns:1fr}.formGrid{grid-template-columns:1fr}.footIn{grid-template-columns:1fr}.top,.navIn,.section{padding-left:22px;padding-right:22px}}
+</style>
 </head>
 <body>
-
-<header class="header" aria-label="Главная навигация">
+<header class="header">
   <div class="top">
-    <a class="logo" href="#">
-      <img src="luxes-logo.png" alt="LUXES EXECUTIVE" loading="lazy" width="160" height="60">
-      <div class="brand" aria-label="Бренд">
-        <b>LUXES EXECUTIVE</b>
-        <small>Премиальные автомобили из Европы</small>
-      </div>
-    </a>
-    <div class="contacts" aria-label="Контакты">
-      <span><a href="tel:+420777399799" aria-label="Телефон">+420 777 399 799</a></span>
-      <span><a href="mailto:executive@luxes.cz" aria-label="Электронная почта">executive@luxes.cz</a></span>
-      <span><a class="whatsapp smallWa" href="https://wa.me/420777399799" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WhatsApp</a></span>
+    <a class="logo" href="#"><img src="assets/logo.svg" alt="LUXES EXECUTIVE"></a>
+    <div class="contacts">
+      <span><b class="ico">☏</b> +420 777 399 799</span><span><b class="ico">✉</b> executive@luxes.cz</span>
+      <span class="ico">◉</span><span class="ico">✈</span><span class="ico">in</span><a class="wa" href="https://wa.me/420777399799">WhatsApp</a>
     </div>
   </div>
-  <div class="nav" aria-label="Навигация по разделам">
-    <div class="menu">
-      <a href="#catalog">Каталог</a>
-      <a href="#how">Как работает</a>
-      <a href="#contact">Контакт</a>
-    </div>
-    <div class="lang" id="google_translate_element" aria-label="Перевод страницы"></div>
-  </div>
+  <div class="nav"><div class="navIn"><nav class="menu">
+    <a href="#">Главная</a><a href="#catalog">Каталог авто</a><a href="#work">Как мы работаем</a><a href="#services">Услуги</a><a href="#about">О компании</a><a href="#contacts">Контакты</a>
+  </nav><div class="lang">RU⌄</div></div></div>
 </header>
+<main>
+<section class="hero"><div class="heroIn"><div>
+  <h1>Премиальные <span class="gold">автомобили<br>из Европы</span></h1>
+  <p class="lead">Подбор и поставка премиальных автомобилей для частных клиентов, дилеров и международных партнёров.</p>
+  <div class="btns"><a class="btn goldBtn" href="#catalog">Смотреть каталог</a><a class="btn out" href="#request">Запросить предложение</a></div>
+</div><div class="carHero"><i class="wheel w1"></i><i class="wheel w2"></i></div></div></section>
 
-<section class="hero" aria-label="Главная страница">
-  <div class="heroText">
-    <h1>Премиальные автомобили <span>из Европы</span></h1>
-    <p class="lead">Подбор и поставка премиальных автомобилей для частных клиентов, дилеров и международных партнёров.</p>
-    <div class="buttons">
-      <a class="btn" href="#catalog" aria-label="Перейти в каталог" style="background:var(--blue);color:#fff">Смотреть каталог</a>
-      <a class="btn btnDark" href="#contact" aria-label="Запросить предложение" style="background:#fff;border:2px solid var(--blue);color:var(--blue)">Запросить предложение</a>
-    </div>
-  </div>
+<section class="features">
+  <div class="feature"><div class="icon">⚙</div><div><b>Проверенные автомобили</b><span>Только юридически чистые автомобили</span></div></div>
+  <div class="feature"><div class="icon">◎</div><div><b>Подбор по всей Европе</b><span>Доступ к лучшим предложениям</span></div></div>
+  <div class="feature"><div class="icon">▤</div><div><b>Экспортные документы</b><span>Полный пакет документов</span></div></div>
+  <div class="feature"><div class="icon">▱</div><div><b>Доставка «под ключ»</b><span>Берём логистику на себя</span></div></div>
+  <div class="feature"><div class="icon">✺</div><div><b>Премиум и коллекционный сегмент</b><span>Эксклюзивные автомобили</span></div></div>
+  <div class="feature"><div class="icon">☏</div><div><b>Личный менеджер</b><span>Поддержка на всех этапах сделки</span></div></div>
 </section>
 
-<section class="section catalog" id="catalog" aria-labelledby="catalog-title">
-  <div class="over" style="color:var(--blue)">Универсальный каталог</div>
-  <h2 id="catalog-title" style="margin:0 0 8px">Автомобили</h2>
-  <div class="note" role="note">
-    Здесь представлены карточки автомобилей. На мобильных версиях — одна колонка, на планшетах и десктopах — три колонки. Фото можно добавить позже.
-  </div>
+<section class="section" id="catalog"><div class="titleRow"><h2>Каталог автомобилей</h2><a class="all" href="#">Смотреть все</a></div>
+<div class="catalog">
+  <article class="card"><div class="pic"></div><div class="cardBody"><h3>BMW X7 M60i</h3><div class="meta">2024 • 9 800 km</div><div class="price">99 900 €</div></div></article>
+  <article class="card"><div class="pic"></div><div class="cardBody"><h3>Mercedes-Benz S 580 4MATIC</h3><div class="meta">2023 • 15 200 km</div><div class="price">89 900 €</div></div></article>
+  <article class="card"><div class="pic"></div><div class="cardBody"><h3>Porsche Cayenne Turbo GT</h3><div class="meta">2024 • 6 900 km</div><div class="price">169 900 €</div></div></article>
+  <article class="card"><div class="pic"></div><div class="cardBody"><h3>Range Rover Autobiography</h3><div class="meta">2023 • 8 900 km</div><div class="price">124 900 €</div></div></article>
+  <article class="card orange"><div class="pic"></div><div class="cardBody"><h3>Audi RS Q8</h3><div class="meta">2024 • 5 400 km</div><div class="price">139 900 €</div></div></article>
+  <article class="card"><div class="pic"></div><div class="cardBody"><h3>Bentley Bentayga EWB</h3><div class="meta">2023 • 7 200 km</div><div class="price">219 900 €</div></div></article>
+</div></section>
 
-    <!-- Карточки автомобилей -->
-  <div class="cards" aria-label="Каталог автомобилей в карточках">
-    <!-- Карточка 1 -->
-    <article class="card" aria-label="Lexus GX 460, 2016 год, 203000 км">
-      <div class="card-media" aria-label="Изображение Lexus GX 460">
-        Lexus GX 460
-        <span class="tag" aria-label="Двигатель">V8 Executive LPG</span>
-      </div>
-      <div class="card-body">
-        <h3 class="car-title">Lexus GX 460</h3>
-        <div class="car-sub">Год: 2016 • Пробег: 203 000 км • Цвет: Чёрный металлик</div>
-        <div class="grid-meta" aria-label="Цена и статус">
-          <span class="price">34 900 €</span>
-          <span class="status" style="margin-left:8px;">В наличии</span>
-        </div>
-      </div>
-      <div class="card-actions" aria-label="Действия по автомобилю">
-        <a class="btnCompact" href="#contact" aria-label="Запросить Lexus GX 460">Запросить</a>
-        <a class="btnOutline" href="#catalog" aria-label="Подробнее Lexus GX 460">Подробнее</a>
-      </div>
-    </article>
-
-    <!-- Карточка 2 -->
-    <article class="card" aria-label="BMW 750i, 2018 год, 40 000 км">
-      <div class="card-media" aria-label="Изображение BMW 750i" style="background: linear-gradient(135deg,#1c3a86 0%,#1f4e79 60%,#0e1b2a 100%);">
-        BMW 750i
-        <span class="tag" aria-label="Двигатель">V8</span>
-      </div>
-      <div class="card-body">
-        <h3 class="car-title">BMW 750i</h3>
-        <div class="car-sub">Год: 2018 • Пробег: 40 000 км • Цвет: Серебристый</div>
-        <div class="grid-meta" aria-label="Цена и статус">
-          <span class="price">67 500 €</span>
-          <span class="status" style="margin-left:8px;">В заказе</span>
-        </div>
-      </div>
-      <div class="card-actions" aria-label="Действия по автомобилю">
-        <a class="btnCompact" href="#contact" aria-label="Запросить BMW 750i">Запросить</a>
-        <a class="btnOutline" href="#catalog" aria-label="Подробнее BMW 750i">Подробнее</a>
-      </div>
-    </article>
-
-    <!-- Карточка 3 -->
-    <article class="card" aria-label="Mercedes-Benz S-Class, 2020 год, 15 000 км">
-      <div class="card-media" aria-label="ИзображениеMercedes-Benz S-Class" style="background: linear-gradient(135deg,#0b1f3b 0%,#1b3a7a 60%,#1F4E79 100%);">
-        Mercedes-Benz S-Class
-        <span class="tag" aria-label="Двигатель AMG">AMG</span>
-      </div>
-      <div class="card-body">
-        <h3 class="car-title">Mercedes-Benz S-Class</h3>
-        <div class="car-sub">Год: 2020 • Пробег: 15 000 км • Цвет: Белый жемчуг</div>
-        <div class="grid-meta" aria-label="Цена и статус">
-          <span class="price">92 000 €</span>
-          <span class="status" style="margin-left:8px;">Под заказ</span>
-        </div>
-      </div>
-      <div class="card-actions" aria-label="Действия по автомобилю">
-        <a class="btnCompact" href="#contact" aria-label="Запросить Mercedes-Benz S-Class">Запросить</a>
-        <a class="btnOutline" href="#catalog" aria-label="Подробнее Mercedes-Benz S-Class">Подробнее</a>
-      </div>
-    </article>
-  </div>
+<section class="section work" id="work">
+  <div><h2>Как мы работаем</h2><div class="steps">
+    <div class="step"><div class="num">01</div><div><b>Заявка</b><span>Вы оставляете заявку или описываете желаемый автомобиль.</span></div></div>
+    <div class="step"><div class="num">02</div><div><b>Подбор</b><span>Мы подбираем лучшие варианты по всей Европе и согласовываем с вами.</span></div></div>
+    <div class="step"><div class="num">03</div><div><b>Проверка</b><span>Проводим проверку, предоставляем отчёты и все детали.</span></div></div>
+    <div class="step"><div class="num">04</div><div><b>Доставка</b><span>Оформляем документы и доставляем автомобиль «под ключ».</span></div></div>
+  </div></div>
+  <form class="formBox" id="request"><h2>Запросить предложение</h2><p>Оставьте заявку и мы подберём лучший автомобиль для вас.</p>
+    <div class="formGrid"><label>Имя*<input placeholder="Ваше имя"></label><label>Email*<input placeholder="Ваш e-mail"></label><label>Телефон / WhatsApp*<input placeholder="+420 ___ ___ ___"></label><label>Желаемый автомобиль<input placeholder="Марка, модель, год, бюджет"></label><textarea placeholder="Комментарий"></textarea></div>
+    <div class="check"><input type="checkbox"> Я согласен с обработкой персональных данных</div><button class="submit" type="button">Отправить заявку</button>
+  </form>
+  <aside class="sideBox"><div class="sidePic"></div><h3>Индивидуальный подход к каждому клиенту</h3><ul><li>Честные условия</li><li>Прозрачные сделки</li><li>Конфиденциальность</li><li>Поддержка 24/7</li></ul></aside>
 </section>
 
-<section class="section" id="how" aria-labelledby="how-title">
-  <div class="over">Процесс</div>
-  <h2 id="how-title" style="margin:0 0 0">Как это работает</h2>
-  <div class="grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
-    <div class="box" aria-label="Этап 1: Запрос"><h3>1. Запрос</h3><p>Клиент сообщает, какой автомобиль нужен.</p></div>
-    <div class="box" aria-label="Этап 2: Подбор"><h3>2. Подбор</h3><p>Мы подбираем и проверяем доступные варианты.</p></div>
-    <div class="box" aria-label="Этап 3: Поставка"><h3>3. Поставка</h3><p>Условия цены и доставки согласовываются индивидуально.</p></div>
-  </div>
+<section class="section why" id="services">
+  <div class="whyIntro"><h2>Почему<br>LUXES EXECUTIVE?</h2><p>Мы специализируемся на премиальном сегменте и предлагаем клиентам надёжные решения, проверенный опыт и репутацию.</p><a class="btn goldBtn" href="#about">Узнать больше о нас</a></div>
+  <div class="whyCard"><div class="whyIcon">♙</div><h3>Частные клиенты</h3><p>Подбор эксклюзивных автомобилей под ваши пожелания.</p></div>
+  <div class="whyCard"><div class="whyIcon">🤝</div><h3>Дилеры</h3><p>Партнёрские условия и оптовые предложения для автодилеров.</p></div>
+  <div class="whyCard"><div class="whyIcon">↗</div><h3>Инвесторы</h3><p>Инвестиции в премиальные и коллекционные автомобили.</p></div>
+  <div class="whyCard"><div class="whyIcon">◎</div><h3>Международные партнёры</h3><p>Надёжное сотрудничество и экспорт по всему миру.</p></div>
 </section>
-
-<section class="section contact" id="contact" aria-labelledby="contact-title">
-  <div class="box" aria-label="Контактная информация">
-    <h3>LUXES EXECUTIVE s.r.o.</h3>
-    <p><b>Телефон:</b><br>+420 777 399 799</p>
-    <p><b>E-mail:</b><br>executive@luxes.cz</p>
-  </div>
-
-  <div class="box form" aria-label="Форма запроса предложения">
-    <h3 id="contact-title" style="margin:0 0 12px">Запросить предложение</h3>
-    <form onsubmit="return false;">
-      <label for="name" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Имя / фирма</label>
-      <input id="name" name="name" placeholder="Имя / фирма" aria-label="Имя или фирма">
-
-      <label for="phone" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Телефон / WhatsApp</label>
-      <input id="phone" name="phone" placeholder="Телефон / WhatsApp" aria-label="Телефон или WhatsApp">
-
-      <label for="email" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">E-mail</label>
-      <input id="email" name="email" placeholder="E-mail" aria-label="E-mail">
-
-      <label for="vehicle" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Марка / модель / VIN</label>
-      <input id="vehicle" name="vehicle" placeholder="Марка / модель / VIN" aria-label="Марка, модель, VIN">
-
-      <label for="message" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Сообщение</label>
-      <textarea id="message" name="message" placeholder="Сообщение" aria-label="Сообщение"></textarea>
-
-      <button class="btnGold" type="button" onclick="location.href='https://wa.me/420777399799'">Отправить через WhatsApp</button>
-    </form>
-  </div>
-</section>
-
-<a class="float" href="https://wa.me/420777399799" target="_blank" rel="noopener noreferrer" aria-label="Открыть WhatsApp">WhatsApp</a>
-<footer>© LUXES EXECUTIVE</footer>
-
-<!-- Google Translate -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'ru',
-    includedLanguages: 'ru,cs,en,de',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
-</html>
-```
-
----
-
-### Что можно дополнительно сделать
-- Добавить реальные фото для карточек и настроить конкретные VIN, года, пробеги и цены.
-- Внедрить интерактивный фильтр по параметрам каталога (год, пробег, цвет, цена).
-- Интеграцию формы запроса с вашим CRM или почтовой пересылкой.
-- Правильную hreflang-структуру для мультиязычности, если планируете отдельные языковые версии.
-
-Если хотите, могу адаптировать макет под ваши конкретные изображения и данные (прикрепить реальные фото, VIN, года, цены). Сообщите, какие автомобили добавить в каталог и какие стилистические акценты важнее: больше золота, минимализм, анимации и т. п. 🔎💫
+</main>
+<footer class="footer" id="contacts"><div class="footIn">
+  <div><img src="assets/logo.svg" style="width:260px" alt=""><p>European Luxury Vehicle Brokerage & Executive Mobility Solutions</p><p>◉ &nbsp; ✈ &nbsp; in</p></div>
+  <div><h4>Навигация</h4><p>Главная<br>Каталог авто<br>Как мы работаем<br>Услуги<br>О компании<br>Контакты</p></div>
+  <div><h4>Услуги</h4><p>Подбор автомобиля<br>Проверка и диагностика<br>Экспорт и документы<br>Доставка «под ключ»<br>Страхование<br>Консультации</p></div>
+  <div><h4>Контакты</h4><p>+420 777 399 799<br>executive@luxes.cz<br>Vinohradská 1511/230,<br>130 00 Praha 3, Česká republika</p></div>
+  <div><h4>Компания</h4><p>LUXES EXECUTIVE s.r.o.<br>IČO: 196 99 301<br>DIČ: CZ19699301<br>VAT: CZ19699301<br>Soud: Městský soud v Praze</p></div>
+</div><div class="copy">© 2025 LUXES EXECUTIVE s.r.o. Все права защищены. &nbsp; Условия и положения &nbsp; Политика конфиденциальности (GDPR) &nbsp; Cookies</div></footer>
+</body></html>
