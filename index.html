@@ -9,51 +9,51 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:#f6f2ea;color:#181818;font-family:Arial,Helvetica,sans-serif}
 a{text-decoration:none;color:inherit}
-:root{--gold:#b8872c;--dark:#101010;--line:#dfd4c2;--muted:#6f6a61}
+:root{--gold:#b8872c;--blue:#1F4E79;--dark:#101010;--line:#dfd4c2;--muted:#6f6a61}
 .header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.06);padding:14px 4vw}
 .top{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .logo{display:flex;align-items:center;gap:16px}
 .logo img{height:82px;object-fit:contain}
 .brand b{font-family:Georgia,serif;font-size:34px;letter-spacing:1px;color:#121212}
 .brand small{display:block;color:var(--gold);font-weight:900;letter-spacing:3px;font-size:11px;margin-top:5px}
-.contacts{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end;align-items:center;font-size:14px;color:#2b2b2b}
+.contacts{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end;align-items:center;font-size:14px;color:var(--blue);font-weight:900}
 .contacts b{color:var(--gold)}
-.whatsapp,.btnGold{background:linear-gradient(135deg,#d8b160,#a06a1f);color:#070707;border-radius:8px;padding:14px 22px;font-weight:950}
-.smallWa{padding:10px 16px}
+.whatsapp,.btnGold{background:var(--blue);color:#fff;border-radius:8px;padding:14px 22px;font-weight:950}
+.smallWa{padding:10px 16px;color:#fff!important}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid #eee3d3}
-.menu{display:flex;gap:28px;text-transform:uppercase;font-weight:900;font-size:13px}
-.lang{min-width:150px}
+.menu{display:flex;gap:28px;text-transform:uppercase;font-weight:900;font-size:13px;color:var(--blue)}
+.lang{min-width:150px;color:var(--blue)}
 .hero{min-height:520px;background:linear-gradient(135deg,#fff 0%,#f3eadb 55%,#dfd0b9 100%);display:flex;align-items:center;padding:64px 4vw;border-bottom:1px solid var(--line)}
 .heroText{max-width:840px}
 .kicker{color:var(--gold);font-weight:950;text-transform:uppercase;letter-spacing:4px;margin-bottom:20px}
-h1{font-family:Georgia,serif;font-size:58px;line-height:1.05;text-transform:uppercase;font-weight:500;margin:0 0 22px;color:#141414}
+h1{font-family:Georgia,serif;font-size:38px;line-height:1.1;text-transform:uppercase;font-weight:500;margin:0 0 22px;color:var(--gold);white-space:nowrap}
 h1 span{color:var(--gold)}
-.lead{font-size:21px;line-height:1.55;color:#34302a;max-width:760px;font-weight:700}
+.lead{font-size:21px;line-height:1.55;color:var(--blue);max-width:900px;font-weight:700}
 .buttons{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px}
 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:8px;padding:16px 28px;text-transform:uppercase;font-weight:950}
-.btnDark{border:1px solid var(--gold);color:var(--gold);background:#fff}
+.btnDark{border:1px solid var(--blue);color:var(--blue);background:#fff}
 .section{padding:58px 4vw 0}
-.over{color:var(--gold);font-weight:950;text-transform:uppercase;letter-spacing:2px;font-size:13px}
+.over{color:var(--blue);font-weight:950;text-transform:uppercase;letter-spacing:2px;font-size:13px}
 .section h2{font-family:Georgia,serif;font-size:38px;text-transform:uppercase;font-weight:500;margin:10px 0 22px}
 .note{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:22px;color:#514a40;box-shadow:0 12px 35px rgba(0,0,0,.04)}
 .tableWrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 45px rgba(0,0,0,.06)}
 table{width:100%;border-collapse:collapse;min-width:980px}
-th{background:#151515;color:#f1d18a;text-align:left;text-transform:uppercase;font-size:12px;letter-spacing:.6px;padding:16px}
+th{background:var(--blue);color:#fff;text-align:left;text-transform:uppercase;font-size:12px;letter-spacing:.6px;padding:16px}
 td{padding:17px 16px;border-top:1px solid #eee3d3;color:#272727}
 tr:hover td{background:#faf6ef}
-.status{display:inline-block;border:1px solid var(--gold);border-radius:999px;padding:7px 12px;color:var(--gold);font-weight:900;font-size:12px;text-transform:uppercase}
-.request{display:inline-block;background:#151515;color:#f1d18a;border-radius:7px;padding:10px 14px;font-weight:900;text-transform:uppercase;font-size:12px}
+.status{display:inline-block;border:1px solid var(--blue);border-radius:999px;padding:7px 12px;color:var(--blue);font-weight:900;font-size:12px;text-transform:uppercase}
+.request{display:inline-block;background:var(--blue);color:#fff;border-radius:7px;padding:10px 14px;font-weight:900;text-transform:uppercase;font-size:12px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:0 12px 35px rgba(0,0,0,.04)}
-.box h3{font-family:Georgia,serif;color:var(--gold);font-size:27px;margin:0 0 14px}
-.box p{line-height:1.6;color:var(--muted)}
+.box h3{font-family:Georgia,serif;color:var(--blue);font-size:27px;margin:0 0 14px}
+.box p{line-height:1.6;color:var(--blue)}
 .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;padding-bottom:80px}
 .form input,.form textarea{width:100%;padding:15px;margin:8px 0;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff}
 .form textarea{min-height:120px}
 .form button{border:0;width:100%;margin-top:12px;cursor:pointer}
 .float{position:fixed;right:22px;bottom:22px;background:#17a65a;color:white;border-radius:999px;padding:16px 23px;font-weight:950;z-index:99}
-footer{padding:30px 4vw;text-align:center;color:var(--gold);letter-spacing:4px;text-transform:uppercase;border-top:1px solid var(--line)}
-@media(max-width:900px){.top{align-items:flex-start;flex-direction:column}.contacts{justify-content:flex-start}.nav{align-items:flex-start;flex-direction:column}.logo img{height:66px}.brand b{font-size:28px}.hero{min-height:auto;padding:48px 22px}h1{font-size:38px}.lead{font-size:17px}.buttons{display:grid}.btn{width:100%}.section{padding:46px 22px 0}.grid,.contact{grid-template-columns:1fr}.float{left:18px;right:18px;text-align:center}}
+footer{padding:30px 4vw;text-align:center;color:var(--blue);letter-spacing:4px;text-transform:uppercase;border-top:1px solid var(--line)}
+@media(max-width:900px){.top{align-items:flex-start;flex-direction:column}.contacts{justify-content:flex-start}.nav{align-items:flex-start;flex-direction:column}.logo img{height:66px}.brand b{font-size:28px}.hero{min-height:auto;padding:48px 22px}h1{font-size:30px;white-space:normal}.lead{font-size:17px}.buttons{display:grid}.btn{width:100%}.section{padding:46px 22px 0}.grid,.contact{grid-template-columns:1fr}.float{left:18px;right:18px;text-align:center}}
 </style>
 </head>
 <body>
@@ -64,7 +64,7 @@ footer{padding:30px 4vw;text-align:center;color:var(--gold);letter-spacing:4px;t
       <img src="luxes-logo.png" alt="LUXES EXECUTIVE">
       <div class="brand">
         <b>LUXES EXECUTIVE</b>
-        <small>PREMIUM VEHICLES FROM EUROPE</small>
+        <small>Премиальные автомобили из Европы</small>
       </div>
     </a>
     <div class="contacts">
@@ -86,8 +86,7 @@ footer{padding:30px 4vw;text-align:center;color:var(--gold);letter-spacing:4px;t
 
 <section class="hero">
   <div class="heroText">
-    <div class="kicker">LUXES EXECUTIVE</div>
-    <h1>Премиальные автомобили <span>из Европы</span></h1>
+    <h1>Премиальные автомобили из Европы</h1>
     <p class="lead">Подбор и поставка премиальных автомобилей для частных клиентов, дилеров и международных партнёров.</p>
     <div class="buttons">
       <a class="btn btnGold" href="#catalog">Смотреть каталог</a>
@@ -133,6 +132,16 @@ footer{padding:30px 4vw;text-align:center;color:var(--gold);letter-spacing:4px;t
           <td>Black / Beige</td>
           <td>По запросу</td>
           <td><span class="status">Под заказ</span></td>
+          <td><a class="request" href="#contact">Запросить</a></td>
+        </tr>
+        <tr>
+          <td><b>Lexus GX 460</b><br>V8 Executive LPG</td>
+          <td>01/2016</td>
+          <td>203 000 км</td>
+          <td></td>
+          <td>Чёрный металлик</td>
+          <td>34 900 €</td>
+          <td><span class="status">В наличии</span></td>
           <td><a class="request" href="#contact">Запросить</a></td>
         </tr>
       </tbody>
