@@ -15,7 +15,7 @@
       position:fixed;
       top:0;left:0;right:0;
       min-height:78px;
-      background:rgba(8,8,8,.92);
+      background:rgba(8,8,8,.95);
       backdrop-filter:blur(12px);
       z-index:10;
       display:flex;
@@ -61,30 +61,30 @@
     }
     .wa:hover, .btn-gold:hover{filter:brightness(1.08)}
     
-    /* Главный баннер - ИСПРАВЛЕНО ДЛЯ ЧИСТОГО ФОНА */
+    /* Главный баннер - ТЕМНЫЙ ФОН И СДВИГ */
     .hero{
       min-height:100vh;
-      background: linear-gradient(180deg, rgba(7,7,7,0.4) 0%, rgba(7,7,7,0.85) 60%, rgba(7,7,7,1) 100%), url('hero-g63-prague.jpg') center top no-repeat;
+      /* Затемняем картинку очень сильно, чтобы не было видно вшитого логотипа по центру */
+      background: linear-gradient(180deg, rgba(7,7,7,0.85) 0%, rgba(7,7,7,0.92) 50%, rgba(7,7,7,1) 100%), url('hero-g63-prague.jpg') center top no-repeat;
       background-size: cover;
       display:flex;
-      align-items: flex-end;
-      padding: 180px 46px 60px;
+      align-items: center;
+      padding: 120px 46px 60px;
       position:relative;
     }
     
-    /* Сдвигаем контент ниже, чтобы не перекрывать вшитый в картинку логотип */
     .hero-content{
       max-width:750px;
       width:100%;
       z-index:2;
       position:relative;
-      margin-top: 35vh; /* Опускает текст вниз под логотип */
+      margin-top: 40px;
     }
     
     .eyebrow{color:#c9a15d;letter-spacing:5px;font-size:13px;font-weight:800;text-transform:uppercase;margin-bottom:20px}
     .hero h1{font-family:Georgia,serif;font-size:48px;line-height:1.1;font-weight:900;text-transform:uppercase;margin-bottom:24px;text-shadow:0 4px 20px rgba(0,0,0,1)}
     .gold{color:#e0b465}
-    .hero p{font-size:18px;line-height:1.6;max-width:600px;color:#f4f4f4;margin-bottom:35px;text-shadow:0 2px 10px rgba(0,0,0,1)}
+    .hero p{font-size:18px;line-height:1.6;max-width:600px;color:#f4f4f4;margin-bottom:35px}
     
     .actions{display:flex;gap:18px;flex-wrap:wrap}
     .btn-dark{border:1px solid rgba(201,161,93,.75);padding:12px 26px;border-radius:7px;font-weight:900;background:rgba(0,0,0,.5);text-transform: uppercase;letter-spacing: 0.5px}
@@ -126,7 +126,6 @@
       .hero h1{font-size:38px}
       .header{padding:15px 22px}
       .hero, .section{padding-left:22px;padding-right:22px}
-      .hero-content{margin-top: 25vh;}
     }
     @media(max-width:650px){
       .grid{grid-template-columns:1fr}
@@ -135,7 +134,6 @@
       .brand-sub{font-size:8px;letter-spacing:1px}
       .right{width:100%;justify-content:space-between;border-top:1px solid rgba(211,211,211,0.1);padding-top:10px}
       .hero{padding-top:140px; padding-bottom: 40px;}
-      .hero-content{margin-top: 15vh;}
     }
   </style>
 </head>
@@ -166,7 +164,7 @@
       <div class="hero-content">
         <div class="eyebrow lang-txt" 
              data-cs="Prémiová vozidla z celé Evropy" 
-             data-ru="Премиальные автомобили со всей Европы" 
+             data-ru="Премиальные autographs со всей Европы" 
              data-de="Premium-Fahrzeuge aus ganz Europa" 
              data-en="Premium vehicles from all over Europe">Prémiová vozidla z celé Evropy</div>
         
@@ -179,8 +177,8 @@
         <p class="lang-txt" 
            data-cs="Zajišťujeme nákup a dovoz prémiových vozidel z Německa, Nizozemska a Turecka pro soukromé klienty, dealery a B2B partnery." 
            data-ru="Подбор и поставка премиальных автомобилей из Германии, Нидерландов и Турции для частных клиентов, дилеров и международных партнеров." 
-           data-de="Beschaffung und Import von Premium-Fahrzeugen aus Deutschland, den Ländern und der Türkei für Privatkunden, Händler und B2B-Partner." 
-           data-en="Premium vehicles sourced from Germany, the Netherlands and Turkey for private clients, dealers and B2B partners.">Zajišťujeme nákup a dovoz prémiových vozidel z Německa, Nizozemska a Turecka pro soukromé klienty, dealery a B2B partnery.</p>
+           data-de="Beschaffung und Import von Premium-Fahrzeugen aus Deutschland, den Niederlanden und der Türkei für Privatkunden, Händler und B2B-Partner." 
+           data-en="Premium vehicles sourced from Germany, the Netherlands and Turkey for private clients, dealers and B2B partners.">Zajišťujeme nákup a dovoz préмиových vozidel z Německa, Nizozemska a Turecka pro soukromé klienty, dealery a B2B partnery.</p>
         
         <div class="actions">
           <a class="btn-gold lang-txt" href="#catalog" data-cs="Zobrazit vozidla" data-ru="Смотреть каталог" data-de="Fahrzeuge anzeigen" data-en="View Vehicles">Zobrazit vozidla</a>
@@ -198,7 +196,7 @@
           </div>
           <div class="feature">
             <b class="lang-txt" data-cs="Doručení kamkoliv" data-ru="Доставка куда угодно" data-de="Weltweite Lieferung" data-en="Worldwide delivery">Doručení kamkoliv</b>
-            <span class="lang-txt" data-cs="Bezpečná a spolehlivá doprava až k vám." data-ru="Безопасная и надежная транспортировка до вас." data-de="Sicherer und zuverlässiger Transport zu Ihnen." data-en="Safe & secure shipping.">Bezpečná a spolehlivá doprava až k vám.</span>
+            <span class="lang-txt" data-cs="Bezpečná a spolehlivá doprava až k vás." data-ru="Безопасная и надежная транспортировка до вас." data-de="Sicherer und zuverlässiger Transport zu Ihnen." data-en="Safe & secure shipping.">Bezpečná a spolehlivá doprava až k vám.</span>
           </div>
         </div>
       </div>
