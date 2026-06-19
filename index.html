@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LUXES EXECUTIVE | Luxusní vozidla z Evropy</title>
+  <title>LUXES EXECUTIVE | Premium Vehicles</title>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:Arial,Helvetica,sans-serif;background:#070707;color:#fff}
     a{text-decoration:none;color:inherit}
     
+    /* Шапка сайта */
     .header{
       position:fixed;
       top:0;left:0;right:0;
@@ -35,7 +36,19 @@
     
     .right{display:flex;align-items:center;gap:18px}
     .phone{font-weight:800;font-size:16px}
-    .lang{border:1px solid rgba(201,161,93,.6);padding:10px 14px;border-radius:7px;font-weight:800;font-size:14px}
+    
+    /* Переключатель языков */
+    .lang-switcher{
+      display:flex;
+      gap:8px;
+      border:1px solid rgba(201,161,93,.4);
+      padding:6px 12px;
+      border-radius:7px;
+      font-weight:800;
+      font-size:13px;
+    }
+    .lang-item{color:#888;cursor:pointer;transition:color 0.2s}
+    .lang-item.active, .lang-item:hover{color:#e0b465}
     
     .wa, .btn-gold{
       background:linear-gradient(135deg,#f1c46c,#b78437);
@@ -49,17 +62,19 @@
     }
     .wa:hover, .btn-gold:hover{filter:brightness(1.08)}
     
+    /* Главный баннер */
     .hero{
       min-height:100vh;
-      background:linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.4),rgba(0,0,0,.2)),url('hero-g63-prague.jpg') center/cover no-repeat;
+      background:linear-gradient(180deg,rgba(0,0,0,.3),rgba(0,0,0,.6),rgba(7,7,7,1)),url('hero-g63-prague.jpg') center center no-repeat;
+      background-size: cover;
       display:flex;
-      align-items:center;
-      padding:140px 46px 58px;
+      align-items:flex-end;
+      padding:140px 46px 60px;
       position:relative;
     }
-    .hero-content{max-width:680px}
+    .hero-content{max-width:750px;width:100%;z-index:2;position:relative;margin-bottom:20px}
     .eyebrow{color:#c9a15d;letter-spacing:5px;font-size:13px;font-weight:800;text-transform:uppercase;margin-bottom:20px}
-    .hero h1{font-family:Georgia,serif;font-size:64px;line-height:1.05;font-weight:900;text-transform:uppercase;margin-bottom:24px;text-shadow:0 4px 24px rgba(0,0,0,.75)}
+    .hero h1{font-family:Georgia,serif;font-size:56px;line-height:1.1;font-weight:900;text-transform:uppercase;margin-bottom:24px;text-shadow:0 4px 24px rgba(0,0,0,.85)}
     .gold{color:#e0b465}
     .hero p{font-size:18px;line-height:1.6;max-width:600px;color:#f4f4f4;margin-bottom:35px}
     
@@ -67,10 +82,11 @@
     .btn-dark{border:1px solid rgba(201,161,93,.75);padding:12px 26px;border-radius:7px;font-weight:900;background:rgba(0,0,0,.5);text-transform: uppercase;letter-spacing: 0.5px}
     
     .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px;max-width:840px}
-    .feature{background:rgba(0,0,0,.65);backdrop-filter:blur(5px);border:1px solid rgba(201,161,93,.3);border-radius:10px;padding:20px}
+    .feature{background:rgba(0,0,0,.75);backdrop-filter:blur(5px);border:1px solid rgba(201,161,93,.25);border-radius:10px;padding:20px}
     .feature b{color:#e0b465;font-size:13px;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:5px}
     .feature span{display:block;color:#d6d6d6;font-size:14px}
     
+    /* Секции */
     .section{padding:80px 46px}
     .section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}
     .section h2{font-family:Georgia,serif;font-size:36px;text-transform:uppercase;letter-spacing:1px}
@@ -94,22 +110,23 @@
     
     .footer{padding:40px 46px;border-top:1px solid rgba(201,161,93,.18);display:flex;justify-content:space-between;align-items:center;color:#888;background:#050505;font-size:14px}
     
+    /* Адаптивность */
     @media(max-width:1100px){
       .grid{grid-template-columns:repeat(2,1fr)}
       .features{grid-template-columns:1fr;gap:12px}
       .nav{display:none}
-      .hero h1{font-size:48px}
+      .hero h1{font-size:44px}
       .header{padding:15px 22px}
       .hero, .section{padding-left:22px;padding-right:22px}
     }
     @media(max-width:650px){
       .grid{grid-template-columns:1fr}
-      .hero h1{font-size:36px}
+      .hero h1{font-size:32px}
       .brand-title{font-size:18px}
       .brand-sub{font-size:8px;letter-spacing:2px}
       .right{width:100%;justify-content:space-between;border-top:1px solid rgba(211,211,211,0.1);padding-top:10px}
       .phone{display:none}
-      .hero{padding-top:160px}
+      .hero{padding-top:120px; padding-bottom: 40px;}
     }
   </style>
 </head>
@@ -120,12 +137,17 @@
       <div><div class="brand-title">LUXES EXECUTIVE</div><div class="brand-sub">PRIVATE · EXECUTIVE · WHOLESALE</div></div>
     </a>
     <nav class="nav">
-      <a href="#catalog">Katalog</a>
-      <a href="#about">O nás</a>
-      <a href="#contact">Kontakt</a>
+      <a href="#catalog" class="lang-txt" data-cs="Katalog" data-ru="Каталог" data-de="Katalog" data-en="Catalog">Katalog</a>
+      <a href="#about" class="lang-txt" data-cs="O nás" data-ru="О компании" data-de="Über uns" data-en="About Us">O nás</a>
+      <a href="#contact" class="lang-txt" data-cs="Kontakt" data-ru="Контакты" data-de="Kontakt" data-en="Contact">Kontakt</a>
     </nav>
     <div class="right">
-      <div class="lang">CS</div>
+      <div class="lang-switcher">
+        <span class="lang-item active" onclick="setLang('cs')">CS</span> | 
+        <span class="lang-item" onclick="setLang('ru')">RU</span> | 
+        <span class="lang-item" onclick="setLang('de')">DE</span> | 
+        <span class="lang-item" onclick="setLang('en')">EN</span>
+      </div>
       <a class="wa" href="https://wa.me/420777399799">WhatsApp</a>
     </div>
   </header>
@@ -133,17 +155,42 @@
   <main id="top">
     <section class="hero">
       <div class="hero-content">
-        <div class="eyebrow">Prémiová vozidla z celé Evropy</div>
-        <h1>Luxusní<br><span class="gold">Manažerská</span><br>Vozidla</h1>
-        <p>Zajišťujeme nákup a dovoz prémiových vozidel z Německa, Nizozemska a Turecka pro soukromé klienty, dealery a B2B partnery.</p>
+        <div class="eyebrow lang-txt" 
+             data-cs="Prémiová vozidla z celé Evropy" 
+             data-ru="Премиальные автомобили со всей Европы" 
+             data-de="Premium-Fahrzeuge aus ganz Europa" 
+             data-en="Premium vehicles from all over Europe">Prémiová vozidla z celé Evropy</div>
+        
+        <h1 class="lang-txt" 
+            data-cs="Luxusní<br><span class='gold'>Manažerská</span><br>Vozidla" 
+            data-ru="Люксовые<br><span class='gold'>Представительские</span><br>Автомобили" 
+            data-de="Luxus- und<br><span class='gold'>Executive</span><br>Fahrzeuge" 
+            data-en="Luxury<br><span class='gold'>Executive</span><br>Vehicles">Luxusní<br><span class="gold">Manažerská</span><br>Vozidla</h1>
+        
+        <p class="lang-txt" 
+           data-cs="Zajišťujeme nákup a dovoz prémiových vozidel z Německa, Nizozemska a Turecka pro soukromé klienty, dealery a B2B partnery." 
+           data-ru="Подбор и поставка премиальных автомобилей из Германии, Нидерландов и Турции для частных клиентов, дилеров и международных партнеров." 
+           data-de="Beschaffung und Import von Premium-Fahrzeugen aus Deutschland, den Niederlanden und der Türkei für Privatkunden, Händler und B2B-Partner." 
+           data-en="Premium vehicles sourced from Germany, the Netherlands and Turkey for private clients, dealers and B2B partners.">Zajišťujeme nákup a dovoz prémiových vozidel z Německa, Nizozemska a Turecka pro soukromé klienty, dealery a B2B partnery.</p>
+        
         <div class="actions">
-          <a class="btn-gold" href="#catalog">Zobrazit vozidla</a>
+          <a class="btn-gold lang-txt" href="#catalog" data-cs="Zobrazit vozidla" data-ru="Смотреть каталог" data-de="Fahrzeuge anzeigen" data-en="View Vehicles">Zobrazit vozidla</a>
           <a class="btn-dark" href="https://wa.me/420777399799">WhatsApp</a>
         </div>
+        
         <div class="features">
-          <div class="feature"><b>Ověření dodavatelé</b><span>Spolupracujeme pouze s prověřenými partnery.</span></div>
-          <div class="feature"><b>Prémiová kvalita</b><span>Garantujeme špičkový stav a původ vozidel.</span></div>
-          <div class="feature"><b>Doručení kamkoliv</b><span>Bezpečná a spolehlivá doprava až k vám.</span></div>
+          <div class="feature">
+            <b class="lang-txt" data-cs="Ověření dodavatelé" data-ru="Проверенные поставщики" data-de="Geprüfte Lieferanten" data-en="Verified suppliers">Ověření dodavatelé</b>
+            <span class="lang-txt" data-cs="Spolupracujeme pouze s prověřenými partnery." data-ru="Работаем исключительно с надежными партнерами." data-de="Wir arbeiten nur mit vertrauenswürdigen Partnern." data-en="Trusted partners only.">Spolupracujeme pouze s prověřenými partnery.</span>
+          </div>
+          <div class="feature">
+            <b class="lang-txt" data-cs="Prémiová kvalita" data-ru="Премиум качество" data-de="Premium-Qualität" data-en="Premium vehicles">Prémiová kvalita</b>
+            <span class="lang-txt" data-cs="Garantujeme špičkový stav a původ vozidel." data-ru="Гарантируем идеальное состояние и происхождение авто." data-de="Wir garantieren erstklassigen Zustand und Herkunft." data-en="Quality & performance guaranteed.">Garantujeme špičkový stav a původ vozidel.</span>
+          </div>
+          <div class="feature">
+            <b class="lang-txt" data-cs="Doručení kamkoliv" data-ru="Доставка куда угодно" data-de="Weltweite Lieferung" data-en="Worldwide delivery">Doručení kamkoliv</b>
+            <span class="lang-txt" data-cs="Bezpečná a spolehlivá doprava až k vám." data-ru="Безопасная и надежная транспортировка до вас." data-de="Sicherer und zuverlässiger Transport zu Ihnen." data-en="Safe & secure shipping.">Bezpečná a spolehlivá doprava až k vám.</span>
+          </div>
         </div>
       </div>
     </section>
@@ -151,27 +198,74 @@
     <section class="section" id="catalog">
       <div class="section-head">
         <div>
-          <h2>Naše Nabídka</h2>
-          <p>Pečlivě vybraná prémiová vozidla ihned k odběru nebo na individuální objednávku.</p>
+          <h2 class="lang-txt" data-cs="Naše Nabídka" data-ru="Наша Наглядная База" data-de="Unser Angebot" data-en="Our Fleet">Naše Nabídka</h2>
+          <p class="lang-txt" data-cs="Pečlivě vybraná prémiová vozidla ihned k odběru nebo na individuální objednávku." data-ru="Тщательно отобранные автомобили в наличии или под индивидуальный заказ." data-de="Sorgfältig ausgewählte Premium-Fahrzeuge sofort verfügbar oder auf Bestellung." data-en="Carefully selected premium vehicles available for immediate delivery or individual order.">Pečlivě vybraná prémiová vozidla ihned k odběru nebo na individuální objednávku.</p>
         </div>
       </div>
+      
       <div class="grid">
-        <article class="card"><img src="car-1.jpg" alt="Mercedes G63 AMG"><div class="card-body"><h3>Mercedes G63 AMG</h3><ul class="specs"><li>Rok: 2023</li><li>Najeto: 22 000 km</li><li>AMG Performance Package</li><li>EU Specifikace</li></ul><div class="price">CENA NA VYŽÁDÁNÍ</div><a class="small-btn" href="https://wa.me/420777399799">Poptat detaily</a></div></article>
-        <article class="card"><img src="car-2.jpg" alt="Mercedes S580"><div class="card-body"><h3>Mercedes S580</h3><ul class="specs"><li>Rok: 2023</li><li>Najeto: 18 500 km</li><li>4MATIC</li><li>Premium Package</li></ul><div class="price">CENA NA VYŽÁDÁNÍ</div><a class="small-btn" href="https://wa.me/420777399799">Poptat detaily</a></div></article>
-        <article class="card"><img src="car-3.jpg" alt="BMW X7"><div class="card-body"><h3>BMW X7 xDrive40i</h3><ul class="specs"><li>Rok: 2023</li><li>Najeto: 24 000 km</li><li>M Sport Package</li><li>7 Míst k sezení</li></ul><div class="price">CENA NA VYŽÁDÁNÍ</div><a class="small-btn" href="https://wa.me/420777399799">Poptat detaily</a></div></article>
-        <article class="card"><img src="car-4.jpg" alt="Range Rover Autobiography"><div class="card-body"><h3>Range Rover Autobiography</h3><ul class="specs"><li>Rok: 2023</li><li>Najeto: 19 000 km</li><li>Verze P530</li><li>Plná výbava (Full Options)</li></ul><div class="price">CENA NA VYŽÁDÁNÍ</div><a class="small-btn" href="https://wa.me/420777399799">Poptat detaily</a></div></article>
-        <article class="card"><img src="car-5.jpg" alt="Porsche Cayenne Turbo"><div class="card-body"><h3>Porsche Cayenne Turbo</h3><ul class="specs"><li>Rok: 2023</li><li>Najeto: 15 000 km</li><li>Sport Chrono Package</li><li>Panoramatická střecha</li></ul><div class="price">CENA NA VYŽÁDÁNÍ</div><a class="small-btn" href="https://wa.me/420777399799">Poptat detaily</a></div></article>
+        <!-- Машина 1 -->
+        <article class="card">
+          <img src="car-1.jpg" alt="Mercedes G63 AMG">
+          <div class="card-body">
+            <h3>Mercedes G63 AMG</h3>
+            <ul class="specs">
+              <li><span class="lang-txt" data-cs="Rok: 2023" data-ru="Год: 2023" data-de="Jahr: 2023" data-en="Year: 2023">Rok: 2023</span></li>
+              <li><span class="lang-txt" data-cs="Najeto: 22 000 km" data-ru="Пробег: 22 000 км" data-de="Kilometerstand: 22.000 km" data-en="Mileage: 22,000 km">Najeto: 22 000 km</span></li>
+              <li>AMG Performance Package</li>
+              <li><span class="lang-txt" data-cs="EU Specifikace" data-ru="Европейская спецификация" data-de="EU-Spezifikation" data-en="EU Specification">EU Specifikace</span></li>
+            </ul>
+            <div class="price lang-txt" data-cs="CENA NA VYŽÁDÁNÍ" data-ru="ЦЕНА ПО ЗАПРОСУ" data-de="PREIS AUF ANFRAGE" data-en="PRICE ON REQUEST">CENA NA VYŽÁDÁNÍ</div>
+            <a class="small-btn lang-txt" href="https://wa.me/420777399799" data-cs="Poptat detaily" data-ru="Запросить детали" data-de="Details anfordern" data-en="Request details">Poptat detaily</a>
+          </div>
+        </article>
+
+        <!-- Машина 2 -->
+        <article class="card">
+          <img src="car-2.jpg" alt="Mercedes S580">
+          <div class="card-body">
+            <h3>Mercedes S580</h3>
+            <ul class="specs">
+              <li><span class="lang-txt" data-cs="Rok: 2023" data-ru="Год: 2023" data-de="Jahr: 2023" data-en="Year: 2023">Rok: 2023</span></li>
+              <li><span class="lang-txt" data-cs="Najeto: 18 500 km" data-ru="Пробег: 18 500 км" data-de="Kilometerstand: 18.500 km" data-en="Mileage: 18,500 km">Najeto: 18 500 km</span></li>
+              <li>4MATIC</li>
+              <li>Premium Package</li>
+            </ul>
+            <div class="price lang-txt" data-cs="CENA NA VYŽÁDÁNÍ" data-ru="ЦЕНА ПО ЗАПРОСУ" data-de="PREIS AUF ANFRAGE" data-en="PRICE ON REQUEST">CENA NA VYŽÁDÁNÍ</div>
+            <a class="small-btn lang-txt" href="https://wa.me/420777399799" data-cs="Poptat detaily" data-ru="Запросить детали" data-de="Details anfordern" data-en="Request details">Poptat detaily</a>
+          </div>
+        </article>
+
+        <!-- Машина 3 -->
+        <article class="card">
+          <img src="car-3.jpg" alt="BMW X7">
+          <div class="card-body">
+            <h3>BMW X7 xDrive40i</h3>
+            <ul class="specs">
+              <li><span class="lang-txt" data-cs="Rok: 2023" data-ru="Год: 2023" data-de="Jahr: 2023" data-en="Year: 2023">Rok: 2023</span></li>
+              <li><span class="lang-txt" data-cs="Najeto: 24 000 km" data-ru="Пробег: 24 000 км" data-de="Kilometerstand: 24.000 km" data-en="Mileage: 24,000 km">Najeto: 24 000 km</span></li>
+              <li>M Sport Package</li>
+              <li><span class="lang-txt" data-cs="7 Míst k sezení" data-ru="7 Мест" data-de="7 Sitzplätze" data-en="7 Seats">7 Míst k sezení</span></li>
+            </ul>
+            <div class="price lang-txt" data-cs="CENA NA VYŽÁDÁNÍ" data-ru="ЦЕНА ПО ЗАПРОСУ" data-de="PREIS AUF ANFRAGE" data-en="PRICE ON REQUEST">CENA NA VYŽÁDÁNÍ</div>
+            <a class="small-btn lang-txt" href="https://wa.me/420777399799" data-cs="Poptat detaily" data-ru="Запросить детали" data-de="Details anfordern" data-en="Request details">Poptat detaily</a>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="section" id="about">
-      <h2>O LUXES EXECUTIVE</h2>
-      <p>Privátní, korporátní a velkoobchodní zprostředkování prémiových automobilů po celé Evropě. Zakládáme si na diskrétní komunikaci, maximální bezpečnosti a profesionální spolupráci.</p>
+      <h2 class="lang-txt" data-cs="O LUXES EXECUTIVE" data-ru="О компании LUXES EXECUTIVE" data-de="Über LUXES EXECUTIVE" data-en="About LUXES EXECUTIVE">O LUXES EXECUTIVE</h2>
+      <p class="lang-txt" 
+         data-cs="Privátní, korporátní a velkoobchodní zprostředkování prémiových automobilů po celé Evropě. Zakládáme si na diskrétní komunikaci, maximální bezpečnosti a profesionální spolupráci." 
+         data-ru="Частный, корпоративный и оптовый подбор автомобилей премиум-класса по всей Европе. Мы делаем ставку на конфиденциальное общение, максимальную безопасность и профессиональное сотрудничество." 
+         data-de="Private, geschäftliche und großhandelliche Vermittlung von Premium-Fahrzeugen in ganz Europa. Wir setzen na diskrete Kommunikation, maximale Sicherheit und professionelle Zusammenarbeit." 
+         data-en="Private, executive and wholesale sourcing of premium vehicles across Europe with discreet communication and secure cooperation.">Privátní, korporátní a velkoobchodní zprostředkování prémiových automobilů po celé Evropě. Zakládáme si na diskrétní komunikaci, maximální bezpečnosti a profesionální spolupráci.</p>
     </section>
     
     <section class="section" id="contact">
-      <h2>Kontakt</h2>
-      <p>Pro nezávaznou poptávku nebo konzultaci nás kontaktujte.</p>
+      <h2 class="lang-txt" data-cs="Kontakt" data-ru="Контакты" data-de="Kontakt" data-en="Contact">Kontakt</h2>
+      <p class="lang-txt" data-cs="Pro nezávaznou poptávku nebo konzultaci nás kontaktujte." data-ru="Для бесплатной консультации или запроса свяжитесь с нами." data-de="Für Anfragen oder Beratung kontaktieren Sie uns." data-en="For inquiries or consultation, feel free to contact us.">Pro nezávaznou poptávku nebo konzultaci nás kontaktujte.</p>
       <p style="font-size: 20px; color: #e0b465; margin-top: 15px; font-weight: bold;">Telefon / WhatsApp: +420 777 399 799</p>
     </section>
   </main>
@@ -180,5 +274,25 @@
     <span>© LUXES EXECUTIVE</span>
     <span>Private · Executive · Wholesale</span>
   </footer>
+
+  <!-- СКРИПТ ПЕРЕКЛЮЧЕНИЯ ЯЗЫКОВ -->
+  <script>
+    function setLang(lang) {
+      // Меняем активный класс на кнопках языков
+      document.querySelectorAll('.lang-item').forEach(item => {
+        item.classList.remove('active');
+        if(item.innerText.toLowerCase() === lang) {
+          item.classList.add('active');
+        }
+      });
+      
+      // Меняем тексты
+      document.querySelectorAll('.lang-txt').forEach(el => {
+        if(el.getAttribute('data-' + lang)) {
+          el.innerHTML = el.getAttribute('data-' + lang);
+        }
+      });
+    }
+  </script>
 </body>
 </html>
