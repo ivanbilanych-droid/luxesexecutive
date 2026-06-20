@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LUXES EXECUTIVE</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #050505; color: #fff; font-family: Arial, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    :root { --g: #d9a441; --g2: #f4cc77; --m: #cfcfcf; --l: rgba(217,164,65,.35); }
+    
+    /* Шапка сайта */
+    .header { position: sticky; top: 0; background: #050505eF; z-index: 9; border-bottom: 1px solid var(--l); }
+    .top { max-width: 1680px; margin: auto; padding: 14px 46px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    
+    /* Стили для нового логотипа (e858f896-d0d4-47b2-b1f0-6697a40ff4fe) */
+    .logo { display: flex; align-items: center; max-width: 320px; width: 100%; }
+    .logo img { width: 100%; height: auto; max-height: 75px; object-fit: contain; display: block; }
+    
+    .contacts { display: flex; gap: 18px; align-items: center; font-weight: 900; }
+    .wa { background: linear-gradient(135deg,#f4cc77,#d49b38); color: #050505; padding: 14px 24px; border-radius: 6px; }
+    .lang { border: 1px solid var(--l); padding: 12px 14px; border-radius: 6px; white-space: nowrap; }
+    
+    .nav { border-top: 1px solid rgba(217,164,65,.18); }
+    .nav div { max-width: 1680px; margin: auto; padding: 0 46px; height: 52px; display: flex; align-items: center; gap: 60px; font-weight: 900; text-transform: uppercase; font-size: 14px; }
+    
+    /* Главный баннер */
+    .hero { position: relative; min-height: 650px; overflow: hidden; background: #050505; border-bottom: 1px solid var(--l); }
+    .hero:before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.62),rgba(0,0,0,.18)),url('hero-g63-prague.jpg') center center no-repeat; background-size: cover; opacity: .45; z-index: 1; }
+    .hero .in { position: relative; z-index: 2; max-width: 1680px; margin: auto; padding: 90px 46px; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+    
+    .hero h1 { font-family: Georgia, serif; font-size: 64px; text-transform: uppercase; margin: 0 0 24px; line-height: 1.1; font-weight: 900; letter-spacing: 1px; }
+    .hero h1 span { color: var(--g2); }
+    .hero p { max-width: 640px; color: var(--m); font-size: 18px; line-height: 1.6; margin: 0 0 40px; }
+    
+    .tags { display: flex; gap: 18px; flex-wrap: wrap; }
+    .tags span { border: 1px solid var(--l); padding: 14px 20px; border-radius: 6px; font-weight: 900; font-size: 15px; background: rgba(5,5,5,.4); backdrop-filter: blur(6px); }
+    .tags i { color: var(--g); font-style: normal; margin-right: 8px; }
+    
+    .hero .btn { background: linear-gradient(135deg,#f4cc77,#d49b38); color: #050505; font-weight: 900; padding: 20px 40px; border-radius: 6px; display: inline-block; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    /* Каталог */
+    .catalog { max-width: 1680px; margin: auto; padding: 80px 46px; }
+    .catalog h2 { font-family: Georgia, serif; font-size: 42px; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 1px; }
+    .catalog .sub { color: var(--m); font-size: 18px; margin-bottom: 46px; }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(420px,1fr)); gap: 32px; }
+    .card { background: #111; border: 1px solid rgba(217,164,65,.18); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+    .photo { height: 280px; background: #1a1a1a; display: flex; align-items: center; justify-content: center; color: #444; font-weight: 900; font-size: 20px; }
+    .cb { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .ct { font-family: Georgia, serif; font-size: 24px; margin-bottom: 18px; font-weight: 900; }
+    .cl { color: var(--m); font-size: 15px; margin-bottom: 6px; }
+    .cl span { color: #666; margin: 0 8px; }
+    .cl.cs { margin-bottom: 24px; color: #888; }
+    .price { font-size: 18px; font-weight: 900; color: var(--g2); margin-top: auto; letter-spacing: 1px; }
+    
+    /* Как мы работаем */
+    .work { background: #111; border-top: 1px solid var(--l); border-bottom: 1px solid var(--l); }
+    .wg { max-width: 1680px; margin: auto; padding: 80px 46px; display: flex; justify-content: space-between; gap: 46px; }
+    .work h2 { font-family: Georgia, serif; font-size: 42px; margin: 0 0 24px; text-transform: uppercase; letter-spacing: 1px; }
+    .subtitle { color: var(--m); font-size: 20px; line-height: 1.8; font-weight: 900; }
+    
+    .box { background: #050505; border: 1px solid var(--l); padding: 40px; border-radius: 12px; width: 100%; max-width: 540px; }
+    .fg { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+    .fg input, .fg textarea { background: #111; border: 1px solid rgba(217,164,65,.25); padding: 14px; color: #fff; font-family: inherit; font-size: 15px; border-radius: 6px; }
+    .fg input:focus, .fg textarea:focus { outline: none; border-color: var(--g); }
+    .fg textarea { height: 100px; resize: none; }
+    .box button { background: linear-gradient(135deg,#f4cc77,#d49b38); color: #050505; border: none; padding: 16px; font-weight: 900; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; border-radius: 6px; width: 100%; cursor: pointer; }
+    aside.box { max-width: 400px; }
+    
+    /* Подвал */
+    .footer { background: #020202; border-top: 1px solid rgba(217,164,65,.1); }
+    .fin { max-width: 1680px; margin: auto; padding: 60px 46px; display: flex; justify-content: space-between; gap: 40px; }
+    .footer h3 { font-family: Georgia, serif; font-size: 26px; color: var(--g2); margin: 0 0 12px; }
+    .footer p { color: #666; font-size: 14px; max-width: 400px; line-height: 1.5; }
+    .footer h4 { color: var(--g); text-transform: uppercase; font-size: 13px; letter-spacing: 2px; margin: 0 0 16px; font-weight: 900; }
+
+    /* Мобильный адаптив */
+    @media (max-width: 768px) {
+      .top { padding: 14px 15px; flex-direction: column; gap: 14px; text-align: center; }
+      .logo { justify-content: center; max-width: 260px; margin: auto; }
+      .logo img { max-height: 55px; } 
+      .contacts { width: 100%; justify-content: center; gap: 10px; }
+      .wa, .lang { padding: 10px 16px; font-size: 13px; }
+      .nav div { padding: 0 15px; height: auto; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; gap: 15px; justify-content: center; font-size: 12px; }
+      .hero .in { padding: 50px 15px; flex-direction: column; text-align: center; }
+      .hero h1 { font-size: 34px; }
+      .hero p { font-size: 15px; }
+      .tags { justify-content: center; }
+      .tags span { font-size: 13px; padding: 10px 14px; }
+      .catalog { padding: 40px 15px; }
+      .catalog h2 { font-size: 28px; }
+      .catalog .sub { font-size: 15px; margin-bottom: 24px; }
+      .grid { grid-template-columns: 1fr; gap: 20px; }
+      .photo { height: 200px; }
+      .wg { padding: 40px 15px; flex-direction: column; gap: 30px; }
+      .work h2 { font-size: 28px; }
+      .box, aside.box { max-width: 100%; padding: 20px; }
+      .fin { padding: 40px 15px; flex-direction: column; gap: 30px; text-align: center; }
+      .footer p { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="top">
+    <!-- ИСПРАВЛЕНО ОКОНЧАТЕЛЬНО: Старый SVG-код и старый текст полностью удалены. Теперь выводится только картинка e858f896-d0d4-47b2-b1f0-6697a40ff4fe -->
+    <div class="logo">
+      <a href="/"><img src="logo.png" alt="LUXES EXECUTIVE"></a>
+    </div>
+    <div class="contacts">
+      <a href="https://wa.me/420777399799" class="wa">WhatsApp</a>
+      <div class="lang">RU / DE / EN / CS</div>
+    </div>
+  </div>
+  <div class="nav">
+    <div>
+      <a href="#catalog">Каталог авто</a>
+      <a href="#contact">Запросить предложение</a>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="in">
+    <div>
+      <h1><span>Оптовые поставки</span><br>премиальных авто из Европы</h1>
+      <p>Подбор, закупка и доставка новых и подержанных автомобилей из Германии, Нидерландов и Турции. Полное сопровождение сделки, таможенное оформление и логистика под ключ для частных лиц и B2B партнеров.</p>
+      <div class="tags">
+        <span><i>✓</i>Проверенные дилеры</span>
+        <span><i>✓</i>Европейское качество</span>
+        <span><i>✓</i>Доставка в любую точку</span>
+      </div>
+    </div>
+    <div>
+      <a href="#contact" class="btn">Оставить заявку</a>
+    </div>
+  </div>
+</section>
+
+<section class="catalog" id="catalog">
+  <h2>Наша наглядная база</h2>
+  <p class="sub">Aktuální nabídka vozidel ze skladů v Evropě a na objednávku</p>
+  <div class="grid">
+    <article class="card"><div class="photo">МЕСТО ДЛЯ ФОТО</div><div class="cb"><div class="ct">МЕСТО ДЛЯ НАЗВАНИЯ</div><div class="cl"></div><div class="cl cs"></div><div class="price">МЕСТО ДЛЯ ЦЕНЫ</div></div></article>
+    <article class="card"><div class="photo">МЕСТО ДЛЯ ФОТО</div><div class="cb"><div class="ct">МЕСТО ДЛЯ НАЗВАНИЯ</div><div class="cl"></div><div class="cl cs"></div><div class="price">МЕСТО ДЛЯ ЦЕНЫ</div></div></article>
+    <article class="card"><div class="photo">МЕСТО ДЛЯ ФОТО</div><div class="cb"><div class="ct">МЕСТО ДЛЯ НАЗВАНИЯ</div><div class="cl"></div><div class="cl cs"></div><div class="price">МЕСТО ДЛЯ ЦЕНЫ</div></div></article>
+  </div>
+</section>
+
+<section class="work">
+  <div class="wg">
+    <div>
+      <h2>Как мы работаем</h2>
+      <p class="subtitle">01 Заявка<br>02 Подбор<br>03 Проверка<br>04 Доставка</p>
+    </div>
+    <form class="box" id="contact">
+      <h2>Запросить предложение</h2>
+      <div class="fg">
+        <input placeholder="Имя">
+        <input placeholder="Telephone / WhatsApp">
+        <input placeholder="E-mail">
+        <input placeholder="Značka, model, rozpočet">
+        <textarea placeholder="Poznámka"></textarea>
+      </div>
+      <button type="button">Запросить предложение</button>
+    </form>
+    <aside class="box">
+      <h2>LUXES</h2>
+      <p class="subtitle">+420 777 399 799<br>executive@luxes.cz<br>LUXES EXECUTIVE s.r.o.<br>IČO: 076 68 295</p>
+    </aside>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="fin">
+    <div>
+      <h3>LUXES EXECUTIVE</h3>
+      <p>European Luxury Vehicle Sourcing & Executive Mobility Solutions</p>
+    </div>
+    <div>
+      <h4>Menu</h4>
+      <p>Katalog vozů<br>Jak pracujeme<br>Kontakty</p>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <p>+420 777 399 799<br>executive@luxes.cz</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
