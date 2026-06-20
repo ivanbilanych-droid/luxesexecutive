@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUXES EXECUTIVE | Premium Vehicles</title>
+  <style>
+    /* Базовые стили оригинала */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Arial',sans-serif;background:#0b0b0b;color:#fff;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    
+    /* ДВУХУРОВНЕВАЯ ШАПКА ИЗ ОРИГИНАЛА */
+    .header-wrapper {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(11,11,11,0.85);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px 12px;
+    }
+    
+    .logo-area { display: flex; flex-direction: column; }
+    .logo-area h1 { font-family: 'Times New Roman', Times, serif; font-size: 28px; letter-spacing: 1.5px; font-weight: 800; color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.1); }
+    .logo-area span { font-size: 9px; color: #d4af37; letter-spacing: 4px; margin-top: 4px; font-weight: bold; text-transform: uppercase; }
+    
+    .top-right-info { display: flex; align-items: center; gap: 35px; }
+    .main-phone { font-weight: bold; font-size: 15px; letter-spacing: 0.5px; color: #fff; }
+    
+    .lang-box {
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.02);
+    }
+    
+    /* Нижний уровень шапки — Меню */
+    .menu-header {
+      padding: 0 50px 15px;
+      display: flex;
+      gap: 35px;
+    }
+    .menu-header a {
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.7);
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+    .menu-header a:hover { color: #fff; text-shadow: 0 0 8px rgba(255,255,255,0.5); }
+    
+    /* ГЛАВНЫЙ ЭКРАН — СЕТКА И ОРИГИНАЛЬНЫЙ ФОН */
+    .hero-section {
+      min-height: 100vh;
+      background: linear-gradient(180deg, rgba(11,11,11,0.3) 0%, rgba(11,11,11,0.85) 85%), url('hero-g63-prague.jpg') center center no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 160px 50px 100px;
+      position: relative;
+    }
+    
+    .hero-inner {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    
+    .hero-text-block { max-width: 650px; }
+    
+    .top-eyebrow { color: #e5c158; letter-spacing: 5px; font-size: 12px; font-weight: bold; text-transform: uppercase; margin-bottom: 25px; text-shadow: 0 0 10px rgba(229,193,88,0.2); }
+    
+    .hero-text-block h2 { 
+      font-family: 'Times New Roman', Times, serif; 
+      font-size: 72px; 
+      line-height: 1.02; 
+      font-weight: 800; 
+      text-transform: uppercase; 
+      margin-bottom: 30px;
+      letter-spacing: -0.5px;
+      text-shadow: 0 0 30px rgba(255,255,255,0.15);
+    }
+    
+    .hero-text-block p { font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.75); margin-bottom: 40px; max-width: 580px; }
+    
+    /* КНОПКИ ИЗ ОРИГИНАЛА */
+    .cta-buttons { display: flex; gap: 15px; }
+    
+    .btn-catalog {
+      background: #e5c158;
+      color: #000;
+      padding: 16px 36px;
+      font-weight: bold;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-catalog:hover { background: #fff; transform: translateY(-1px); }
+    
+    .btn-offer {
+      border: 1px solid #e5c158;
+      color: #fff;
+      padding: 16px 32px;
+      font-weight: bold;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      background: rgba(229,193,88,0.03);
+      transition: all 0.2s;
+    }
+    .btn-offer:hover { background: #e5c158; color: #000; }
+    
+    /* ПЛАШКИ С ИКОНКАМИ ВНИЗУ */
+    .bottom-status-bar {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(8,8,8,0.9);
+      padding: 25px 50px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+    }
+    
+    .status-node { display: flex; align-items: center; gap: 15px; }
+    
+    /* Иконки-заглушки под оригинальные спецсимволы */
+    .status-shape { width: 14px; height: 14px; border: 2px solid #e5c158; flex-shrink: 0; display: inline-block; }
+    .status-shape.rhombus { transform: rotate(45deg); width: 10px; height: 10px; }
+    .status-shape.circle { border-radius: 50%; }
+    .status-shape.double { border: 2px solid #e5c158; position: relative; }
+    .status-shape.double::after { content:''; position: absolute; top:2px; left:2px; right:2px; bottom:2px; background:#e5c158; }
+    
+    .status-info b { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 3px; color: #fff; }
+    .status-info span { display: block; font-size: 11px; color: rgba(255,255,255,0.45); }
+    
+    /* КНОПКА МЕНЮ ДЛЯ МОБИЛЬНЫХ (СКРЫТА НА ПК) */
+    .mobile-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      background: none; border: none;
+    }
+    .mobile-hamburger span { width: 26px; height: 2px; background: #fff; transition: 0.3s; }
+    
+    .mobile-navigation-overlay {
+      position: fixed;
+      top: -100%; left: 0; right: 0;
+      background: #0b0b0b;
+      padding: 110px 24px 40px;
+      display: flex; flex-direction: column; gap: 24px;
+      transition: 0.4s cubic-bezier(0.1, 0.8, 0.3, 1); z-index: 90;
+      border-bottom: 1px solid #e5c158;
+    }
+    .mobile-navigation-overlay.visible { top: 0; }
+    .mobile-navigation-overlay a { font-size: 15px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 12px; }
+
+    /* 📱 АДАПТИВНЫЙ СЛОЙ (Включается только на экранах смартфонов) */
+    @media (max-width: 991px) {
+      .bottom-status-bar { grid-template-columns: repeat(2, 1fr); position: relative; margin-top: 40px; padding: 30px 24px; }
+    }
+    
+    @media (max-width: 768px) {
+      .top-header { padding: 16px 24px; }
+      .menu-header, .top-right-info { display: none !important; } /* Прячем дублирование на мобильных */
+      .mobile-hamburger { display: flex; } /* Показываем иконку меню */
+      
+      .hero-section { padding: 130px 24px 40px; justify-content: flex-start; }
+      .hero-text-block h2 { font-size: 42px; margin-bottom: 20px; }
+      .hero-text-block p { font-size: 15px; margin-bottom: 30px; }
+      
+      .cta-buttons { flex-direction: column; width: 100%; }
+      .btn-catalog, .btn-offer { text-align: center; width: 100%; padding: 15px; }
+      
+      .bottom-status-bar { grid-template-columns: 1fr; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ВЕРХНЯЯ И НИЖНЯЯ ШАПКА -->
+  <div class="header-wrapper">
+    <div class="top-header">
+      <div class="logo-area">
+        <h1>LUXES EXECUTIVE</h1>
+        <span>PRIVATE · EXECUTIVE · WHOLESALE</span>
+      </div>
+      
+      <div class="top-right-info">
+        <div class="main-phone">+420 777 399 799</div>
+        <div class="lang-box">RU / DE / EN / CS</div>
+      </div>
+      
+      <!-- Гамбургер -->
+      <button class="mobile-hamburger" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    
+    <div class="menu-header">
+      <a href="#catalog">Каталог</a>
+      <a href="#how-we-work">Как мы работаем</a>
+      <a href="#services">Услуги</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+  </div>
+
+  <!-- ВЫЕЗЖАЮЩАЯ ПАНЕЛЬ ДЛЯ ТЕЛЕФОНОВ -->
+  <div class="mobile-navigation-overlay" id="mobileNav">
+    <a href="#catalog" onclick="toggleMobileMenu()">Каталог</a>
+    <a href="#how-we-work" onclick="toggleMobileMenu()">Как мы работаем</a>
+    <a href="#services" onclick="toggleMobileMenu()">Услуги</a>
+    <a href="#contacts" onclick="toggleMobileMenu()">Контакты</a>
+    <div style="margin-top: 10px; font-weight: bold; font-size: 16px;">+420 777 399 799</div>
+    <div style="color: #e5c158; font-weight: bold; letter-spacing: 2px; font-size: 14px;">RU / DE / EN / CS</div>
+  </div>
+
+  <!-- ОСНОВНОЙ БАННЕР -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-text-block">
+        <div class="top-eyebrow">PREMIUM VEHICLES FROM EUROPE</div>
+        <h2>LUXURY<br>EXECUTIVE<br>VEHICLES</h2>
+        <p>Премиальные автомобили из Европы для частных клиентов, дилеров и международных B2B-партнёров. Конфиденциально. Качественно. Под ключ.</p>
+        
+        <div class="cta-buttons">
+          <a href="#catalog" class="btn-catalog">Каталог</a>
+          <a href="#quote" class="btn-offer">Запросить предложение →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 ОРИГИНАЛЬНЫХ ПЛАШЕК ВНИЗУ -->
+    <div class="bottom-status-bar">
+      <div class="status-node">
+        <span class="status-shape rhombus"></span>
+        <div class="status-info">
+          <b>Verified Suppliers</b>
+          <span>Partners only</span>
+        </div>
+      </div>
+      
+      <div class="status-node">
+        <span class="status-shape circle"></span>
+        <div class="status-info">
+          <b>Premium Vehicles</b>
+          <span>Quality & performance</span>
+        </div>
+      </div>
+      
+      <div class="status-node">
+        <span class="status-shape double"></span>
+        <div class="status-info">
+          <b>Worldwide Delivery</b>
+          <span>Safe & secure shipping</span>
+        </div>
+      </div>
+      
+      <div class="status-node">
+        <span class="status-shape circle"></span>
+        <div class="status-info">
+          <b>Private & Confidential</b>
+          <span>Discreet transactions</span>
+        </div>
+      </div>
+      
+      <div class="status-node">
+        <span class="status-shape rhombus"></span>
+        <div class="status-info">
+          <b>B2B & Private Clients</b>
+          <span>Flexible cooperation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobileNav').classList.toggle('visible');
+    }
+  </script>
+</body>
+</html>
