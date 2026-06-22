@@ -15,7 +15,7 @@
       position:fixed;
       top:0;left:0;right:0;
       min-height:78px;
-      background:rgba(8,8,8,.92);
+      background:rgba(8,8,8,.95);
       backdrop-filter:blur(12px);
       z-index:10;
       display:flex;
@@ -35,7 +35,6 @@
     .nav a:hover{color:#c9a15d}
     
     .right{display:flex;align-items:center;gap:18px}
-    .phone{font-weight:800;font-size:16px}
     
     /* Переключатель языков */
     .lang-switcher{
@@ -62,27 +61,37 @@
     }
     .wa:hover, .btn-gold:hover{filter:brightness(1.08)}
     
-    /* Главный баннер */
+    /* ИСПРАВЛЕННЫЙ ГЛАВНЫЙ БАННЕР - КАРТИНКА СНОВА СВЕТЛАЯ И ВИДНАЯ */
     .hero{
       min-height:100vh;
-      background:linear-gradient(180deg,rgba(0,0,0,.3),rgba(0,0,0,.6),rgba(7,7,7,1)),url('hero-g63-prague.jpg') center center no-repeat;
+      /* Убрали глухую темноту! Оставили легкий прозрачный налет, чтобы буквы читались, но Гелик и Прагу было отлично видно */
+      background: linear-gradient(180deg, rgba(7,7,7,0.1) 0%, rgba(7,7,7,0.4) 60%, rgba(7,7,7,0.9) 100%), url('hero-g63-prague.jpg') center top no-repeat;
       background-size: cover;
       display:flex;
-      align-items:flex-end;
-      padding:140px 46px 60px;
+      align-items: flex-end; /* Опускает контент вниз, чтобы не перекрывать центр картинки */
+      padding: 120px 46px 80px;
       position:relative;
     }
-    .hero-content{max-width:750px;width:100%;z-index:2;position:relative;margin-bottom:20px}
+    
+    /* Текст аккуратно сдвинут вниз под центр картинки, чтобы всё было видно */
+    .hero-content{
+      max-width:750px;
+      width:100%;
+      z-index:2;
+      position:relative;
+      margin-top: 38vh; 
+    }
+    
     .eyebrow{color:#c9a15d;letter-spacing:5px;font-size:13px;font-weight:800;text-transform:uppercase;margin-bottom:20px}
-    .hero h1{font-family:Georgia,serif;font-size:56px;line-height:1.1;font-weight:900;text-transform:uppercase;margin-bottom:24px;text-shadow:0 4px 24px rgba(0,0,0,.85)}
+    .hero h1{font-family:Georgia,serif;font-size:48px;line-height:1.1;font-weight:900;text-transform:uppercase;margin-bottom:24px;text-shadow:0 4px 15px rgba(0,0,0,0.95)}
     .gold{color:#e0b465}
-    .hero p{font-size:18px;line-height:1.6;max-width:600px;color:#f4f4f4;margin-bottom:35px}
+    .hero p{font-size:18px;line-height:1.6;max-width:600px;color:#f4f4f4;margin-bottom:35px;text-shadow:0 2px 10px rgba(0,0,0,0.95)}
     
     .actions{display:flex;gap:18px;flex-wrap:wrap}
-    .btn-dark{border:1px solid rgba(201,161,93,.75);padding:12px 26px;border-radius:7px;font-weight:900;background:rgba(0,0,0,.5);text-transform: uppercase;letter-spacing: 0.5px}
+    .btn-dark{border:1px solid rgba(201,161,93,.75);padding:12px 26px;border-radius:7px;font-weight:900;background:rgba(0,0,0,.6);text-transform: uppercase;letter-spacing: 0.5px}
     
     .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px;max-width:840px}
-    .feature{background:rgba(0,0,0,.75);backdrop-filter:blur(5px);border:1px solid rgba(201,161,93,.25);border-radius:10px;padding:20px}
+    .feature{background:rgba(0,0,0,.8);backdrop-filter:blur(5px);border:1px solid rgba(201,161,93,.25);border-radius:10px;padding:20px}
     .feature b{color:#e0b465;font-size:13px;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:5px}
     .feature span{display:block;color:#d6d6d6;font-size:14px}
     
@@ -115,18 +124,19 @@
       .grid{grid-template-columns:repeat(2,1fr)}
       .features{grid-template-columns:1fr;gap:12px}
       .nav{display:none}
-      .hero h1{font-size:44px}
+      .hero h1{font-size:38px}
       .header{padding:15px 22px}
       .hero, .section{padding-left:22px;padding-right:22px}
+      .hero-content{margin-top: 25vh;}
     }
     @media(max-width:650px){
       .grid{grid-template-columns:1fr}
-      .hero h1{font-size:32px}
-      .brand-title{font-size:18px}
-      .brand-sub{font-size:8px;letter-spacing:2px}
+      .hero h1{font-size:28px}
+      .brand-title{font-size:16px}
+      .brand-sub{font-size:8px;letter-spacing:1px}
       .right{width:100%;justify-content:space-between;border-top:1px solid rgba(211,211,211,0.1);padding-top:10px}
-      .phone{display:none}
-      .hero{padding-top:120px; padding-bottom: 40px;}
+      .hero{padding-top:140px; padding-bottom: 40px;}
+      .hero-content{margin-top: 15vh;}
     }
   </style>
 </head>
@@ -168,7 +178,7 @@
             data-en="Luxury<br><span class='gold'>Executive</span><br>Vehicles">Luxusní<br><span class="gold">Manažerská</span><br>Vozidla</h1>
         
         <p class="lang-txt" 
-           data-cs="Zajišťujeme nákup a dovoz prémiových vozidel z Německa, Nizozemska a Turecka pro soukromé klienty, dealery a B2B partnery." 
+           data-cs="Zajišťujeme nákup and dovoz prémiových vozidel z Německa, Nizozemska a Turecka pro soukromé klienty, dealery a B2B partnery." 
            data-ru="Подбор и поставка премиальных автомобилей из Германии, Нидерландов и Турции для частных клиентов, дилеров и международных партнеров." 
            data-de="Beschaffung und Import von Premium-Fahrzeugen aus Deutschland, den Niederlanden und der Türkei für Privatkunden, Händler und B2B-Partner." 
            data-en="Premium vehicles sourced from Germany, the Netherlands and Turkey for private clients, dealers and B2B partners.">Zajišťujeme nákup a dovoz prémiových vozidel z Německa, Nizozemska a Turecka pro soukromé klienty, dealery a B2B partnery.</p>
@@ -199,12 +209,11 @@
       <div class="section-head">
         <div>
           <h2 class="lang-txt" data-cs="Naše Nabídka" data-ru="Наша Наглядная База" data-de="Unser Angebot" data-en="Our Fleet">Naše Nabídka</h2>
-          <p class="lang-txt" data-cs="Pečlivě vybraná prémiová vozidla ihned k odběru nebo na individuální objednávku." data-ru="Тщательно отобранные автомобили в наличии или под индивидуальный заказ." data-de="Sorgfältig ausgewählte Premium-Fahrzeuge sofort verfügbar oder auf Bestellung." data-en="Carefully selected premium vehicles available for immediate delivery or individual order.">Pečlivě vybraná prémiová vozidla ihned k odběru nebo na individuální objednávku.</p>
+          <p class="lang-txt" data-cs="Pečlivě vybraná prémiová vozidla ihned k odběru nebo na individuální objednávku." data-ru="Тщательно отобранные автомобили в наличии или под individual заказ." data-de="Sorgfältig ausgewählte Premium-Fahrzeuge sofort verfügbar oder auf Bestellung." data-en="Carefully selected premium vehicles available for immediate delivery or individual order.">Pečlivě vybraná prémiová vozidla ihned k odběru nebo na individuální objednávku.</p>
         </div>
       </div>
       
       <div class="grid">
-        <!-- Машина 1 -->
         <article class="card">
           <img src="car-1.jpg" alt="Mercedes G63 AMG">
           <div class="card-body">
@@ -220,7 +229,6 @@
           </div>
         </article>
 
-        <!-- Машина 2 -->
         <article class="card">
           <img src="car-2.jpg" alt="Mercedes S580">
           <div class="card-body">
@@ -236,7 +244,6 @@
           </div>
         </article>
 
-        <!-- Машина 3 -->
         <article class="card">
           <img src="car-3.jpg" alt="BMW X7">
           <div class="card-body">
@@ -258,8 +265,8 @@
       <h2 class="lang-txt" data-cs="O LUXES EXECUTIVE" data-ru="О компании LUXES EXECUTIVE" data-de="Über LUXES EXECUTIVE" data-en="About LUXES EXECUTIVE">O LUXES EXECUTIVE</h2>
       <p class="lang-txt" 
          data-cs="Privátní, korporátní a velkoobchodní zprostředkování prémiových automobilů po celé Evropě. Zakládáme si na diskrétní komunikaci, maximální bezpečnosti a profesionální spolupráci." 
-         data-ru="Частный, корпоративный и оптовый подбор автомобилей премиум-класса по всей Европе. Мы делаем ставку на конфиденциальное общение, максимальную безопасность и профессиональное сотрудничество." 
-         data-de="Private, geschäftliche und großhandelliche Vermittlung von Premium-Fahrzeugen in ganz Europa. Wir setzen na diskrete Kommunikation, maximale Sicherheit und professionelle Zusammenarbeit." 
+         data-ru="Частный, корпоративный и оптовый подбор автомобилей премиум-класса по всей Европе. Мы делаем ставку на конфиденциальное общение, maximální безопасность и профессиональное сотрудничество." 
+         data-de="Private, geschäftliche und großhandelliche Vermittlung von Premium-Fahrzeugen in ganz Europa. Wir setzen auf diskrete Kommunikation, maximale Sicherheit und professionelle Zusammenarbeit." 
          data-en="Private, executive and wholesale sourcing of premium vehicles across Europe with discreet communication and secure cooperation.">Privátní, korporátní a velkoobchodní zprostředkování prémiových automobilů po celé Evropě. Zakládáme si na diskrétní komunikaci, maximální bezpečnosti a profesionální spolupráci.</p>
     </section>
     
@@ -275,10 +282,8 @@
     <span>Private · Executive · Wholesale</span>
   </footer>
 
-  <!-- СКРИПТ ПЕРЕКЛЮЧЕНИЯ ЯЗЫКОВ -->
   <script>
     function setLang(lang) {
-      // Меняем активный класс на кнопках языков
       document.querySelectorAll('.lang-item').forEach(item => {
         item.classList.remove('active');
         if(item.innerText.toLowerCase() === lang) {
@@ -286,7 +291,6 @@
         }
       });
       
-      // Меняем тексты
       document.querySelectorAll('.lang-txt').forEach(el => {
         if(el.getAttribute('data-' + lang)) {
           el.innerHTML = el.getAttribute('data-' + lang);
