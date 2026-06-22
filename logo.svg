@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f4cc77"/><stop offset="1" stop-color="#b8860b"/></linearGradient></defs>
+<circle cx="36" cy="35" r="27" fill="none" stroke="url(#g)" stroke-width="3"/>
+<text x="17" y="46" font-family="Georgia" font-size="30" font-weight="900" fill="url(#g)">LE</text>
+<text x="76" y="30" font-family="Georgia" font-size="25" font-weight="900" fill="#111">LUXES EXECUTIVE</text>
+<text x="78" y="49" font-family="Arial" font-size="8" font-weight="900" letter-spacing="3" fill="#b8860b">PRIVATE • EXECUTIVE • WHOLESALE</text>
+</svg>
