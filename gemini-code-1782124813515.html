@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LUXES AUTO | IMPORT / EXPORT / EXECUTIVE</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f8f9fa; color: #333; font-family: Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; transition: all .2s ease; }
+    
+    :root { 
+      --gold: #b89355; 
+      --gold-light: #fdfaf4;
+      --dark: #1e1e1e; 
+      --text-muted: #666;
+      --border: #eaeaea;
+    }
+
+    /* Шапка сайта */
+    .header { position: sticky; top: 0; background: #ffffff; z-index: 100; border-bottom: 1px solid var(--border); box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+    .top-nav { max-width: 1440px; margin: auto; padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; }
+    
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 52px; width: auto; object-fit: contain; display: block; }
+    
+    .menu { display: flex; gap: 32px; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: .5px; color: var(--dark); }
+    .menu a:hover, .menu a.active { color: var(--gold); }
+    .menu a.active { border-bottom: 2px solid var(--gold); padding-bottom: 4px; }
+    
+    .right-actions { display: flex; align-items: center; gap: 24px; font-weight: 700; font-size: 14px; }
+    .phone-link { display: flex; align-items: center; gap: 8px; color: var(--dark); }
+    .lang-select { display: flex; align-items: center; gap: 6px; cursor: pointer; padding: 6px 12px; border-left: 1px solid var(--border); border-right: 1px solid var(--border); }
+    
+    .btn-wa { background: var(--gold); color: #fff; padding: 12px 24px; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+    .btn-wa:hover { filter: brightness(1.08); }
+
+    /* Главный баннер (Текст слева, Гелик на фоне Праги справа) */
+    .hero { 
+      position: relative; 
+      min-height: 560px; 
+      background: #ffffff url('hero-g63-prague.jpg') right center / contain no-repeat;
+      border-bottom: 1px solid var(--border);
+    }
+    /* Градиентная подложка для идеального контраста текста */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #ffffff 0%, #ffffff 45%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,0) 100%);
+      z-index: 1;
+    }
+    .hero .container { position: relative; z-index: 2; max-width: 1440px; margin: auto; padding: 70px 40px; }
+    
+    .hero .subtitle { color: var(--gold); text-transform: uppercase; font-size: 13px; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; }
+    .hero h1 { font-family: Georgia, serif; font-size: 56px; color: var(--dark); text-transform: uppercase; margin: 0 0 20px; line-height: 1.1; font-weight: 900; }
+    .hero h1 span { color: var(--gold); }
+    .hero p { max-width: 520px; color: var(--text-muted); font-size: 16px; line-height: 1.6; margin: 0 0 32px; }
+
+    /* Плашки контактов в баннере */
+    .contact-widgets { display: flex; gap: 16px; max-width: 600px; margin-bottom: 24px; flex-wrap: wrap; }
+    .c-box { flex: 1; min-width: 180px; background: #fff; border: 1px solid var(--border); padding: 14px 18px; border-radius: 8px; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+    .c-box i { font-size: 20px; color: var(--gold); font-style: normal; }
+    .c-box .c-txt h5 { margin: 0; font-size: 13px; color: var(--dark); font-weight: 700; }
+    .c-box .c-txt span { font-size: 11px; color: var(--text-muted); display: block; margin-top: 2px; }
+
+    .hero-buttons { display: flex; gap: 14px; }
+    .hero-buttons .btn-wa { padding: 14px 32px; box-shadow: 0 4px 15px rgba(184,147,85,0.2); }
+    .btn-mail { border: 1px solid var(--border); background: #fff; color: var(--dark); font-weight: 700; padding: 14px 32px; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-mail:hover { background: #fdfdfd; border-color: var(--gold); }
+
+    /* Четыре преимущества под баннером */
+    .benefits-bar { max-width: 1440px; margin: -30px auto 0; position: relative; z-index: 3; padding: 0 40px; }
+    .benefits-grid { background: #fff; border-radius: 10px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.04); display: grid; grid-template-columns: repeat(4, 1fr); padding: 24px; gap: 24px; }
+    .benefit-item { display: flex; align-items: flex-start; gap: 14px; }
+    .benefit-item .b-icon { background: var(--gold-light); border: 1px dashed var(--gold); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold); font-weight: bold; }
+    .benefit-item h4 { margin: 0 0 4px 0; font-size: 14px; color: var(--dark); text-transform: uppercase; font-weight: 700; }
+    .benefit-item p { margin: 0; font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+    /* Каталог автомобилей */
+    .catalog-section { max-width: 1440px; margin: auto; padding: 60px 40px; }
+    .catalog-section .tag-lbl { color: var(--gold); font-size: 11px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; display: block; }
+    
+    .catalog-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; flex-wrap: wrap; gap: 20px; }
+    .catalog-header h2 { font-family: Georgia, serif; font-size: 32px; color: var(--dark); margin: 0; font-weight: 900; }
+    
+    /* Фильтры */
+    .filter-tabs { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .tab { background: #fff; border: 1px solid var(--border); padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 700; color: var(--dark); cursor: pointer; }
+    .tab.active { background: var(--gold); color: #fff; border-color: var(--gold); }
+    .sort-select { background: #fff; border: 1px solid var(--border); padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 700; color: var(--dark); outline: none; }
+
+    /* Две колонки снизу: Карточка слева, Услуги справа */
+    .main-content-grid { display: grid; grid-template-columns: 1.8fr 1.2fr; gap: 32px; align-items: start; }
+    
+    /* Новая карточка G63 точь-в-точь по макету */
+    .car-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; box-shadow: 0 4px 20px rgba(0,0,0,0.02); position: relative; }
+    .car-card .fav-btn { position: absolute; top: 15px; left: 15px; background: #fff; border: none; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 5; color: #ccc; }
+    .car-card .car-img { width: 42%; position: relative; background: #f0f0f0; }
+    .car-card .car-img img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 240px; }
+    
+    .car-details { padding: 28px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .car-details h3 { font-family: Arial, sans-serif; font-size: 22px; color: var(--dark); margin: 0 0 12px 0; font-weight: 700; }
+    
+    .car-specs { display: flex; gap: 16px; color: var(--text-muted); font-size: 13px; margin-bottom: 14px; flex-wrap: wrap; }
+    .car-specs span { display: flex; align-items: center; gap: 6px; }
+    .vin-code { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; text-transform: uppercase; }
+    
+    .car-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; border-top: 1px solid #f5f5f5; padding-top: 18px; }
+    .car-price { font-size: 22px; font-weight: 700; color: var(--gold); }
+    .btn-detail { background: #f4ebd9; color: var(--gold); font-weight: 700; padding: 12px 28px; border-radius: 6px; font-size: 13px; }
+    .btn-detail:hover { background: #ebdcbfaF; }
+
+    /* Блок услуг (справа от карточки) */
+    .services-sidebar { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .service-box { text-align: left; }
+    .service-box .s-icon { color: var(--gold); font-size: 24px; margin-bottom: 8px; font-weight: bold; }
+    .service-box h5 { margin: 0 0 6px 0; font-size: 14px; color: var(--dark); font-weight: 700; }
+    .service-box p { margin: 0; font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+    /* Адаптивность для мобильных телефонов */
+    @media (max-width: 1200px) {
+      .hero { background-size: cover; background-position: 65% center; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .main-content-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 991px) {
+      .top-nav { padding: 15px 20px; }
+      .menu { display: none; }
+      .hero { background-image: none; }
+      .hero::before { background: #ffffff; }
+      .hero .container { padding: 40px 20px; text-align: center; }
+      .hero p { margin: 0 auto 32px; }
+      .contact-widgets, .hero-buttons { justify-content: center; }
+      .benefits-bar { margin-top: 20px; padding: 0 20px; }
+      .catalog-section { padding: 40px 20px; }
+      .car-card { flex-direction: column; }
+      .car-card .car-img { width: 100%; height: 220px; }
+    }
+    @media (max-width: 600px) {
+      .right-actions .phone-link, .right-actions .lang-select { display: none; }
+      .hero h1 { font-size: 36px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .catalog-header h2 { font-size: 24px; }
+      .services-sidebar { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Навигационная панель -->
+  <header class="header">
+    <div class="top-nav">
+      <a href="/" class="logo">
+        <img src="logo.png" alt="LUXES AUTO">
+      </a>
+      <nav class="menu">
+        <a href="#home" class="active">Главная</a>
+        <a href="#catalog">Каталог авто</a>
+        <a href="#about">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <div class="right-actions">
+        <a href="tel:+420777399799" class="phone-link">📱 +420 777 399 799</a>
+        <div class="lang-select">🇷🇺 RU</div>
+        <a href="https://wa.me/420777399799" class="btn-wa">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Главный экран -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="subtitle">Премиальный импорт / экспорт автомобилей</div>
+      <h1>Роскошные авто<br><span>из Европы и всего мира</span></h1>
+      <p>Мы специализируемся на импорте и экспорте премиальных автомобилей из Европы, США, Дубая и других ключевых направлений.</p>
+      
+      <!-- Информационные виджеты -->
+      <div class="contact-widgets">
+        <div class="c-box">
+          <i>📞</i>
+          <div class="c-txt">
+            <h5>+420 777 399 799</h5>
+            <span>WhatsApp / Звонок</span>
+          </div>
+        </div>
+        <div class="c-box">
+          <i>✉️</i>
+          <div class="c-txt">
+            <h5>ib.luxes@luxes.cz</h5>
+            <span>Электронная почта</span>
+          </div>
+        </div>
+        <div class="c-box">
+          <i>🏢</i>
+          <div class="c-txt">
+            <h5>LUXES s.r.o.</h5>
+            <span>IČ: 247 88 384</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Кнопки действия -->
+      <div class="hero-buttons">
+        <a href="https://wa.me/420777399799" class="btn-wa">WhatsApp</a>
+        <a href="mailto:ib.luxes@luxes.cz" class="btn-mail">E-mail</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок с четырьмя преимуществами -->
+  <div class="benefits-bar">
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="b-icon">✓</div>
+        <div>
+          <h4>Проверенные предложения</h4>
+          <p>VIN, состояние, история и цена всегда проверяются у каждого авто.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="b-icon">🌐</div>
+        <div>
+          <h4>ЕС / Весь мир</h4>
+          <p>Германия, Нидерланды, США, Дубай и другие рынки под ваши запросы.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="b-icon">👑</div>
+        <div>
+          <h4>Премиальный стиль</h4>
+          <p>Люксовые автомобили, коммерческий транспорт и микроавтобусы.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="b-icon">🔒</div>
+        <div>
+          <h4>Безопасная сделка</h4>
+          <p>Полная конфиденциальность, экспортное оформление и VIP-подход.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Раздел каталога и услуг -->
+  <section class="catalog-section" id="catalog">
+    <span class="tag-lbl">Предложение автомобилей</span>
+    <div class="catalog-header">
+      <h2>Актуальный каталог</h2>
+      <div class="filter-tabs">
+        <div class="tab active">Все авто</div>
+        <div class="tab">SUV / 4x4</div>
+        <div class="tab">Легковые</div>
+        <div class="tab">Микроавтобусы</div>
+        <select class="sort-select">
+          <option>Сортировать по</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Основная сетка контента -->
+    <div class="main-content-grid">
+      
+      <!-- Карточка автомобиля (Слева) -->
+      <article class="car-card">
+        <button class="fav-btn">♡</button>
+        <div class="car-img">
+          <img src="hero-g63-prague.jpg" alt="Mercedes-Benz G 63 AMG">
+        </div>
+        <div class="car-details">
+          <div>
+            <h3>Mercedes-Benz G 63 AMG</h3>
+            <div class="car-specs">
+              <span>📅 2022</span>
+              <span>🛣️ 25 000 км</span>
+              <span>⛽ Бензин</span>
+            </div>
+            <div class="vin-code">VIN: W1N4632761X123456</div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price">3 950 000 Kč</div>
+            <a href="https://wa.me/420777399799" class="btn-detail">Подробнее</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Дополнительный блок услуг (Справа) -->
+      <div class="services-sidebar" id="services">
+        <div class="service-box">
+          <div class="s-icon">🚗</div>
+          <h5>Пригон под заказ</h5>
+          <p>Найдем и доставим любой автомобиль по вашим критериям.</p>
+        </div>
+        <div class="service-box">
+          <div class="s-icon">📋</div>
+          <h5>Полный сервис</h5>
+          <p>Оформление экспорта, логистика и все документы.</p>
+        </div>
+        <div class="service-box">
+          <div class="s-icon">🗺️</div>
+          <h5>Global sourcing</h5>
+          <p>Доступ к лучшим закрытым базам дилеров по всему миру.</p>
+        </div>
+        <div class="service-box">
+          <div class="s-icon">⭐</div>
+          <h5>VIP подход</h5>
+          <p>Максимальная дискретность и индивидуальное ведение сделки.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
