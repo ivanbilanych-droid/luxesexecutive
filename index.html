@@ -1,325 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LUXES EXECUTIVE | Premium Vehicles</title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Arial,Helvetica,sans-serif;background:#070707;color:#fff}
-    a{text-decoration:none;color:inherit}
-    
-    /* Шапка сайта */
-    .header{
-      position:fixed;
-      top:0;left:0;right:0;
-      min-height:78px;
-      background:rgba(8,8,8,.95);
-      backdrop-filter:blur(12px);
-      z-index:10;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:10px 46px;
-      border-bottom:1px solid rgba(201,161,93,.18);
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:1px}
-    .brand-mark{width:64px;height:64px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .brand-mark img{width:64px;height:64px;object-fit:contain}
-    .brand-title{font-size:24px;font-family:Georgia,serif}
-    .brand-sub{font-size:10px;color:#c9a15d;letter-spacing:4px;margin-top:3px}
-    
-    .nav{display:flex;gap:38px;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
-    .nav a:hover{color:#c9a15d}
-    
-    .right{display:flex;align-items:center;gap:18px}
-    
-    /* Переключатель языков */
-    .lang-switcher{
-      display:flex;
-      gap:8px;
-      border:1px solid rgba(201,161,93,.4);
-      padding:6px 12px;
-      border-radius:7px;
-      font-weight:800;
-      font-size:13px;
-    }
-    .lang-item{color:#888;cursor:pointer;transition:color 0.2s}
-    .lang-item.active, .lang-item:hover{color:#e0b465}
-    
-    .wa, .btn-gold{
-      background:linear-gradient(135deg,#f1c46c,#b78437);
-      color:#080808;
-      padding:12px 24px;
-      border-radius:7px;
-      font-weight:900;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      display: inline-block;
-    }
-    .wa:hover, .btn-gold:hover{filter:brightness(1.08)}
-    
-    /* ИСПРАВЛЕННЫЙ ГЛАВНЫЙ БАННЕР - КАРТИНКА СНОВА СВЕТЛАЯ И ВИДНАЯ */
-    .hero{
-      min-height:100vh;
-      background:
-        linear-gradient(90deg, rgba(7,7,7,.78) 0%, rgba(7,7,7,.50) 34%, rgba(7,7,7,.20) 62%, rgba(7,7,7,.08) 100%),
-        linear-gradient(180deg, rgba(7,7,7,.05) 0%, rgba(7,7,7,.30) 60%, rgba(7,7,7,.88) 100%),
-        url('hero-g63-prague.jpg') center top no-repeat;
-      background-size: cover;
-      display:flex;
-      align-items: center;
-      padding: 120px 46px 80px;
-      position:relative;
-    }
-    .hero::before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:78px;
-      bottom:0;
-      width:58%;
-      background:linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.40), transparent);
-      z-index:1;
-      pointer-events:none;
-    }
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:78px 0 0 0;
-      background:radial-gradient(circle at 50% 30%, rgba(0,0,0,.38) 0%, rgba(0,0,0,.22) 28%, transparent 52%);
-      z-index:1;
-      pointer-events:none;
-    }
-    
-    /* Текст аккуратно сдвинут вниз под центр картинки, чтобы всё было видно */
-    .hero-content{
-      max-width:650px;
-      width:100%;
-      z-index:2;
-      position:relative;
-      margin-top: 0;
-    }
-    
-    .eyebrow{color:#e0b465;letter-spacing:6px;font-size:13px;font-weight:900;text-transform:uppercase;margin-bottom:18px}
-    .hero h1{font-family:Georgia,serif;font-size:76px;line-height:.92;font-weight:900;text-transform:uppercase;margin-bottom:20px;text-shadow:0 6px 24px rgba(0,0,0,0.95)}
-    .gold{color:#e0b465}
-    .hero p{font-size:20px;line-height:1.55;max-width:600px;color:#f4f4f4;margin-bottom:34px;text-shadow:0 3px 14px rgba(0,0,0,0.95)}
-    
-    .actions{display:flex;gap:18px;flex-wrap:wrap}
-    .btn-dark{border:1px solid rgba(201,161,93,.75);padding:12px 26px;border-radius:7px;font-weight:900;background:rgba(0,0,0,.6);text-transform: uppercase;letter-spacing: 0.5px}
-    
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px;max-width:840px}
-    .feature{background:rgba(0,0,0,.8);backdrop-filter:blur(5px);border:1px solid rgba(201,161,93,.25);border-radius:10px;padding:20px}
-    .feature b{color:#e0b465;font-size:13px;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:5px}
-    .feature span{display:block;color:#d6d6d6;font-size:14px}
-    
-    /* Секции */
-    .section{padding:80px 46px}
-    .section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}
-    .section h2{font-family:Georgia,serif;font-size:36px;text-transform:uppercase;letter-spacing:1px}
-    .section h2::after{content:'';display:block;width:60px;height:2px;background:#c9a15d;margin-top:10px}
-    .section p{color:#b5b5b5;margin-top:12px;font-size:16px}
-    
-    .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:24px}
-    .card{background:#111;border:1px solid rgba(201,161,93,.15);border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.4);transition:transform 0.3s ease}
-    .card:hover{transform:translateY(-5px);border-color:rgba(201,161,93,.4)}
-    .card img{width:100%;height:210px;object-fit:cover;display:block}
-    .car-placeholder{height:210px;background:linear-gradient(135deg,#1b1b1b,#0b0b0b);display:flex;align-items:center;justify-content:center;color:#c9a15d;font-weight:900;text-transform:uppercase;letter-spacing:1px;text-align:center;padding:20px}
-    .card-body{padding:22px}
-    .card h3{font-size:20px;margin-bottom:14px;font-family:Georgia,serif}
-    
-    .specs{list-style:none;color:#b5b5b5;font-size:14px;line-height:2;margin-bottom:20px}
-    .specs li{display:flex;align-items:center;gap:8px}
-    .specs li::before{content:'•';color:#c9a15d}
-    
-    .price{color:#e0b465;font-weight:900;margin-bottom:20px;font-size:15px;letter-spacing:1px}
-    .small-btn{display:block;text-align:center;border:1px solid rgba(201,161,93,.65);padding:12px;border-radius:6px;font-size:13px;font-weight:900;text-transform:uppercase;transition:all 0.3s}
-    .small-btn:hover{background:#c9a15d;color:#000}
-    
-    .footer{padding:40px 46px;border-top:1px solid rgba(201,161,93,.18);display:flex;justify-content:space-between;align-items:center;color:#888;background:#050505;font-size:14px}
-    
-    /* Адаптивность */
-    @media(max-width:1100px){
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .features{grid-template-columns:1fr;gap:12px}
-      .nav{display:none}
-      .hero h1{font-size:54px}
-      .header{padding:15px 22px}
-      .hero, .section{padding-left:22px;padding-right:22px}
-      .hero-content{margin-top:0;}
-    }
-    @media(max-width:650px){
-      .grid{grid-template-columns:1fr}
-      .hero h1{font-size:40px}
-      .brand-title{font-size:16px}
-      .brand-sub{font-size:8px;letter-spacing:1px}
-      .right{width:100%;justify-content:space-between;border-top:1px solid rgba(211,211,211,0.1);padding-top:10px}
-      .hero{padding-top:140px; padding-bottom: 40px;}
-      .hero-content{margin-top:0;}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUXES EXECUTIVE</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:#fff;font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit}
+.header{height:86px;background:#070707;display:flex;align-items:center;justify-content:space-between;padding:0 44px;border-bottom:1px solid rgba(217,164,65,.28);position:sticky;top:0;z-index:10}
+.brand{display:flex;align-items:center;gap:14px}
+.mark{width:58px;height:58px;border:2px solid #d9a441;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#d9a441;font-family:Georgia,serif;font-size:28px}
+.brand-title{font-size:26px;font-family:Georgia,serif;letter-spacing:1px}
+.brand-sub{font-size:10px;color:#d9a441;letter-spacing:3px;margin-top:4px}
+.nav{display:flex;gap:44px;font-weight:800;text-transform:uppercase}
+.right{display:flex;gap:16px;align-items:center;font-weight:800}
+.lang{border:1px solid rgba(217,164,65,.5);padding:12px 16px;border-radius:7px}
+.wa{background:linear-gradient(135deg,#f4cc77,#c99234);color:#050505;padding:14px 24px;border-radius:7px;font-weight:900}
+.hero{min-height:calc(100vh - 86px);background:url('hero-g63-prague.png') center/cover no-repeat;position:relative}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.28) 0%,rgba(255,255,255,.08) 38%,rgba(0,0,0,.05) 100%)}
+.benefits{position:absolute;left:5%;right:5%;bottom:38px;background:rgba(5,5,5,.92);border:1px solid rgba(217,164,65,.25);border-radius:10px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:24px 34px;z-index:2}
+.benefit{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center}
+.ico{font-size:34px;color:#d9a441}
+.benefit b{display:block;text-transform:uppercase;font-size:15px}
+.benefit span{color:#ddd;font-size:14px}
+.section{max-width:1500px;margin:auto;padding:56px 44px}
+h2{font-family:Georgia,serif;font-size:34px;text-transform:uppercase}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{min-height:250px;background:#111;border:1px solid rgba(217,164,65,.22);border-radius:10px;overflow:hidden}
+.photo{height:135px;background:#1d1d1d;display:flex;align-items:center;justify-content:center;color:#d9a441;font-weight:900}
+.card-body{padding:18px}
+.footer{padding:34px 44px;background:#050505;border-top:1px solid rgba(217,164,65,.25);display:flex;justify-content:space-between;color:#ccc}
+@media(max-width:900px){
+.header{height:auto;display:grid;gap:14px;padding:14px 20px}
+.nav{overflow:auto;gap:22px;font-size:13px}
+.hero{min-height:620px;background-position:center}
+.benefits{position:relative;left:auto;right:auto;bottom:auto;margin:0;border-radius:0;grid-template-columns:1fr}
+.cards{grid-template-columns:1fr}
+.footer{display:block;line-height:1.8}
+}
+</style>
 </head>
 <body>
-  <header class="header">
-    <a class="brand" href="#top">
-      <div class="brand-mark"><img src="logo.png" alt="LE"></div>
-      <div><div class="brand-title">LUXES EXECUTIVE</div><div class="brand-sub">PRIVATE · EXECUTIVE · WHOLESALE</div></div>
-    </a>
-    <nav class="nav">
-      <a href="#catalog" class="lang-txt" data-cs="Katalog" data-ru="Каталог" data-de="Katalog" data-en="Catalog">Katalog</a>
-      <a href="#about" class="lang-txt" data-cs="O nás" data-ru="О компании" data-de="Über uns" data-en="About Us">O nás</a>
-      <a href="#contact" class="lang-txt" data-cs="Kontakt" data-ru="Контакты" data-de="Kontakt" data-en="Contact">Kontakt</a>
-    </nav>
-    <div class="right">
-      <div class="lang-switcher">
-        <span class="lang-item active" onclick="setLang('cs')">CS</span> | 
-        <span class="lang-item" onclick="setLang('ru')">RU</span> | 
-        <span class="lang-item" onclick="setLang('de')">DE</span> | 
-        <span class="lang-item" onclick="setLang('en')">EN</span>
-      </div>
-      <a class="wa" href="https://wa.me/420777399799">WhatsApp</a>
+<header class="header">
+  <a class="brand" href="index.html">
+    <div class="mark">LE</div>
+    <div>
+      <div class="brand-title">LUXES EXECUTIVE</div>
+      <div class="brand-sub">PRIVATE • EXECUTIVE • WHOLESALE</div>
     </div>
-  </header>
+  </a>
+  <nav class="nav">
+    <a href="#catalog">Catalog</a>
+    <a href="#about">About us</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="right">
+    <span>+420 777 399 799</span>
+    <div class="lang">EN / RU / DE / CS</div>
+    <a class="wa" href="https://wa.me/420777399799">WhatsApp</a>
+  </div>
+</header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-content">
-        <div class="eyebrow lang-txt"
-             data-cs="Private • Executive • Wholesale"
-             data-ru="Private • Executive • Wholesale"
-             data-de="Private • Executive • Wholesale"
-             data-en="Private • Executive • Wholesale">Private • Executive • Wholesale</div>
+<main>
+<section class="hero">
+  <div class="benefits">
+    <div class="benefit"><div class="ico">▱</div><div><b>Verified suppliers</b><span>Trusted partners only</span></div></div>
+    <div class="benefit"><div class="ico">◇</div><div><b>Premium vehicles</b><span>Quality & performance</span></div></div>
+    <div class="benefit"><div class="ico">◎</div><div><b>Worldwide delivery</b><span>Safe & secure shipping</span></div></div>
+    <div class="benefit"><div class="ico">☏</div><div><b>Dedicated support</b><span>Personal assistance</span></div></div>
+  </div>
+</section>
 
-        <h1 class="lang-txt"
-            data-cs="LUXES<br><span class='gold'>EXECUTIVE</span>"
-            data-ru="LUXES<br><span class='gold'>EXECUTIVE</span>"
-            data-de="LUXES<br><span class='gold'>EXECUTIVE</span>"
-            data-en="LUXES<br><span class='gold'>EXECUTIVE</span>">LUXES<br><span class="gold">EXECUTIVE</span></h1>
-        
-        <p class="lang-txt"
-           data-cs="Premium vehicles from Germany, the Netherlands and Turkey for private clients, dealers and B2B partners."
-           data-ru="Премиальные автомобили из Германии, Нидерландов и Турции для частных клиентов, дилеров и B2B партнёров."
-           data-de="Premium-Fahrzeuge aus Deutschland, den Niederlanden und der Türkei für Privatkunden, Händler und B2B-Partner."
-           data-en="Premium vehicles from Germany, the Netherlands and Turkey for private clients, dealers and B2B partners.">Premium vehicles from Germany, the Netherlands and Turkey for private clients, dealers and B2B partners.</p>
-        
-        <div class="actions">
-          <a class="btn-gold lang-txt" href="#catalog" data-cs="Zobrazit vozidla" data-ru="Смотреть каталог" data-de="Fahrzeuge anzeigen" data-en="View Vehicles">Zobrazit vozidla</a>
-          <a class="btn-dark" href="https://wa.me/420777399799">WhatsApp</a>
-        </div>
-        
-        <div class="features">
-          <div class="feature">
-            <b class="lang-txt" data-cs="Ověření dodavatelé" data-ru="Проверенные поставщики" data-de="Geprüfte Lieferanten" data-en="Verified suppliers">Ověření dodavatelé</b>
-            <span class="lang-txt" data-cs="Spolupracujeme pouze s prověřenými partnery." data-ru="Работаем исключительно с надежными партнерами." data-de="Wir arbeiten nur mit vertrauenswürdigen Partnern." data-en="Trusted partners only.">Spolupracujeme pouze s prověřenými partnery.</span>
-          </div>
-          <div class="feature">
-            <b class="lang-txt" data-cs="Prémiová kvalita" data-ru="Премиум качество" data-de="Premium-Qualität" data-en="Premium vehicles">Prémiová kvalita</b>
-            <span class="lang-txt" data-cs="Garantujeme špičkový stav a původ vozidel." data-ru="Гарантируем идеальное состояние и происхождение авто." data-de="Wir garantieren erstklassigen Zustand und Herkunft." data-en="Quality & performance guaranteed.">Garantujeme špičkový stav a původ vozidel.</span>
-          </div>
-          <div class="feature">
-            <b class="lang-txt" data-cs="Doručení kamkoliv" data-ru="Доставка куда угодно" data-de="Weltweite Lieferung" data-en="Worldwide delivery">Doručení kamkoliv</b>
-            <span class="lang-txt" data-cs="Bezpečná a spolehlivá doprava až k vám." data-ru="Безопасная и надежная транспортировка до вас." data-de="Sicherer und zuverlässiger Transport zu Ihnen." data-en="Safe & secure shipping.">Bezpečná a spolehlivá doprava až k vám.</span>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="section" id="catalog">
+  <h2>Vehicle catalog</h2>
+  <div class="cards">
+    <div class="card"><div class="photo">PHOTO</div><div class="card-body">Vehicle name<br><br>Price on request</div></div>
+    <div class="card"><div class="photo">PHOTO</div><div class="card-body">Vehicle name<br><br>Price on request</div></div>
+    <div class="card"><div class="photo">PHOTO</div><div class="card-body">Vehicle name<br><br>Price on request</div></div>
+    <div class="card"><div class="photo">PHOTO</div><div class="card-body">Vehicle name<br><br>Price on request</div></div>
+  </div>
+</section>
+</main>
 
-    <section class="section" id="catalog">
-      <div class="section-head">
-        <div>
-          <h2 class="lang-txt" data-cs="Naše Nabídka" data-ru="Наша Наглядная База" data-de="Unser Angebot" data-en="Our Fleet">Naše Nabídka</h2>
-          <p class="lang-txt" data-cs="Pečlivě vybraná prémiová vozidla ihned k odběru nebo na individuální objednávku." data-ru="Тщательно отобранные автомобили в наличии или под individual заказ." data-de="Sorgfältig ausgewählte Premium-Fahrzeuge sofort verfügbar oder auf Bestellung." data-en="Carefully selected premium vehicles available for immediate delivery or individual order.">Pečlivě vybraná prémiová vozidla ihned k odběru nebo na individuální objednávku.</p>
-        </div>
-      </div>
-      
-      <div class="grid">
-        <article class="card">
-          <div class="car-placeholder">Mercedes G63 AMG</div>
-          <div class="card-body">
-            <h3>Mercedes G63 AMG</h3>
-            <ul class="specs">
-              <li><span class="lang-txt" data-cs="Rok: 2023" data-ru="Год: 2023" data-de="Jahr: 2023" data-en="Year: 2023">Rok: 2023</span></li>
-              <li><span class="lang-txt" data-cs="Najeto: 22 000 km" data-ru="Пробег: 22 000 км" data-de="Kilometerstand: 22.000 km" data-en="Mileage: 22,000 km">Najeto: 22 000 km</span></li>
-              <li>AMG Performance Package</li>
-              <li><span class="lang-txt" data-cs="EU Specifikace" data-ru="Европейская спецификация" data-de="EU-Spezifikation" data-en="EU Specification">EU Specifikace</span></li>
-            </ul>
-            <div class="price lang-txt" data-cs="CENA NA VYŽÁDÁNÍ" data-ru="ЦЕНА ПО ЗАПРОСУ" data-de="PREIS AUF ANFRAGE" data-en="PRICE ON REQUEST">CENA NA VYŽÁDÁNÍ</div>
-            <a class="small-btn lang-txt" href="https://wa.me/420777399799" data-cs="Poptat detaily" data-ru="Запросить детали" data-de="Details anfordern" data-en="Request details">Poptat detaily</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="car-placeholder">Mercedes S580</div>
-          <div class="card-body">
-            <h3>Mercedes S580</h3>
-            <ul class="specs">
-              <li><span class="lang-txt" data-cs="Rok: 2023" data-ru="Год: 2023" data-de="Jahr: 2023" data-en="Year: 2023">Rok: 2023</span></li>
-              <li><span class="lang-txt" data-cs="Najeto: 18 500 km" data-ru="Пробег: 18 500 км" data-de="Kilometerstand: 18.500 km" data-en="Mileage: 18,500 km">Najeto: 18 500 km</span></li>
-              <li>4MATIC</li>
-              <li>Premium Package</li>
-            </ul>
-            <div class="price lang-txt" data-cs="CENA NA VYŽÁDÁNÍ" data-ru="ЦЕНА ПО ЗАПРОСУ" data-de="PREIS AUF ANFRAGE" data-en="PRICE ON REQUEST">CENA NA VYŽÁDÁNÍ</div>
-            <a class="small-btn lang-txt" href="https://wa.me/420777399799" data-cs="Poptat detaily" data-ru="Запросить детали" data-de="Details anfordern" data-en="Request details">Poptat detaily</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="car-placeholder">BMW X7</div>
-          <div class="card-body">
-            <h3>BMW X7 xDrive40i</h3>
-            <ul class="specs">
-              <li><span class="lang-txt" data-cs="Rok: 2023" data-ru="Год: 2023" data-de="Jahr: 2023" data-en="Year: 2023">Rok: 2023</span></li>
-              <li><span class="lang-txt" data-cs="Najeto: 24 000 km" data-ru="Пробег: 24 000 км" data-de="Kilometerstand: 24.000 km" data-en="Mileage: 24,000 km">Najeto: 24 000 km</span></li>
-              <li>M Sport Package</li>
-              <li><span class="lang-txt" data-cs="7 Míst k sezení" data-ru="7 Мест" data-de="7 Sitzplätze" data-en="7 Seats">7 Míst k sezení</span></li>
-            </ul>
-            <div class="price lang-txt" data-cs="CENA NA VYŽÁDÁNÍ" data-ru="ЦЕНА ПО ЗАПРОСУ" data-de="PREIS AUF ANFRAGE" data-en="PRICE ON REQUEST">CENA NA VYŽÁDÁNÍ</div>
-            <a class="small-btn lang-txt" href="https://wa.me/420777399799" data-cs="Poptat detaily" data-ru="Запросить детали" data-de="Details anfordern" data-en="Request details">Poptat detaily</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <h2 class="lang-txt" data-cs="O LUXES EXECUTIVE" data-ru="О компании LUXES EXECUTIVE" data-de="Über LUXES EXECUTIVE" data-en="About LUXES EXECUTIVE">O LUXES EXECUTIVE</h2>
-      <p class="lang-txt" 
-         data-cs="Privátní, korporátní a velkoobchodní zprostředkování prémiových automobilů po celé Evropě. Zakládáme si na diskrétní komunikaci, maximální bezpečnosti a profesionální spolupráci." 
-         data-ru="Частный, корпоративный и оптовый подбор автомобилей премиум-класса по всей Европе. Мы делаем ставку на конфиденциальное общение, maximální безопасность и профессиональное сотрудничество." 
-         data-de="Private, geschäftliche und großhandelliche Vermittlung von Premium-Fahrzeugen in ganz Europa. Wir setzen auf diskrete Kommunikation, maximale Sicherheit und professionelle Zusammenarbeit." 
-         data-en="Private, executive and wholesale sourcing of premium vehicles across Europe with discreet communication and secure cooperation.">Privátní, korporátní a velkoobchodní zprostředkování prémiových automobilů po celé Evropě. Zakládáme si na diskrétní komunikaci, maximální bezpečnosti a profesionální spolupráci.</p>
-    </section>
-    
-    <section class="section" id="contact">
-      <h2 class="lang-txt" data-cs="Kontakt" data-ru="Контакты" data-de="Kontakt" data-en="Contact">Kontakt</h2>
-      <p class="lang-txt" data-cs="Pro nezávaznou poptávku nebo konzultaci nás kontaktujte." data-ru="Для бесплатной консультации или запроса свяжитесь с нами." data-de="Für Anfragen oder Beratung kontaktieren Sie uns." data-en="For inquiries or consultation, feel free to contact us.">Pro nezávaznou poptávku nebo konzultaci nás kontaktujte.</p>
-      <p style="font-size: 20px; color: #e0b465; margin-top: 15px; font-weight: bold;">Telefon / WhatsApp: +420 777 399 799</p>
-    </section>
-  </main>
-  
-  <footer class="footer">
-    <span>© LUXES EXECUTIVE</span>
-    <span>Private · Executive · Wholesale</span>
-  </footer>
-
-  <script>
-    function setLang(lang) {
-      document.querySelectorAll('.lang-item').forEach(item => {
-        item.classList.remove('active');
-        if(item.innerText.toLowerCase() === lang) {
-          item.classList.add('active');
-        }
-      });
-      
-      document.querySelectorAll('.lang-txt').forEach(el => {
-        if(el.getAttribute('data-' + lang)) {
-          el.innerHTML = el.getAttribute('data-' + lang);
-        }
-      });
-    }
-  </script>
+<footer class="footer" id="contact">
+  <div>LUXES EXECUTIVE s.r.o.<br>IČO: 076 68 295</div>
+  <div>+420 777 399 799<br>executive@luxes.cz</div>
+</footer>
 </body>
 </html>
