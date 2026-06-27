@@ -24,7 +24,7 @@ a{text-decoration:none;color:inherit}
 .hero:before{content:"";position:absolute;inset:0;background:
 linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.62) 38%,rgba(0,0,0,.20) 100%),
 linear-gradient(0deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,0) 38%),
-url("assets/hero.jpg") center/cover no-repeat}
+url("assets/hero.jpg") right center/contain no-repeat}
 .hero-inner{position:relative;max-width:1420px;margin:auto;min-height:760px;padding:96px 34px 70px;display:grid;grid-template-columns:.78fr 1.22fr;align-items:center}
 .kicker{color:var(--gold2);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:7px;margin-bottom:20px}
 h1{font-family:Georgia,serif;font-size:76px;line-height:.92;margin:0;text-transform:uppercase;letter-spacing:-1px;text-shadow:0 14px 42px #000}
