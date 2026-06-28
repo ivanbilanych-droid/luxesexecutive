@@ -1,15 +1,16 @@
-LUXES EXECUTIVE - CATALOG READY
+LUXES EXECUTIVE - GOLD LOGO FINAL
 
 Сделано:
-- Mercedes G уменьшен в главном экране через CSS.
+- Новый золотой логотип LE.
+- Mercedes G уменьшен в главном экране.
 - Каталог оставлен.
-- Первая карточка: Lexus GX 460 V8 Executive LPG из mobile.de.
-- 5 пустых карточек оставлены для будущих машин.
+- Первая карточка: Lexus GX 460 с ссылкой mobile.de.
+- Остальные карточки пустые для будущего заполнения.
 - Контакты: +420 777 399 799 / executive@luxes.cz.
 - Языки: CZ / EN / DE / RU.
 
-ВАЖНО:
-На GitHub нужно загрузить НЕ ZIP, а содержимое ZIP:
+ЗАГРУЗКА:
+На GitHub загрузить содержимое ZIP, не сам ZIP:
 index.html
 index_ru.html
 index_cs.html
