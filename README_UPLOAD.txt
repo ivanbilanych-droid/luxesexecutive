@@ -1,1 +1,1 @@
-Upload contents of this folder to GitHub/Vercel. Do not upload only ZIP. Catalog reads cars.csv. Photos go to assets/cars/.
+Fixed header, removed technical blocks, checked RU/CZ/EN/DE language pages, replaced hero/logo assets.

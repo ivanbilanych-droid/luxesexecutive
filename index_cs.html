@@ -1,8 +1,84 @@
-<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LUXES EXECUTIVE</title><link rel="stylesheet" href="style.css"></head><body>
-<header class="header"><div class="header-inner"><a class="brand" href="index.html"><img src="assets/logo.png" alt="LUXES EXECUTIVE"><div><div class="brand-title">LUXES EXECUTIVE</div><div class="brand-sub">Premium vehicles from Europe</div></div></a><nav class="nav"><a href="#catalog">Katalog</a><a href="#services">Služby</a><a href="#contact">Kontakt</a></nav><div class="actions"><span>+420 777 399 799</span><span class="mail">executive@luxes.cz</span><span class="lang"><a href="index_cs.html">CZ</a> / <a href="index_en.html">EN</a> / <a href="index_de.html">DE</a> / <a href="index.html">RU</a></span><a class="wa" href="https://wa.me/420777399799">WhatsApp</a></div></div></header>
-<section class="hero"><div class="hero-inner"><div><div class="kicker">Private • Executive • Wholesale</div><h1>Prémiové automobily z Evropy</h1><p class="lead">Světlý web LUXES EXECUTIVE. Katalog se aktualizuje přes Excel / CSV tabulku.</p><div class="buttons"><a class="btn btn-black" href="#catalog">Katalog vozidel</a><a class="btn btn-line" href="#contact">Kontakt</a></div></div><div class="hero-visual"><img src="assets/hero.png" alt="Mercedes G"><div class="hero-note"><b>LUXES EXECUTIVE</b><p>+420 777 399 799<br>executive@luxes.cz</p></div></div></div></section>
-<section class="strip"><div class="strip-inner"><div class="fact"><b>Excel каталог</b><span>машины добавляются без кода</span></div><div class="fact"><b>TOP авто</b><span>показываются первыми</span></div><div class="fact"><b>Статус</b><span>V prodeji / Rezervováno / Prodáno</span></div><div class="fact"><b>GitHub / Vercel</b><span>готово к загрузке</span></div></div></section>
-<section class="section" id="catalog"><div class="title-row"><div><h2>Katalog vozidel</h2><p class="subtitle">Karty se načítají ze souboru cars.csv. V Excelu doplníš vůz, uložíš CSV a nahraješ na web.</p></div><a class="wa" href="cars.xlsx">Excel</a></div><div class="catalog" id="catalogGrid"></div></section>
-<section class="services" id="services"><div class="section"><div class="title-row"><h2>Jak systém funguje</h2></div><div class="service-grid"><div class="service"><div class="no">01</div><b>Excel</b><p>Заполняешь таблицу автомобилей.</p></div><div class="service"><div class="no">02</div><b>CSV</b><p>Сохраняешь файл cars.csv.</p></div><div class="service"><div class="no">03</div><b>Фото</b><p>Фото кладёшь в assets/cars/.</p></div><div class="service"><div class="no">04</div><b>Сайт</b><p>Каталог обновляется автоматически.</p></div></div></div></section>
-<section class="section" id="contact"><div class="contact-grid"><div class="box"><h2>Kontakt</h2><p class="subtitle">LUXES EXECUTIVE s.r.o.</p><div class="contact-line">+420 777 399 799</div><div class="contact-line">executive@luxes.cz</div><p class="subtitle">IČO: 076 68 295</p></div><form class="box"><input placeholder="Имя / Jméno"><input placeholder="Telefon / WhatsApp"><input placeholder="E-mail"><input placeholder="Марка, модель, бюджет"><textarea placeholder="Комментарий"></textarea><button class="submit" type="button">Send</button></form></div></section>
-<footer class="footer"><div class="footer-inner"><div><b>LUXES EXECUTIVE</b><br>Premium vehicles from Europe</div><div>+420 777 399 799<br>executive@luxes.cz</div><div>© 2026 LUXES EXECUTIVE s.r.o.</div></div></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUXES EXECUTIVE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="LUXES EXECUTIVE">
+      <div><div class="brand-title">LUXES EXECUTIVE</div><div class="brand-sub">Premium vehicles from Europe</div></div>
+    </a>
+    <nav class="nav"><a href="#catalog">Katalog</a><a href="#benefits">Služby</a><a href="#contact">Kontakt</a></nav>
+    <div class="actions">
+      <span class="lang"><a href="index_cs.html">CZ</a> / <a href="index_en.html">EN</a> / <a href="index_de.html">DE</a> / <a href="index.html">RU</a></span>
+      <a class="wa" href="https://wa.me/420777399799">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Private • Executive • Wholesale</div>
+      <h1>Prémiové automobily z Evropy</h1>
+      <p class="lead">Výběr, kontrola a dodání prémiových vozů pro soukromé klienty a partnery.</p>
+      <div class="buttons">
+        <a class="btn btn-black" href="#catalog">Zobrazit katalog</a>
+        <a class="btn btn-line" href="#contact">Kontakt</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/hero.png" alt="Mercedes G">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="catalog">
+  <div class="title-row">
+    <div><h2>Katalog vozidel</h2><p class="subtitle">Aktuální vozidla LUXES EXECUTIVE. Nové nabídky se postupně doplňují do katalogu.</p></div>
+  </div>
+  <div class="catalog" id="catalogGrid"></div>
+</section>
+
+<section class="services" id="benefits">
+  <div class="section">
+    <div class="title-row"><h2>Proč LUXES EXECUTIVE</h2></div>
+    <div class="service-grid"><div class="service"><b>Prověřené vozy</b><p>Historie, doklady a stav vozidla.</p></div><div class="service"><b>Kompletní kontrola</b><p>Karoserie, výbava, nájezd a právní čistota.</p></div><div class="service"><b>Dovoz po Evropě</b><p>Zajištění nákupu, logistiky a předání vozu.</p></div><div class="service"><b>Individuální výběr</b><p>Výběr vozu podle konkrétního požadavku klienta.</p></div></div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="contact-grid">
+    <div class="box">
+      <h2>Kontakt</h2>
+      <p class="subtitle">LUXES EXECUTIVE s.r.o.</p>
+      <div class="contact-line">+420 777 399 799</div>
+      <div class="contact-line">executive@luxes.cz</div>
+      <p class="subtitle">IČO: 076 68 295</p>
+    </div>
+    <form class="box">
+      <input placeholder="Jméno / Name">
+      <input placeholder="Telefon / WhatsApp">
+      <input placeholder="E-mail">
+      <input placeholder="Model / budget">
+      <textarea placeholder="Message"></textarea>
+      <button class="submit" type="button">Send</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><b>LUXES EXECUTIVE</b><br>Premium vehicles from Europe</div>
+    <div>+420 777 399 799<br>executive@luxes.cz</div>
+    <div>© 2026 LUXES EXECUTIVE s.r.o.</div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
