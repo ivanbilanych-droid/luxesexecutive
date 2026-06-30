@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LUXES EXECUTIVE | Luxusní vozy s exkluzivním přístupem</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #ffffff; color: #111111; font-family: Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; transition: all .2s ease; }
+    
+    :root { 
+      --dark: #0f1012;
+      --text-muted: #555555;
+      --border: #eef0f2;
+      --bg-light: #f8f9fa;
+    }
+
+    /* Шапка сайта */
+    .header { position: sticky; top: 0; background: #ffffff; z-index: 100; border-bottom: 1px solid var(--border); }
+    .top-nav { max-width: 1440px; margin: auto; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+    
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 64px; width: auto; object-fit: contain; display: block; }
+    
+    .menu { display: flex; gap: 28px; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: .5px; color: var(--dark); }
+    .menu a { position: relative; padding-bottom: 4px; }
+    .menu a.active::after { content: ""; position: absolute; bottom: 0; left: 0; width: 24px; height: 2px; background: var(--dark); }
+    
+    .right-actions { display: flex; align-items: center; gap: 32px; font-size: 13px; font-weight: 700; color: var(--dark); }
+    .header-contact-item { display: flex; align-items: center; gap: 8px; }
+    .header-contact-item i { font-size: 16px; opacity: 0.7; font-style: normal; }
+    
+    .lang-select { border: 1px solid #ccc; padding: 10px 16px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 6px; background: #fff; }
+
+    /* Главный баннер */
+    .hero { 
+      position: relative; 
+      min-height: 540px; 
+      background: #ffffff url('assets/hero.jpg') right center / contain no-repeat;
+      display: flex;
+      align-items: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #ffffff 0%, #ffffff 45%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,0) 100%);
+      z-index: 1;
+    }
+    .hero .container { position: relative; z-index: 2; max-width: 1440px; width: 100%; margin: auto; padding: 40px 40px; }
+    
+    .hero h1 { font-family: Arial, sans-serif; font-size: 46px; color: var(--dark); text-transform: uppercase; margin: 0 0 16px; line-height: 1.15; font-weight: 900; letter-spacing: .5px; }
+    .hero h1 span { display: block; font-size: 32px; font-weight: 700; margin-top: 4px; }
+    .hero p { max-width: 480px; color: var(--text-muted); font-size: 15px; line-height: 1.6; margin: 0 0 32px; }
+
+    .btn-dark { background: var(--dark); color: #ffffff; font-weight: 700; padding: 16px 28px; border-radius: 4px; display: inline-flex; align-items: center; gap: 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+    .btn-dark:hover { opacity: 0.9; }
+
+    /* Блок преимуществ */
+    .benefits-bar { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: #ffffff; }
+    .benefits-grid { max-width: 1440px; margin: auto; display: grid; grid-template-columns: repeat(4, 1fr); padding: 30px 40px; }
+    .benefit-item { display: flex; align-items: flex-start; gap: 16px; padding: 0 10px; }
+    .benefit-item:not(:last-child) { border-right: 1px solid var(--border); }
+    .benefit-item .b-icon { font-size: 24px; color: var(--dark); font-style: normal; line-height: 1; }
+    .benefit-item h4 { margin: 0 0 4px 0; font-size: 14px; color: var(--dark); font-weight: 700; }
+    .benefit-item p { margin: 0; font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+
+    /* Каталог автомобилей */
+    .catalog-section { max-width: 1440px; margin: auto; padding: 60px 40px; }
+    .catalog-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .catalog-header h2 { font-size: 28px; color: var(--dark); margin: 0; font-weight: 900; text-transform: uppercase; letter-spacing: .5px; }
+    .view-all { font-size: 13px; font-weight: 700; color: var(--dark); display: flex; align-items: center; gap: 8px; }
+
+    /* Сетка карточек */
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .card { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; position: relative; }
+    
+    .card-img-wrapper { position: relative; width: 100%; height: 200px; background: #f0f2f5; display: flex; align-items: center; justify-content: center; }
+    .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    
+    /* Плейсхолдер для пустых карточек */
+    .placeholder-svg { width: 60%; opacity: 0.15; }
+    .placeholder-add { font-size: 24px; color: var(--dark); opacity: 0.3; position: absolute; }
+
+    .badge-new { position: absolute; top: 12px; left: 12px; background: #000000; color: #ffffff; font-size: 10px; font-weight: 700; padding: 6px 12px; border-radius: 4px; text-transform: uppercase; letter-spacing: .5px; }
+    .fav-icon { position: absolute; top: 12px; right: 12px; font-size: 18px; color: var(--dark); cursor: pointer; background: transparent; border: none; outline: none; }
+
+    .card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .card-body h3 { font-size: 15px; color: var(--dark); margin: 0 0 8px 0; font-weight: 700; }
+    .card-specs { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
+    
+    .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 12px; }
+    .card-footer .price-label { font-size: 15px; font-weight: 700; color: var(--dark); }
+    .card-footer .placeholder-price { font-size: 14px; font-weight: 700; color: var(--dark); }
+
+    /* Подвал сайта */
+    .footer { background: #f1f3f5; border-top: 1px solid var(--border); padding: 40px 40px; }
+    .footer-grid { max-width: 1440px; margin: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .footer-col { display: flex; align-items: center; gap: 16px; }
+    .footer-col i { font-size: 24px; color: var(--dark); font-style: normal; opacity: 0.8; }
+    .footer-col h4 { margin: 0 0 4px 0; font-size: 14px; color: var(--dark); font-weight: 700; }
+    .footer-col p { margin: 0; font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+    /* Адаптивность для мобильных */
+    @media (max-width: 1200px) {
+      .hero { background-size: cover; background-position: 60% center; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .benefit-item:not(:last-child) { border-right: none; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    }
+    @media (max-width: 991px) {
+      .top-nav { padding: 15px 20px; }
+      .menu { display: none; }
+      .right-actions { gap: 16px; }
+      .hero { background-image: none; min-height: auto; }
+      .hero::before { background: #ffffff; }
+      .hero .container { padding: 40px 20px; text-align: center; }
+      .hero p { margin: 0 auto 32px; }
+      .benefits-grid { padding: 30px 20px; }
+      .catalog-section { padding: 40px 20px; }
+      .footer { padding: 40px 20px; }
+    }
+    @media (max-width: 650px) {
+      .header-contact-item { display: none; }
+      .hero h1 { font-size: 32px; .hero h1 span { font-size: 22px; } }
+      .benefits-grid { grid-template-columns: 1fr; gap: 20px; }
+      .grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="top-nav">
+      <a href="/" class="logo">
+        <img src="assets/LE_gold_logo.png" alt="LUXES EXECUTIVE">
+      </a>
+      <nav class="menu">
+        <a href="#home" class="active">Domů</a>
+        <a href="#catalog">Katalog</a>
+        <a href="#about">O nás</a>
+        <a href="#services">Služby</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+      <div class="right-actions">
+        <div class="header-contact-item"><i>📞</i> +420 777 399 799</div>
+        <div class="header-contact-item"><i>✉</i> executive@luxes.cz</div>
+        <div class="lang-select">CZ <span>▼</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Главный баннер -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Luxusní vozy<span>S exkluzivním přístupem</span></h1>
+      <p>Prémiové vozy z ověřených zdrojů v celé Evropě. Individuální přístup, maximální důvěra, špičkový servis.</p>
+      <a href="#catalog" class="btn-dark">Zobrazit katalog ➔</a>
+    </div>
+  </section>
+
+  <!-- Блок четырех преимуществ -->
+  <div class="benefits-bar">
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="b-icon">🛡️</div>
+        <div>
+          <h4>Prověřené vozy</h4>
+          <p>Pečlivě vybíráme jen prověřené vozy.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="b-icon">🌐</div>
+        <div>
+          <h4>Dovoz po celé Evropě</h4>
+          <p>Zajišťujeme dovoz vozů z celé Evropy.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="b-icon">🤝</div>
+        <div>
+          <h4>Individuální přístup</h4>
+          <p>Každý klient je pro nás jedinečný.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="b-icon">⭐</div>
+        <div>
+          <h4>Prémiový servis</h4>
+          <p>Postaráme se o vše od A do Z.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Раздел каталога автомобилей -->
+  <section class="catalog-section" id="catalog">
+    <div class="catalog-header">
+      <h2>Katalog vozů</h2>
+      <a href="#catalog" class="view-all">Zobrazit všechny vozy ➔</a>
+    </div>
+
+    <div class="grid">
+      <!-- Реальная карточка Mercedes -->
+      <article class="card">
+        <span class="badge-new">Novinka</span>
+        <button class="fav-icon">♡</button>
+        <div class="card-img-wrapper">
+          <img src="assets/hero.jpg" alt="Mercedes-Benz G 63 AMG">
+        </div>
+        <div class="card-body">
+          <h3>Mercedes-Benz G 63 AMG</h3>
+          <div class="card-specs">585 kW (795 PS) • 09/2023 • 22 000 km</div>
+          <div class="card-footer">
+            <span class="price-label">249 900 €</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Плейсхолдер 2 -->
+      <article class="card">
+        <button class="fav-icon">♡</button>
+        <div class="card-img-wrapper">
+          <svg class="placeholder-svg" viewBox="0 0 100 60"><path d="M10,40 Q20,25 40,25 L70,25 Q80,25 90,40 Z" fill="none" stroke="#ccc" stroke-width="2"/><circle cx="30" cy="42" r="8" fill="none" stroke="#ccc" stroke-width="2"/><circle cx="70" cy="42" r="8" fill="none" stroke="#ccc" stroke-width="2"/></svg>
+          <span class="placeholder-add">+</span>
+        </div>
+        <div class="card-body">
+          <h3>Název vozu</h3>
+          <div class="card-specs">Rok • Výkon • Najeto</div>
+          <div class="card-footer">
+            <span class="placeholder-price">Cena</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Плейсхолдер 3 -->
+      <article class="card">
+        <button class="fav-icon">♡</button>
+        <div class="card-img-wrapper">
+          <svg class="placeholder-svg" viewBox="0 0 100 60"><path d="M10,40 Q20,25 40,25 L70,25 Q80,25 90,40 Z" fill="none" stroke="#ccc" stroke-width="2"/><circle cx="30" cy="42" r="8" fill="none" stroke="#ccc" stroke-width="2"/><circle cx="70" cy="42" r="8" fill="none" stroke="#ccc" stroke-width="2"/></svg>
+          <span class="placeholder-add">+</span>
+        </div>
+        <div class="card-body">
+          <h3>Název vozu</h3>
+          <div class="card-specs">Rok • Výkon • Najeto</div>
+          <div class="card-footer">
+            <span class="placeholder-price">Cena</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Плейсхолдер 4 -->
+      <article class="card">
+        <button class="fav-icon">♡</button>
+        <div class="card-img-wrapper">
+          <svg class="placeholder-svg" viewBox="0 0 100 60"><path d="M10,40 Q20,25 40,25 L70,25 Q80,25 90,40 Z" fill="none" stroke="#ccc" stroke-width="2"/><circle cx="30" cy="42" r="8" fill="none" stroke="#ccc" stroke-width="2"/><circle cx="70" cy="42" r="8" fill="none" stroke="#ccc" stroke-width="2"/></svg>
+          <span class="placeholder-add">+</span>
+        </div>
+        <div class="card-body">
+          <h3>Název vozu</h3>
+          <div class="card-specs">Rok • Výkon • Najeto</div>
+          <div class="card-footer">
+            <span class="placeholder-price">Cena</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Подвал сайта -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <i>📞</i>
+        <div>
+          <h4>+420 777 399 799</h4>
+          <p>Po–Ne: 9:00 – 20:00</p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <i>✉</i>
+        <div>
+          <h4>executive@luxes.cz</h4>
+          <p>Odpovíme co nejdříve</p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <i>📍</i>
+        <div>
+          <h4>Praha, Česká republika</h4>
+          <p>Působíme po celé Evropě</p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <i>📷</i>
+        <div>
+          <h4>@luxes.executive</h4>
+          <p>Sledujte nás</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
