@@ -15,4 +15,6 @@
 @media(max-width:1050px){.header-inner{grid-template-columns:1fr;gap:14px}.nav{justify-content:flex-start;flex-wrap:wrap}.actions{flex-wrap:wrap}.hero-inner{grid-template-columns:1fr;min-height:auto}.hero{min-height:auto}.catalog{grid-template-columns:1fr 1fr}.service-grid{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}}
 @media(max-width:680px){.header-inner,.hero-inner,.section,.contact-grid,.footer-inner{padding-left:18px;padding-right:18px}.brand img{width:80px;height:55px}.brand-title{font-size:22px}.brand-sub{font-size:9px}h1{font-size:42px}.kicker{letter-spacing:4px}.lead{font-size:17px}.hero-inner{padding-top:46px;padding-bottom:46px}.catalog,.service-grid,form{grid-template-columns:1fr}h2{font-size:30px}.title-row{align-items:flex-start;flex-direction:column}.btn{width:100%}}
 
-.card-version{color:#6b6258;margin-top:6px}
+
+.card-version{color:var(--muted);margin-top:6px}
+.card-photo.image-missing::after{content:"Foto není nalezeno";color:#777;font-weight:900}

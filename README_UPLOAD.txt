@@ -1,1 +1,1 @@
-WORKING CATALOG: Upload all files. Catalog reads cars.csv and shows Lexus test car from assets/cars/lexus-gx460-2023.jpg.
+CZ is main index.html. Catalog reads cars.csv. Add car photo to assets/cars and fill cars.csv or Excel.
