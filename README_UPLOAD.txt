@@ -1,1 +1,1 @@
-Fixed header, removed technical blocks, checked RU/CZ/EN/DE language pages, replaced hero/logo assets.
+CZ is main index.html. Catalog reads cars.csv. Add car photo to assets/cars and fill cars.csv or Excel.
