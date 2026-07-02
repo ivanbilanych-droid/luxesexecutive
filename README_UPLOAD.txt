@@ -1,16 +1,11 @@
-LUXES EXECUTIVE UNLIMITED CATALOG
+LUXES EXECUTIVE - PREMIUM LOGO + HERO
 
-Cars included now: 4
+Hotovo:
+- vyměněné logo za nové stříbrné LE;
+- favicon používá stejné logo;
+- hero blok je luxusnější;
+- Mercedes v hero zvětšený;
+- jemná animace textu a auta;
+- katalog zůstává automatický a neomezený.
 
-This version:
-- shows any number of cars;
-- reads cars.csv automatically on GitHub/Vercel;
-- uses cars.js fallback when opened locally;
-- shows cars even if some fields are empty;
-- empty price becomes 'Cena na dotaz'.
-
-To add a car:
-1. Put photo into assets/cars/
-2. Add row in cars.xlsx
-3. Save/export as cars.csv
-4. Upload updated files
+Otevři index.html nebo nahraj celý projekt na GitHub/Vercel.

@@ -64,3 +64,123 @@
   .catalog{grid-template-columns:1fr}
   .card-photo{height:255px}
 }
+
+
+/* PREMIUM HERO + NEW LOGO PATCH */
+.brand img{
+  width:118px;
+  height:78px;
+  object-fit:cover;
+  border-radius:14px;
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+}
+.hero{
+  min-height:660px;
+  background:
+    radial-gradient(circle at 72% 38%, rgba(184,149,78,.20), transparent 34%),
+    linear-gradient(115deg, rgba(246,243,236,.98) 0%, rgba(246,243,236,.82) 42%, rgba(229,219,202,.72) 100%);
+}
+.hero-inner{
+  min-height:660px;
+  padding-top:58px;
+  padding-bottom:58px;
+}
+.hero h1{
+  letter-spacing:-1px;
+  text-shadow:0 12px 35px rgba(0,0,0,.08);
+}
+.hero-visual{
+  position:relative;
+  animation:luxesCarIn .85s ease-out both;
+}
+.hero-visual::before{
+  content:"";
+  position:absolute;
+  inset:-30px -36px;
+  background:radial-gradient(circle, rgba(184,149,78,.22), transparent 64%);
+  filter:blur(10px);
+  z-index:0;
+}
+.hero-visual img{
+  position:relative;
+  z-index:1;
+  max-width:790px;
+  width:112%;
+  max-height:540px;
+  transform:scale(1.08);
+  border-radius:0;
+  box-shadow:0 48px 110px rgba(0,0,0,.20);
+  filter:contrast(1.08) saturate(.92) brightness(.98);
+}
+.hero-inner > div:first-child{
+  animation:luxesTextIn .7s ease-out both;
+}
+.btn{
+  transition:transform .22s ease, box-shadow .22s ease, background .22s ease, color .22s ease, border-color .22s ease;
+}
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 35px rgba(0,0,0,.16);
+}
+.btn-black:hover{
+  background:#b8954e;
+  color:#fff;
+}
+.btn-line:hover{
+  border-color:#b8954e;
+  color:#7a5a1c;
+  background:#fff;
+}
+@keyframes luxesTextIn{
+  from{opacity:0;transform:translateX(-26px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@keyframes luxesCarIn{
+  from{opacity:0;transform:translateX(34px) scale(.985)}
+  to{opacity:1;transform:translateX(0) scale(1)}
+}
+.card{
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 28px 70px rgba(0,0,0,.13);
+  border-color:rgba(184,149,78,.55);
+}
+.detail{
+  transition:background .22s ease, transform .22s ease;
+}
+.detail:hover{
+  background:#b8954e;
+  transform:translateY(-1px);
+}
+@media(max-width:1050px){
+  .hero-visual img{
+    width:100%;
+    transform:none;
+    max-width:100%;
+  }
+}
+@media(max-width:680px){
+  .brand img{
+    width:76px;
+    height:52px;
+    border-radius:10px;
+  }
+  .hero{
+    min-height:auto;
+  }
+  .hero-inner{
+    min-height:auto;
+    padding-top:36px;
+    padding-bottom:40px;
+  }
+  .hero h1{
+    font-size:39px;
+  }
+  .hero-visual img{
+    width:100%;
+    max-height:none;
+    transform:none;
+  }
+}
