@@ -51,3 +51,16 @@
   .service-grid{grid-template-columns:1fr}
   .contact-grid{padding:34px 16px;grid-template-columns:1fr}
 }
+
+
+/* unlimited catalog patch */
+.catalog{grid-template-columns:repeat(auto-fit,minmax(290px,1fr));align-items:stretch}
+.card{height:100%;display:flex;flex-direction:column}
+.card-body{display:flex;flex-direction:column;flex:1}
+.detail{align-self:flex-start;margin-top:auto}
+.card-photo.image-missing::after{content:"Foto není nalezeno";color:#777;font-weight:900}
+.price{color:#111}
+@media(max-width:680px){
+  .catalog{grid-template-columns:1fr}
+  .card-photo{height:255px}
+}

@@ -1,11 +1,16 @@
-LUXES EXECUTIVE AUTO CSV V2
+LUXES EXECUTIVE UNLIMITED CATALOG
 
-Вариант 2:
-- сайт сам читает cars.csv;
-- cars.js больше не нужен;
-- добавил строку в Excel, сохранил как cars.csv, загрузил на GitHub/Vercel — машина появилась.
+Cars included now: 4
 
-Важно:
-- двойной клик по index.html может не читать cars.csv из-за защиты браузера;
-- на GitHub/Vercel работает нормально;
-- для проверки на компьютере используй Live Server.
+This version:
+- shows any number of cars;
+- reads cars.csv automatically on GitHub/Vercel;
+- uses cars.js fallback when opened locally;
+- shows cars even if some fields are empty;
+- empty price becomes 'Cena na dotaz'.
+
+To add a car:
+1. Put photo into assets/cars/
+2. Add row in cars.xlsx
+3. Save/export as cars.csv
+4. Upload updated files
