@@ -18,7 +18,8 @@ window.CARS_DATA = [
     "Порядок": "1",
     "Примечание": "",
     "Sloupec1": "",
-    "TOP": "ANO"
+    "TOP": "ANO",
+    "slug": "lexus-gx460"
   },
   {
     "№": "2",
@@ -39,7 +40,8 @@ window.CARS_DATA = [
     "Порядок": "2",
     "Примечание": "",
     "Sloupec1": "2",
-    "TOP": "NE"
+    "TOP": "NE",
+    "slug": "bmw-x5"
   },
   {
     "№": "3",
@@ -60,7 +62,8 @@ window.CARS_DATA = [
     "Порядок": "3",
     "Примечание": "",
     "Sloupec1": "3",
-    "TOP": "NE"
+    "TOP": "NE",
+    "slug": "mercedes-g63-amg"
   },
   {
     "№": "4",
@@ -81,6 +84,7 @@ window.CARS_DATA = [
     "Порядок": "",
     "Примечание": "",
     "Sloupec1": "",
-    "TOP": "ANO"
+    "TOP": "ANO",
+    "slug": "mercedes-maybach-hud"
   }
 ];
