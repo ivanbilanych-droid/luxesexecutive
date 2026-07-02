@@ -1,4 +1,4 @@
-LUXES EXECUTIVE FINAL WORKING ZIP
+LUXES EXECUTIVE 3 CARS READY
 
-This version works by double-clicking index.html because it reads cars.js.
-To update cars: edit cars.xlsx, save/export cars.csv, open convert_csv_to_cars_js.html, paste CSV, generate cars.js, replace cars.js.
+Cars included: 3
+Open index.html. Catalog reads cars.js and shows all cars.
