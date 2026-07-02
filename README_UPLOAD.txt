@@ -1,4 +1,11 @@
-LUXES EXECUTIVE 3 CARS READY
+LUXES EXECUTIVE AUTO CSV V2
 
-Cars included: 3
-Open index.html. Catalog reads cars.js and shows all cars.
+Вариант 2:
+- сайт сам читает cars.csv;
+- cars.js больше не нужен;
+- добавил строку в Excel, сохранил как cars.csv, загрузил на GitHub/Vercel — машина появилась.
+
+Важно:
+- двойной клик по index.html может не читать cars.csv из-за защиты браузера;
+- на GitHub/Vercel работает нормально;
+- для проверки на компьютере используй Live Server.
