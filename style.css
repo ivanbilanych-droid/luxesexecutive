@@ -101,97 +101,20 @@
   .meta{grid-template-columns:1fr 1fr!important}
 }
 
-
-/* CONTACT FORM PREMIUM PATCH - LUXES colors */
-.contact-section{
-  background:#fffaf2!important;
-  color:var(--ink)!important;
-  padding:28px 18px 34px!important;
-  border-top:1px solid var(--line);
-}
-.contact-wrap{max-width:1180px;margin:0 auto}
-.contact-wrap h2{text-align:center;margin-bottom:18px;font-size:38px}
-.contact-card{
-  background:#0b0b0b;
-  color:#fff;
-  border:1px solid rgba(184,149,78,.75);
-  border-radius:26px;
-  padding:28px;
-  display:grid;
-  grid-template-columns:1.25fr .75fr;
-  gap:28px;
-  box-shadow:0 22px 58px rgba(0,0,0,.12);
-}
-.contact-form{display:block!important}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.contact-form input,.contact-form textarea{
-  width:100%;
-  background:#111!important;
-  border:1px solid rgba(184,149,78,.85)!important;
-  border-radius:12px!important;
-  padding:15px 16px!important;
-  color:#fff!important;
-  font:inherit;
-}
-.contact-form textarea{min-height:92px;resize:vertical;margin-bottom:14px}
-.contact-form input::placeholder,.contact-form textarea::placeholder{color:#9d9d9d}
-.contact-form .submit{
-  width:100%;
-  display:block;
-  background:var(--gold)!important;
-  color:#fff!important;
-  border:0!important;
-  border-radius:999px!important;
-  padding:16px 24px!important;
-  font-weight:900;
-  letter-spacing:.3px;
-}
-.form-note{text-align:center;color:#cfcfcf;margin:13px 0 0;font-size:14px}
-.contact-info{border-left:1px solid rgba(184,149,78,.45);padding-left:28px;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
-.contact-info .contact-line{font-size:20px;margin:8px 0;color:#fff}
-.contact-info p{color:#cfcfcf;line-height:1.6;margin-top:14px}
-
-/* Compact catalog photos */
-.card-photo{height:220px!important}
-.section{padding-top:38px!important;padding-bottom:38px!important}
-.catalog-section{padding-top:38px!important;padding-bottom:38px!important}
-@media(max-width:680px){
-  .contact-section{padding:24px 16px 28px!important}
-  .contact-wrap h2{text-align:left;font-size:30px;margin-bottom:14px}
-  .contact-card{grid-template-columns:1fr;padding:18px;border-radius:22px;gap:18px}
-  .form-row{grid-template-columns:1fr;gap:12px;margin-bottom:12px}
-  .contact-info{border-left:0;border-top:1px solid rgba(184,149,78,.45);padding-left:0;padding-top:18px}
-  .contact-info .contact-line{font-size:18px}
-  .card-photo{height:210px!important}
-  .section{padding-top:30px!important;padding-bottom:30px!important}
-}
-
-
-/* === v1.1 LANG + COMPACT FINAL OVERRIDES === */
-.header-inner{padding-top:11px!important;padding-bottom:11px!important}
-.brand img{width:88px!important;height:58px!important}
-.brand-title{font-size:27px!important}.brand-sub{font-size:9px!important;margin-top:5px!important}
-.hero{min-height:500px!important}.hero-inner{min-height:500px!important;padding-top:38px!important;padding-bottom:38px!important;gap:42px!important}
-.hero-visual img{max-width:650px!important;max-height:410px!important}
-.kicker{margin-bottom:18px!important}.lead{margin-top:20px!important;margin-bottom:24px!important}
-.section{padding-top:30px!important;padding-bottom:30px!important}.title-row{margin-bottom:20px!important}
-h2{font-size:36px!important}.subtitle{font-size:14px!important;margin-top:8px!important}
-.catalog{gap:18px!important;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))!important}
-.card{border-radius:18px!important}.card-photo{height:185px!important}.card-body{padding:17px!important}
-.card-title{font-size:18px!important}.card-version{font-size:13px!important}.meta{margin:13px 0!important;gap:6px!important;font-size:13px!important}
-.price{font-size:23px!important}.detail{margin-top:13px!important;padding:10px 16px!important}
-.service-grid{gap:16px!important}.service{padding:24px!important}.service b{font-size:16px!important}.service p{font-size:14px!important}
-.contact-section{padding-top:24px!important;padding-bottom:28px!important}.contact-card{padding:22px!important}.contact-wrap h2{font-size:34px!important}
-.footer-inner{padding-top:20px!important;padding-bottom:20px!important}
-@media(max-width:1050px){.header-inner{grid-template-columns:auto 1fr auto!important}.nav{justify-content:center!important}.hero-inner{grid-template-columns:.88fr 1.12fr!important}}
-@media(max-width:760px){
- .header{position:relative!important}.header-inner{display:flex!important;flex-direction:column!important;align-items:flex-start!important;padding:11px 15px!important;gap:9px!important}
- .brand img{width:68px!important;height:46px!important}.brand-title{font-size:21px!important}.brand-sub{font-size:7px!important}
- .nav{gap:16px!important;font-size:11px!important}.actions{width:100%!important;justify-content:space-between!important}.lang{padding:8px 11px!important}.wa{padding:10px 15px!important}
- .hero{min-height:auto!important}.hero-inner{display:grid!important;grid-template-columns:1fr!important;padding:28px 15px!important;gap:22px!important}
- h1{font-size:37px!important}.lead{font-size:15px!important}.btn{min-height:48px!important}
- .section{padding:26px 15px!important}h2{font-size:28px!important}.catalog{grid-template-columns:1fr!important;gap:16px!important}
- .card-photo{height:200px!important}.card-body{padding:16px!important}.service{padding:22px!important}
- .contact-section{padding:22px 15px 26px!important}.contact-card{padding:16px!important}.contact-wrap h2{font-size:28px!important}
- .footer-inner{padding:18px 15px!important;flex-direction:column!important}
-}
+/* ONE LEXUS + REAL GALLERY */
+.gallery-viewer{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:16px;align-items:start}
+.gallery-main{border:0;background:none;padding:0;cursor:zoom-in;border-radius:18px;overflow:hidden}
+.gallery-main img{display:block;width:100%;height:500px;object-fit:cover}
+.gallery-thumbs{display:flex;flex-direction:column;gap:10px;max-height:500px;overflow:auto;padding-right:4px}
+.gallery-thumb{border:2px solid transparent;background:none;padding:0;border-radius:12px;overflow:hidden;cursor:pointer}
+.gallery-thumb.active{border-color:#b8954e}
+.gallery-thumb img{display:block;width:100%;height:82px;object-fit:cover}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:9999;padding:30px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:86vh;object-fit:contain}
+.lightbox-close,.lightbox-prev,.lightbox-next{position:absolute;border:0;background:rgba(255,255,255,.14);color:#fff;cursor:pointer;border-radius:999px;width:52px;height:52px;font-size:34px;line-height:1}
+.lightbox-close{top:22px;right:22px}
+.lightbox-prev{left:22px;top:50%;transform:translateY(-50%)}
+.lightbox-next{right:22px;top:50%;transform:translateY(-50%)}
+@media(max-width:900px){.gallery-viewer{grid-template-columns:1fr}.gallery-main img{height:360px}.gallery-thumbs{flex-direction:row;max-height:none;overflow-x:auto}.gallery-thumb{min-width:110px}.gallery-thumb img{height:80px}}
+@media(max-width:600px){.gallery-main img{height:280px}.gallery-thumb{min-width:90px}.lightbox{padding:10px}.lightbox-prev{left:8px}.lightbox-next{right:8px}}
