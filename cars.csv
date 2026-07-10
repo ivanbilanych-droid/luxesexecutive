@@ -1,6 +1,2 @@
-﻿LUXES EXECUTIVE — БАЗА АВТОМОБИЛЕЙ
-№;Фото;Марка;Модель;Комплектация;Год;Пробег;Двигатель;Топливо;Коробка;Цвет;VIN;Цена (€);Статус;⭐ TOP;Порядок;Примечание;Sloupec1
-1;lexus-gx460-2016.jpg;Lexus;GX460;Executive LPG;2016;203000;4.6 V8;Benzin;Automat;Černá;;34900;V prodeji;ANO;1;;
-2;bmw-x5-2024.jpg;BMW;X5;xDrive40d;2024;35000;3.0 Diesel;Diesel;Automat;Černá;;69900;V prodeji;NE;2;;2
-3;mercedes-g63-2022.jpg;Mercedes;G63 AMG;AMG;2022;48000;4.0 V8;Benzin;Automat;Černá;;139900;V prodeji;NE;3;;3
-4;Mercedes-Benz S 500.jpg;Mercedes;Maybach HUD;Maybach HUD;;;;Diesel;Automat;Černá;;;V prodeji;ANO;;;
+﻿ID;Aktivní;TOP;Status;Pořadí;Značka;Model;Verze / výbava;Rok;Nájezd km;Motor;Výkon kW;Palivo;Převodovka;Pohon;Barva;VIN;Cena;Měna;Cena na dotaz;Stav vozu;Hlavní foto;Složka galerie;Fotografie galerie;Výbava CZ;Výbava EN;Výbava DE;Výbava RU;Popis CZ;Popis EN;Popis DE;Popis RU;WhatsApp;E-mail;Poznámka;Poslední změna
+1;ANO;ANO;V prodeji;1;Lexus;GX460;Executive LPG;2016;203000;4.6 V8;;Benzin;Automat;4x4;Černá;;34900;EUR;NE;Ojeté;lexus-gx460-2016.jpg;lexus-gx460-2016;lexus-gx460-2016.jpg|lexus-gx460-2016-1.jpg|lexus-gx460-2016-2.jpg|lexus-gx460-2016-3.jpg|lexus-gx460-2016-4.jpg|lexus-gx460-2016-5.jpg|lexus-gx460-2016-6.jpg;"Executive; LPG; kožený interiér; vyhřívaná sedadla; kamera; navigace";"Executive; LPG; leather interior; heated seats; camera; navigation";"Executive; LPG; Lederausstattung; Sitzheizung; Kamera; Navigation";"Executive; LPG; кожаный салон; подогрев сидений; камера; навигация";Spolehlivý prémiový SUV s motorem V8, pohonem 4x4 a LPG.;Reliable premium SUV with V8 engine, 4x4 and LPG.;Zuverlässiges Premium-SUV mit V8-Motor, 4x4 und LPG.;Надёжный премиальный внедорожник с V8, полным приводом и LPG.;+420 777 399 799;executive@luxes.cz;ANO;

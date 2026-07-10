@@ -1,14 +1,5 @@
-LUXES EXECUTIVE NEW WEB
+LUXES EXECUTIVE - ONE LEXUS DATA
 
-Upload all files to the root of GitHub/Vercel:
-- index.html
-- index_ru.html
-- index_cs.html
-- index_en.html
-- index_de.html
-- style.css
-- assets folder
-
-Contacts:
-+420 777 399 799
-executive@luxes.cz
+Aktualne je v databazi pouze jeden Lexus GX460.
+Dalsi auta lze pozdeji pridavat jako nove radky do cars.csv nebo Excel tabulky.
+Fotografie jsou v assets/cars/.
