@@ -1,14 +1,15 @@
+const CSV_FILE='cars.csv';
+function parseCSV(text){const rows=[];let row=[],field='',q=false;for(let i=0;i<text.length;i++){const c=text[i],n=text[i+1];if(c==='"'&&q&&n==='"'){field+='"';i++;}else if(c==='"')q=!q;else if(c===';'&&!q){row.push(field.trim());field='';}else if((c==='\n'||c==='\r')&&!q){if(field||row.length){row.push(field.trim());rows.push(row);row=[];field='';}if(c==='\r'&&n==='\n')i++;}else field+=c;}if(field||row.length){row.push(field.trim());rows.push(row);}return rows.filter(r=>r.some(v=>String(v||'').trim()));}
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
-function num(v){const s=String(v||'').replace(/[^\d]/g,'');return s?Number(s):0}
-function euro(v){const n=num(v);return n?n.toLocaleString('cs-CZ')+' €':'Cena na dotaz'}
-function km(v){const n=num(v);return n?n.toLocaleString('cs-CZ')+' km':''}
-function isTop(v){return ['ANO','A','YES','1','TOP'].includes(String(v||'').trim().toUpperCase())}
-function val(c,ks){for(const k of ks){if(c[k]!==undefined&&String(c[k]).trim())return c[k]}return ''}
-function carCard(c,i){
- const title=((val(c,['Марка'])+' '+val(c,['Модель'])).trim())||'Automobil';
- const img=val(c,['Фото']); const link='detail.html?car='+encodeURIComponent(c.slug||'auto');
- const specs=[val(c,['Год']),km(val(c,['Пробег'])),val(c,['Двигатель']),val(c,['Коробка']),val(c,['Топливо']),val(c,['Цвет'])].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('');
- return `<article class="card reveal-card" style="animation-delay:${i*90}ms"><a class="card-photo-link" href="${link}"><div class="card-photo">${img?`<img src="assets/cars/${esc(img)}" alt="${esc(title)}">`:''}<span class="status">${esc(val(c,['Статус'])||'V prodeji')}</span>${isTop(val(c,['TOP','⭐ TOP']))?'<span class="top">TOP</span>':''}</div></a><div class="card-body"><a class="card-title" href="${link}">${esc(title)}</a><div class="card-version">${esc(val(c,['Комплектация']))}</div><div class="meta">${specs}</div><div class="price">${euro(val(c,['Цена (€)']))}</div><a class="detail" href="${link}">Detail</a></div></article>`;
-}
-function loadCars(){const grid=document.querySelector('#catalogGrid');if(!grid)return;const cars=(window.CARS_DATA||[]).filter(Boolean).sort((a,b)=>(isTop(val(a,['TOP','⭐ TOP']))?0:1)-(isTop(val(b,['TOP','⭐ TOP']))?0:1)||((Number(val(a,['Порядок']))||9999)-(Number(val(b,['Порядок']))||9999)));grid.innerHTML=cars.map(carCard).join('');}
-loadCars();
+function num(v){const s=String(v||'').replace(/[^\d]/g,'');return s?Number(s):0;}
+function euro(v){const n=num(v);return n?n.toLocaleString('cs-CZ')+' €':'Cena na dotaz';}
+function km(v){const n=num(v);return n?n.toLocaleString('cs-CZ')+' km':'';}
+function val(c,ks){for(const k of ks){if(c[k]!==undefined&&String(c[k]).trim())return c[k];}return '';}
+function isTop(v){return ['ANO','A','YES','1','TOP'].includes(String(v||'').trim().toUpperCase());}
+function slugify(s){return String(s||'auto').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'auto';}
+function rowsToCars(rows){if(!rows.length)return[];const h=rows[0].map(x=>String(x||'').trim());return rows.slice(1).map(r=>Object.fromEntries(h.map((k,i)=>[k,r[i]||'']))).filter(c=>val(c,['Фото','Марка','Модель'])).map((c,i)=>{c.slug=c.slug||slugify(`${val(c,['Марка'])}-${val(c,['Модель'])}`);return c;});}
+function langCode(){const l=(document.documentElement.lang||'cs').toLowerCase();return l.startsWith('de')?'de':l.startsWith('en')?'en':l.startsWith('ru')?'ru':'cs';}
+const TXT={cs:{detail:'Detail',status:'V prodeji'},en:{detail:'Details',status:'For sale'},de:{detail:'Details',status:'Zu verkaufen'},ru:{detail:'Подробнее',status:'В продаже'}};
+function card(c,i){const lang=langCode(),t=TXT[lang];const title=`${val(c,['Марка'])} ${val(c,['Модель'])}`.trim();const img=val(c,['Фото']);const link=`detail.html?car=${encodeURIComponent(c.slug||'auto')}&lang=${lang}`;return `<article class="card reveal-card" style="animation-delay:${i*70}ms"><a class="card-photo-link" href="${link}"><div class="card-photo"><img src="assets/cars/${esc(img)}" alt="${esc(title)}" loading="lazy"><span class="status">${esc(val(c,['Статус'])||t.status)}</span>${isTop(val(c,['TOP']))?'<span class="top">TOP</span>':''}</div></a><div class="card-body"><a class="card-title" href="${link}">${esc(title)}</a><div class="card-version">${esc(val(c,['Комплектация']))}</div><div class="meta"><span>${esc(val(c,['Год']))}</span><span>${km(val(c,['Пробег']))}</span><span>${esc(val(c,['Двигатель']))}</span><span>${esc(val(c,['Коробка']))}</span><span>${esc(val(c,['Топливо']))}</span><span>${esc(val(c,['Цвет']))}</span></div><div class="card-bottom"><div class="price">${euro(val(c,['Цена (€)']))}</div><a class="detail" href="${link}">${t.detail}</a></div></div></article>`;}
+function render(cars){const grid=document.querySelector('#catalogGrid');if(!grid)return;cars.sort((a,b)=>(isTop(val(a,['TOP']))?0:1)-(isTop(val(b,['TOP']))?0:1)||((Number(val(a,['Порядок']))||9999)-(Number(val(b,['Порядок']))||9999)));grid.innerHTML=cars.map(card).join('');}
+(async()=>{try{const r=await fetch(CSV_FILE+'?v='+Date.now());if(!r.ok)throw 0;const cars=rowsToCars(parseCSV(await r.text()));if(cars.length)return render(cars);}catch(e){}render(window.CARS_DATA||[]);})();

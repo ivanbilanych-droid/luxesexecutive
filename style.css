@@ -118,3 +118,32 @@
 .lightbox-next{right:22px;top:50%;transform:translateY(-50%)}
 @media(max-width:900px){.gallery-viewer{grid-template-columns:1fr}.gallery-main img{height:360px}.gallery-thumbs{flex-direction:row;max-height:none;overflow-x:auto}.gallery-thumb{min-width:110px}.gallery-thumb img{height:80px}}
 @media(max-width:600px){.gallery-main img{height:280px}.gallery-thumb{min-width:90px}.lightbox{padding:10px}.lightbox-prev{left:8px}.lightbox-next{right:8px}}
+
+/* ===== FINAL CATALOG — STABLE ===== */
+.catalog{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(280px,340px))!important;justify-content:start!important;gap:24px!important;align-items:stretch!important}
+.card{width:100%!important;min-width:0!important;border-radius:20px!important;overflow:hidden!important}
+.card-photo{height:auto!important;aspect-ratio:16/10!important;overflow:hidden!important}
+.card-photo img{width:100%!important;height:100%!important;object-fit:cover!important;transition:transform .35s ease}
+.card:hover .card-photo img{transform:scale(1.035)}
+.card-body{padding:20px!important}
+.card-title{font-size:23px!important;line-height:1.08!important}
+.meta{font-size:14px!important;gap:8px 18px!important;margin:16px 0!important}
+.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:auto}
+.price{font-size:27px!important;white-space:nowrap}
+.detail{margin-top:0!important;flex:0 0 auto}
+.detail-hero{padding-top:48px!important;padding-bottom:48px!important}
+.detail-main-photo{border-radius:22px;overflow:hidden}
+.detail-main-photo img{aspect-ratio:16/10;height:auto!important;max-height:none!important}
+.gallery-main img{aspect-ratio:16/10;height:auto!important}
+.lightbox-count{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);color:#fff;background:rgba(0,0,0,.45);padding:8px 14px;border-radius:999px;font-weight:800}
+@media(max-width:680px){
+  #catalogGrid.catalog,.catalog{grid-template-columns:1fr!important;justify-content:stretch!important}
+  .catalog-section{padding-top:30px!important;padding-bottom:30px!important}
+  .card-photo{aspect-ratio:16/10!important;height:auto!important}
+  .card-body{padding:18px!important}
+  .card-title{font-size:22px!important}
+  .price{font-size:25px!important}
+  .detail-hero{padding-top:30px!important;padding-bottom:30px!important}
+  .detail-copy h1{font-size:38px!important}
+  .gallery-main img{aspect-ratio:4/3!important}
+}

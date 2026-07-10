@@ -1,8 +1,13 @@
-LUXES EXECUTIVE — ONE LEXUS FIXED
+LUXES EXECUTIVE — FINAL CATALOG
 
-- V katalogu je pouze jeden Lexus GX460.
-- Detail používá skutečných 5 různých fotografií.
-- Kliknutím na miniaturu se mění hlavní fotografie.
-- Kliknutím na hlavní fotografii se otevře galerie přes celou obrazovku.
-- Další auta lze přidávat do cars.csv jako nové řádky.
-- Galerie fotografií se zapisuje do sloupce Galerie a názvy se oddělují znakem |.
+Готово:
+- один Lexus GX460 в каталоге;
+- 7 разных фотографий;
+- компактная карточка на компьютере;
+- одна ровная карточка на телефоне;
+- DETAIL на 4 языках;
+- большая галерея, миниатюры, полноэкранный просмотр;
+- стрелки, клавиатура и свайп на телефоне;
+- сайт читает cars.csv на хостинге и использует cars.js как резерв.
+
+Для обновления каталога присылай Excel и фотографии — готовый ZIP будет собран без ручной работы с твоей стороны.
