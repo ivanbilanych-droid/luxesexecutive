@@ -1,13 +1,18 @@
-LUXES EXECUTIVE — FINAL CATALOG
+LUXES EXECUTIVE — FINAL ONE ZIP
 
-Готово:
-- один Lexus GX460 в каталоге;
-- 7 разных фотографий;
-- компактная карточка на компьютере;
-- одна ровная карточка на телефоне;
-- DETAIL на 4 языках;
-- большая галерея, миниатюры, полноэкранный просмотр;
-- стрелки, клавиатура и свайп на телефоне;
-- сайт читает cars.csv на хостинге и использует cars.js как резерв.
+This is the only main website package.
+Upload all files and folders to hosting.
 
-Для обновления каталога присылай Excel и фотографии — готовый ZIP будет собран без ручной работы с твоей стороны.
+Catalog source:
+- cars.csv / cars.js
+- vehicle photos: assets/cars/
+
+Included:
+- CZ / EN / DE / RU pages
+- premium hero
+- enlarged LE logo
+- gold accents
+- large catalog button
+- no empty vehicle cards
+- automatic catalog from cars.js
+- working vehicle detail and gallery
