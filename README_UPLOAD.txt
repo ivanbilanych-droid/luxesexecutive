@@ -1,6 +1,18 @@
-LUXES EXECUTIVE FINAL CORRECTED
+LUXES EXECUTIVE — FINAL ONE ZIP
 
-- Hero image rebuilt for wide desktop screens without extreme crop.
-- Catalog returned to compact premium cards (4 desktop / 2 tablet / 1 mobile).
-- Only real cars from cars.js are shown; no empty placeholders.
-- cars.csv/cars.xlsx remain in the package for future updates.
+This is the only main website package.
+Upload all files and folders to hosting.
+
+Catalog source:
+- cars.csv / cars.js
+- vehicle photos: assets/cars/
+
+Included:
+- CZ / EN / DE / RU pages
+- premium hero
+- enlarged LE logo
+- gold accents
+- large catalog button
+- no empty vehicle cards
+- automatic catalog from cars.js
+- working vehicle detail and gallery
