@@ -1,18 +1,12 @@
-LUXES EXECUTIVE — FINAL ONE ZIP
+LUXES EXECUTIVE — FINAL WIDE CATALOG
 
-This is the only main website package.
-Upload all files and folders to hosting.
+Tato verze obsahuje:
+- katalog přes celou šířku obsahu;
+- velkou fotografii vlevo;
+- informace, cenu a tlačítka vpravo;
+- responzivní mobilní zobrazení;
+- data a galerie z cars.js / cars.csv;
+- CZ / EN / DE / RU;
+- detail vozu s galerií.
 
-Catalog source:
-- cars.csv / cars.js
-- vehicle photos: assets/cars/
-
-Included:
-- CZ / EN / DE / RU pages
-- premium hero
-- enlarged LE logo
-- gold accents
-- large catalog button
-- no empty vehicle cards
-- automatic catalog from cars.js
-- working vehicle detail and gallery
+Nahraj celý obsah ZIP na hosting a přepiš staré soubory.
