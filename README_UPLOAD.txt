@@ -1,12 +1,6 @@
-LUXES EXECUTIVE — FINAL WIDE CATALOG
+LUXES EXECUTIVE FINAL CORRECTED
 
-Tato verze obsahuje:
-- katalog přes celou šířku obsahu;
-- velkou fotografii vlevo;
-- informace, cenu a tlačítka vpravo;
-- responzivní mobilní zobrazení;
-- data a galerie z cars.js / cars.csv;
-- CZ / EN / DE / RU;
-- detail vozu s galerií.
-
-Nahraj celý obsah ZIP na hosting a přepiš staré soubory.
+- Hero image rebuilt for wide desktop screens without extreme crop.
+- Catalog returned to compact premium cards (4 desktop / 2 tablet / 1 mobile).
+- Only real cars from cars.js are shown; no empty placeholders.
+- cars.csv/cars.xlsx remain in the package for future updates.
