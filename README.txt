@@ -1,5 +1,5 @@
-FINÁLNÍ PAUZA VERZE
-- Hlavní stránka zobrazuje pouze MODELY VOZŮ.
-- Kliknutí na model otevře katalog vozidel daného modelu.
-- Kliknutí na DETAIL otevře detail vozu s galerií.
-- Nová auta se přidávají do cars.js (později lze napojit na cars.csv).
+LUXES EXECUTIVE — ETAPA 1
+
+Hlavní stránka byla přepracována podle schváleného světlého konceptu.
+Soubory index.html, index_en.html, index_de.html a index_ru.html jsou jazykové verze.
+Katalog a detail vozu zůstávají zachovány pro další etapu.
