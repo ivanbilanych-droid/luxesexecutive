@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Ovládání mobilního menu (zachování tvé původní funkce)
+  // 1. Ovládání mobilního menu (zachování původní funkce)
   const mobileToggle = document.querySelector('.mobile-toggle');
   const nav = document.querySelector('.nav');
   if (mobileToggle && nav) {
     mobileToggle.addEventListener('click', () => nav.classList.toggle('open'));
   }
 
-  // 2. Automatická úprava stránek katalogu a detailu
+  // 2. Kontrola, na jaké stránce se nacházíme
   const currentPath = window.location.pathname;
 
-  // Pokud je uživatel na stránce katalogu
+  // === ÚPRAVA PRO STRÁNKU KATALOGU ===
   if (currentPath.includes('catalog.html')) {
-    const mainArea = document.querySelector('.catalog-page') || document.querySelector('main');
+    const mainArea = document.querySelector('main');
     if (mainArea) {
       mainArea.style.padding = '60px 0';
       mainArea.innerHTML = `
@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Pokud je uživatel na stránce detailu auta
+  // === ÚPRAVA PRO STRÁNKU DETAILU AUTA ===
   if (currentPath.includes('detail.html')) {
-    const mainArea = document.querySelector('.detail-page') || document.querySelector('main');
+    const mainArea = document.querySelector('main');
     if (mainArea) {
-      // Vložení speciálních stylů pro detail
+      // Přidání stylů pro rozvržení detailu
       const styles = document.createElement('style');
       styles.innerHTML = `
         .detail-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; padding: 50px 0; }
