@@ -1,1 +1,25 @@
-window.CARS_DATA=[{"№":"1","Фото":"lexus-gx460-main.jpg","Галерея":"lexus-gx460-main.jpg|lexus-gx460-1.jpg|lexus-gx460-2.jpg|lexus-gx460-3.jpg|lexus-gx460-4.jpg|lexus-gx460-5.jpg|lexus-gx460-6.jpg","Марка":"Lexus","Модель":"GX460","Комплектация":"Executive LPG","Год":"2016","Пробег":"203000","Двигатель":"4.6 V8","Топливо":"Benzin","Коробка":"Automat","Цвет":"Černá","VIN":"","Цена (€)":"34900","Статус":"V prodeji","TOP":"ANO","Порядок":"1","Примечание":"","slug":"lexus-gx460"}];
+window.CARS = [
+  {
+    id: "lexus-gx460-2016",
+    brand: "Lexus",
+    model: "GX460",
+    year: 2016,
+    price: 34900,
+    mileage: 203000,
+    engine: "4.6 V8",
+    fuel: "Benzin",
+    gearbox: "Automat",
+    color: "Černá",
+    trim: "Executive LPG",
+    status: "V prodeji",
+    top: true,
+    mainPhoto: "assets/cars/lexus-gx460-2016.jpg",
+    gallery: [
+      "assets/cars/lexus-gx460-2016.jpg",
+      "assets/cars/lexus-gx460-2016-1.jpg",
+      "assets/cars/lexus-gx460-2016-2.jpg",
+      "assets/cars/lexus-gx460-2016-3.jpg",
+      "assets/cars/lexus-gx460-2016-4.jpg"
+    ]
+  }
+];
