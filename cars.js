@@ -13,8 +13,8 @@ window.CARS = [
     trim: "AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=600", // Čistokrevný černý Mercedes-AMG
-    gallery: ["https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=600"]
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Mercedes-Benz_G_63_AMG_Facelift_concept_EM2A1765_cropped.jpg/640px-Mercedes-Benz_G_63_AMG_Facelift_concept_EM2A1765_cropped.jpg",
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Mercedes-Benz_G_63_AMG_Facelift_concept_EM2A1765_cropped.jpg/640px-Mercedes-Benz_G_63_AMG_Facelift_concept_EM2A1765_cropped.jpg"]
   },
   {
     id: "mercedes-gls-600-maybach",
@@ -30,8 +30,8 @@ window.CARS = [
     trim: "Maybach",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600", // Luxusní černé SUV Mercedes-Benz
-    gallery: ["https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600"]
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Mercedes-Maybach_GLS_600_4MATIC_X167_Inland_Concept_EM2A0639.jpg/640px-Mercedes-Maybach_GLS_600_4MATIC_X167_Inland_Concept_EM2A0639.jpg",
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Mercedes-Maybach_GLS_600_4MATIC_X167_Inland_Concept_EM2A0639.jpg/640px-Mercedes-Maybach_GLS_600_4MATIC_X167_Inland_Concept_EM2A0639.jpg"]
   },
   {
     id: "mercedes-s580-4matic",
@@ -47,8 +47,8 @@ window.CARS = [
     trim: "Long AMG Line",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600", // Šedý Mercedes-AMG GT Coupe (ten, co se vám líbil)
-    gallery: ["https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600"]
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Mercedes-Benz_S_580_4MATIC_Long_W223_EM2A9615_cropped.jpg/640px-Mercedes-Benz_S_580_4MATIC_Long_W223_EM2A9615_cropped.jpg",
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Mercedes-Benz_S_580_4MATIC_Long_W223_EM2A9615_cropped.jpg/640px-Mercedes-Benz_S_580_4MATIC_Long_W223_EM2A9615_cropped.jpg"]
   },
   {
     id: "mercedes-gls-450d",
@@ -64,8 +64,8 @@ window.CARS = [
     trim: "AMG Line",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600", // Elegantní černý Mercedes-Benz sedan
-    gallery: ["https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600"]
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Mercedes-Benz_GLS_400_d_4MATIC_X167_Inland_Concept_EM2A0423_cropped.jpg/640px-Mercedes-Benz_GLS_400_d_4MATIC_X167_Inland_Concept_EM2A0423_cropped.jpg",
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Mercedes-Benz_GLS_400_d_4MATIC_X167_Inland_Concept_EM2A0423_cropped.jpg/640px-Mercedes-Benz_GLS_400_d_4MATIC_X167_Inland_Concept_EM2A0423_cropped.jpg"]
   },
   {
     id: "mercedes-gle-53-amg",
@@ -81,8 +81,8 @@ window.CARS = [
     trim: "AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600", // Nádherný sportovní černý Mercedes
-    gallery: ["https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600"]
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Mercedes-AMG_GLE_53_Coupe_C167_EM2A9581.jpg/640px-Mercedes-AMG_GLE_53_Coupe_C167_EM2A9581.jpg",
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Mercedes-AMG_GLE_53_Coupe_C167_EM2A9581.jpg/640px-Mercedes-AMG_GLE_53_Coupe_C167_EM2A9581.jpg"]
   },
   {
     id: "mercedes-v300d",
@@ -98,7 +98,7 @@ window.CARS = [
     trim: "Avantgarde AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://images.unsplash.com/photo-1622194989918-0915f8287313?w=600", // Profil černého Mercedesu
-    gallery: ["https://images.unsplash.com/photo-1622194989918-0915f8287313?w=600"]
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Mercedes-Benz_V_300_d_Exclusive_Edition_EM2A4941_cropped.jpg/640px-Mercedes-Benz_V_300_d_Exclusive_Edition_EM2A4941_cropped.jpg",
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Mercedes-Benz_V_300_d_Exclusive_Edition_EM2A4941_cropped.jpg/640px-Mercedes-Benz_V_300_d_Exclusive_Edition_EM2A4941_cropped.jpg"]
   }
 ];
