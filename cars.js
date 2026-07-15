@@ -13,8 +13,8 @@ window.CARS = [
     trim: "AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://images.unsplash.com/photo-1520050206274-a1ae446cb3cc?w=600", // Skutečný černý G-Wagon AMG
-    gallery: ["https://images.unsplash.com/photo-1520050206274-a1ae446cb3cc?w=600"]
+    mainPhoto: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=600", // Čistokrevný černý Mercedes-AMG
+    gallery: ["https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=600"]
   },
   {
     id: "mercedes-gls-600-maybach",
@@ -30,8 +30,8 @@ window.CARS = [
     trim: "Maybach",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://images.unsplash.com/photo-1616422285623-13ff0162193c?w=600", // Luxusní černé velké SUV Mercedes GLS
-    gallery: ["https://images.unsplash.com/photo-1616422285623-13ff0162193c?w=600"]
+    mainPhoto: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600", // Luxusní černé SUV Mercedes-Benz
+    gallery: ["https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600"]
   },
   {
     id: "mercedes-s580-4matic",
@@ -47,7 +47,7 @@ window.CARS = [
     trim: "Long AMG Line",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600", // Nádherný černý luxusní sedan třídy S
+    mainPhoto: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600", // Šedý Mercedes-AMG GT Coupe (ten, co se vám líbil)
     gallery: ["https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600"]
   },
   {
@@ -64,8 +64,8 @@ window.CARS = [
     trim: "AMG Line",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=600", // Černý Mercedes-Benz SUV GLS předek
-    gallery: ["https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=600"]
+    mainPhoto: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600", // Elegantní černý Mercedes-Benz sedan
+    gallery: ["https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600"]
   },
   {
     id: "mercedes-gle-53-amg",
@@ -81,8 +81,8 @@ window.CARS = [
     trim: "AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://images.unsplash.com/photo-1563720223185-11003d516935?w=600", // Černý sportovní Mercedes SUV GLE Coupe
-    gallery: ["https://images.unsplash.com/photo-1563720223185-11003d516935?w=600"]
+    mainPhoto: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600", // Nádherný sportovní černý Mercedes
+    gallery: ["https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600"]
   },
   {
     id: "mercedes-v300d",
@@ -98,7 +98,7 @@ window.CARS = [
     trim: "Avantgarde AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=600", // Černý sportovní sedan Mercedes-Benz pro reprezentativní vzhled
-    gallery: ["https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=600"]
+    mainPhoto: "https://images.unsplash.com/photo-1622194989918-0915f8287313?w=600", // Profil černého Mercedesu
+    gallery: ["https://images.unsplash.com/photo-1622194989918-0915f8287313?w=600"]
   }
 ];
