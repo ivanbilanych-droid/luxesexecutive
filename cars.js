@@ -13,8 +13,8 @@ window.CARS = [
     trim: "AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/cars/lexus-gx460-2016-4.jpg", // Použije vaši existující fotku z webu
-    gallery: ["assets/cars/lexus-gx460-2016-4.jpg"]
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Mercedes-Benz_G_63_AMG_Facelift_concept_EM2A1765_cropped.jpg",
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/e/e0/Mercedes-Benz_G_63_AMG_Facelift_concept_EM2A1765_cropped.jpg"]
   },
   {
     id: "mercedes-gls-600-maybach",
@@ -26,12 +26,12 @@ window.CARS = [
     engine: "4.0 V8",
     fuel: "Benzin",
     gearbox: "Automat",
-    color: "Dvoubarevná (černá/stříbrná)",
+    color: "Dvoubarevná",
     trim: "Maybach",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/cars/lexus-gx460-2016.jpg", // Použije vaši existující fotku z webu
-    gallery: ["assets/cars/lexus-gx460-2016.jpg"]
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/6/69/Mercedes-Maybach_GLS_600_4MATIC_X167_Inland_Concept_EM2A0639.jpg",
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/6/69/Mercedes-Maybach_GLS_600_4MATIC_X167_Inland_Concept_EM2A0639.jpg"]
   },
   {
     id: "mercedes-s580-4matic",
@@ -47,8 +47,8 @@ window.CARS = [
     trim: "Long AMG Line",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/cars/lexus-gx460-2016-1.jpg", // Použije vaši existující fotku z webu
-    gallery: ["assets/cars/lexus-gx460-2016-1.jpg"]
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/2/27/Mercedes-Benz_S_580_4MATIC_Long_W223_EM2A9615_cropped.jpg",
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/2/27/Mercedes-Benz_S_580_4MATIC_Long_W223_EM2A9615_cropped.jpg"]
   },
   {
     id: "mercedes-gls-450d",
@@ -64,8 +64,8 @@ window.CARS = [
     trim: "AMG Line",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/cars/lexus-gx460-2016.jpg", // Použije vaši existující fotku z webu
-    gallery: ["assets/cars/lexus-gx460-2016.jpg"]
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Mercedes-Benz_GLS_350_d_4MATIC_AMG_Line_%28X166%29_f_08032021.jpg",
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/9/9f/Mercedes-Benz_GLS_350_d_4MATIC_AMG_Line_%28X166%29_f_08032021.jpg"]
   },
   {
     id: "mercedes-gle-53-amg",
@@ -81,8 +81,8 @@ window.CARS = [
     trim: "AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/cars/lexus-gx460-2016-1.jpg", // Použije vaši existující fotku z webu
-    gallery: ["assets/cars/lexus-gx460-2016-1.jpg"]
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Mercedes-AMG_GLE_53_Coupe_C167_EM2A9581.jpg",
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/f/f3/Mercedes-AMG_GLE_53_Coupe_C167_EM2A9581.jpg"]
   },
   {
     id: "mercedes-v300d",
@@ -98,7 +98,7 @@ window.CARS = [
     trim: "Avantgarde AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/cars/lexus-gx460-2016-3.jpg", // Použije vaši existující fotku z webu
-    gallery: ["assets/cars/lexus-gx460-2016-3.jpg"]
+    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Mercedes-Benz_V_300_d_Exclusive_Edition_EM2A4941_cropped.jpg",
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/b/ba/Mercedes-Benz_V_300_d_Exclusive_Edition_EM2A4941_cropped.jpg"]
   }
 ];
