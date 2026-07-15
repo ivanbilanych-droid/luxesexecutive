@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileToggle.addEventListener('click', () => nav.classList.toggle('open'));
   }
 
-  // 2. Načtení modelů do nového tmavého vzhledu
+  // 2. Dynamické vykreslení vozů v katalogu z databáze cars.js
   const popularModelsGrid = document.getElementById('popularModelsGrid');
   if (popularModelsGrid && window.CARS) {
     popularModelsGrid.innerHTML = window.CARS.map(car => `
@@ -21,5 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </a>
     `).join('');
+  }
+
+  // 3. Dynamický výpočet celkového počtu aut pro značku Mercedes-Benz
+  const mercedesCountSpan = document.getElementById('mercedes-count-span');
+  if (mercedesCountSpan && window.CARS) {
+    // Spočítáme, kolik aut v poli má značku "Mercedes-Benz"
+    const count = window.CARS.filter(car => car.brand === 'Mercedes-Benz').length;
+    
+    // Gramatika pro ruskou verzi (1 авто, 2-4 авто, 5+ авто)
+    let text = `${count} авто`;
+    if (count === 1) {
+      text = `${count} авто`;
+    } else if (count >= 2 && count <= 4) {
+      text = `${count} автомобиля`;
+    } else if (count >= 5) {
+      text = `${count} авто`;
+    }
+    
+    mercedesCountSpan.textContent = text;
   }
 });
