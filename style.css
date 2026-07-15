@@ -4,7 +4,7 @@
   --bg-dark: #070a13; /* Hluboké tmavé pozadí */
   --bg-card: #0d1324; /* Pozadí pro karty a panely */
   --text-light: #ffffff;
-  --text-muted: #8fa0dd; /* Jemná namodralá pro popisky */
+  --text-muted: #a0a8ba; /* Světlejší šedomodrá pro perfektní čitelnost */
   --line: rgba(212, 175, 55, 0.15); /* Jemná zlatá linka */
   --radius: 8px;
 }
@@ -105,12 +105,22 @@ body {
   gap: 16px;
 }
 
-.lang-dropdown {
+.lang {
   font-size: 13px;
   font-weight: 700;
   color: var(--text-light);
-  cursor: pointer;
+  display: flex;
+  gap: 6px;
+}
+
+.lang a {
   text-decoration: none;
+  color: #a0a5b5;
+  transition: color 0.2s;
+}
+
+.lang a:hover, .lang a.active {
+  color: var(--gold);
 }
 
 .icon-link {
@@ -208,7 +218,7 @@ body {
   background: rgba(212, 175, 55, 0.1);
 }
 
-/* Lišta výhod (Benefits) - umístěna hned pod hero */
+/* Lišta výhod (Benefits) */
 .quick-benefits {
   padding: 40px 0;
   border-bottom: 1px solid var(--line);
@@ -234,11 +244,12 @@ body {
 .benefit-item strong {
   font-size: 13px;
   color: var(--text-light);
+  font-weight: 700;
 }
 
 .benefit-item span {
   font-size: 11px;
-  color: #7d879c;
+  color: var(--text-muted); /* Opraveno na vysoce čitelnou šedomodrou */
   line-height: 1.4;
 }
 
@@ -274,7 +285,7 @@ body {
   border-color: var(--gold);
 }
 
-/* Nový vzhled karet aut (Katalog) */
+/* Karty aut (Katalog) */
 .cars-slider {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -319,11 +330,12 @@ body {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 6px;
+  color: var(--text-light);
 }
 
 .car-specs {
   font-size: 12px;
-  color: #7d879c;
+  color: var(--text-muted); /* Zvýšený kontrast specifikací */
   margin-bottom: 14px;
 }
 
@@ -333,7 +345,7 @@ body {
   color: var(--gold);
 }
 
-/* Jak pracujeme (How we work) */
+/* Jak pracujeme */
 .how-it-works-grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -368,11 +380,12 @@ body {
 .step-info h4 {
   font-size: 15px;
   margin-bottom: 4px;
+  color: var(--text-light);
 }
 
 .step-info p {
   font-size: 12px;
-  color: #7d879c;
+  color: var(--text-muted); /* Zvýšený kontrast kroků */
   line-height: 1.5;
 }
 
@@ -388,11 +401,12 @@ body {
   font-family: "Georgia", serif;
   font-size: 24px;
   margin-bottom: 8px;
+  color: var(--text-light);
 }
 
 .form-card p {
   font-size: 13px;
-  color: #7d879c;
+  color: var(--text-muted); /* Lepší čitelnost úvodu formuláře */
   margin-bottom: 24px;
 }
 
@@ -411,6 +425,7 @@ body {
 .form-group label {
   font-size: 11px;
   color: var(--gold);
+  font-weight: 600;
 }
 
 .form-group input, .form-group textarea {
@@ -437,7 +452,7 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 11px;
-  color: #7d879c;
+  color: var(--text-muted); /* Čitelnější text u souhlasu */
   margin-top: 10px;
 }
 
@@ -459,7 +474,7 @@ body {
   background: var(--gold-hover);
 }
 
-/* Proč Luxes Executive */
+/* Sekce Proč Luxes Executive */
 .why-us-grid {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -471,10 +486,11 @@ body {
   font-family: "Georgia", serif;
   font-size: 28px;
   margin-bottom: 16px;
+  color: var(--text-light);
 }
 
 .why-us-info p {
-  color: #7d879c;
+  color: var(--text-muted); /* Výraznější doprovodný text */
   font-size: 13px;
   line-height: 1.6;
   margin-bottom: 24px;
@@ -504,11 +520,12 @@ body {
   font-size: 14px;
   margin-bottom: 8px;
   text-transform: uppercase;
+  color: var(--text-light);
 }
 
 .why-card p {
   font-size: 11px;
-  color: #7d879c;
+  color: var(--text-muted); /* Zvýšený kontrast karet výhod */
   line-height: 1.5;
 }
 
@@ -532,6 +549,14 @@ body {
   margin-top: 20px;
 }
 
+.footer p, .footer a {
+  color: var(--text-muted); /* Zvýšená čitelnost odkazů v patičce */
+}
+
+.footer a:hover {
+  color: var(--gold);
+}
+
 .footer-bottom {
   margin-top: 40px;
   padding-top: 20px;
@@ -539,7 +564,7 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 11px;
-  color: #4f5666;
+  color: #6a758a; /* Výraznější barva copyrightu */
 }
 
 /* Responzivní design */
