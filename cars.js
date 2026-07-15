@@ -13,10 +13,8 @@ window.CARS = [
     trim: "AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/cars/mercedes-g63.png",
-    gallery: [
-      "assets/cars/mercedes-g63.png"
-    ]
+    mainPhoto: "assets/cars/lexus-gx460-2016-4.jpg", // Použije nahranou fotku
+    gallery: ["assets/cars/lexus-gx460-2016-4.jpg"]
   },
   {
     id: "bmw-x5-2024",
@@ -32,10 +30,8 @@ window.CARS = [
     trim: "M Sport",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/cars/bmw-x5.png",
-    gallery: [
-      "assets/cars/bmw-x5.png"
-    ]
+    mainPhoto: "assets/cars/lexus-gx460-2016-1.jpg", // Použije nahranou fotku
+    gallery: ["assets/cars/lexus-gx460-2016-1.jpg"]
   },
   {
     id: "lexus-gx460-2016",
@@ -51,10 +47,8 @@ window.CARS = [
     trim: "Executive LPG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/cars/lexus-gx460.png",
-    gallery: [
-      "assets/cars/lexus-gx460.png"
-    ]
+    mainPhoto: "assets/cars/lexus-gx460-2016-2.jpg", // Použije nahranou fotku
+    gallery: ["assets/cars/lexus-gx460-2016-2.jpg"]
   },
   {
     id: "toyota-lc300",
@@ -70,10 +64,8 @@ window.CARS = [
     trim: "GR Sport",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/cars/toyota-lc300.png",
-    gallery: [
-      "assets/cars/toyota-lc300.png"
-    ]
+    mainPhoto: "assets/cars/lexus-gx460-2016-3.jpg", // Použije nahranou fotku
+    gallery: ["assets/cars/lexus-gx460-2016-3.jpg"]
   },
   {
     id: "mercedes-gls-2024",
@@ -89,10 +81,8 @@ window.CARS = [
     trim: "AMG Line",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/cars/mercedes-gls.png",
-    gallery: [
-      "assets/cars/mercedes-gls.png"
-    ]
+    mainPhoto: "assets/cars/lexus-gx460-2016.jpg", // Použije nahranou fotku
+    gallery: ["assets/cars/lexus-gx460-2016.jpg"]
   },
   {
     id: "bmw-x7-2024",
@@ -108,9 +98,7 @@ window.CARS = [
     trim: "M Sport",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/cars/bmw-x7.png",
-    gallery: [
-      "assets/cars/bmw-x7.png"
-    ]
+    mainPhoto: "assets/cars/lexus-gx460-2016.jpg", // Použije nahranou fotku
+    gallery: ["assets/cars/lexus-gx460-2016.jpg"]
   }
 ];
