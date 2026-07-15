@@ -13,8 +13,8 @@ window.CARS = [
     trim: "AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Mercedes-Benz_G_63_AMG_Facelift_concept_EM2A1765_cropped.jpg",
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/e/e0/Mercedes-Benz_G_63_AMG_Facelift_concept_EM2A1765_cropped.jpg"]
+    mainPhoto: "https://images.unsplash.com/photo-1520050206274-a1ae446cb3cc?auto=format&fit=crop&w=600&q=80",
+    gallery: ["https://images.unsplash.com/photo-1520050206274-a1ae446cb3cc?auto=format&fit=crop&w=600&q=80"]
   },
   {
     id: "mercedes-gls-600-maybach",
@@ -30,8 +30,8 @@ window.CARS = [
     trim: "Maybach",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/6/69/Mercedes-Maybach_GLS_600_4MATIC_X167_Inland_Concept_EM2A0639.jpg",
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/6/69/Mercedes-Maybach_GLS_600_4MATIC_X167_Inland_Concept_EM2A0639.jpg"]
+    mainPhoto: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80",
+    gallery: ["https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80"]
   },
   {
     id: "mercedes-s580-4matic",
@@ -47,8 +47,8 @@ window.CARS = [
     trim: "Long AMG Line",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/2/27/Mercedes-Benz_S_580_4MATIC_Long_W223_EM2A9615_cropped.jpg",
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/2/27/Mercedes-Benz_S_580_4MATIC_Long_W223_EM2A9615_cropped.jpg"]
+    mainPhoto: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=600&q=80",
+    gallery: ["https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=600&q=80"]
   },
   {
     id: "mercedes-gls-450d",
@@ -64,8 +64,8 @@ window.CARS = [
     trim: "AMG Line",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Mercedes-Benz_GLS_350_d_4MATIC_AMG_Line_%28X166%29_f_08032021.jpg",
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/9/9f/Mercedes-Benz_GLS_350_d_4MATIC_AMG_Line_%28X166%29_f_08032021.jpg"]
+    mainPhoto: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600&q=80",
+    gallery: ["https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600&q=80"]
   },
   {
     id: "mercedes-gle-53-amg",
@@ -81,8 +81,8 @@ window.CARS = [
     trim: "AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Mercedes-AMG_GLE_53_Coupe_C167_EM2A9581.jpg",
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/f/f3/Mercedes-AMG_GLE_53_Coupe_C167_EM2A9581.jpg"]
+    mainPhoto: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80",
+    gallery: ["https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80"]
   },
   {
     id: "mercedes-v300d",
@@ -98,7 +98,7 @@ window.CARS = [
     trim: "Avantgarde AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Mercedes-Benz_V_300_d_Exclusive_Edition_EM2A4941_cropped.jpg",
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/b/ba/Mercedes-Benz_V_300_d_Exclusive_Edition_EM2A4941_cropped.jpg"]
+    mainPhoto: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80",
+    gallery: ["https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80"]
   }
 ];
