@@ -1,4 +1,8 @@
-LUXES EXECUTIVE — MASTER V4
+LUXES EXECUTIVE — MASTER V5
+
+Změny V5:
+- samotná hero fotografie s automobilem zmenšena o 25 %
+- zachována výška hero, správné logo a všechny čtyři jazyky
 
 Změny V4:
 - použito správné zlato-stříbrné logo LE dodané Ivanem

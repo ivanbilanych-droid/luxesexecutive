@@ -28,3 +28,8 @@
 .model-card img{height:160px;object-fit:cover;background:#07111b}
 .model-card{min-height:270px}
 @media(max-width:760px){.topbar .wrap{gap:8px}.brand{gap:8px}.brand img{width:93px;height:81px}.brand strong{font-size:16px}.brand span{font-size:8px;letter-spacing:.4px}.contact-strip{gap:0}.wa{padding:9px 10px;font-size:11px}.model-card img{height:135px}}
+
+/* V5: scale down the actual hero photograph, not only the section height */
+.hero{background-size:100% 100%,100% 100%,75% auto;background-position:center,center,right center;background-repeat:no-repeat;background-color:#02080f}
+@media(max-width:1100px) and (min-width:761px){.hero{background-size:100% 100%,100% 100%,auto 100%;background-position:center,center,right center}}
+@media(max-width:760px){.hero{background-size:100% 100%,100% 100%,cover;background-position:center,center,64% center}}
