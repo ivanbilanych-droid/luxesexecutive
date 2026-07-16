@@ -208,7 +208,7 @@ const TEXT = {
 document.addEventListener('DOMContentLoaded', () => {
   const lang = getLanguage();
   document.documentElement.lang = lang;
-  document.querySelectorAll('.brand img').forEach((img) => { img.src = 'assets/logo-main.png'; });
+  document.querySelectorAll('.brand img').forEach((img) => { img.src = 'assets/logo-gold.png'; });
 
   if (document.querySelector('.hero')) applyHomeTranslations(lang);
   else applySubpageTranslations(lang);

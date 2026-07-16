@@ -1,4 +1,9 @@
-LUXES EXECUTIVE — MASTER V5
+LUXES EXECUTIVE — MASTER V6
+
+Změny V6:
+- použita přesně dodaná hero fotografie s celým automobilem a Prahou
+- logo převedeno na čisté zlato bez černého nebo šedého podkladu
+- logo má průhledné pozadí a je upraveno pro hlavičku webu
 
 Změny V5:
 - samotná hero fotografie s automobilem zmenšena o 25 %
