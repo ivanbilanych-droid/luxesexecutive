@@ -1,4 +1,9 @@
-LUXES EXECUTIVE — MASTER V6
+LUXES EXECUTIVE — MASTER V7
+
+Změny V7:
+- opraven poměr stran hero fotografie
+- automobil už není roztažený ani stlačený
+- na počítači zůstává celý automobil viditelný vpravo
 
 Změny V6:
 - použita přesně dodaná hero fotografie s celým automobilem a Prahou
