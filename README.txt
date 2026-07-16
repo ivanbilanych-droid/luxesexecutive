@@ -1,4 +1,9 @@
-LUXES EXECUTIVE — MASTER V1
+LUXES EXECUTIVE — MASTER V3
+
+Změny V3:
+- hero sekce zmenšena o 25 %
+- hlavní logo zvětšeno 1,5×
+- úpravy platí pro počítač i mobil
 
 Základ vzhledu:
 - LUXES_EXECUTIVE_HOMEPAGE_DARK_GOLD_V1
