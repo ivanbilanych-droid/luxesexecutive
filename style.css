@@ -22,8 +22,9 @@
 .back-link{display:inline-block;margin-bottom:22px;color:var(--gold2);font-weight:700}.detail-grid{display:grid;grid-template-columns:1.55fr .9fr;gap:28px;align-items:start}.detail-main-photo{width:100%;height:570px;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block}.thumb-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px}.thumb{border:1px solid transparent;background:none;padding:0;border-radius:5px;overflow:hidden;cursor:pointer}.thumb.active{border-color:var(--gold)}.thumb img{width:100%;height:100px;object-fit:cover;display:block}.detail-card{position:sticky;top:20px;background:linear-gradient(180deg,#101d2a,#07111b);border:1px solid var(--line);border-radius:8px;padding:28px}.detail-card>small{letter-spacing:3px;color:var(--gold2)}.detail-card h1{font:700 36px Georgia,serif;margin:12px 0}.detail-card>p{color:var(--muted)}.detail-price{font:700 34px Georgia,serif;color:var(--gold2);margin:22px 0}
 @media(max-width:1050px){.catalog-grid{grid-template-columns:repeat(2,1fr)}.detail-grid{grid-template-columns:1fr}.detail-card{position:static}.detail-main-photo{height:500px}}
 @media(max-width:680px){.catalog-grid{grid-template-columns:1fr}.car-photo{height:230px}.car-heading{flex-direction:column}.detail-main-photo{height:360px}.thumb-grid{grid-template-columns:repeat(3,1fr)}.thumb img{height:82px}.detail-card h1{font-size:30px}}
-/* V3: hero reduced by 25% and logo enlarged by 1.5x */
-.brand img{width:132px;height:108px}
+/* V4: correct LE logo, hero reduced by 25%, full language switching */
+.brand img{width:132px;height:108px;object-fit:contain}
+.lang .active{color:var(--gold2);font-weight:800}
 .model-card img{height:160px;object-fit:cover;background:#07111b}
 .model-card{min-height:270px}
-@media(max-width:760px){.brand img{width:93px;height:81px}.model-card img{height:135px}}
+@media(max-width:760px){.topbar .wrap{gap:8px}.brand{gap:8px}.brand img{width:93px;height:81px}.brand strong{font-size:16px}.brand span{font-size:8px;letter-spacing:.4px}.contact-strip{gap:0}.wa{padding:9px 10px;font-size:11px}.model-card img{height:135px}}

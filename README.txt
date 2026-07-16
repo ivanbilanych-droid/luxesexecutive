@@ -1,4 +1,10 @@
-LUXES EXECUTIVE — MASTER V3
+LUXES EXECUTIVE — MASTER V4
+
+Změny V4:
+- použito správné zlato-stříbrné logo LE dodané Ivanem
+- kompletně opraveny jazykové verze CZ / EN / DE / RU
+- jazyk se zachovává také v katalogu a detailu vozidla
+- opraveno přepínání jazyků a aktivní jazyk
 
 Změny V3:
 - hero sekce zmenšena o 25 %
