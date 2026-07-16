@@ -1,151 +1,23 @@
-window.CARS = [
+// ... tady končí předchozí auto v seznamu, dáš za něj čárku ,
   {
-    id: "mercedes-g63-amg",
-    brand: "Mercedes-Benz",
-    model: "G63 AMG",
-    year: 2024,
-    price: 180000,
-    mileage: 1500,
-    engine: "4.0 V8 BiTurbo",
-    fuel: "Benzin",
-    gearbox: "Automat",
-    color: "Černá matná",
-    trim: "AMG",
-    status: "V prodeji",
-    top: true,
-    mainPhoto: "assets/g63.jpg",
-    gallery: [
-      "assets/g63.jpg",
-      "assets/g63-side.jpg",
-      "assets/g63-back.jpg"
-    ]
-  },
-  {
-    id: "lexus-gx460-luxury",
-    brand: "Lexus",
-    model: "GX460",
-    year: 2023,
-    price: 85000,
-    mileage: 10,
-    engine: "4.6 V8",
-    fuel: "Benzin",
-    gearbox: "Automat",
-    color: "Černá (Červený interiér)",
-    trim: "Luxury (Canada spec)",
-    status: "V prodeji",
-    top: true,
-    mainPhoto: "assets/lexus.jpg",
-    gallery: [
-      "assets/lexus.jpg",
-      "assets/lexus-1.jpg",
-      "assets/lexus-2.jpg",
-      "assets/lexus-3.jpg",
-      "assets/lexus-4.jpg"
-    ]
-  },
-  {
-    id: "mercedes-gls-600-maybach",
-    brand: "Mercedes-Benz",
-    model: "GLS 600 Maybach",
-    year: 2023,
-    price: 215000,
-    mileage: 12500,
-    engine: "4.0 V8",
-    fuel: "Benzin",
-    gearbox: "Automat",
-    color: "Dvoubarevná",
-    trim: "Maybach",
-    status: "V prodeji",
-    top: true,
-    mainPhoto: "assets/maybach.jpg",
-    gallery: [
-      "assets/maybach.jpg",
-      "assets/maybach-side.jpg",
-      "assets/maybach-back.jpg"
-    ]
-  },
-  {
-    id: "mercedes-s580-4matic",
-    brand: "Mercedes-Benz",
-    model: "S 580 4MATIC",
-    year: 2023,
-    price: 89900,
-    mileage: 13200,
-    engine: "4.0 V8",
-    fuel: "Benzin",
-    gearbox: "Automat",
-    color: "Černá metalíza",
-    trim: "Long AMG Line",
-    status: "V prodeji",
-    top: true,
-    mainPhoto: "assets/sclass.jpg",
-    gallery: [
-      "assets/sclass.jpg",
-      "assets/sclass-side.jpg",
-      "assets/sclass-back.jpg"
-    ]
-  },
-  {
-    id: "mercedes-gls-450d",
-    brand: "Mercedes-Benz",
-    model: "GLS 450d",
-    year: 2024,
-    price: 92000,
-    mileage: 18000,
-    engine: "3.0 L",
-    fuel: "Nafta",
-    gearbox: "Automat",
-    color: "Tmavě modrá",
-    trim: "AMG Line",
-    status: "V prodeji",
-    top: true,
-    mainPhoto: "assets/gls.jpg",
-    gallery: [
-      "assets/gls.jpg",
-      "assets/gls-side.jpg",
-      "assets/gls-back.jpg"
-    ]
-  },
-  {
-    id: "mercedes-gle-53-amg",
-    brand: "Mercedes-Benz",
-    model: "GLE 53 AMG Coupe",
-    year: 2024,
-    price: 105000,
-    mileage: 8500,
-    engine: "3.0 L",
-    fuel: "Benzin",
-    gearbox: "Automat",
-    color: "Šedá selenit",
-    trim: "AMG",
-    status: "V prodeji",
-    top: true,
-    mainPhoto: "assets/gle.jpg",
-    gallery: [
-      "assets/gle.jpg",
-      "assets/gle-side.jpg",
-      "assets/gle-back.jpg"
-    ]
-  },
-  {
-    id: "mercedes-v300d",
-    brand: "Mercedes-Benz",
-    model: "V 300d Avantgarde",
-    year: 2023,
-    price: 78900,
-    mileage: 24000,
-    engine: "2.0 L",
-    fuel: "Nafta",
-    gearbox: "Automat",
-    color: "Černá",
-    trim: "Avantgarde AMG",
-    status: "V prodeji",
-    top: true,
-    mainPhoto: "assets/vclass.jpg",
-    gallery: [
-      "assets/vclass.jpg",
-      "assets/vclass-side.jpg",
-      "assets/vclass-back.jpg"
+    id: "porsche-911",                       // Unikátní ID auta (bez mezer a diakritiky)
+    brand: "Porsche",                        // Značka
+    model: "911 Carrera",                    // Model
+    year: 2024,                              // Rok výroby
+    price: 145000,                           // Cena v eurech (čisté číslo bez mezer)
+    mileage: 500,                            // Najeté kilometry
+    engine: "3.0 H6",                        // Motor
+    fuel: "Benzin",                          // Palivo
+    gearbox: "Automat",                      // Převodovka
+    color: "Šedá",                           // Barva
+    trim: "Carrera S",                       // Výbava
+    status: "V prodeji",                     // Status
+    top: true,                               // Chceš ho na hlavní stránce? (true = ano, false = ne)
+    mainPhoto: "assets/porsche.jpg",         // Cesta k hlavní fotce
+    gallery: [                               // Cesty k fotkám v galerii
+      "assets/porsche.jpg",
+      "assets/porsche-side.jpg",
+      "assets/porsche-back.jpg"
     ]
   }
-];
+]; // Tímto soubor cars.js končí
