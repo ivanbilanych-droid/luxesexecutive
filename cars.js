@@ -13,11 +13,11 @@ window.CARS = [
     trim: "AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/g63.jpg",
+    mainPhoto: "assets/g63.jpg.jpg",
     gallery: [
-      "assets/g63.jpg",
-      "assets/g63-side.jpg",
-      "assets/g63-back.jpg"
+      "assets/g63.jpg.jpg",
+      "assets/g63-side.jpg.jpg",
+      "assets/g63-back.jpg.jpg"
     ]
   },
   {
@@ -34,48 +34,12 @@ window.CARS = [
     trim: "Luxury (Canada spec)",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/lexus.jpg",
+    mainPhoto: "assets/lexus-gx460-2016.jpg",
     gallery: [
-      "assets/lexus.jpg",
-      "assets/lexus-1.jpg",
-      "assets/lexus-2.jpg",
-      "assets/lexus-3.jpg",
-      "assets/lexus-4.jpg"
+      "assets/lexus-gx460-2016.jpg",
+      "assets/lexus-gx460-2016-1.jpg",
+      "assets/2024-lexus-gx-premium-exterior-102-6481f83325bd2.jpg"
     ]
-  },
-  {
-    id: "mercedes-gls-600-maybach",
-    brand: "Mercedes-Benz",
-    model: "GLS 600 Maybach",
-    year: 2023,
-    price: 215000,
-    mileage: 12500,
-    engine: "4.0 V8",
-    fuel: "Benzin",
-    gearbox: "Automat",
-    color: "Dvoubarevná",
-    trim: "Maybach",
-    status: "V prodeji",
-    top: true,
-    mainPhoto: "assets/hero.png", // Dokud nenahraješ maybach.jpg, ukáže se pěkné pozadí webu
-    gallery: ["assets/hero.png"]
-  },
-  {
-    id: "mercedes-s580-4matic",
-    brand: "Mercedes-Benz",
-    model: "S 580 4MATIC",
-    year: 2023,
-    price: 89900,
-    mileage: 13200,
-    engine: "4.0 V8",
-    fuel: "Benzin",
-    gearbox: "Automat",
-    color: "Černá metalíza",
-    trim: "Long AMG Line",
-    status: "V prodeji",
-    top: true,
-    mainPhoto: "assets/hero.png",
-    gallery: ["assets/hero.png"]
   },
   {
     id: "mercedes-gls-450d",
@@ -91,8 +55,10 @@ window.CARS = [
     trim: "AMG Line",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/hero.png",
-    gallery: ["assets/hero.png"]
+    mainPhoto: "assets/gls.jpg.jpg",
+    gallery: [
+      "assets/gls.jpg.jpg"
+    ]
   },
   {
     id: "mercedes-gle-53-amg",
@@ -108,24 +74,9 @@ window.CARS = [
     trim: "AMG",
     status: "V prodeji",
     top: true,
-    mainPhoto: "assets/hero.png",
-    gallery: ["assets/hero.png"]
-  },
-  {
-    id: "mercedes-v300d",
-    brand: "Mercedes-Benz",
-    model: "V 300d Avantgarde",
-    year: 2023,
-    price: 78900,
-    mileage: 24000,
-    engine: "2.0 L",
-    fuel: "Nafta",
-    gearbox: "Automat",
-    color: "Černá",
-    trim: "Avantgarde AMG",
-    status: "V prodeji",
-    top: true,
-    mainPhoto: "assets/hero.png",
-    gallery: ["assets/hero.png"]
+    mainPhoto: "assets/gle.jpg.jpg",
+    gallery: [
+      "assets/gle.jpg.jpg"
+    ]
   }
 ];
