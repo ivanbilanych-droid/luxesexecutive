@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e8edf3"/><stop offset="1" stop-color="#c9d1d9"/></linearGradient>
+ <linearGradient id="road" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9d5ce"/><stop offset="1" stop-color="#a9a49c"/></linearGradient>
+ <linearGradient id="car" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#17191d"/><stop offset=".55" stop-color="#050608"/><stop offset="1" stop-color="#24272c"/></linearGradient>
+ <filter id="shadow"><feGaussianBlur stdDeviation="22"/></filter>
+</defs>
+<rect width="1600" height="800" fill="url(#sky)"/>
+<rect y="505" width="1600" height="295" fill="url(#road)"/>
+<g opacity=".72">
+ <rect x="30" y="300" width="220" height="205" fill="#bcb5a9"/><rect x="65" y="258" width="150" height="247" fill="#d6cec0"/>
+ <rect x="270" y="335" width="260" height="170" fill="#bbb0a4"/><rect x="590" y="280" width="230" height="225" fill="#c7beb1"/>
+ <rect x="860" y="315" width="250" height="190" fill="#b7aea1"/>
+ <path d="M0 505 C180 420 365 420 545 505" fill="none" stroke="#888078" stroke-width="25"/>
+ <path d="M210 505 C390 405 585 405 765 505" fill="none" stroke="#9d9489" stroke-width="20"/>
+ <rect x="1185" y="250" width="150" height="255" fill="#b8afa2"/><polygon points="1260,180 1315,250 1205,250" fill="#857d75"/>
+ <rect x="1380" y="335" width="185" height="170" fill="#c7bfb2"/>
+</g>
+<ellipse cx="1130" cy="680" rx="355" ry="55" fill="#000" opacity=".22" filter="url(#shadow)"/>
+<g transform="translate(775 290)">
+ <path d="M95 310 L155 120 Q170 80 225 70 L515 56 Q568 55 604 92 L710 238 L724 363 L673 390 L102 390 L61 351 Z" fill="url(#car)"/>
+ <path d="M196 118 L255 89 L489 78 Q530 78 558 108 L626 220 L181 220 Z" fill="#1d2228"/>
+ <path d="M271 94 L282 214 M432 82 L445 214" stroke="#555d66" stroke-width="5"/>
+ <rect x="96" y="237" width="585" height="110" rx="14" fill="#0b0c0f"/>
+ <rect x="74" y="274" width="79" height="52" rx="10" fill="#d9e4ee"/><circle cx="113" cy="300" r="19" fill="#f5fbff"/>
+ <rect x="627" y="274" width="83" height="52" rx="10" fill="#c81d2d"/>
+ <rect x="280" y="300" width="205" height="42" rx="7" fill="#16191e"/><text x="382" y="328" text-anchor="middle" fill="#f3f3f3" font-family="Arial" font-size="21" font-weight="700">LUXES EXECUTIVE</text>
+ <circle cx="200" cy="375" r="82" fill="#090a0c"/><circle cx="200" cy="375" r="52" fill="#555c65"/><circle cx="200" cy="375" r="19" fill="#111"/>
+ <circle cx="604" cy="375" r="82" fill="#090a0c"/><circle cx="604" cy="375" r="52" fill="#555c65"/><circle cx="604" cy="375" r="19" fill="#111"/>
+</g>
+</svg>
