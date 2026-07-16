@@ -14,7 +14,7 @@ window.CARS = [
     status: "V prodeji",
     top: true,
     mainPhoto: "assets/cars/g63.jpg",
-    gallery: ["assets/cars/g63.jpg"]
+    gallery: ["assets/cars/g63.jpg", "assets/cars/g63-side.jpg", "assets/cars/g63-back.jpg"]
   },
   {
     id: "mercedes-gls-600-maybach",
