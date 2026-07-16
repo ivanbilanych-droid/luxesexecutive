@@ -100,5 +100,22 @@ window.CARS = [
     top: true,
     mainPhoto: "assets/cars/vclass.jpg",
     gallery: ["assets/cars/vclass.jpg"]
+  },
+  {
+    id: "lexus-gx460-luxury",
+    brand: "Lexus",
+    model: "GX460",
+    year: 2023,
+    price: 85000,
+    mileage: 10,
+    engine: "4.6 V8",
+    fuel: "Benzin",
+    gearbox: "Automat",
+    color: "Černá (Červený interiér)",
+    trim: "Luxury (Canada spec)",
+    status: "V prodeji",
+    top: true,
+    mainPhoto: "assets/cars/lexus.jpg",
+    gallery: ["assets/cars/lexus.jpg"]
   }
 ];
