@@ -1,11 +1,12 @@
+/* ОБЩИЕ СТИЛИ ДЛЯ ВСЕГО САЙТА */
 :root {
-  --gold: #d4af37; /* Luxusní zlatá */
-  --gold-hover: #f3e5ab;
-  --bg-dark: #070a13; /* Hluboké tmavé pozadí */
-  --bg-card: #0d1324; /* Pozadí pro karty a panely */
+  --bg: #050507;
+  --bg-card: #0d0e12;
+  --gold: #e5c158;
+  --gold-hover: #f3d47a;
   --text-light: #ffffff;
-  --text-muted: #a0a8ba; /* Světlejší šedomodrá pro perfektní čitelnost */
-  --line: rgba(212, 175, 55, 0.15); /* Jemná zlatá linka */
+  --text-muted: #8e929a;
+  --line: rgba(255, 255, 255, 0.08);
   --radius: 8px;
 }
 
@@ -16,70 +17,66 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg);
   color: var(--text-light);
-  background-color: var(--bg-dark);
-  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
 }
 
-.page {
-  max-width: 1540px;
-  margin: auto;
-  background: var(--bg-dark);
-  min-height: 100vh;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .container {
-  width: min(1320px, calc(100% - 48px));
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Hlavička (Header) */
+/* ШАПКА САЙТА (HEADER) */
 .header {
-  height: 90px;
-  background: rgba(7, 10, 19, 0.95);
   border-bottom: 1px solid var(--line);
+  background-color: rgba(5, 5, 7, 0.95);
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 }
 
 .header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  height: 80px;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  text-decoration: none;
 }
 
 .brand img {
-  height: 52px;
+  height: 45px;
   width: auto;
 }
 
 .brand-copy strong {
   display: block;
-  font-family: "Georgia", serif;
-  font-size: 20px;
-  letter-spacing: 2px;
-  color: var(--gold);
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #fff;
 }
 
 .brand-copy span {
   display: block;
-  font-size: 9px;
-  color: var(--text-light);
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
 }
 
+/* Меню навигации */
 .nav {
   display: flex;
   gap: 24px;
@@ -87,239 +84,136 @@ body {
 
 .nav a {
   font-size: 13px;
-  font-weight: 600;
-  color: #a0a5b5;
-  text-decoration: none;
-  transition: color 0.2s;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  font-weight: 500;
 }
 
 .nav a:hover, .nav a.active {
   color: var(--gold);
 }
 
+/* Инструменты справа */
 .tools {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .lang {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--text-light);
-  display: flex;
-  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
 }
 
-.lang a {
-  text-decoration: none;
-  color: #a0a5b5;
-  transition: color 0.2s;
-}
-
-.lang a:hover, .lang a.active {
+.lang a.active {
   color: var(--gold);
+  font-weight: bold;
 }
 
 .icon-link {
-  color: var(--gold);
   font-size: 18px;
-  text-decoration: none;
-  transition: opacity 0.2s;
+  color: var(--text-muted);
+  transition: color 0.2s;
 }
 
 .icon-link:hover {
-  opacity: 0.8;
+  color: var(--gold);
 }
 
 .contact-btn {
-  background: var(--gold);
-  color: #000;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
   padding: 10px 20px;
-  border-radius: var(--radius);
-  font-weight: 700;
-  font-size: 13px;
-  text-decoration: none;
-  transition: background 0.2s;
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: all 0.2s;
 }
 
 .contact-btn:hover {
-  background: var(--gold-hover);
-}
-
-/* Hero sekce */
-.hero {
-  padding: 100px 0;
-  background-image: linear-gradient(90deg, rgba(7,10,19,1) 30%, rgba(7,10,19,0.7) 60%, rgba(7,10,19,0.2) 100%), url('assets/hero.png');
-  background-size: contain;
-  background-position: right center;
-  background-repeat: no-repeat;
-  min-height: 580px;
-  display: flex;
-  align-items: center;
-}
-
-.hero-content {
-  max-width: 650px;
-}
-
-.hero h1 {
-  font-family: "Georgia", serif;
-  font-size: 58px;
-  line-height: 1.1;
-  font-weight: 400;
-  margin-bottom: 20px;
-  color: var(--text-light);
-}
-
-.hero p {
-  color: #b0b8cc;
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 16px;
-}
-
-.hero-actions .primary {
   background: var(--gold);
   color: #000;
-  padding: 14px 28px;
-  border-radius: var(--radius);
-  font-weight: 700;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 13px;
-  transition: background 0.2s;
 }
 
-.hero-actions .primary:hover {
-  background: var(--gold-hover);
+/* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ ТЕЛЕФОНОВ */
+@media (max-width: 991px) {
+  .header .container {
+    height: auto;
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .tools {
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+  }
 }
 
-.hero-actions .secondary {
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  padding: 14px 28px;
-  border-radius: var(--radius);
-  font-weight: 700;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 13px;
-  transition: background 0.2s;
+@media (max-width: 480px) {
+  .brand-copy {
+    display: none; /* Скрываем текст логотипа на совсем маленьких экранах, чтобы не забивать место */
+  }
+  
+  .nav a {
+    font-size: 11px;
+  }
+  
+  .contact-btn {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
 }
 
-.hero-actions .secondary:hover {
-  background: rgba(212, 175, 55, 0.1);
-}
-
-/* Lišta výhod (Benefits) */
-.quick-benefits {
-  padding: 40px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.benefits-row {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 16px;
-}
-
-.benefit-item {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.benefit-item .icon {
-  font-size: 24px;
-  color: var(--gold);
-}
-
-.benefit-item strong {
-  font-size: 13px;
-  color: var(--text-light);
-  font-weight: 700;
-}
-
-.benefit-item span {
-  font-size: 11px;
-  color: var(--text-muted); /* Opraveno na vysoce čitelnou šedomodrou */
-  line-height: 1.4;
-}
-
-/* Sekce Společné */
-.section {
-  padding: 80px 0;
-}
-
-.section-title-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 32px;
-}
-
-.section-title-row h2 {
-  font-family: "Georgia", serif;
-  font-size: 28px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.all-link {
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-bottom: 1px solid transparent;
-}
-
-.all-link:hover {
-  border-color: var(--gold);
-}
-
-/* Karty aut (Katalog) */
+/* СТИЛИ ДЛЯ КАРТОЧЕК И СЕТКИ АВТО */
 .cars-slider {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
 }
 
 .car-slide-card {
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: border-color 0.2s, transform 0.2s;
-  text-decoration: none;
-  color: var(--text-light);
+  display: block;
+  transition: transform 0.2s, border-color 0.2s;
 }
 
 .car-slide-card:hover {
+  transform: translateY(-5px);
   border-color: var(--gold);
-  transform: translateY(-4px);
 }
 
 .car-img-box {
+  width: 100%;
+  height: 200px;
+  background: #15161b;
   position: relative;
-  height: 180px;
-  background: #090e1a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
 .car-img-box img {
-  max-width: 90%;
-  max-height: 85%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .car-slide-meta {
@@ -327,256 +221,19 @@ body {
 }
 
 .car-slide-meta h3 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: var(--text-light);
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #fff;
 }
 
 .car-specs {
-  font-size: 12px;
-  color: var(--text-muted); /* Zvýšený kontrast specifikací */
-  margin-bottom: 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 15px;
 }
 
 .car-slide-price {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--gold);
-}
-
-/* Jak pracujeme */
-.how-it-works-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 40px;
-}
-
-.steps-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.step {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.step-num {
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.step-info h4 {
-  font-size: 15px;
-  margin-bottom: 4px;
-  color: var(--text-light);
-}
-
-.step-info p {
-  font-size: 12px;
-  color: var(--text-muted); /* Zvýšený kontrast kroků */
-  line-height: 1.5;
-}
-
-/* Formulář žádosti (Form Card) */
-.form-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  border-radius: var(--radius);
-  padding: 36px;
-}
-
-.form-card h3 {
-  font-family: "Georgia", serif;
-  font-size: 24px;
-  margin-bottom: 8px;
-  color: var(--text-light);
-}
-
-.form-card p {
-  font-size: 13px;
-  color: var(--text-muted); /* Lepší čitelnost úvodu formuláře */
-  margin-bottom: 24px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.form-group label {
-  font-size: 11px;
-  color: var(--gold);
-  font-weight: 600;
-}
-
-.form-group input, .form-group textarea {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 12px;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 13px;
-  outline: none;
-}
-
-.form-group input:focus, .form-group textarea:focus {
-  border-color: var(--gold);
-}
-
-.form-group.full-width {
-  grid-column: span 2;
-}
-
-.form-checkbox {
-  grid-column: span 2;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  color: var(--text-muted); /* Čitelnější text u souhlasu */
-  margin-top: 10px;
-}
-
-.submit-btn {
-  grid-column: span 2;
-  background: var(--gold);
-  color: #000;
-  border: none;
-  padding: 14px;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 13px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background 0.2s;
-}
-
-.submit-btn:hover {
-  background: var(--gold-hover);
-}
-
-/* Sekce Proč Luxes Executive */
-.why-us-grid {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 40px;
-  margin-top: 60px;
-}
-
-.why-us-info h3 {
-  font-family: "Georgia", serif;
-  font-size: 28px;
-  margin-bottom: 16px;
-  color: var(--text-light);
-}
-
-.why-us-info p {
-  color: var(--text-muted); /* Výraznější doprovodný text */
-  font-size: 13px;
-  line-height: 1.6;
-  margin-bottom: 24px;
-}
-
-.why-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.why-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 24px;
-  border-radius: var(--radius);
-  text-align: center;
-}
-
-.why-card .icon {
-  font-size: 32px;
-  color: var(--gold);
-  margin-bottom: 16px;
-}
-
-.why-card h4 {
-  font-size: 14px;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  color: var(--text-light);
-}
-
-.why-card p {
-  font-size: 11px;
-  color: var(--text-muted); /* Zvýšený kontrast karet výhod */
-  line-height: 1.5;
-}
-
-/* Patička (Footer) */
-.footer {
-  background: #04060d;
-  border-top: 1px solid var(--line);
-  padding: 60px 0 20px;
-}
-
-.footer-logo-desc h3 {
-  color: var(--gold);
-  font-family: "Georgia", serif;
   font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.footer-socials {
-  display: flex;
-  gap: 14px;
-  margin-top: 20px;
-}
-
-.footer p, .footer a {
-  color: var(--text-muted); /* Zvýšená čitelnost odkazů v patičce */
-}
-
-.footer a:hover {
   color: var(--gold);
-}
-
-.footer-bottom {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  color: #6a758a; /* Výraznější barva copyrightu */
-}
-
-/* Responzivní design */
-@media (max-width: 1024px) {
-  .benefits-row { grid-template-columns: repeat(3, 1fr); }
-  .how-it-works-grid { grid-template-columns: 1fr; }
-  .why-us-grid { grid-template-columns: 1fr; }
-  .why-cards { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 768px) {
-  .benefits-row { grid-template-columns: 1fr; }
-  .why-cards { grid-template-columns: 1fr; }
-  .form-grid { grid-template-columns: 1fr; }
-  .form-group.full-width { grid-column: span 1; }
+  font-weight: 700;
 }
