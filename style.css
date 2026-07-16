@@ -1,4 +1,6 @@
-/* ОБЩИЕ СТИЛИ ДЛЯ ВСЕГО САЙТА */
+/* ==========================================
+   1. GLOBÁLNÍ NASTAVENÍ & PROMĚNNÉ
+   ========================================== */
 :root {
   --bg: #050507;
   --bg-card: #0d0e12;
@@ -20,7 +22,8 @@ body {
   background-color: var(--bg);
   color: var(--text-light);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a {
@@ -34,7 +37,38 @@ a {
   padding: 0 20px;
 }
 
-/* ШАПКА САЙТА (HEADER) */
+/* ==========================================
+   2. NEZBYTNÉ POMOCNÉ TŘÍDY & SEKCE
+   ========================================== */
+.section {
+  padding: 80px 0;
+}
+
+.section-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.section-title-row h2 {
+  font-family: "Georgia", serif;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.all-link {
+  color: var(--gold);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* ==========================================
+   3. ŠAHKA (HEADER) - BEZPEČNÁ PRO MOBILY
+   ========================================== */
 .header {
   border-bottom: 1px solid var(--line);
   background-color: rgba(5, 5, 7, 0.95);
@@ -48,7 +82,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 90px;
 }
 
 .brand {
@@ -76,7 +110,6 @@ a {
   letter-spacing: 2px;
 }
 
-/* Меню навигации */
 .nav {
   display: flex;
   gap: 24px;
@@ -95,7 +128,6 @@ a {
   color: var(--gold);
 }
 
-/* Инструменты справа */
 .tools {
   display: flex;
   align-items: center;
@@ -105,6 +137,10 @@ a {
 .lang {
   font-size: 12px;
   color: var(--text-muted);
+}
+
+.lang a {
+  margin: 0 2px;
 }
 
 .lang a.active {
@@ -140,52 +176,118 @@ a {
   color: #000;
 }
 
-/* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ ТЕЛЕФОНОВ */
-@media (max-width: 991px) {
-  .header .container {
-    height: auto;
-    padding: 15px 20px;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
-
-  .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .tools {
-    width: 100%;
-    justify-content: center;
-    gap: 15px;
-    border-top: 1px solid var(--line);
-    padding-top: 12px;
-  }
+/* ==========================================
+   4. HERO UTĚŠENÍ (ÚVODNÍ BANNER)
+   ========================================== */
+.hero {
+  padding: 100px 0;
+  background: linear-gradient(rgba(5,5,7,0.8), rgba(5,5,7,0.95)), url('assets/hero.png') no-repeat center center;
+  background-size: cover;
+  border-bottom: 1px solid var(--line);
 }
 
-@media (max-width: 480px) {
-  .brand-copy {
-    display: none; /* Скрываем текст логотипа на совсем маленьких экранах, чтобы не забивать место */
-  }
-  
-  .nav a {
-    font-size: 11px;
-  }
-  
-  .contact-btn {
-    padding: 8px 14px;
-    font-size: 11px;
-  }
+.hero-content {
+  max-width: 600px;
 }
 
-/* СТИЛИ ДЛЯ КАРТОЧЕК И СЕТКИ АВТО */
+.eyebrow {
+  color: var(--gold);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-family: "Georgia", serif;
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.hero-actions a {
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.hero-actions a.primary {
+  background: var(--gold);
+  color: #000;
+}
+
+.hero-actions a.primary:hover {
+  background: var(--gold-hover);
+}
+
+.hero-actions a.secondary {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.hero-actions a.secondary:hover {
+  border-color: #fff;
+}
+
+/* ==========================================
+   5. QUICK BENEFITS (PROVĚŘENÉ VOZY...)
+   ========================================== */
+.quick-benefits {
+  border-bottom: 1px solid var(--line);
+  padding: 40px 0;
+}
+
+.benefits-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.benefit-item .icon {
+  color: var(--gold);
+  font-size: 20px;
+}
+
+.benefit-item strong {
+  font-size: 13px;
+  color: #fff;
+}
+
+.benefit-item span {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   6. KATALOG / KARTY AUT (DOKONALÝ SHOWROOM)
+   ========================================== */
 .cars-slider {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px;
-  margin-top: 30px;
 }
 
 .car-slide-card {
@@ -204,9 +306,8 @@ a {
 
 .car-img-box {
   width: 100%;
-  height: 200px;
+  height: 220px;
   background: #15161b;
-  position: relative;
   overflow: hidden;
 }
 
@@ -217,23 +318,366 @@ a {
 }
 
 .car-slide-meta {
-  padding: 20px;
+  padding: 24px;
 }
 
 .car-slide-meta h3 {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 8px;
   color: #fff;
+  font-family: "Georgia", serif;
 }
 
 .car-specs {
   font-size: 13px;
   color: var(--text-muted);
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 15px;
 }
 
 .car-slide-price {
-  font-size: 20px;
+  font-size: 22px;
   color: var(--gold);
   font-weight: 700;
+}
+
+/* ==========================================
+   7. JAK PRACUJEME & FORMULÁŘ
+   ========================================== */
+.how-it-works-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.step {
+  display: flex;
+  gap: 24px;
+}
+
+.step-num {
+  font-family: "Georgia", serif;
+  font-size: 32px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.step-info h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.step-info p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* FORMULÁŘ */
+.form-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 40px;
+}
+
+.form-card h3 {
+  font-family: "Georgia", serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.form-card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.form-group input, .form-group textarea {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line);
+  padding: 14px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.submit-btn {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: var(--gold-hover);
+}
+
+/* ==========================================
+   8. PROČ LUXES EXECUTIVE & BRAND CARDS
+   ========================================== */
+.why-us-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.why-us-info h3 {
+  font-family: "Georgia", serif;
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.why-us-info p {
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.why-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.why-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 30px;
+}
+
+.why-card .icon {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.why-card h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.why-card p {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ==========================================
+   9. POPULÁRNÍ ZNAČKY (BRAND CARDS)
+   ========================================== */
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.brand-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.2s;
+}
+
+.brand-card:hover {
+  border-color: var(--gold);
+}
+
+.brand-logo-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--gold);
+}
+
+.brand-card .mark {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.brand-card span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   10. PATIČKA (FOOTER)
+   ========================================== */
+.footer {
+  background: #020203;
+  border-top: 1px solid var(--line);
+  padding: 80px 0 40px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-grid h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+.footer-logo-desc h3 {
+  font-size: 18px;
+  color: #fff;
+  font-family: "Georgia", serif;
+}
+
+.footer-logo-desc p {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.footer-grid p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.footer-grid a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--line);
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   11. PLNÁ RESPONSIVITA (MOBILNÍ VERZE)
+   ========================================== */
+@media (max-width: 991px) {
+  .header .container {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .tools {
+    width: 100%;
+    justify-content: center;
+    border-top: 1px solid var(--line);
+    padding-top: 15px;
+  }
+  
+  .benefits-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .how-it-works-grid, .why-us-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  
+  .hero p {
+    font-size: 15px;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+  }
+  
+  .benefits-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .why-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }
