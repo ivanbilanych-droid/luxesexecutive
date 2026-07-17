@@ -492,7 +492,7 @@ function renderCatalog(cars, lang) {
     return `
       <article class="car-card">
         <a class="car-photo" href="${detailUrl}">
-          <img src="${car.mainPhoto}" alt="${car.brand} ${car.model}">
+          <img class="${car.photoFit === 'contain' ? 'car-photo-contain' : ''}" src="${car.mainPhoto}" alt="${car.brand} ${car.model}">
           ${car.top ? '<span class="badge badge-gold">TOP</span>' : ''}
           <span class="badge badge-status">${translateStatus(car.status, lang) || t.statusForSale}</span>
         </a>
@@ -529,7 +529,7 @@ function renderHomeCars(cars, lang) {
   grid.innerHTML = cars.map((car) => {
     const detailUrl = localizedUrl(`detail.html?id=${encodeURIComponent(car.id)}`, lang);
     return `<article class="car-card home-car-card">
-      <a class="car-photo" href="${detailUrl}"><img src="${car.mainPhoto}" alt="${car.brand} ${car.model}"><span class="badge badge-status">${translateStatus(car.status, lang) || t.statusForSale}</span></a>
+      <a class="car-photo" href="${detailUrl}"><img class="${car.photoFit === 'contain' ? 'car-photo-contain' : ''}" src="${car.mainPhoto}" alt="${car.brand} ${car.model}"><span class="badge badge-status">${translateStatus(car.status, lang) || t.statusForSale}</span></a>
       <div class="car-content"><div class="car-heading"><div><small>${car.brand}</small><h3>${car.model}</h3></div><strong>${formatPrice(car.price, lang)}</strong></div>
       <div class="car-specs"><span><b>${t.specs.year}</b>${car.year}</span><span><b>${t.specs.mileage}</b>${formatMileage(car.mileage, lang)}</span></div>
       <a class="btn btn-primary home-detail-button" href="${detailUrl}">${t.vehicleDetail}</a></div>
@@ -557,7 +557,7 @@ function renderDetail(cars, lang) {
     <a class="back-link" href="${catalogUrl}">${t.backCatalogArrow}</a>
     <section class="detail-grid">
       <div class="detail-gallery">
-        <img id="mainCarPhoto" class="detail-main-photo" src="${gallery[0]}" alt="${car.brand} ${car.model}">
+        <img id="mainCarPhoto" class="detail-main-photo ${car.photoFit === 'contain' ? 'detail-photo-contain' : ''}" src="${gallery[0]}" alt="${car.brand} ${car.model}">
         <div class="thumb-grid">
           ${gallery.map((photo, index) => `<button class="thumb ${index === 0 ? 'active' : ''}" type="button" data-photo="${photo}"><img src="${photo}" alt="${t.photo} ${index + 1}"></button>`).join('')}
         </div>

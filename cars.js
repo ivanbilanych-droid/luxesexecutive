@@ -7,7 +7,7 @@ window.CARS = [
   {
     id: 'lexus-gx460-2016', brand: 'Lexus', model: 'GX 460 V8 Executive LPG', year: 2016,
     price: 34900, mileage: null, engine: '4.6 V8', fuel: 'Benzín / LPG', gearbox: 'Automat', color: 'Černá', trim: 'Executive LPG',
-    status: 'V prodeji', top: true, mainPhoto: 'assets/cars/2016_lexus_gx460_01.jpg',
+    status: 'V prodeji', top: true, photoFit: 'contain', mainPhoto: 'assets/cars/2016_lexus_gx460_01.jpg',
     gallery: ['assets/cars/2016_lexus_gx460_01.jpg', 'assets/cars/2016_lexus_gx460_02.jpg', 'assets/cars/2016_lexus_gx460_03.jpg']
   },
   {
