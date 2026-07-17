@@ -5,6 +5,12 @@
  */
 window.CARS = [
   {
+    id: 'lexus-gx460-2016', brand: 'Lexus', model: 'GX 460 V8 Executive LPG', year: 2016,
+    price: 34900, mileage: null, engine: '4.6 V8', fuel: 'Benzín / LPG', gearbox: 'Automat', color: 'Černá', trim: 'Executive LPG',
+    status: 'V prodeji', top: true, mainPhoto: 'assets/cars/2016_lexus_gx460_01.jpg',
+    gallery: ['assets/cars/2016_lexus_gx460_01.jpg', 'assets/cars/2016_lexus_gx460_02.jpg', 'assets/cars/2016_lexus_gx460_03.jpg']
+  },
+  {
     id: 'mercedes-gls-2024', brand: 'Mercedes-Benz', model: 'GLS', year: 2024,
     price: null, mileage: null, engine: '—', fuel: '—', gearbox: 'Automat', color: 'Černá', trim: '2024',
     status: 'V prodeji', top: true, mainPhoto: 'assets/cars/2024_mercedes_gls_01.jpg',
