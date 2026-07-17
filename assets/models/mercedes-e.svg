@@ -1,8 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="320" viewBox="0 0 560 320">
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="205" viewBox="60 25 440 205">
 <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101c2a"/><stop offset="1" stop-color="#050a11"/></linearGradient><linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#b9812d"/><stop offset=".5" stop-color="#f0c46a"/><stop offset="1" stop-color="#b9812d"/></linearGradient></defs>
 <rect width="560" height="320" fill="url(#bg)"/>
 <circle cx="100" cy="62" r="120" fill="#d6a248" opacity=".05"/><circle cx="480" cy="260" r="150" fill="#d6a248" opacity=".04"/>
 <g fill="none" stroke="url(#gold)" stroke-width="3" stroke-linejoin="round" opacity=".95"><path d="M76 160 L122 121 L205 88 L339 88 L395 121 L438 160 L420 191 L94 191 Z"/><path d="M205 88 L239 58 L331 58 L364 91"/><path d="M135 191 A35 35 0 0 0 205 191 M342 191 A35 35 0 0 0 412 191"/><circle cx="170" cy="191" r="25"/><circle cx="377" cy="191" r="25"/><path d="M129 151 H417 M196 88 L207 151 M334 88 L345 151"/></g>
-<text x="280" y="254" text-anchor="middle" fill="#f3cf81" font-family="Georgia,serif" font-size="30" font-weight="700">MERCEDES-BENZ E-CLASS</text>
-<text x="280" y="283" text-anchor="middle" fill="#9da7b3" font-family="Arial,sans-serif" font-size="15" letter-spacing="2">MODEL PLACEHOLDER • 0 VOZŮ</text>
 </svg>
