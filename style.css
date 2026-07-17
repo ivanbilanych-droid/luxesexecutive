@@ -66,6 +66,19 @@
   html[lang="ru"] .hero h1{font-size:28px}
 }
 
+/* V11: one clean mobile hero image, beneath the text */
+@media(max-width:760px){
+  .hero{
+    min-height:510px;
+    align-items:flex-start;
+    background-image:linear-gradient(180deg,#02080f 0%,#02080f 54%,rgba(2,8,15,.12) 69%,rgba(2,8,15,.42) 100%),url('assets/hero-v6.png');
+    background-size:100% 100%,100% auto;
+    background-position:center,center bottom;
+    background-repeat:no-repeat;
+  }
+  .hero::after{display:none}
+}
+
 /* V8: cleaner Mercedes model cards without duplicated or clipped SVG labels */
 .models{align-items:stretch}
 .model-card{display:flex;flex-direction:column;min-height:250px;overflow:hidden}
@@ -166,3 +179,22 @@
 /* V7: preserve the hero photo aspect ratio so the vehicle is never distorted */
 .hero{background-size:100% 100%,100% 100%,auto 100%;background-position:center,center,right center;background-repeat:no-repeat;background-color:#02080f}
 @media(max-width:760px){.hero{background-size:100% 100%,100% 100%,cover;background-position:center,center,64% center}}
+
+/* V11 final mobile composition: text above, one smaller car image below */
+@media(max-width:760px){
+  .hero > .wrap{margin:0 auto}
+  .hero{
+    min-height:510px;
+    background-image:linear-gradient(180deg,#02080f 0%,#02080f 54%,rgba(2,8,15,.12) 69%,rgba(2,8,15,.42) 100%),url('assets/hero-v6.png');
+    background-size:100% 100%,100% auto;
+    background-position:center,center bottom;
+    background-repeat:no-repeat;
+  }
+  .hero::after{display:none}
+  .hero-content{position:relative;z-index:1;padding:27px 0 0}
+  .hero h1{font-size:34px;max-width:100%;margin-bottom:13px}
+  .hero p{max-width:100%;font-size:14px;line-height:1.45;margin-bottom:17px}
+  .actions{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .actions .btn{min-height:46px;padding:10px 7px;font-size:10px;white-space:nowrap}
+}
+@media(max-width:390px){.hero h1{font-size:31px}html[lang="ru"] .hero h1{font-size:28px}}
