@@ -1,6 +1,6 @@
-LUXES EXECUTIVE — MASTER V17
+LUXES EXECUTIVE — MASTER V21
 
-V17 je jeden hotový projekt pro nahrání na hosting.
+V21 je jeden hotový projekt pro nahrání na hosting.
 
 Co je uvnitř:
 - hlavní stránka se sedmi aktuálními vozy a jejich počtem;

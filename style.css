@@ -211,5 +211,19 @@
 .home-detail-button{width:100%;padding:12px 10px;font-size:11px;text-align:center}
 .car-photo img.car-photo-contain{object-fit:contain;background:#03080e}
 .detail-main-photo.detail-photo-contain{object-fit:contain;background:#03080e}
+
+/* V19: current vehicle as the executive hero. */
+.hero{
+  background-image:linear-gradient(90deg,rgba(2,8,15,.98) 0%,rgba(2,8,15,.91) 38%,rgba(2,8,15,.18) 70%,rgba(2,8,15,.12) 100%),linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.34)),url('assets/hero-g63-v21.jpg');
+  background-size:100% 100%,100% 100%,cover;
+  background-position:center,center,center;
+}
+@media(max-width:760px){
+  .hero{
+    background-image:linear-gradient(180deg,#02080f 0%,#02080f 54%,rgba(2,8,15,.1) 70%,rgba(2,8,15,.48) 100%),url('assets/hero-g63-v21.jpg');
+    background-size:100% 100%,auto 50%;
+    background-position:center,right bottom;
+  }
+}
 @media(max-width:920px){.models.featured-models{grid-template-columns:repeat(2,minmax(0,1fr))}.home-car-card .car-photo{height:auto;aspect-ratio:3/2}}
 @media(max-width:520px){.models.featured-models{grid-template-columns:1fr}.home-car-card .car-photo{aspect-ratio:3/2}.home-car-card .car-heading{flex-direction:row}.home-car-card .car-heading h3{font-size:23px}}
