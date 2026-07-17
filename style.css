@@ -34,6 +34,97 @@
 @media(max-width:1100px) and (min-width:761px){.hero{background-size:100% 100%,100% 100%,auto 100%;background-position:center,center,right center}}
 @media(max-width:760px){.hero{background-size:100% 100%,100% 100%,cover;background-position:center,center,64% center}}
 
+/* V8: cleaner Mercedes model cards without duplicated or clipped SVG labels */
+.models{align-items:stretch}
+.model-card{display:flex;flex-direction:column;min-height:250px;overflow:hidden}
+.model-card img{width:100%;height:128px;object-fit:contain;object-position:center;padding:9px 7px 2px;background:linear-gradient(180deg,#101d2a,#0a1520)}
+.model-info{display:flex;flex:1;flex-direction:column;padding:14px 15px 16px}
+.model-info h3{line-height:1.25;margin-bottom:10px}
+.model-count{margin-top:auto}
+@media(max-width:760px){.model-card{min-height:238px}.model-card img{height:116px;padding:8px 5px 0}.model-info{padding:12px}.model-info h3{font-size:15px}}
+
+/* V9: dedicated mobile refinement */
+@media(max-width:760px){
+  body{overflow-x:hidden}
+  .wrap{width:calc(100% - 24px)}
+  .topbar .wrap{min-height:76px;gap:6px}
+  .brand{gap:7px;min-width:0;overflow:hidden}
+  .brand img{width:82px;height:50px;flex:0 0 82px}
+  .brand>div{min-width:0}
+  .brand strong{display:block;font-size:16px;line-height:1;white-space:nowrap}
+  .brand span{font-size:8px;line-height:1.2;letter-spacing:.25px;margin-top:5px;white-space:normal}
+  .contact-strip{margin-left:0;gap:0;flex:0 0 auto}
+  .contact-strip .wa{width:42px;height:38px;padding:0;font-size:0;border-radius:4px}
+  .contact-strip .wa::after{content:'WA';font-size:11px;font-weight:900}
+  .navrow .wrap{min-height:56px}
+  .mobile-toggle{width:44px;height:40px;padding:0;font-size:21px;border-radius:4px}
+  .lang{padding-left:12px;border-left:0;font-size:12px;white-space:nowrap}
+  .nav{border-top:1px solid rgba(255,255,255,.08);margin-top:7px}
+  .nav a{padding:13px 2px;font-size:13px}
+  .hero{min-height:475px}
+  .hero-content{padding:34px 0}
+  .hero h1{font-size:38px;line-height:1.03;letter-spacing:0;margin-bottom:16px;overflow-wrap:normal;word-break:normal}
+  .hero p{max-width:100%;font-size:15px;line-height:1.5;margin-bottom:22px}
+  .actions{width:100%;gap:10px}
+  .actions .btn{width:100%;min-height:48px;padding:13px 14px;font-size:12px;text-align:center}
+  .quick-item{padding:20px 13px;min-height:116px;gap:10px}
+  .quick-icon{font-size:25px}
+  .quick-item strong{font-size:13px}
+  .quick-item span{font-size:11px}
+  .section{padding:36px 0}
+  .section-head{align-items:flex-start;gap:14px;margin-bottom:18px}
+  .section h2{font-size:23px;line-height:1.2}
+  .section-link{font-size:11px;white-space:nowrap;padding-top:4px}
+  .workflow{gap:14px}
+  .steps,.form-panel,.vip-panel{padding:18px}
+  .steps h2,.form-panel h2{font-size:23px}
+  .field input,.field textarea{width:100%}
+  .submit .btn{width:100%;min-height:48px}
+  .footer{padding:34px 0 16px}
+  .footer-grid{grid-template-columns:1fr;gap:18px}
+  .copyright{font-size:10px}
+  .catalog-page,.detail-page{padding:36px 0 50px;min-height:0}
+  .car-photo{height:auto;aspect-ratio:3/2}
+  .car-content{padding:16px}
+  .car-heading h3{font-size:23px}
+  .car-heading>strong{font-size:20px}
+  .car-specs,.detail-specs{gap:8px}
+  .car-specs span,.detail-specs span{padding:10px}
+  .car-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .car-actions .btn{width:100%;padding:12px 8px;text-align:center;overflow-wrap:anywhere}
+  .detail-main-photo{height:auto;aspect-ratio:3/2}
+  .thumb-grid{gap:7px}
+  .thumb img{height:72px}
+  .detail-card{padding:20px}
+  .detail-card h1{font-size:28px}
+  .detail-price{font-size:28px;margin:18px 0}
+}
+
+@media(max-width:520px){
+  .section-head{flex-direction:column;align-items:flex-start;gap:8px}
+  .models{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .model-card{min-height:218px}
+  .model-card img{height:105px;padding:7px 5px 0}
+  .model-info{padding:10px 11px 12px}
+  .model-info small{font-size:10px}
+  .model-info h3{font-size:14px}
+  .model-count{font-size:13px}
+}
+
+@media(max-width:390px){
+  .brand img{width:72px;height:46px;flex-basis:72px}
+  .brand strong{font-size:14px}
+  .brand span{font-size:7px}
+  .hero h1{font-size:34px}
+  .detail-specs{grid-template-columns:1fr}
+  html[lang="ru"] .hero h1{font-size:30px}
+}
+
+@media(max-width:350px){
+  .quick-grid,.models{grid-template-columns:1fr}
+  .quick-item{min-height:94px}
+}
+
 /* V6: exact supplied hero composition and transparent all-gold logo */
 .hero{background-image:linear-gradient(90deg,rgba(2,8,15,.98) 0%,rgba(3,10,18,.88) 34%,rgba(4,10,18,.24) 68%,rgba(2,7,12,.24) 100%),linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.42)),url('assets/hero-v6.png');background-size:100% 100%,100% 100%,100% 100%;background-position:center,center,center;background-repeat:no-repeat}
 .brand img{width:150px;height:90px;object-fit:contain}

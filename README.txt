@@ -1,4 +1,16 @@
-LUXES EXECUTIVE — MASTER V7
+LUXES EXECUTIVE — MASTER V9
+
+Změny V9:
+- kompletně doladěna mobilní hlavička, logo, WhatsApp a jazykový přepínač
+- hero text a tlačítka přizpůsobeny šířce telefonu
+- modely Mercedes-Benz se na telefonu zobrazují přehledně ve dvou sloupcích
+- katalog a detail auta používají mobilní poměr fotografií 3:2
+- opraveny mobilní formuláře, karty, patička a rozestupy
+
+Změny V8:
+- odstraněny duplicitní a ořezané nápisy z obrázků modelů Mercedes-Benz
+- karty modelů mají čistší vzhled a stejnou výšku
+- doladěny rozestupy a zobrazení modelů na počítači i mobilu
 
 Změny V7:
 - opraven poměr stran hero fotografie
