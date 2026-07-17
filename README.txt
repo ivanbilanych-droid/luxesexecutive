@@ -1,51 +1,20 @@
-LUXES EXECUTIVE — MASTER V9
+LUXES EXECUTIVE — MASTER V15
 
-Změny V9:
-- kompletně doladěna mobilní hlavička, logo, WhatsApp a jazykový přepínač
-- hero text a tlačítka přizpůsobeny šířce telefonu
-- modely Mercedes-Benz se na telefonu zobrazují přehledně ve dvou sloupcích
-- katalog a detail auta používají mobilní poměr fotografií 3:2
-- opraveny mobilní formuláře, karty, patička a rozestupy
+V15 je jeden hotový projekt pro nahrání na hosting.
 
-Změny V8:
-- odstraněny duplicitní a ořezané nápisy z obrázků modelů Mercedes-Benz
-- karty modelů mají čistší vzhled a stejnou výšku
-- doladěny rozestupy a zobrazení modelů na počítači i mobilu
+Co je uvnitř:
+- hlavní stránka se šesti aktuálními vozy Mercedes-Benz a jejich počtem;
+- katalog všech šesti vozů;
+- detail každého vozu se třemi fotografiemi;
+- Excel tabulka LUXES_EXECUTIVE_WHOLESALE_CATALOG.xlsx;
+- fotografie ve složce assets/cars. Jejich názvy přesně odpovídají sloupcům Foto 1–3 v Excelu.
 
-Změny V7:
-- opraven poměr stran hero fotografie
-- automobil už není roztažený ani stlačený
-- na počítači zůstává celý automobil viditelný vpravo
+Aktuální zkušební katalog 2024:
+1. Mercedes-Benz GLS
+2. Mercedes-Benz GLE
+3. Mercedes-Benz G-Class / G63
+4. Mercedes-Benz S-Class
+5. Mercedes-Benz E-Class
+6. Mercedes-Benz C-Class / CLA
 
-Změny V6:
-- použita přesně dodaná hero fotografie s celým automobilem a Prahou
-- logo převedeno na čisté zlato bez černého nebo šedého podkladu
-- logo má průhledné pozadí a je upraveno pro hlavičku webu
-
-Změny V5:
-- samotná hero fotografie s automobilem zmenšena o 25 %
-- zachována výška hero, správné logo a všechny čtyři jazyky
-
-Změny V4:
-- použito správné zlato-stříbrné logo LE dodané Ivanem
-- kompletně opraveny jazykové verze CZ / EN / DE / RU
-- jazyk se zachovává také v katalogu a detailu vozidla
-- opraveno přepínání jazyků a aktivní jazyk
-
-Změny V3:
-- hero sekce zmenšena o 25 %
-- hlavní logo zvětšeno 1,5×
-- úpravy platí pro počítač i mobil
-
-Základ vzhledu:
-- LUXES_EXECUTIVE_HOMEPAGE_DARK_GOLD_V1
-
-Přeneseno a zachováno z ETAPA_1_POLISHED:
-- cars.js a databázová struktura vozidel
-- katalog vozidel
-- detail vozidla s galerií
-- jazykové verze hlavní stránky CZ / EN / DE / RU
-- fotografie Lexus GX460 pro test katalogu a detailu
-
-Hlavní stránka zůstává v tmavém zlato-černém designu se 6 modely Mercedes-Benz.
-Katalog je připraven pro další přidávání vozidel přes cars.js.
+V Excelu doplňujte pouze údaje o skutečném vozu. Pro každé auto jsou připraveny maximálně tři fotografie. Po změně Excelu pošlete tabulku zpět a připravíme další verzi webu se stejnými údaji.

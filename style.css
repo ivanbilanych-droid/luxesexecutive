@@ -198,3 +198,16 @@
   .actions .btn{min-height:46px;padding:10px 7px;font-size:10px;white-space:nowrap}
 }
 @media(max-width:390px){.hero h1{font-size:31px}html[lang="ru"] .hero h1{font-size:28px}}
+
+/* V15: the home page is now a real, photo-based vehicle showcase. */
+.models.featured-models{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.home-car-card{min-height:0}
+.home-car-card .car-photo{height:210px}
+.home-car-card .car-content{padding:16px}
+.home-car-card .car-heading{gap:12px}
+.home-car-card .car-heading h3{font-size:22px}
+.home-car-card .car-heading>strong{font-size:17px;white-space:nowrap;color:var(--gold2)}
+.home-car-card .car-specs{margin:13px 0}
+.home-detail-button{width:100%;padding:12px 10px;font-size:11px;text-align:center}
+@media(max-width:920px){.models.featured-models{grid-template-columns:repeat(2,minmax(0,1fr))}.home-car-card .car-photo{height:auto;aspect-ratio:3/2}}
+@media(max-width:520px){.models.featured-models{grid-template-columns:1fr}.home-car-card .car-photo{aspect-ratio:3/2}.home-car-card .car-heading{flex-direction:row}.home-car-card .car-heading h3{font-size:23px}}

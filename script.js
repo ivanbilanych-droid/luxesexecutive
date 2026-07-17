@@ -17,7 +17,7 @@ const TEXT = {
       ['Prémiový segment', 'Exkluzivní a sběratelské vozy'],
       ['Osobní manažer', 'Podpora ve všech etapách']
     ],
-    modelsTitle: 'MODELY MERCEDES-BENZ', viewAll: 'ZOBRAZIT VŠE →', zeroVehicles: '0 vozů',
+    modelsTitle: 'AKTUÁLNÍ NABÍDKA', viewAll: 'ZOBRAZIT VŠE →', zeroVehicles: '0 vozů', priceOnRequest: 'CENA NA DOTAZ',
     processTitle: 'JAK PRACUJEME',
     steps: [
       ['Poptávka', 'Popíšete požadovaný automobil nebo nám pošlete odkaz.'],
@@ -67,7 +67,7 @@ const TEXT = {
       ['Premium segment', 'Exclusive and collectible vehicles'],
       ['Personal manager', 'Support at every stage']
     ],
-    modelsTitle: 'MERCEDES-BENZ MODELS', viewAll: 'VIEW ALL →', zeroVehicles: '0 vehicles',
+    modelsTitle: 'CURRENT OFFER', viewAll: 'VIEW ALL →', zeroVehicles: '0 vehicles', priceOnRequest: 'PRICE ON REQUEST',
     processTitle: 'HOW WE WORK',
     steps: [
       ['Request', 'Describe the car you want or send us a link.'],
@@ -117,7 +117,7 @@ const TEXT = {
       ['Premiumsegment', 'Exklusive Fahrzeuge und Sammlerfahrzeuge'],
       ['Persönlicher Ansprechpartner', 'Unterstützung in jeder Phase']
     ],
-    modelsTitle: 'MERCEDES-BENZ MODELLE', viewAll: 'ALLE ANZEIGEN →', zeroVehicles: '0 Fahrzeuge',
+    modelsTitle: 'AKTUELLES ANGEBOT', viewAll: 'ALLE ANZEIGEN →', zeroVehicles: '0 Fahrzeuge', priceOnRequest: 'PREIS AUF ANFRAGE',
     processTitle: 'SO ARBEITEN WIR',
     steps: [
       ['Anfrage', 'Beschreiben Sie Ihr Wunschfahrzeug oder senden Sie uns einen Link.'],
@@ -167,7 +167,7 @@ const TEXT = {
       ['Премиальный сегмент', 'Эксклюзивные и коллекционные автомобили'],
       ['Персональный менеджер', 'Поддержка на всех этапах']
     ],
-    modelsTitle: 'МОДЕЛИ MERCEDES-BENZ', viewAll: 'ПОКАЗАТЬ ВСЕ →', zeroVehicles: '0 автомобилей',
+    modelsTitle: 'АКТУАЛЬНЫЕ АВТОМОБИЛИ', viewAll: 'ПОКАЗАТЬ ВСЕ →', zeroVehicles: '0 автомобилей', priceOnRequest: 'ЦЕНА ПО ЗАПРОСУ',
     processTitle: 'КАК МЫ РАБОТАЕМ',
     steps: [
       ['Запрос', 'Опишите нужный автомобиль или отправьте нам ссылку.'],
@@ -215,9 +215,20 @@ document.addEventListener('DOMContentLoaded', () => {
   applyLanguageSwitcher(lang);
   setupNavigation();
 
-  const cars = Array.isArray(window.CARS) ? window.CARS : [];
-  renderCatalog(cars, lang);
-  renderDetail(cars, lang);
+  const renderCars = () => {
+    const cars = Array.isArray(window.CARS) ? window.CARS : [];
+    renderHomeCars(cars, lang);
+    renderCatalog(cars, lang);
+    renderDetail(cars, lang);
+  };
+  if (document.querySelector('.hero') && !Array.isArray(window.CARS)) {
+    const carsScript = document.createElement('script');
+    carsScript.src = 'cars.js';
+    carsScript.onload = renderCars;
+    document.head.appendChild(carsScript);
+  } else {
+    renderCars();
+  }
 });
 
 function getParams() {
@@ -416,11 +427,13 @@ function setupNavigation() {
 }
 
 function formatPrice(value, lang) {
-  return new Intl.NumberFormat(LOCALES[lang]).format(Number(value || 0)) + ' €';
+  if (value === null || value === undefined || value === '') return TEXT[lang].priceOnRequest;
+  return new Intl.NumberFormat(LOCALES[lang]).format(Number(value)) + ' €';
 }
 
 function formatMileage(value, lang) {
-  return new Intl.NumberFormat(LOCALES[lang]).format(Number(value || 0)) + ' km';
+  if (value === null || value === undefined || value === '') return '—';
+  return new Intl.NumberFormat(LOCALES[lang]).format(Number(value)) + ' km';
 }
 
 function translateStatus(value, lang) {
@@ -501,6 +514,26 @@ function renderCatalog(cars, lang) {
           </div>
         </div>
       </article>`;
+  }).join('');
+}
+
+function renderHomeCars(cars, lang) {
+  const section = document.getElementById('models');
+  if (!section || !cars.length) return;
+  const t = TEXT[lang];
+  const grid = section.querySelector('.models');
+  if (!grid) return;
+  const heading = section.querySelector('.section-head h2');
+  if (heading) heading.textContent = `${t.modelsTitle} — ${cars.length}`;
+  grid.classList.add('featured-models');
+  grid.innerHTML = cars.map((car) => {
+    const detailUrl = localizedUrl(`detail.html?id=${encodeURIComponent(car.id)}`, lang);
+    return `<article class="car-card home-car-card">
+      <a class="car-photo" href="${detailUrl}"><img src="${car.mainPhoto}" alt="${car.brand} ${car.model}"><span class="badge badge-status">${translateStatus(car.status, lang) || t.statusForSale}</span></a>
+      <div class="car-content"><div class="car-heading"><div><small>${car.brand}</small><h3>${car.model}</h3></div><strong>${formatPrice(car.price, lang)}</strong></div>
+      <div class="car-specs"><span><b>${t.specs.year}</b>${car.year}</span><span><b>${t.specs.mileage}</b>${formatMileage(car.mileage, lang)}</span></div>
+      <a class="btn btn-primary home-detail-button" href="${detailUrl}">${t.vehicleDetail}</a></div>
+    </article>`;
   }).join('');
 }
 
