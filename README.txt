@@ -1,21 +1,16 @@
-LUXES EXECUTIVE — MASTER V21
+LUXES EXECUTIVE — MASTER V22 / INTERNATIONAL CAR CLUB
 
-V21 je jeden hotový projekt pro nahrání na hosting.
+Novinky ve verzi V22:
+- nový prémiový blok LUXES INTERNATIONAL CAR CLUB
+- koncept „Automobily bez hranic“
+- síť trhů: Evropa, Kanada, USA, SAE, Turecko a Gruzie
+- šest kroků služby: výběr, kontrola, vyjednání, nákup, doprava, dokumenty
+- samostatná poptávka „Najít auto pro mě“
+- samostatný formulář „Stát se partnerem klubu“
+- oba formuláře otevírají WhatsApp s automaticky připravenou zprávou
+- plná verze CZ / EN / DE / RU
+- zachován katalog, Excel, detail vozů a mobilní verze
 
-Co je uvnitř:
-- hlavní stránka se sedmi aktuálními vozy a jejich počtem;
-- katalog všech sedmi vozů;
-- detail každého vozu se třemi fotografiemi;
-- Excel tabulka LUXES_EXECUTIVE_WHOLESALE_CATALOG.xlsx;
-- fotografie ve složce assets/cars. Jejich názvy přesně odpovídají sloupcům Foto 1–3 v Excelu.
-
-Aktuální katalog:
-1. Lexus GX 460 V8 Executive LPG (2016) — skutečné fotografie
-2. Mercedes-Benz GLS (2024)
-3. Mercedes-Benz GLE (2024)
-4. Mercedes-Benz G-Class / G63 (2024)
-5. Mercedes-Benz S-Class (2024)
-6. Mercedes-Benz E-Class (2024)
-7. Mercedes-Benz C-Class / CLA (2024)
-
-V Excelu doplňujte pouze údaje o skutečném vozu. Pro každé auto jsou připraveny maximálně tři fotografie. Po změně Excelu pošlete tabulku zpět a připravíme další verzi webu se stejnými údaji.
+Hlavní soubor: index.html
+Katalog dat: cars.js
+Excel katalog: LUXES_EXECUTIVE_WHOLESALE_CATALOG.xlsx

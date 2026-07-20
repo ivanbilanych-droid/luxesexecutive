@@ -4,24 +4,24 @@ const HOME_FILES = { cs: 'index.html', en: 'index_en.html', de: 'index_de.html',
 
 const TEXT = {
   cs: {
-    brand: 'PRÉMIOVÉ AUTOMOBILY Z EVROPY',
-    nav: ['HLAVNÍ', 'KATALOG AUT', 'JAK PRACUJEME', 'SLUŽBY', 'O SPOLEČNOSTI', 'KONTAKTY'],
-    heroTitle: 'PRÉMIOVÉ<br><span>AUTOMOBILY</span><br>Z EVROPY',
-    heroText: 'Výběr a dodání prémiových automobilů pro soukromé klienty, dealery a mezinárodní partnery.',
-    heroButtons: ['ZOBRAZIT KATALOG', 'VYŽÁDAT NABÍDKU'],
+    brand: 'PRÉMIOVÉ AUTOMOBILY BEZ HRANIC',
+    nav: ['HLAVNÍ', 'KATALOG', 'AUTO NA OBJEDNÁVKU', 'CAR CLUB', 'PARTNEŘI', 'KONTAKTY'],
+    heroTitle: 'PRÉMIOVÉ<br><span>AUTOMOBILY</span><br>BEZ HRANIC',
+    heroText: 'Výběr, prověření, nákup a dodání prémiových automobilů z Evropy, Kanady, USA a SAE.',
+    heroButtons: ['ZOBRAZIT KATALOG', 'NAJÍT AUTO PRO MĚ'],
     benefits: [
-      ['Prověřené automobily', 'Pouze kvalitní vozy s čistou historií'],
-      ['Výběr po celé Evropě', 'Přístup k nejlepším nabídkám'],
-      ['Exportní dokumenty', 'Kompletní balíček dokumentů'],
-      ['Doprava na klíč', 'Logistiku převezmeme za vás'],
-      ['Prémiový segment', 'Exkluzivní a sběratelské vozy'],
-      ['Osobní manažer', 'Podpora ve všech etapách']
+      ['Prověřené automobily', 'VIN, historie, dokumenty a technický stav'],
+      ['Výběr po celém světě', 'Evropa, Kanada, USA a SAE'],
+      ['Bezpečný nákup', 'Transparentní podmínky a kontrola prodávajícího'],
+      ['Doprava na klíč', 'Logistiku a pojištění vyřídíme za vás'],
+      ['Prémiový segment', 'Exkluzivní, luxusní a sběratelské vozy'],
+      ['Osobní manažer', 'Jeden kontakt od poptávky po předání']
     ],
     modelsTitle: 'AKTUÁLNÍ NABÍDKA', viewAll: 'ZOBRAZIT VŠE →', zeroVehicles: '0 vozů', priceOnRequest: 'CENA NA DOTAZ',
     processTitle: 'JAK PRACUJEME',
     steps: [
       ['Poptávka', 'Popíšete požadovaný automobil nebo nám pošlete odkaz.'],
-      ['Výběr', 'Najdeme nejlepší varianty v celé Evropě.'],
+      ['Výběr', 'Najdeme nejlepší varianty na světových trzích.'],
       ['Kontrola', 'Prověříme historii, dokumenty a technický stav.'],
       ['Dodání', 'Vyřídíme dokumenty a doručíme vůz na klíč.']
     ],
@@ -40,9 +40,9 @@ const TEXT = {
       ['INVESTOŘI', 'Investice do prémiových a sběratelských automobilů.'],
       ['MEZINÁRODNÍ PARTNEŘI', 'Spolehlivá spolupráce, import a export po celém světě.']
     ],
-    footerDescription: 'Zprostředkování prémiových automobilů<br>a řešení mobility na míru',
-    footerNavTitle: 'NAVIGACE', footerNav: ['Hlavní', 'Katalog', 'Jak pracujeme', 'Služby'],
-    footerServicesTitle: 'SLUŽBY', footerServices: ['Výběr automobilu', 'Kontrola a diagnostika', 'Exportní dokumenty', 'Doprava na klíč'],
+    footerDescription: 'Mezinárodní výběr prémiových automobilů<br>a řešení mobility na míru',
+    footerNavTitle: 'NAVIGACE', footerNav: ['Hlavní', 'Katalog', 'Car Club', 'Partneři'],
+    footerServicesTitle: 'SLUŽBY', footerServices: ['Výběr na objednávku', 'Kontrola a vyjednávání', 'Mezinárodní doprava', 'Exportní dokumenty'],
     contactsTitle: 'KONTAKTY', city: 'Praha, Česká republika', companyTitle: 'SPOLEČNOST', privacy: 'Ochrana osobních údajů · Cookies',
     catalogNav: ['HLAVNÍ', 'KATALOG AUT', 'JAK PRACUJEME', 'KONTAKTY'],
     detailNav: ['HLAVNÍ', 'KATALOG AUT', 'KONTAKTY'],
@@ -54,24 +54,24 @@ const TEXT = {
     call: 'ZAVOLAT', photo: 'Foto', interest: 'Mám zájem o', catalogPageTitle: 'Katalog | LUXES EXECUTIVE', detailPageTitle: 'Detail vozu | LUXES EXECUTIVE'
   },
   en: {
-    brand: 'PREMIUM CARS FROM EUROPE',
-    nav: ['HOME', 'CAR CATALOG', 'HOW WE WORK', 'SERVICES', 'ABOUT US', 'CONTACTS'],
-    heroTitle: 'PREMIUM<br><span>CARS</span><br>FROM EUROPE',
-    heroText: 'Selection and delivery of premium cars for private clients, dealers and international partners.',
-    heroButtons: ['VIEW CATALOG', 'REQUEST AN OFFER'],
+    brand: 'PREMIUM CARS WITHOUT BORDERS',
+    nav: ['HOME', 'CATALOG', 'CAR TO ORDER', 'CAR CLUB', 'PARTNERS', 'CONTACTS'],
+    heroTitle: 'PREMIUM<br><span>CARS</span><br>WITHOUT BORDERS',
+    heroText: 'Sourcing, inspection, purchase and delivery of premium cars from Europe, Canada, the USA and the UAE.',
+    heroButtons: ['VIEW CATALOG', 'FIND A CAR FOR ME'],
     benefits: [
-      ['Verified vehicles', 'Only quality cars with a clean history'],
-      ['Selection across Europe', 'Access to the best offers'],
-      ['Export documents', 'Complete documentation package'],
-      ['Turnkey delivery', 'We handle the logistics for you'],
-      ['Premium segment', 'Exclusive and collectible vehicles'],
-      ['Personal manager', 'Support at every stage']
+      ['Verified vehicles', 'VIN, history, documents and technical condition'],
+      ['Worldwide sourcing', 'Europe, Canada, USA and UAE'],
+      ['Secure purchase', 'Transparent terms and seller verification'],
+      ['Turnkey delivery', 'We manage logistics and transport insurance'],
+      ['Premium segment', 'Exclusive, luxury and collectible vehicles'],
+      ['Personal manager', 'One contact from request to handover']
     ],
     modelsTitle: 'CURRENT OFFER', viewAll: 'VIEW ALL →', zeroVehicles: '0 vehicles', priceOnRequest: 'PRICE ON REQUEST',
     processTitle: 'HOW WE WORK',
     steps: [
       ['Request', 'Describe the car you want or send us a link.'],
-      ['Selection', 'We find the best options across Europe.'],
+      ['Selection', 'We find the best options on international markets.'],
       ['Inspection', 'We verify the history, documents and technical condition.'],
       ['Delivery', 'We handle the documents and deliver the car turnkey.']
     ],
@@ -90,9 +90,9 @@ const TEXT = {
       ['INVESTORS', 'Investment in premium and collectible vehicles.'],
       ['INTERNATIONAL PARTNERS', 'Reliable cooperation, import and export worldwide.']
     ],
-    footerDescription: 'European Luxury Vehicle Brokerage<br>& Executive Mobility Solutions',
-    footerNavTitle: 'NAVIGATION', footerNav: ['Home', 'Catalog', 'How we work', 'Services'],
-    footerServicesTitle: 'SERVICES', footerServices: ['Vehicle selection', 'Inspection and diagnostics', 'Export documents', 'Turnkey delivery'],
+    footerDescription: 'Global Luxury Vehicle Brokerage<br>& Executive Mobility Solutions',
+    footerNavTitle: 'NAVIGATION', footerNav: ['Home', 'Catalog', 'Car Club', 'Partners'],
+    footerServicesTitle: 'SERVICES', footerServices: ['Tailored vehicle sourcing', 'Inspection and negotiation', 'International delivery', 'Export documents'],
     contactsTitle: 'CONTACTS', city: 'Prague, Czech Republic', companyTitle: 'COMPANY', privacy: 'Privacy Policy · Cookies',
     catalogNav: ['HOME', 'CAR CATALOG', 'HOW WE WORK', 'CONTACTS'],
     detailNav: ['HOME', 'CAR CATALOG', 'CONTACTS'],
@@ -104,24 +104,24 @@ const TEXT = {
     call: 'CALL', photo: 'Photo', interest: 'I am interested in', catalogPageTitle: 'Car Catalog | LUXES EXECUTIVE', detailPageTitle: 'Vehicle Details | LUXES EXECUTIVE'
   },
   de: {
-    brand: 'PREMIUMFAHRZEUGE AUS EUROPA',
-    nav: ['STARTSEITE', 'FAHRZEUGKATALOG', 'SO ARBEITEN WIR', 'LEISTUNGEN', 'ÜBER UNS', 'KONTAKT'],
-    heroTitle: 'PREMIUM<br><span>FAHRZEUGE</span><br>AUS EUROPA',
-    heroText: 'Auswahl und Lieferung von Premiumfahrzeugen für Privatkunden, Händler und internationale Partner.',
-    heroButtons: ['KATALOG ANZEIGEN', 'ANGEBOT ANFORDERN'],
+    brand: 'PREMIUMFAHRZEUGE OHNE GRENZEN',
+    nav: ['START', 'KATALOG', 'FAHRZEUG AUF BESTELLUNG', 'CAR CLUB', 'PARTNER', 'KONTAKT'],
+    heroTitle: 'PREMIUM<br><span>FAHRZEUGE</span><br>OHNE GRENZEN',
+    heroText: 'Auswahl, Prüfung, Kauf und Lieferung von Premiumfahrzeugen aus Europa, Kanada, den USA und den VAE.',
+    heroButtons: ['KATALOG ANZEIGEN', 'FAHRZEUG SUCHEN'],
     benefits: [
-      ['Geprüfte Fahrzeuge', 'Nur hochwertige Fahrzeuge mit lückenloser Historie'],
-      ['Auswahl in ganz Europa', 'Zugang zu den besten Angeboten'],
-      ['Exportdokumente', 'Komplettes Dokumentenpaket'],
-      ['Schlüsselfertige Lieferung', 'Wir übernehmen die gesamte Logistik'],
-      ['Premiumsegment', 'Exklusive Fahrzeuge und Sammlerfahrzeuge'],
-      ['Persönlicher Ansprechpartner', 'Unterstützung in jeder Phase']
+      ['Geprüfte Fahrzeuge', 'VIN, Historie, Dokumente und technischer Zustand'],
+      ['Weltweite Auswahl', 'Europa, Kanada, USA und VAE'],
+      ['Sicherer Kauf', 'Transparente Bedingungen und Prüfung des Verkäufers'],
+      ['Schlüsselfertige Lieferung', 'Logistik und Transportversicherung aus einer Hand'],
+      ['Premiumsegment', 'Exklusive Luxus- und Sammlerfahrzeuge'],
+      ['Persönlicher Ansprechpartner', 'Ein Kontakt von der Anfrage bis zur Übergabe']
     ],
     modelsTitle: 'AKTUELLES ANGEBOT', viewAll: 'ALLE ANZEIGEN →', zeroVehicles: '0 Fahrzeuge', priceOnRequest: 'PREIS AUF ANFRAGE',
     processTitle: 'SO ARBEITEN WIR',
     steps: [
       ['Anfrage', 'Beschreiben Sie Ihr Wunschfahrzeug oder senden Sie uns einen Link.'],
-      ['Auswahl', 'Wir finden die besten Angebote in ganz Europa.'],
+      ['Auswahl', 'Wir finden die besten Angebote auf internationalen Märkten.'],
       ['Prüfung', 'Wir prüfen Historie, Dokumente und technischen Zustand.'],
       ['Lieferung', 'Wir erledigen die Dokumente und liefern das Fahrzeug schlüsselfertig.']
     ],
@@ -140,9 +140,9 @@ const TEXT = {
       ['INVESTOREN', 'Investitionen in Premium- und Sammlerfahrzeuge.'],
       ['INTERNATIONALE PARTNER', 'Zuverlässige Zusammenarbeit sowie weltweiter Import und Export.']
     ],
-    footerDescription: 'Vermittlung europäischer Premiumfahrzeuge<br>& individuelle Mobilitätslösungen',
-    footerNavTitle: 'NAVIGATION', footerNav: ['Startseite', 'Katalog', 'So arbeiten wir', 'Leistungen'],
-    footerServicesTitle: 'LEISTUNGEN', footerServices: ['Fahrzeugauswahl', 'Prüfung und Diagnose', 'Exportdokumente', 'Schlüsselfertige Lieferung'],
+    footerDescription: 'Internationale Vermittlung von Premiumfahrzeugen<br>& individuelle Mobilitätslösungen',
+    footerNavTitle: 'NAVIGATION', footerNav: ['Start', 'Katalog', 'Car Club', 'Partner'],
+    footerServicesTitle: 'LEISTUNGEN', footerServices: ['Fahrzeugauswahl auf Bestellung', 'Prüfung und Verhandlung', 'Internationaler Transport', 'Exportdokumente'],
     contactsTitle: 'KONTAKT', city: 'Prag, Tschechische Republik', companyTitle: 'UNTERNEHMEN', privacy: 'Datenschutz · Cookies',
     catalogNav: ['STARTSEITE', 'FAHRZEUGKATALOG', 'SO ARBEITEN WIR', 'KONTAKT'],
     detailNav: ['STARTSEITE', 'FAHRZEUGKATALOG', 'KONTAKT'],
@@ -154,24 +154,24 @@ const TEXT = {
     call: 'ANRUFEN', photo: 'Foto', interest: 'Ich interessiere mich für', catalogPageTitle: 'Fahrzeugkatalog | LUXES EXECUTIVE', detailPageTitle: 'Fahrzeugdetails | LUXES EXECUTIVE'
   },
   ru: {
-    brand: 'ПРЕМИАЛЬНЫЕ АВТОМОБИЛИ ИЗ ЕВРОПЫ',
-    nav: ['ГЛАВНАЯ', 'КАТАЛОГ АВТО', 'КАК МЫ РАБОТАЕМ', 'УСЛУГИ', 'О КОМПАНИИ', 'КОНТАКТЫ'],
-    heroTitle: 'ПРЕМИАЛЬНЫЕ<br><span>АВТОМОБИЛИ</span><br>ИЗ ЕВРОПЫ',
-    heroText: 'Подбор и доставка премиальных автомобилей для частных клиентов, дилеров и международных партнёров.',
-    heroButtons: ['СМОТРЕТЬ КАТАЛОГ', 'ЗАПРОСИТЬ ПРЕДЛОЖЕНИЕ'],
+    brand: 'ПРЕМИАЛЬНЫЕ АВТОМОБИЛИ БЕЗ ГРАНИЦ',
+    nav: ['ГЛАВНАЯ', 'КАТАЛОГ', 'АВТО ПОД ЗАКАЗ', 'CAR CLUB', 'ПАРТНЁРАМ', 'КОНТАКТЫ'],
+    heroTitle: 'ПРЕМИАЛЬНЫЕ<br><span>АВТОМОБИЛИ</span><br>БЕЗ ГРАНИЦ',
+    heroText: 'Подбор, проверка, покупка и доставка премиальных автомобилей из Европы, Канады, США и ОАЭ.',
+    heroButtons: ['СМОТРЕТЬ КАТАЛОГ', 'НАЙТИ АВТО ДЛЯ МЕНЯ'],
     benefits: [
-      ['Проверенные автомобили', 'Только качественные автомобили с чистой историей'],
-      ['Выбор по всей Европе', 'Доступ к лучшим предложениям'],
-      ['Экспортные документы', 'Полный комплект документов'],
-      ['Доставка под ключ', 'Мы берём логистику на себя'],
-      ['Премиальный сегмент', 'Эксклюзивные и коллекционные автомобили'],
-      ['Персональный менеджер', 'Поддержка на всех этапах']
+      ['Проверенные автомобили', 'VIN, история, документы и техническое состояние'],
+      ['Поиск по всему миру', 'Европа, Канада, США и ОАЭ'],
+      ['Безопасная покупка', 'Прозрачные условия и проверка продавца'],
+      ['Доставка под ключ', 'Логистика и страхование перевозки'],
+      ['Премиальный сегмент', 'Эксклюзивные, люксовые и коллекционные автомобили'],
+      ['Персональный менеджер', 'Один контакт от заявки до выдачи автомобиля']
     ],
     modelsTitle: 'АКТУАЛЬНЫЕ АВТОМОБИЛИ', viewAll: 'ПОКАЗАТЬ ВСЕ →', zeroVehicles: '0 автомобилей', priceOnRequest: 'ЦЕНА ПО ЗАПРОСУ',
     processTitle: 'КАК МЫ РАБОТАЕМ',
     steps: [
       ['Запрос', 'Опишите нужный автомобиль или отправьте нам ссылку.'],
-      ['Подбор', 'Мы найдём лучшие варианты по всей Европе.'],
+      ['Подбор', 'Мы найдём лучшие варианты на международных рынках.'],
       ['Проверка', 'Проверим историю, документы и техническое состояние.'],
       ['Доставка', 'Оформим документы и доставим автомобиль под ключ.']
     ],
@@ -190,9 +190,9 @@ const TEXT = {
       ['ИНВЕСТОРЫ', 'Инвестиции в премиальные и коллекционные автомобили.'],
       ['МЕЖДУНАРОДНЫЕ ПАРТНЁРЫ', 'Надёжное сотрудничество, импорт и экспорт по всему миру.']
     ],
-    footerDescription: 'Подбор премиальных автомобилей из Европы<br>и индивидуальные решения мобильности',
-    footerNavTitle: 'НАВИГАЦИЯ', footerNav: ['Главная', 'Каталог', 'Как мы работаем', 'Услуги'],
-    footerServicesTitle: 'УСЛУГИ', footerServices: ['Подбор автомобиля', 'Проверка и диагностика', 'Экспортные документы', 'Доставка под ключ'],
+    footerDescription: 'Международный подбор премиальных автомобилей<br>и индивидуальные решения мобильности',
+    footerNavTitle: 'НАВИГАЦИЯ', footerNav: ['Главная', 'Каталог', 'Car Club', 'Партнёрам'],
+    footerServicesTitle: 'УСЛУГИ', footerServices: ['Подбор под заказ', 'Проверка и переговоры', 'Международная доставка', 'Экспортные документы'],
     contactsTitle: 'КОНТАКТЫ', city: 'Прага, Чешская Республика', companyTitle: 'КОМПАНИЯ', privacy: 'Политика конфиденциальности · Cookies',
     catalogNav: ['ГЛАВНАЯ', 'КАТАЛОГ АВТО', 'КАК МЫ РАБОТАЕМ', 'КОНТАКТЫ'],
     detailNav: ['ГЛАВНАЯ', 'КАТАЛОГ АВТО', 'КОНТАКТЫ'],
@@ -265,7 +265,7 @@ function setTextList(elements, values) {
 
 function applyHomeTranslations(lang) {
   const t = TEXT[lang];
-  document.title = 'LUXES EXECUTIVE';
+  document.title = { cs: 'LUXES EXECUTIVE | Automobily bez hranic', en: 'LUXES EXECUTIVE | Cars Without Borders', de: 'LUXES EXECUTIVE | Fahrzeuge ohne Grenzen', ru: 'LUXES EXECUTIVE | Автомобили без границ' }[lang] || 'LUXES EXECUTIVE';
   const brand = document.querySelector('.brand');
   if (brand) brand.href = homeFile(lang);
   const brandLine = document.querySelector('.brand span');
@@ -277,6 +277,9 @@ function applyHomeTranslations(lang) {
     hero.querySelector('h1').innerHTML = t.heroTitle;
     hero.querySelector('p').textContent = t.heroText;
     setTextList(hero.querySelectorAll('.actions a'), t.heroButtons);
+    const heroLinks = hero.querySelectorAll('.actions a');
+    if (heroLinks[0]) heroLinks[0].href = localizedUrl('catalog.html', lang);
+    if (heroLinks[1]) heroLinks[1].href = '#club-buyer';
   }
 
   document.querySelectorAll('.quick-item').forEach((item, index) => {
@@ -334,6 +337,8 @@ function applyHomeTranslations(lang) {
     columns[0].querySelector('p').innerHTML = t.footerDescription;
     columns[1].querySelector('h3').textContent = t.footerNavTitle;
     setTextList(columns[1].querySelectorAll('a'), t.footerNav);
+    const footerLinks = columns[1].querySelectorAll('a');
+    ['#home', '#models', '#car-club', '#partners'].forEach((href, index) => { if (footerLinks[index]) footerLinks[index].href = href; });
     columns[2].querySelector('h3').textContent = t.footerServicesTitle;
     setTextList(columns[2].querySelectorAll('li'), t.footerServices);
     columns[3].querySelector('h3').textContent = t.contactsTitle;
