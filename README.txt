@@ -1,16 +1,15 @@
-LUXES EXECUTIVE — MASTER V22 / INTERNATIONAL CAR CLUB
+LUXES EXECUTIVE MASTER V23 — INTERNATIONAL CAR CLUB
 
-Novinky ve verzi V22:
-- nový prémiový blok LUXES INTERNATIONAL CAR CLUB
-- koncept „Automobily bez hranic“
-- síť trhů: Evropa, Kanada, USA, SAE, Turecko a Gruzie
-- šest kroků služby: výběr, kontrola, vyjednání, nákup, doprava, dokumenty
-- samostatná poptávka „Najít auto pro mě“
-- samostatný formulář „Stát se partnerem klubu“
-- oba formuláře otevírají WhatsApp s automaticky připravenou zprávou
-- plná verze CZ / EN / DE / RU
-- zachován katalog, Excel, detail vozů a mobilní verze
+Změny proti V22:
+- úplné statické překlady CZ / EN / DE / RU (fungují správně i před načtením JavaScriptu)
+- odstraněno chybné zobrazení „Mercedes-Benz GLS 0“
+- cena 0 nebo chybějící cena se vždy zobrazí jako „Cena na dotaz“
+- opraveno vícejazyčné zobrazení katalogu a detailu vozů
+- přidáno verzování CSS/JS (?v=23.0), aby prohlížeče nenačítaly starou V22 z cache
+- ověřeno WhatsApp číslo +420 777 399 799 ve všech tlačítkách a formulářích
+- přidán překlad Benzín/LPG do EN, DE a RU
 
-Hlavní soubor: index.html
-Katalog dat: cars.js
-Excel katalog: LUXES_EXECUTIVE_WHOLESALE_CATALOG.xlsx
+Nasazení:
+1. Zálohujte aktuální web.
+2. Nahrajte obsah ZIPu přímo do hlavní složky webu a potvrďte přepsání souborů.
+3. Otevřete web v anonymním okně nebo proveďte tvrdé obnovení (Ctrl+F5).

@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   if (document.querySelector('.hero') && !Array.isArray(window.CARS)) {
     const carsScript = document.createElement('script');
-    carsScript.src = 'cars.js';
+    carsScript.src = 'cars.js?v=23.0';
     carsScript.onload = renderCars;
     document.head.appendChild(carsScript);
   } else {
@@ -294,7 +294,7 @@ function applyHomeTranslations(lang) {
     const allLink = models.querySelector('.section-link');
     allLink.textContent = t.viewAll;
     allLink.href = localizedUrl('catalog.html', lang);
-    setTextList(models.querySelectorAll('.model-count'), Array(models.querySelectorAll('.model-count').length).fill(t.zeroVehicles));
+    setTextList(models.querySelectorAll('.model-count'), Array(models.querySelectorAll('.model-count').length).fill(t.priceOnRequest));
     models.querySelectorAll('.model-card').forEach((card) => { card.href = localizedUrl(card.getAttribute('href'), lang); });
   }
 
@@ -432,8 +432,9 @@ function setupNavigation() {
 }
 
 function formatPrice(value, lang) {
-  if (value === null || value === undefined || value === '') return TEXT[lang].priceOnRequest;
-  return new Intl.NumberFormat(LOCALES[lang]).format(Number(value)) + ' €';
+  const numeric = Number(value);
+  if (value === null || value === undefined || value === '' || !Number.isFinite(numeric) || numeric <= 0) return TEXT[lang].priceOnRequest;
+  return new Intl.NumberFormat(LOCALES[lang]).format(numeric) + ' €';
 }
 
 function formatMileage(value, lang) {
@@ -454,6 +455,7 @@ function translateStatus(value, lang) {
 function translateValue(value, lang) {
   const values = {
     Benzin: { cs: 'Benzín', en: 'Petrol', de: 'Benzin', ru: 'Бензин' },
+    'Benzín / LPG': { cs: 'Benzín / LPG', en: 'Petrol / LPG', de: 'Benzin / LPG', ru: 'Бензин / LPG' },
     Diesel: { cs: 'Diesel', en: 'Diesel', de: 'Diesel', ru: 'Дизель' },
     Hybrid: { cs: 'Hybrid', en: 'Hybrid', de: 'Hybrid', ru: 'Гибрид' },
     'Plug-in': { cs: 'Plug-in hybrid', en: 'Plug-in hybrid', de: 'Plug-in-Hybrid', ru: 'Подключаемый гибрид' },
@@ -497,7 +499,7 @@ function renderCatalog(cars, lang) {
     return `
       <article class="car-card">
         <a class="car-photo" href="${detailUrl}">
-          <img class="${car.photoFit === 'contain' ? 'car-photo-contain' : ''}" src="${car.mainPhoto}" alt="${car.brand} ${car.model}">
+          <img loading="lazy" class="${car.photoFit === 'contain' ? 'car-photo-contain' : ''}" src="${car.mainPhoto}" alt="${car.brand} ${car.model}">
           ${car.top ? '<span class="badge badge-gold">TOP</span>' : ''}
           <span class="badge badge-status">${translateStatus(car.status, lang) || t.statusForSale}</span>
         </a>
@@ -534,7 +536,7 @@ function renderHomeCars(cars, lang) {
   grid.innerHTML = cars.map((car) => {
     const detailUrl = localizedUrl(`detail.html?id=${encodeURIComponent(car.id)}`, lang);
     return `<article class="car-card home-car-card">
-      <a class="car-photo" href="${detailUrl}"><img class="${car.photoFit === 'contain' ? 'car-photo-contain' : ''}" src="${car.mainPhoto}" alt="${car.brand} ${car.model}"><span class="badge badge-status">${translateStatus(car.status, lang) || t.statusForSale}</span></a>
+      <a class="car-photo" href="${detailUrl}"><img loading="lazy" class="${car.photoFit === 'contain' ? 'car-photo-contain' : ''}" src="${car.mainPhoto}" alt="${car.brand} ${car.model}"><span class="badge badge-status">${translateStatus(car.status, lang) || t.statusForSale}</span></a>
       <div class="car-content"><div class="car-heading"><div><small>${car.brand}</small><h3>${car.model}</h3></div><strong>${formatPrice(car.price, lang)}</strong></div>
       <div class="car-specs"><span><b>${t.specs.year}</b>${car.year}</span><span><b>${t.specs.mileage}</b>${formatMileage(car.mileage, lang)}</span></div>
       <a class="btn btn-primary home-detail-button" href="${detailUrl}">${t.vehicleDetail}</a></div>
